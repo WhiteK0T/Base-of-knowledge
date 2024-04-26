@@ -17,9 +17,9 @@ tags:
 Перед тем, как приступить к настройке ядра, полезно будет помнить, что некоторые аппаратные устройства требуют установки в систему дополнительной, иногда не совместимой с принципами FOSS (free (as in freedom) and open source software/свободное и открытое программное обеспечение), прошивки, прежде чем они будут работать правильно. Чаще всего это касается беспроводных сетевых интерфейсов, обычно встречающихся как в настольных, так и в портативных компьютерах. Современные видеочипы от таких производителей, как AMD, Nvidia и Intel также часто требуют установки внешней прошивки для обеспечения полной функциональности. Большинство прошивок для современных аппаратных устройств можно найти в пакете [sys-kernel/linux-firmware](https://packages.gentoo.org/packages/sys-kernel/linux-firmware).
 
 Рекомендуется установить пакет [sys-kernel/linux-firmware](https://packages.gentoo.org/packages/sys-kernel/linux-firmware) перед первоначальной перезагрузкой системы, чтобы прошивка была доступна в случае необходимости:
-
-`emerge --ask sys-kernel/linux-firmware`
-
+```bash
+emerge --ask sys-kernel/linux-firmware
+```
 **Заметка**  
 Установка определённых пакетов прошивок часто требует принятия соответствующих лицензий на прошивку. При необходимости посетите раздел руководства [о принятии лицензии](https://wiki.gentoo.org/wiki/Handbook:AMD64/Working/Portage/ru#Licenses "Handbook:AMD64/Working/Portage/ru") для получения помощи.
 
@@ -28,9 +28,9 @@ tags:
 #### SOF Firmware
 
 Sound Open Firmware (SOF) is a new open source audio driver meant to replace the proprietary Smart Sound Technology (SST) audio driver from Intel. 10th gen+ and Apollo Lake (Atom E3900, Celeron N3350, and Pentium N4200) Intel CPUs require this firmware for certain features and certain AMD APUs also have support for this firmware. SOF's supported platforms matrix can be found [here](https://thesofproject.github.io/latest/platforms/index.html) for more information.
-
-`emerge --ask sys-firmware/sof-firmware`
-
+```bash
+emerge --ask sys-firmware/sof-firmware
+```
 ### Микрокод
 
 Вдобавок к сетевому оборудованию и видеокартам, процессоры также могут требовать обновления прошивки. Обычно подобный вид прошивок называется _микрокодом_. Обновления микрокода иногда нужны, чтобы исправить нестабильность, улучшить безопасность, или исправить прочие разнообразные баги в процессоре.
@@ -49,58 +49,56 @@ Sound Open Firmware (SOF) is a new open source audio driver meant to replace the
 
 [Гибридный подход: Genkernel](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel/ru#Alternative:_Genkernel "Handbook:AMD64/Installation/Kernel/ru")
 
-Новые обновления ядра устанавливаются через системный менеджер пакетов. Системные администраторы могут использовать инструмент Gentoo genkernel для общей конфигурации, автоматической сборки и установки ядра Linux, связанных с ним модулей и (опционально, но _**не**_ включено по умолчанию) файла initramfs. Можно предоставить пользовательский файл конфигурации ядра, если необходима кастомизация. Будущая конфигурация, сборка и установка ядра требуют участия системного администратора в виде выполнения eselect kernel, genkernel и, возможно, других команд для каждого обновления.
+Новые обновления ядра устанавливаются через системный менеджер пакетов. Системные администраторы могут использовать инструмент Gentoo **genkernel** для общей конфигурации, автоматической сборки и установки ядра Linux, связанных с ним модулей и (опционально, но _**не**_ включено по умолчанию) файла initramfs. Можно предоставить пользовательский файл конфигурации ядра, если необходима кастомизация. Будущая конфигурация, сборка и установка ядра требуют участия системного администратора в виде выполнения **eselect kernel, genkernel** и, возможно, других команд для каждого обновления.
 
 [Полностью ручная настройка](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel/ru#Alternative:_Manual_configuration "Handbook:AMD64/Installation/Kernel/ru")
 
-Новые исходные тексты ядра устанавливаются с помощью системного менеджера пакетов. Ядро конфигурируется, собирается и устанавливается вручную с помощью команды eselect kernel и множества команд make. С новыми обновлениями ядра повторяется ручной процесс конфигурирования, сборки и установки файлов ядра. Это самый сложный процесс, но он обеспечивает максимальный контроль над процессом обновления ядра.
+Новые исходные тексты ядра устанавливаются с помощью системного менеджера пакетов. Ядро конфигурируется, собирается и устанавливается вручную с помощью команды **eselect kernel** и множества команд **make**. С новыми обновлениями ядра повторяется ручной процесс конфигурирования, сборки и установки файлов ядра. Это самый сложный процесс, но он обеспечивает максимальный контроль над процессом обновления ядра.
 
 Основой, вокруг которой строятся все дистрибутивы, является ядро Linux. Оно является прослойкой между пользовательскими программами и аппаратным обеспечением системы. Хотя руководство предоставляет своим пользователям несколько возможных источников ядра, более подробная информация с более детальным описанием доступна на странице {{|Link|Kernel/Overview|Общие сведения о ядре}}.
 
+**Совет**  
+Kernel installation tasks such as, copying the kernel image to /boot or the [EFI System Partition](https://wiki.gentoo.org/wiki/EFI_System_Partition/ru "EFI System Partition/ru"), generating an [initramfs](https://wiki.gentoo.org/wiki/Initramfs "Initramfs") and/or [Unified Kernel Image](https://wiki.gentoo.org/wiki/Unified_Kernel_Image "Unified Kernel Image"), updating bootloader configuration, can be automated with [installkernel](https://wiki.gentoo.org/wiki/Installkernel "Installkernel"). Users may wish to configure and install [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel) before proceeding. See the [Kernel installation section below](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel#Kernel_installation.2Fru "Handbook:AMD64/Installation/Kernel") for more more information.
 ### Distribution-ядра
 
-_[Distribution-ядра](https://wiki.gentoo.org/wiki/Project:Distribution_Kernel "Project:Distribution Kernel")_ — это ebuild-файлы, которые охватывают полный процесс распаковки, конфигурирования, компиляции и установки ядра. Основным преимуществом этого метода является то, что ядра обновляются до новых версий менеджером пакетов во время обновления @world. Для этого используется только команда emerge. Distribution-ядра по умолчанию сконфигурированы для поддержки большинства оборудования, для более тонкой настройки предлагаются два механизма: saveconfig и сниппеты конфигурации. Смотрите страницу проекта для [более подробной информации о конфигурации.](https://wiki.gentoo.org/wiki/Project:Distribution_Kernel#Modifying_kernel_configuration "Project:Distribution Kernel")
+_[Distribution-ядра](https://wiki.gentoo.org/wiki/Project:Distribution_Kernel "Project:Distribution Kernel")_ — это ebuild-файлы, которые охватывают полный процесс распаковки, конфигурирования, компиляции и установки ядра. Основным преимуществом этого метода является то, что ядра обновляются до новых версий менеджером пакетов во время обновления @world. Для этого используется только команда **emerge**. Distribution-ядра по умолчанию сконфигурированы для поддержки большинства оборудования, для более тонкой настройки предлагаются два механизма: saveconfig и сниппеты конфигурации. Смотрите страницу проекта для [более подробной информации о конфигурации.](https://wiki.gentoo.org/wiki/Project:Distribution_Kernel#Modifying_kernel_configuration "Project:Distribution Kernel")
 
 #### Установка distribution-ядра
 
 Before installing the kernel package the [dracut](https://packages.gentoo.org/useflags/dracut)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flag needs to be added for the package [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel) in [/etc/portage/package.use](https://wiki.gentoo.org/wiki//etc/portage/package.use/ru "/etc/portage/package.use/ru"):
 
 ФАЙЛ **`/etc/portage/package.use/installkernel`** Enable dracut support
-
-```
+```bash
 sys-kernel/installkernel dracut
 ```
-
 Users may also wish to enable additional [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel) USE flags at this stage. See the [Installation/Kernel#Installkernel](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel#Installkernel.2Fru "Handbook:AMD64/Installation/Kernel") section for details.
 
 Чтобы собрать ядро из исходного кода с патчами Gentoo, введите:
-
-`emerge --ask sys-kernel/gentoo-kernel`
-
+```bash
+emerge --ask sys-kernel/gentoo-kernel
+```
 Администраторы систем, которые хотят избежать сборки ядра из исходных текстов на компьютере, могут вместо этого использовать предварительно скомпилированные образы ядра:
-
-`emerge --ask sys-kernel/gentoo-kernel-bin`
-
+```bash
+emerge --ask sys-kernel/gentoo-kernel-bin
+```
 ##### Optional: Signed kernel modules
 
 The kernel modules in the prebuilt distribution kernel ([sys-kernel/gentoo-kernel-bin](https://packages.gentoo.org/packages/sys-kernel/gentoo-kernel-bin)) are already signed. To sign the modules of kernels built from source enable the [modules-sign](https://packages.gentoo.org/useflags/modules-sign)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flag, and optionally specify which key to use for signing in [/etc/portage/make.conf](https://wiki.gentoo.org/wiki//etc/portage/make.conf/ru "/etc/portage/make.conf/ru"):
 
 ФАЙЛ **`/etc/portage/make.conf` Enable module signing**
-
-```
+```bash
 USE="modules-sign"
 # Optionally, to use custom signing keys.
 MODULES_SIGN_KEY="/path/to/kernel_key.pem"
 MODULES_SIGN_CERT="/path/to/kernel_key.pem" # Only required if the MODULES_SIGN_KEY does not also contain the certificate.
 MODULES_SIGN_HASH="sha512" # Defaults to sha512.
 ```
-
-If MODULES_SIGN_KEY is not specified the kernel build system will generate a key, it will be stored in /usr/src/linux-x.y.z/certs. It is recommended to manually generate a key to ensure that it will be the same for each kernel release. A key may be generated with:
-
-`openssl req -new -nodes -utf8 -sha256 -x509 -outform PEM -out kernel_key.pem -keyout kernel_key.pem`
-
+If **MODULES_SIGN_KEY** is not specified the kernel build system will generate a key, it will be stored in **/usr/src/linux-x.y.z/certs**. It is recommended to manually generate a key to ensure that it will be the same for each kernel release. A key may be generated with:
+```bash
+openssl req -new -nodes -utf8 -sha256 -x509 -outform PEM -out kernel_key.pem -keyout kernel_key.pem
+```
 **Заметка**  
-The MODULES_SIGN_KEY and MODULES_SIGN_CERT may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
+The **MODULES_SIGN_KEY** and **MODULES_SIGN_CERT** may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
 
 OpenSSL will ask some questions about the user generating the key, it is recommended to fill in these questions as detailed as possible.
 
@@ -112,18 +110,17 @@ root # ls -l kernel_key.pem
 ```
 
 If this outputs anything other then the above, correct the permissions with:
-
-`chown root:root kernel_key.pem`
-
-`chmod 400 kernel_key.pem`
-
+```bash
+chown root:root kernel_key.pem
+chmod 400 kernel_key.pem
+```
 ##### Optional: Signing the kernel image (Secure Boot)
 
 The kernel image in the prebuilt distribution kernel ([sys-kernel/gentoo-kernel-bin](https://packages.gentoo.org/packages/sys-kernel/gentoo-kernel-bin)) is already signed for use with [Secure Boot](https://wiki.gentoo.org/wiki/Secure_Boot "Secure Boot"). To sign the kernel image of kernels built from source enable the [secureboot](https://packages.gentoo.org/useflags/secureboot)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flag, and optionally specify which key to use for signing in [/etc/portage/make.conf](https://wiki.gentoo.org/wiki//etc/portage/make.conf/ru "/etc/portage/make.conf/ru"). Note that signing the kernel image for use with secureboot requires that the kernel modules are also signed, the same key may be used to sign both the kernel image and the kernel modules:
 
 ФАЙЛ **`/etc/portage/make.conf` Enable custom signing keys**
 
-```
+```bash
 USE="modules-sign secureboot"
 # Optionally, to use custom signing keys.
 MODULES_SIGN_KEY="/path/to/kernel_key.pem"
@@ -136,7 +133,7 @@ SECUREBOOT_SIGN_CERT="/path/to/kernel_key.pem"
 ```
 
 **Заметка**  
-The SECUREBOOT_SIGN_KEY and SECUREBOOT_SIGN_CERT may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
+The **SECUREBOOT_SIGN_KEY** and **SECUREBOOT_SIGN_CERT** may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
 
 **Заметка**  
 For this example the same key that was generated to sign the modules is used to sign the kernel image. It is also possible to generate and use a second separate key for signing the kernel image. The same OpenSSL command as in the previous section may be used again.
@@ -150,9 +147,9 @@ To successfully boot with Secure Boot enabled, the used bootloader must also be 
 После установки ядра менеджер пакетов будет автоматически обновлять его до более новых версий. Предыдущие версии будут храниться до тех пор, пока менеджер пакетов не получит запрос на очистку устаревших пакетов. Чтобы освободить место на диске, устаревшие пакеты можно удалить, периодически запуская emerge с опцией `--depclean`:
 
 Также можно удалить именно устаревшие ядра:
-
-`emerge --prune sys-kernel/gentoo-kernel sys-kernel/gentoo-kernel-bin`
-
+```bash
+emerge --prune sys-kernel/gentoo-kernel sys-kernel/gentoo-kernel-bin
+```
 #### Задачи после установки/обновления
 
 Distribution-ядра способны пере собирать модули ядра, установленные другими пакетами. linux-mod.eclass предоставляет USE-флаг `dist-kernel`, который управляет зависимостью от под слота [virtual/dist-kernel](https://packages.gentoo.org/packages/virtual/dist-kernel).
@@ -162,55 +159,50 @@ Distribution-ядра способны пере собирать модули я
 ##### Ручная пере сборка initramfs
 
 Если понадобится, вручную запустите перестройку, выполнив после обновления ядра команду:
-
-`emerge --ask @module-rebuild`
-
+```bash
+emerge --ask @module-rebuild
+```
 Если какой-то модуль ядра (например, ZFS) необходим при ранней загрузке, пере соберите initramfs при помощи:
-
-`emerge --config sys-kernel/gentoo-kernel`
-
-`emerge --config sys-kernel/gentoo-kernel-bin`
-
+```bash
+emerge --config sys-kernel/gentoo-kernel
+emerge --config sys-kernel/gentoo-kernel-bin
+```
 ### Установка исходного кода ядра
 
 **Заметка**  
-Этот раздел актуален только при использовании следующих методов genkernel (гибридного) или ручного подхода к управлению ядром.
+Этот раздел актуален только при использовании следующих методов **genkernel** (гибридного) или ручного подхода к управлению ядром.
 
 The use of [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel) is not strictly required, but highly recommended. When this package is installed, the kernel installation process will be delegated to [installkernel](https://wiki.gentoo.org/wiki/Installkernel "Installkernel"). This allows for installing several different kernel versions side-by-side as well as managing and automating several tasks relating to kernel installation described [later](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel#Kernel_installation.2Fru "Handbook:AMD64/Installation/Kernel") in the handbook. Install it now with:
-
-`emerge --ask sys-kernel/installkernel`
-
+```bash
+emerge --ask sys-kernel/installkernel
+```
 При установке и компиляции ядра для систем на базе amd64 Gentoo рекомендует использовать пакет [sys-kernel/gentoo-sources](https://packages.gentoo.org/packages/sys-kernel/gentoo-sources).
 
-Выберите подходящий исходный код ядра и установите его с помощью emerge:
+Выберите подходящий исходный код ядра и установите его с помощью **emerge**:
+```bash
+emerge --ask sys-kernel/gentoo-sources
+```
+Данная команда установит исходный код ядра Linux в **/usr/src/**, используя в названии версию ядра. Эта команда не установит автоматически символьную ссылку, пока вы не укажете USE-флаг [symlink](https://packages.gentoo.org/useflags/symlink)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") для выбранного исходного кода ядра.
 
-`emerge --ask sys-kernel/gentoo-sources`
-
-Данная команда установит исходный код ядра Linux в /usr/src/, используя в названии версию ядра. Эта команда не установит автоматически символьную ссылку, пока вы не укажете USE-флаг [symlink](https://packages.gentoo.org/useflags/symlink)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") для выбранного исходного кода ядра.
-
-Обычно, символьная ссылка /usr/src/linux указывает на исходный код текущего работающего ядра. Однако, эта символьная ссылка не создаётся по умолчанию. Создать её поможет kernel модуль для eselect.
+Обычно, символьная ссылка **/usr/src/linux** указывает на исходный код текущего работающего ядра. Однако, эта символьная ссылка не создаётся по умолчанию. Создать её поможет kernel модуль для eselect.
 
 Чтобы подробнее узнать, зачем нужна эта символьная ссылка и как ею управлять, смотрите [Kernel/Upgrade](https://wiki.gentoo.org/wiki/Kernel/Upgrade/ru "Kernel/Upgrade/ru").
 
 Для начала, просмотрите список установленных ядер (в виде исходного кода):
-
-`eselect kernel list`
-
 ```
+eselect kernel list
+
 Available kernel symlink targets:
   [1]   linux-6.6.21-gentoo
 ```
 
 Для того, чтобы создать символьную ссылку linux, используйте:
+```bash
+eselect kernel set 1
+ls -l /usr/src/linux
 
-`eselect kernel set 1`
-
-`ls -l /usr/src/linux`
-
+lrwxrwxrwx    1 root   root    20 мар  3 22:44 /usr/src/linux -> linux-6.6.21-gentoo
 ```
-lrwxrwxrwx    1 root   root    20 мар  3 22:44 /usr/src/linux -&gt; linux-6.6.21-gentoo
-```
-
 ### Альтернатива: Genkernel
 
 **Заметка**  
@@ -220,9 +212,9 @@ In case it was missed, this section requires [the kernel sources to be installed
 
 Genkernel предоставляет базовый файл конфигурации ядра и соберет ядро и initramfs, а затем устанавливает полученные двоичные файлы в соответствующие места. Это обеспечивает минимальную и базовую аппаратную поддержку при первой загрузке системы, а в дальнейшем позволяет дополнительно контролировать обновление и настраивать конфигурацию ядра.
 
-Учтите: хотя использование genkernel для поддержки ядра обеспечивает системным администраторам больший контроль над обновлением ядра системы, initramfs и других опций, это _требует_ затрат времени и усилий для выполнения будущих обновлений ядра по мере выпуска новых источников. Тем, кто ищет автоматический подход к обслуживанию ядра, следует [использовать distribution-ядра](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel/ru#Alternative:_Using_distribution_kernels "Handbook:AMD64/Installation/Kernel/ru").
+Учтите: хотя использование **genkernel** для поддержки ядра обеспечивает системным администраторам больший контроль над обновлением ядра системы, initramfs и других опций, это _требует_ затрат времени и усилий для выполнения будущих обновлений ядра по мере выпуска новых источников. Тем, кто ищет автоматический подход к обслуживанию ядра, следует [использовать distribution-ядра](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Kernel/ru#Alternative:_Using_distribution_kernels "Handbook:AMD64/Installation/Kernel/ru").
 
-Для большей ясности, это является _заблуждением_, что genkernel автоматически генерирует _специальную_ конфигурацию ядра для оборудования, на котором он запущен; он использует определённую конфигурацию ядра, которая поддерживает большинство оборудования и автоматически обрабатывает команды make, необходимые для сборки и установки ядра, сопутствующих модулей и файла initramfs.
+Для большей ясности, это является _заблуждением_, что genkernel автоматически генерирует _специальную_ конфигурацию ядра для оборудования, на котором он запущен; он использует определённую конфигурацию ядра, которая поддерживает большинство оборудования и автоматически обрабатывает команды **make**, необходимые для сборки и установки ядра, сопутствующих модулей и файла initramfs.
 
 #### Группа лицензий на "программное обеспечение, распространяемое в бинарном виде"
 
@@ -230,48 +222,45 @@ Genkernel предоставляет базовый файл конфигура�
 
 Поскольку по умолчанию для пакета [sys-kernel/genkernel](https://packages.gentoo.org/packages/sys-kernel/genkernel) включен USE-флаг `firwmare`, пакетный менеджер также попытается установить пакет [sys-kernel/linux-firmware](https://packages.gentoo.org/packages/sys-kernel/linux-firmware). Перед установкой linux-firmware необходимо принять лицензии на "программное обеспечение, распространяемое в бинарном виде".
 
-Эта группа лицензий может быть принята для всей системы путем добавления `@BINARY-REDISTRIBUTABLE` в переменную ACCEPT_LICENSE в файле /etc/portage/make.conf. Лицензия также может быть принята только для пакета linux-firmware с помощью добавления в файле /etc/portage/package.license/linux-firmware.
+Эта группа лицензий может быть принята для всей системы путем добавления `@BINARY-REDISTRIBUTABLE` в переменную ACCEPT_LICENSE в файле **/etc/portage/make.conf**. Лицензия также может быть принята только для пакета linux-firmware с помощью добавления в файле **/etc/portage/package.license/linux-firmware**.
 
 При необходимости ознакомьтесь с [методами разрешения лицензий на программное обеспечение](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base/ru#Optional:_Configure_the_ACCEPT_LICENSE_variable "Handbook:AMD64/Installation/Base/ru"), о которых говорится в главе руководства [Установка базовой системы](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base/ru "Handbook:AMD64/Installation/Base/ru") , а затем внесите некоторые изменения для допустимых лицензий на программное обеспечение.
 
 Для упрощения, примеры разрешения лицензий:
-
-`mkdir /etc/portage/package.license`
+```bash
+mkdir /etc/portage/package.license
+```
 
 ФАЙЛ **`/etc/portage/package.license/linux-firmware` Разрешения лицензий на "программное обеспечение, распространяемое в бинарном виде" для linux-firmware**
-
-```
+```bash
 sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE
 ```
 
 #### Установка
 
 Итак, установите пакет [sys-kernel/genkernel](https://packages.gentoo.org/packages/sys-kernel/genkernel):
-
-`emerge --ask sys-kernel/genkernel`
-
+```bash
+emerge --ask sys-kernel/genkernel
+```
 #### Генерация
 
-Скомпилируйте исходные тексты ядра, выполнив команду genkernel all. Имейте в виду, что, поскольку genkernel компилирует ядро, поддерживающее широкий набор аппаратных средств для различных архитектур компьютеров, процесс компиляции может занять довольно много времени.
+Скомпилируйте исходные тексты ядра, выполнив команду **genkernel all**. Имейте в виду, что, поскольку **genkernel** компилирует ядро, поддерживающее широкий набор аппаратных средств для различных архитектур компьютеров, процесс компиляции может занять довольно много времени.
 
 **Заметка**  
-Если для корневого раздела/тома используется файловая система, отличная от ext4, может потребоваться вручную настроить ядра с помощью genkernel --menuconfig all, чтобы добавить встроенную поддержку ядра для данной файловой системы (т.е. не собирать файловую систему как модуль).
+Если для корневого раздела/тома используется файловая система, отличная от ext4, может потребоваться вручную настроить ядра с помощью **genkernel --menuconfig all**, чтобы добавить встроенную поддержку ядра для данной файловой системы (т.е. не собирать файловую систему как модуль).
 
 **Заметка**  
-Пользователи LVM2 должны добавить `--lvm` в качестве аргумента к команде genkernel ниже
-
-.
-
-`genkernel --mountboot --install all`
-
+Пользователи LVM2 должны добавить `--lvm` в качестве аргумента к команде genkernel ниже.
+```bash
+genkernel --mountboot --install all
+```
 По завершению работы genkernel будут сформированы ядро, полный набор модулей и файловая система инициализации (initramfs). Ядро и initrd нам понадобятся позднее. Запишите название файлов ядра и initrd, так как они нам понадобятся при настройке загрузчика. Initrd запускается сразу после ядра для определения оборудования (как при загрузке установочного CD), перед запуском самой системы.
 
 После завершения работы genkernel, ядро и начальная файловая система ram (initramfs) будут сформированы и установлены в каталог /boot. Соответствующие модули будут установлены в каталог /lib/modules. initramfs будет запущена сразу после загрузки ядра для автоматического определения оборудования (как при загрузке "живого" (live) загрузочного диска).
-
-`ls /boot/vmlinu* /boot/initramfs*`
-
-`ls /lib/modules`
-
+```bash
+ls /boot/vmlinu* /boot/initramfs*
+ls /lib/modules
+```
 ### Альтернатива: Ручная настройка
 
 #### Введение
@@ -282,8 +271,9 @@ In case it was missed, this section requires [the kernel sources to be installed
 Согласно расхожему мнению, настройка ядра — одна из наиболее сложных процедур, с которыми приходится сталкиваться администратору системы. Это совсем не так — после пары-тройки настроек не всякий вспомнит, что это было сложно!
 
 Однако одна вещь является истиной: при ручной конфигурации ядра очень важно понимать свою систему. Большую часть сведений можно почерпнуть, установив пакет [sys-apps/pciutils](https://packages.gentoo.org/packages/sys-apps/pciutils), который содержит в команду lspci:
-
-`emerge --ask sys-apps/pciutils`
+```bash
+emerge --ask sys-apps/pciutils
+```
 
 **Заметка**  
 Находясь внутри изолированного окружения chroot, можно спокойно игнорировать любые предупреждения pcilib (например, _pcilib: cannot open /sys/bus/pci/devices_), которые могут появляться в выводе lspci.
@@ -291,11 +281,10 @@ In case it was missed, this section requires [the kernel sources to be installed
 Другим источником информации о системе может стать вывод команды lsmod, по которому можно понять, какие модули ядра использует установочный носитель, чтобы потом включить аналогичные настройки.
 
 Остаётся перейти в каталог с ядром и выполнить make menuconfig, который запустит экран меню конфигурации.
-
-`cd /usr/src/linux`
-
-`make menuconfig`
-
+```bash
+cd /usr/src/linux
+make menuconfig
+```
 В конфигурации ядра Linux есть много-много разделов. Сначала пройдёмся по пунктам, которые должны быть обязательно включены (иначе Gentoo будет работать неправильно или же вовсе не запустится). Также в вики есть [Руководство по настройке ядра Gentoo](https://wiki.gentoo.org/wiki/Kernel/Gentoo_Kernel_Configuration_Guide/ru "Kernel/Gentoo Kernel Configuration Guide/ru"), которое поможет понять более тонкие детали.
 
 #### Включение обязательных параметров
@@ -463,7 +452,7 @@ Device Drivers --->
 
 #### Optional: Signed kernel modules
 
-To automatically sign the kernel modules enable CONFIG_MODULE_SIG_ALL:
+To automatically sign the kernel modules enable *CONFIG_MODULE_SIG_ALL*:
 
 ЯДРО **Sign kernel modules CONFIG_MODULE_SIG_ALL**
 
@@ -476,7 +465,7 @@ To automatically sign the kernel modules enable CONFIG_MODULE_SIG_ALL:
 
 Optionally change the hash algorithm if desired.
 
-To enforce that all modules are signed with a valid signature, enable CONFIG_MODULE_SIG_FORCE as well:
+To enforce that all modules are signed with a valid signature, enable *CONFIG_MODULE_SIG_FORCE* as well:
 
 ЯДРО **Enforce signed kernel modules CONFIG_MODULE_SIG_FORCE**
 
@@ -488,10 +477,10 @@ To enforce that all modules are signed with a valid signature, enable CONFIG_MOD
     Which hash algorithm should modules be signed with? (Sign modules with SHA-512) --->
 ```
 
-To use a custom key, specify the location of this key in CONFIG_MODULE_SIG_KEY, if unspecified the kernel build system will generate a key. It is recommended to generate one manually instead. This can be done with:
-
-`openssl req -new -nodes -utf8 -sha256 -x509 -outform PEM -out kernel_key.pem -keyout kernel_key.pem`
-
+To use a custom key, specify the location of this key in *CONFIG_MODULE_SIG_KEY*, if unspecified the kernel build system will generate a key. It is recommended to generate one manually instead. This can be done with:
+```bash
+openssl req -new -nodes -utf8 -sha256 -x509 -outform PEM -out kernel_key.pem -keyout kernel_key.pem
+```
 OpenSSL will ask some questions about the user generating the key, it is recommended to fill in these questions as detailed as possible.
 
 Store the key in a safe location, at the very least the key should be readable only by the root user. Verify this with:
@@ -502,11 +491,10 @@ ls -l kernel_key.pem
 ```
 
 If this outputs anything other then the above, correct the permissions with:
-
-`chown root:root kernel_key.pem`
-
-`chmod 400 kernel_key.pem`
-
+```bash
+chown root:root kernel_key.pem
+chmod 400 kernel_key.pem
+```
 ЯДРО **Specify signing key CONFIG_MODULE_SIG_KEY**
 
 ```
@@ -519,7 +507,7 @@ To also sign external kernel modules installed by other packages via `linux-mod-
 
 ФАЙЛ **`/etc/portage/make.conf` Enable module signing**
 
-```
+```bash
 USE="modules-sign"
 # Optionally, when using custom signing keys.
 MODULES_SIGN_KEY="/path/to/kernel_key.pem"
@@ -528,7 +516,7 @@ MODULES_SIGN_HASH="sha512" # Defaults to sha512
 ```
 
 **Заметка**  
-The MODULES_SIGN_KEY and MODULES_SIGN_CERT may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
+The **MODULES_SIGN_KEY** and **MODULES_SIGN_CERT** may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
 
 #### Optional: Signing the kernel image (Secure Boot)
 
@@ -579,10 +567,11 @@ Device Drivers --->
 ```
 
 After compilation of the kernel, as explained in the next section, the kernel image must be signed. First install [app-crypt/sbsigntools](https://packages.gentoo.org/packages/app-crypt/sbsigntools) and then sign the kernel image:
+```bash
+emerge --ask app-crypt/sbsigntools
 
-`emerge --ask app-crypt/sbsigntools`
-
-`sbsign /usr/src/linux-x.y.z/path/to/kernel-image --cert /path/to/kernel_key.pem --key /path/to/kernel_key.pem --out /usr/src/linux-x.y.z/path/to/kernel-image`
+sbsign /usr/src/linux-x.y.z/path/to/kernel-image --cert /path/to/kernel_key.pem --key /path/to/kernel_key.pem --out /usr/src/linux-x.y.z/path/to/kernel-image
+```
 
 **Заметка**  
 For this example the same key that was generated to sign the modules is used to sign the kernel image. It is also possible to generate and use a second sperate key for signing the kernel image. The same OpenSSL command as in the previous section may be used again.
@@ -593,7 +582,7 @@ To automatically sign EFI executables installed by other packages, enable the [s
 
 ФАЙЛ **`/etc/portage/make.conf` Enable Secure Boot**
 
-```
+```bash
 USE="modules-sign secureboot"
 
 # Optionally, to use custom signing keys.
@@ -607,7 +596,7 @@ SECUREBOOT_SIGN_CERT="/path/to/kernel_key.pem"
 ```
 
 **Заметка**  
-The SECUREBOOT_SIGN_KEY and SECUREBOOT_SIGN_CERT may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
+The **SECUREBOOT_SIGN_KEY** and **SECUREBOOT_SIGN_CERT** may be different files. For this example the pem file generated by OpenSSL includes both the key and the accompanying certificate, and thus both variables are set to the same value.
 
 **Заметка**  
 When generating an [Unified Kernel Image](https://wiki.gentoo.org/wiki/Unified_Kernel_Image "Unified Kernel Image") with systemd's `ukify` the kernel image will be signed automatically before inclusion in the unified kernel image and it is not necessary to sign it manually.
@@ -685,33 +674,35 @@ Device Drivers --->
 #### Компиляция и установка
 
 Когда настройка закончена, настало время скомпилировать и установить ядро. Выйдите из настройки и запустите процесс компиляции:
-
-`make && make modules_install`
-
+```bash
+make && make modules_install
+```
 **Заметка**  
-Можно включить параллельную сборку, используя make -jX, где `X` — это число параллельных задач, которые может запустить процесс сборки. Это похоже на инструкции, которые были даны ранее относительно файла /etc/portage/make.conf в части переменной MAKEOPTS.
+Можно включить параллельную сборку, используя **make -jX**, где `X` — это число параллельных задач, которые может запустить процесс сборки. Это похоже на инструкции, которые были даны ранее относительно файла **/etc/portage/make.conf** в части переменной *MAKEOPTS*.
 
-По завершении компиляции, скопируйте образ ядра в каталог /boot/. Это делается командой make install:
-
-Данная команда скопирует образ ядра в каталог /boot/ вместе с файлом System.map и файлом настройки ядра.
+По завершении компиляции, скопируйте образ ядра в каталог **/boot/**. Это делается командой **make install**:
+```bash
+make install
+```
+Данная команда скопирует образ ядра в каталог **/boot/** вместе с файлом **System.map** и файлом настройки ядра.
 
 ## Kernel installation
 
 ### Installkernel
 
-[Installkernel](https://wiki.gentoo.org/wiki/Installkernel "Installkernel") may be used to automate, the kernel installation, [initramfs](https://wiki.gentoo.org/wiki/Initramfs "Initramfs") generation, [unified kernel image](https://wiki.gentoo.org/wiki/Unified_kernel_image "Unified kernel image") generation and/or bootloader configuration among other things. [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel) implements two paths of achieving this: the traditional installkernel originating from Debian and [systemd](https://wiki.gentoo.org/wiki/Systemd/ru "Systemd/ru")'s kernel-install. Which one to choose depends, among other things, on the system's bootloader. By default systemd's kernel-install is used on systemd profiles, while the traditional installkernel is the default for other profiles.
+[Installkernel](https://wiki.gentoo.org/wiki/Installkernel "Installkernel") may be used to automate, the kernel installation, [initramfs](https://wiki.gentoo.org/wiki/Initramfs "Initramfs") generation, [unified kernel image](https://wiki.gentoo.org/wiki/Unified_kernel_image "Unified kernel image") generation and/or bootloader configuration among other things. [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel) implements two paths of achieving this: the traditional **installkernel** originating from Debian and [systemd](https://wiki.gentoo.org/wiki/Systemd/ru "Systemd/ru")'s **kernel-install**. Which one to choose depends, among other things, on the system's bootloader. By default systemd's **kernel-install** is used on systemd profiles, while the traditional **installkernel** is the default for other profiles.
 
 If unsure, follow the 'Traditional layout' subsection below.
 
 #### systemd-boot
 
-When using [systemd-boot](https://wiki.gentoo.org/wiki/Systemd/systemd-boot "Systemd/systemd-boot") (formerly gummiboot) as the bootloader, systemd's kernel-install must be used. Therefore ensure the [systemd](https://packages.gentoo.org/useflags/systemd)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") and the [systemd-boot](https://packages.gentoo.org/useflags/systemd-boot)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flags are enabled on [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel), and then install the relevant package for systemd-boot.
+When using [systemd-boot](https://wiki.gentoo.org/wiki/Systemd/systemd-boot "Systemd/systemd-boot") (formerly gummiboot) as the bootloader, systemd's **kernel-install** must be used. Therefore ensure the [systemd](https://packages.gentoo.org/useflags/systemd)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") and the [systemd-boot](https://packages.gentoo.org/useflags/systemd-boot)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flags are enabled on [sys-kernel/installkernel](https://packages.gentoo.org/packages/sys-kernel/installkernel), and then install the relevant package for systemd-boot.
 
 On **OpenRC** systems:
 
 ФАЙЛ **`/etc/portage/package.use/systemd-boot`**
 
-```
+```bash
 sys-apps/systemd-utils boot kernel-install
 sys-kernel/installkernel systemd systemd-boot
 ```
@@ -722,7 +713,7 @@ On **systemd** systems:
 
 ФАЙЛ **`/etc/portage/package.use/systemd`**
 
-```
+```bash
 sys-apps/systemd boot
 sys-kernel/installkernel systemd-boot
 ```
@@ -731,15 +722,18 @@ sys-kernel/installkernel systemd-boot
 
 #### GRUB
 
-Users of GRUB can use either systemd's kernel-install or the traditional Debian installkernel. The [systemd](https://packages.gentoo.org/useflags/systemd)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flag switches between these implementations. To automatically run grub-mkconfig when installing the kernel, enable the [grub](https://packages.gentoo.org/useflags/grub)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") [USE flag](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru").
+Users of GRUB can use either systemd's **kernel-install** or the traditional Debian **installkernel**. The [systemd](https://packages.gentoo.org/useflags/systemd)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flag switches between these implementations. To automatically run **grub-mkconfig** when installing the kernel, enable the [grub](https://packages.gentoo.org/useflags/grub)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") [USE flag](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru").
 
 ФАЙЛ **`/etc/portage/package.use/installkernel`**
 
-```
+```bash
 sys-kernel/installkernel grub
 ```
 
-`emerge --ask sys-kernel/installkernel`
+```bash
+emerge --ask sys-kernel/installkernel
+```
+
 
 #### Traditional layout, other bootloaders (e.g. lilo, etc.)
 
@@ -758,25 +752,24 @@ If using genkernel, it should be used for both building the kernel _and_ the ini
 
 ФАЙЛ **`/etc/portage/package.use/installkernel`**
 
-```
+```bash
 sys-kernel/installkernel dracut
 ```
 
 Alternatively, dracut may be called manually to generate an initramfs. Install [sys-kernel/dracut](https://packages.gentoo.org/packages/sys-kernel/dracut) first, then have it generate an initramfs:
-
-`emerge --ask sys-kernel/dracut`
-
-`dracut --kver=6.6.21-gentoo`
-
-The initramfs will be stored in /boot/. The resulting file can be found by simply listing the files starting with _initramfs_:
-
-`ls /boot/initramfs*`
-
+```bash
+emerge --ask sys-kernel/dracut
+dracut --kver=6.6.21-gentoo
+```
+The initramfs will be stored in **/boot/**. The resulting file can be found by simply listing the files starting with _initramfs_:
+```bash
+ls /boot/initramfs*
+```
 ### Optional: Building an Unified Kernel Image
 
 An [Unified Kernel Image](https://wiki.gentoo.org/wiki/Unified_Kernel_Image "Unified Kernel Image") (UKI) combines, among other things, the kernel, the initramfs and the kernel command line into a single executable. Since the kernel command line is embedded into the unified kernel image it should be specified before generating the unified kernel image (see below). Note that any kernel command line arguments supplied by the bootloader or firmware at boot are ignored when booting with secure boot enabled.
 
-An unified kernel image requires a stub loader, currently the only one available is systemd-stub. To enable it:
+An unified kernel image requires a stub loader, currently the only one available is **systemd-stub**. To enable it:
 
 For systemd systems:
 
@@ -786,23 +779,23 @@ For OpenRC systems:
 
 ФАЙЛ **`/etc/portage/package.use/systemd-utils`**
 
-```
+```bash
 sys-apps/systemd-utils boot
 ```
 
-[Installkernel](https://wiki.gentoo.org/wiki/Installkernel "Installkernel") can automatically generate an unified kernel image using either dracut or ukify, by enabling the respective flag. The [uki](https://packages.gentoo.org/useflags/uki)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flag should be enabled as well to install the generated unified kernel image to the $ESP/EFI/Linux directory on the [EFI system partition](https://wiki.gentoo.org/wiki/EFI_system_partition "EFI system partition") (ESP).
+[Installkernel](https://wiki.gentoo.org/wiki/Installkernel "Installkernel") can automatically generate an unified kernel image using either dracut or ukify, by enabling the respective flag. The [uki](https://packages.gentoo.org/useflags/uki)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") USE flag should be enabled as well to install the generated unified kernel image to the **$ESP/EFI/Linux** directory on the [EFI system partition](https://wiki.gentoo.org/wiki/EFI_system_partition "EFI system partition") (ESP).
 
 For dracut:
 
 ФАЙЛ **`/etc/portage/package.use/installkernel`**
 
-```
+```bash
 sys-kernel/installkernel dracut uki
 ```
 
 ФАЙЛ **`/etc/dracut.conf`**
 
-```
+```bash
 uefi="yes"
 kernel_cmdline="some-kernel-command-line-arguments"
 ```
@@ -811,13 +804,13 @@ For ukify:
 
 ФАЙЛ **`/etc/portage/package.use/installkernel`**
 
-```
+```bash
 sys-kernel/installkernel dracut ukify uki
 ```
 
 ФАЙЛ **`/etc/kernel/cmdline`**
 
-```
+```bash
 some-kernel-command-line-arguments
 ```
 
@@ -829,20 +822,20 @@ The prebuilt [sys-kernel/gentoo-kernel-bin](https://packages.gentoo.org/packages
 
 ФАЙЛ **`/etc/portage/package.use/generic-uki`**
 
-```
+```bash
 sys-kernel/gentoo-kernel-bin generic-uki
 sys-kernel/installkernel -dracut -ukify uki
 ```
 
 #### Secure Boot
 
-The generic Unified Kernel Image optionally distributed by [sys-kernel/gentoo-kernel-bin](https://packages.gentoo.org/packages/sys-kernel/gentoo-kernel-bin) is already pre-signed. How to sign a locally generated unified kernel image depends on whether dracut or ukify is used. Note that the location of the key and certificate should be the same as the SECUREBOOT_SIGN_KEY and SECUREBOOT_SIGN_CERT as specified in /etc/portage/make.conf.
+The generic Unified Kernel Image optionally distributed by [sys-kernel/gentoo-kernel-bin](https://packages.gentoo.org/packages/sys-kernel/gentoo-kernel-bin) is already pre-signed. How to sign a locally generated unified kernel image depends on whether dracut or ukify is used. Note that the location of the key and certificate should be the same as the SECUREBOOT_SIGN_KEY and SECUREBOOT_SIGN_CERT as specified in **/etc/portage/make.conf**.
 
 For dracut:
 
 ФАЙЛ **`/etc/dracut.conf`**
 
-```
+```bash
 uefi="yes"
 kernel_cmdline="some-kernel-command-line-arguments"
 uefi_secureboot_key="/path/to/kernel_key.pem"
@@ -853,7 +846,7 @@ For ukify:
 
 ФАЙЛ **`/etc/kernel/uki.conf`**
 
-```
+```bash
 [UKI]
 SecureBootPrivateKey=/path/to/kernel_key.pem
 SecureBootCertificate=/path/to/kernel_key.pem
@@ -864,12 +857,13 @@ SecureBootCertificate=/path/to/kernel_key.pem
 External kernel modules installed by other packages via `linux-mod-r1.eclass` must be rebuilt for each new kernel version. When the distribution kernels are used this may be automated by enabling the [dist-kernel](https://packages.gentoo.org/useflags/dist-kernel)[](https://wiki.gentoo.org/wiki/USE_flag/ru "USE flag/ru") flag globally.
 
 ФАЙЛ **`/etc/portage/package.use/module-rebuild`**
-```
+```bash
 */* dist-kernel
 ```
 External kernel modules may also be rebuilt manually with:
-
-`emerge --ask @module-rebuild`
+```bash
+emerge --ask @module-rebuild
+```
 
 ## Модули ядра
 
@@ -881,20 +875,23 @@ External kernel modules may also be rebuilt manually with:
 Модули, которые должны загружаться при каждой загрузке, могут быть добавлены в файлы /etc/modules-load.d/\*.conf, по одному модулю в строке. Если для модулей необходимы дополнительные параметры, их следует указывать в файлах /etc/modprobe.d/\*.conf.
 
 Чтобы просмотреть все модули, доступные для определённой версии ядра, выполните следующую команду find. Не забудьте заменить **kernel version** на соответствующую версию ядра для поиска:
-```
+```bash
 find /lib/modules/<kernel version>/ -type f -iname '*.o' -or -iname '*.ko' | less
 ```
 ### Принудительная загрузка отдельных модулей ядра
 
-Чтобы принудительно загрузить в систему модуль 3c59x.ko (драйвер для определённого семейства сетевых карт от 3Com), отредактируйте файл /etc/modules-load.d/network.conf и добавьте туда имя модуля.
-
-`mkdir -p /etc/modules-load.d`
-
-`nano -w /etc/modules-load.d/network.conf`
+Чтобы принудительно загрузить в систему модуль **3c59x.ko** (драйвер для определённого семейства сетевых карт от 3Com), отредактируйте файл **/etc/modules-load.d/network.conf** и добавьте туда имя модуля.
+```bash
+mkdir -p /etc/modules-load.d
+nano -w /etc/modules-load.d/network.conf
+```
 
 Обратите внимание, что суффикс в имени файла модуля .ko несущественен для механизма загрузки и не включается в файл:
 
 ФАЙЛ **`/etc/modules-load.d/network.conf` Принудительная загрузка модуля 3c59x**
+```bash
+3c59x
+```
 
 Продолжите установку с раздела [Настройка системы](https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/System/ru "Handbook:AMD64/Installation/System/ru").
 

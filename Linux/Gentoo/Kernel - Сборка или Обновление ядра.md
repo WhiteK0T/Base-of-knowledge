@@ -1,6 +1,11 @@
 ---
 создал заметку: 2024-04-25T14:07:00
 author: WhiteK0T
+tags:
+  - CheatSheet
+  - Gentoo
+  - Kernel
+  - Linux
 ---
 ### Сборка ядра Gentoo
 
@@ -145,6 +150,8 @@ cd ..
 cd /usr/src/
 rm .config.working .config.default .config.diff
 ```
+
+Источник [[Gentoo Wiki - Настройка ядра Linux]] , [[Gentoo Wiki - ЯдроОбновление]]
 
 #Gentoo 
 #Linux 

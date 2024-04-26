@@ -7,10 +7,9 @@ tags:
   - Linux
 Источник: https://wiki.gentoo.org/wiki/Kernel/Upgrade/ru
 ---
-
 Эта статья описывает шаги необходимые для обновления [ядра](https://wiki.gentoo.org/wiki/Kernel/ru "Kernel/ru") Linux.
 
-Сборка нового ядра из свежего исходного кода является практически тем же процессом, как и во время установки системы. Разница заключается в том, что для экономии времени можно конвертировать конфигурацию от старого ядра под изменения, сделанные в новом ядре, вместо того, чтобы снова устанавливать все опции (например, с помощью make menuconfig).
+Сборка нового ядра из свежего исходного кода является практически тем же процессом, как и во время установки системы. Разница заключается в том, что для экономии времени можно конвертировать конфигурацию от старого ядра под изменения, сделанные в новом ядре, вместо того, чтобы снова устанавливать все опции (например, с помощью **make menuconfig**).
 
 В новом ядре могут быть опции или возможности, которых нет в старом ядро, или наоборот, из нового ядра могут быть убраны некоторые из опций, которые были в старом ядре. Поэтому в конфигурационном файле нового ядра могут быть новые опции, которые отсутствуют в конфигурационном файле старого ядра, или некоторых опций больше нет в новом ядре, но они присутствовали в конфигурационном файле старого ядра.
 
@@ -21,7 +20,7 @@ tags:
 1.  Установка нового исходного кода ядра.
 2.  Установка символьной ссылки на (недавно установленный) исходный код ядра.
 3.  Вход в каталог с новым ядром.
-4.  Настройка файла .config для параметров, которые были удалены или добавлены в конфигурацию нового ядра.
+4.  Настройка файла **.config** для параметров, которые были удалены или добавлены в конфигурацию нового ядра.
 5.  Сборка ядра и initramfs.
 6.  Обновление загрузчика.
 7.  Удаление или сохранение старого ядра.
@@ -32,20 +31,20 @@ tags:
 ## Установка нового исходного кода ядра
 
 Для обновление ядра в начале нужно установить новый исходный код ядра. Этот исходный код иногда устанавливается в результате обновления системы при запуске следующей команды:
-
-`emerge --ask --update --deep --with-bdeps=y --newuse @world`
-
+```bash
+emerge --ask --update --deep --with-bdeps=y --newuse @world
+```
 Конечно, исходный код ядра можно установить напрямую, используя команду (замените _gentoo-sources_ на любую версию ядра, которую используете):
-
-`emerge --ask --update --deep --with-bdeps=y --newuse sys-kernel/gentoo-sources`
-
+```bash
+emerge --ask --update --deep --with-bdeps=y --newuse sys-kernel/gentoo-sources
+```
 Установка нового исходного кода ядра не дает пользователю обновленное ядро. Новый исходный код нужно собрать в новое ядро и установить, а затем перезапустить систему.
 
 ## Установка символьной ссылки на новый исходный код ядра
 
-Конфигурация ядра сохранена в файле .config, в каталоге с исходным кодом ядра.
+Конфигурация ядра сохранена в файле **.config**, в каталоге с исходным кодом ядра.
 
-Символьная ссылка /usr/src/linux должна всегда указывать на каталог, в котором находится исходный код используемого в настоящий момент ядра. Это может быть сделано одним из трех способов:
+Символьная ссылка **/usr/src/linux** должна всегда указывать на каталог, в котором находится исходный код используемого в настоящий момент ядра. Это может быть сделано одним из трех способов:
 
 1.  По умолчанию: Настройка ссылки с помощью eselect
 2.  Альтернатива 1: Ручное обновление символьной ссылки
@@ -53,22 +52,20 @@ tags:
 
 ### По умолчанию: Настройка символьной ссылки с помощью eselect
 
-Для настройки символьной ссылки с помощью eselect:
+Для настройки символьной ссылки с помощью **eselect**:
+```bash
+eselect kernel list
 
-`eselect kernel list`
-
-```
 Available kernel symlink targets:
  [1] linux-3.14.14-gentoo *
  [2] linux-3.16.3-gentoo
 ```
-
 Это вывод доступных исходных кодов ядра. Звездочка указывает на выбранный исходный код.
 
 Для выбора исходного кода ядра, например, второго в списке, выполните:
-
-`eselect kernel set 2`
-
+```bash
+eselect kernel set 2
+```
 ### Альтернатива 1: Изменение символьной ссылки вручную
 
 Для изменения символьной ссылки вручную:
@@ -81,9 +78,9 @@ ls -l /usr/src/linux
   lrwxrwxrwx 1 root root 19 Oct  4 10:21 /usr/src/linux -> linux-3.16.3-gentoo
 ```
 
-### Альтернатива 2: Установка исходного кода ядра с USE-флагом symlink
+### Альтернатива 2: Установка исходного кода ядра с **USE**-флагом **symlink**
 
-Это заставит /usr/src/linux ссылаться на с веже установленный исходный код ядра.
+Это заставит **/usr/src/linux** ссылаться на с веже установленный исходный код ядра.
 
 Если необходимо, это можно изменить одним из двух методов.
 
@@ -94,7 +91,7 @@ ls -l /usr/src/linux
 cd /usr/src/linux
 ```
 **Заметка**  
-Эта команда необходима, даже если вы уже находились в каталоге /usr/src/linux, когда изменялась символьная ссылка. Пока вы не пере зайдете в каталог, консоль всё ещё будет в каталоге _старого_ ядра.
+Эта команда необходима, даже если вы уже находились в каталоге **/usr/src/linux**, когда изменялась символьная ссылка. Пока вы не пере зайдете в каталог, консоль всё ещё будет в каталоге _старого_ ядра.
 
 ## Конвертация файла .config для нового ядра
 
@@ -103,29 +100,29 @@ cd /usr/src/linux
 Конфигурацию от старого ядра необходимо скопировать в каталог с новым. Старую конфигурацию можно найти в нескольких местах:
 
 -   В файловой системе [procfs](https://wiki.gentoo.org/wiki/Procfs/ru "Procfs/ru"), если параметр ядра _Enable access to .config through /proc/config.gz_ был включен в работающем на данный момент ядре:
-
-`zcat /proc/config.gz > /usr/src/linux/.config`
-
--   Из старого ядра. Такое будет работать только в случае, если старое ядро было собрано с CONFIG\_IKCONFIG:
-
-`/usr/src/linux/scripts/extract-ikconfig /path/to/old/kernel >/usr/src/linux/.config`
-
--   В каталоге /boot, если туда был установлен конфигурационный файл:
-
-`cp /boot/config-3.14.14-gentoo /usr/src/linux/.config`
-
+```bash
+zcat /proc/config.gz > /usr/src/linux/.config
+```
+-   Из старого ядра. Такое будет работать только в случае, если старое ядро было собрано с **CONFIG_IKCONFIG**:
+```bash
+/usr/src/linux/scripts/extract-ikconfig /path/to/old/kernel >/usr/src/linux/.config`
+```
+-   В каталоге **/boot**, если туда был установлен конфигурационный файл:
+```bash
+cp /boot/config-3.14.14-gentoo /usr/src/linux/.config
+```
 -   В каталоге ядра, которое работает на данный момент:
-
-`cp /usr/src/linux-3.14.14-gentoo/.config /usr/src/linux/`
-
--   В каталоге /etc/kernels/, если `SAVE_CONFIG="yes"` настроено в /etc/genkernel.conf и ядро было собрано с помощью [genkernel](https://wiki.gentoo.org/wiki/Genkernel/ru "Genkernel/ru"):
-
-`cp /etc/kernels/kernel-config-x86_64-3.14.14-gentoo /usr/src/linux/.config`
-
-### Обновление файла .config
+```bash
+cp /usr/src/linux-3.14.14-gentoo/.config /usr/src/linux/
+```
+-   В каталоге **/etc/kernels/**, если **`SAVE_CONFIG="yes"`** настроено в **/etc/genkernel.conf** и ядро было собрано с помощью [genkernel](https://wiki.gentoo.org/wiki/Genkernel/ru "Genkernel/ru"):
+```bash
+cp /etc/kernels/kernel-config-x86_64-3.14.14-gentoo /usr/src/linux/.config
+```
+### Обновление файла **.config**
 
 **Заметка**  
-Комманды make oldconfig и make menuconfig могут вызываться автоматически с помощью [genkernel](https://wiki.gentoo.org/wiki/Genkernel/ru "Genkernel/ru") во время сборки, если вы включите параметры _OLDCONFIG_ и _MENUCONFIG_ в файле /etc/genkernel.conf. Если вы включили параметр _OLDCONFIG_ в конфигурации genkernel или с помощью параметра _\--oldconfig_ команды genkernel, перейдите к разделу с [сборкой](https://wiki.gentoo.org/wiki/Kernel/Upgrade/ru#Build "Kernel/Upgrade/ru").
+Команды **make oldconfig** и **make menuconfig** могут вызываться автоматически с помощью [genkernel](https://wiki.gentoo.org/wiki/Genkernel/ru "Genkernel/ru") во время сборки, если вы включите параметры _OLDCONFIG_ и _MENUCONFIG_ в файле **/etc/genkernel.conf**. Если вы включили параметр _OLDCONFIG_ в конфигурации genkernel или с помощью параметра _\--oldconfig_ команды **genkernel**, перейдите к разделу с [сборкой](https://wiki.gentoo.org/wiki/Kernel/Upgrade/ru#Build "Kernel/Upgrade/ru").
 
 Новое ядро обычно требует новый файл .config для поддержки новых опций ядра. Файл .config с предыдущего ядра может быть с конвертирован для использования новым ядром. Конвертация может быть выполнена несколькими способами, например, с помощью команд **make oldconfig** или **make olddefconfig.**
 
@@ -134,7 +131,7 @@ cd /usr/src/linux
 **Важно**  
 **make syncconfig** стал частью внутреннего устройства; по возможности используйте **make oldconfig**. **make silentoldconfig** был удален, начиная с ядра Linux версии 4.19.
 
-Следующая конфигурация похожа на текстовый интерфейс из make config. Для новых опций она предоставляет выбор пользователю. Например:
+Следующая конфигурация похожа на текстовый интерфейс из **make config**. Для новых опций она предоставляет выбор пользователю. Например:
 ```bash
 cd /usr/src/linux
 make oldconfig
@@ -143,24 +140,24 @@ Anticipatory I/O scheduler (IOSCHED_AS) [Y/n/m/?] (NEW)
 
 Надпись _(NEW)_ в конце строки означает, что это новая опция. В левой части, в квадратных скобках, указаны возможные ответы: _Yes, _no, _module или ?_ для справки. Рекомендуемый ответ (т.е. по умолчанию) написан большими буквами (здесь _Y_). В справке дано пояснение к опции или драйверу.
 
-К сожалению, make oldconfig не дает исчерпывающей информации для каждой опции, так что иногда трудно выбрать правильный ответ. В этом случае, лучше запомнить название параметра и найти его позже с помощью одного из [инструментов конфигурации ядра](https://wiki.gentoo.org/wiki/Kernel/Configuration/ru#Configuration_tools "Kernel/Configuration/ru"). Для просмотра списка новых опций, используйте make listnewconfig перед make oldconfig.
+К сожалению, **make oldconfig** не дает исчерпывающей информации для каждой опции, так что иногда трудно выбрать правильный ответ. В этом случае, лучше запомнить название параметра и найти его позже с помощью одного из [инструментов конфигурации ядра](https://wiki.gentoo.org/wiki/Kernel/Configuration/ru#Configuration_tools "Kernel/Configuration/ru"). Для просмотра списка новых опций, используйте **make listnewconfig** перед **make oldconfig**.
 
 #### make olddefconfig
 
-make olddefconfig оставит все настройки с старого файла .config, и установит новые настройки в их рекомендуемое значение (т.е. в значение по умолчанию):
+make olddefconfig оставит все настройки с старого файла **.config**, и установит новые настройки в их рекомендуемое значение (т.е. в значение по умолчанию):
 ```bash
 cd /usr/src/linux
 make olddefconfig
 ```
 #### make help
 
-Используйте make help для просмотра других доступных методов преобразования конфиг файла:
+Используйте **make help** для просмотра других доступных методов преобразования конфиг файла:
 ```bash
 make help
 ```
 #### Наблюдение различий
 
-Инструмент diff может быть использован для сравнения старого и нового файла .config, чтобы просмотреть вновь добавленные опции:
+Инструмент **diff** может быть использован для сравнения старого и нового файла **.config**, чтобы просмотреть вновь добавленные опции:
 ```bash
 comm -2 -3 <(sort .config) <(sort .config.old)`
 ```
@@ -201,7 +198,7 @@ Finally, the bootloader must be reconfigured to account for the new kernel filen
 
 It is possible to automatically build and install the newly emerged kernel using Portage hooks. While other approaches are also possible, the following is based on genkernel and gentoo-sources package. It requires the following prerequisites:
 
-1.  genkernel all is able to build and install the kernel to which the /usr/src/linux symlink points into `$BOOTDIR` and the bootloader.
+1.  **genkernel all** is able to build and install the kernel to which the **/usr/src/linux symlink** points into `$BOOTDIR` and the bootloader.
 2.  The `symlink` use flag is set for the kernel ebuild.
 
 If those are fulfilled, simply install a `post_pkg_postinst` Portage hook as shown below. Keep in mind this calls genkernel with --`no-module-rebuild`, since using module-rebuild would run emerge in emerge, and result in a deadlock waiting on the lock file. Remember to run `emerge @module-rebuild` after any update that includes a kernel upgrade.
@@ -232,7 +229,7 @@ post_pkg_postinst() {
 ```
 ### Решение проблем сборки
 
-Если возникают проблемы при пере сборке текущего ядра, то может помочь очистка исходного кода ядра. Удостоверьтесь, что сохранили файл .config, так как данная операция удалит его. Удостоверьтесь, что не используется окончание файла .bak или ~ для бэкапа, так как make distclean очищает и такие файлы.
+Если возникают проблемы при пере сборке текущего ядра, то может помочь очистка исходного кода ядра. Удостоверьтесь, что сохранили файл .config, так как данная операция удалит его. Удостоверьтесь, что не используется окончание файла .bak или ~ для бэкапа, так как **make distclean** очищает и такие файлы.
 ```bash
 cp .config /usr/src/kernel_config_bk
 make distclean
@@ -242,14 +239,14 @@ mv /usr/src/kernel_config_bk .config
 
 The upgraded and installed kernel must be registered with the [bootloader](https://wiki.gentoo.org/wiki/Bootloader/ru "Bootloader/ru") or [directly with the UEFI firmware](https://wiki.gentoo.org/wiki/EFI_stub_kernel#Installation "EFI stub kernel"), see [Kernel/Configuration](https://wiki.gentoo.org/wiki/Kernel/Configuration/ru#Setup "Kernel/Configuration/ru"). Users of [GRUB](https://wiki.gentoo.org/wiki/GRUB/ru "GRUB/ru") can use the method below, users of other bootloaders must consult the [Handbook](https://wiki.gentoo.org/wiki/Handbook "Handbook").
 
-Make sure /boot partition is mounted.
+Make sure **/boot** partition is mounted.
 
 ### Использование grub-mkconfig
 
 The following command can be executed for updating [GRUB](https://wiki.gentoo.org/wiki/GRUB/ru "GRUB/ru")'s configuration file:
-
-`grub-mkconfig -o /boot/grub/grub.cfg`
-
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 **Предупреждение**  
 If GRUB itself was upgraded (besides the kernel), for instance as part of a world set upgrade, it is necessary to also re-install GRUB, otherwise it may not boot. See [GRUB#GRUB Bootloader Installation](https://wiki.gentoo.org/wiki/GRUB#GRUB_Bootloader_Installation "GRUB") for details.
 

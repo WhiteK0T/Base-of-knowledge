@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "801c2d1c18916e5f",
+        "id": "33be1fd79c3f672d",
         "type": "tabs",
         "children": [
           {
-            "id": "c20486ad78f8afee",
+            "id": "ff2cceea1e16afb6",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -86,8 +86,8 @@
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -137,7 +137,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 337.5
+    "width": 337.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,20 +150,21 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "c20486ad78f8afee",
+  "active": "ff2cceea1e16afb6",
   "lastOpenFiles": [
-    "Linux/Gentoo/Gentoo Wiki - Настройка ядра Linux.md",
     "Linux/Gentoo/Gentoo Wiki - ЯдроОбновление.md",
+    "Daily/Без названия.md",
     "Linux/Gentoo/Kernel - Сборка или Обновление ядра.md",
-    "Linux/Gentoo/ЯдроОбновление — Gentoo Wiki.md",
+    "Linux/Gentoo/Gentoo Wiki - Настройка ядра Linux.md",
+    "Без названия.md",
+    "Templates/Planner Template.md",
+    "Templates/Reference Template.md",
     "Templates/Book Template.md",
     "Templates/Course Template.md",
     "Templates/Daily Template.md",
-    "Templates/Default Template.md",
-    "Templates/Planner Template.md",
-    "Templates/Reference Template.md",
-    "Без названия.md",
     "Obsidian Base Settings.md",
+    "Linux/Gentoo/ЯдроОбновление — Gentoo Wiki.md",
+    "Templates/Default Template.md",
     "Education/Книги/2024/Как взломать пентагон на HTML.md",
     "Education/Ежедневник/2024/Апрель.md",
     "Education/Выполненные цели/2024.md",
