@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "33be1fd79c3f672d",
+        "id": "2fe4d9a6e3b21fe9",
         "type": "tabs",
         "children": [
           {
-            "id": "ff2cceea1e16afb6",
+            "id": "81713102b7770627",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Linux/Network/IPTables.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Linux/Network/IPTables.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Linux/Network/IPTables.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Linux/Network/IPTables.md"
+              }
             }
           },
           {
@@ -150,12 +158,23 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "ff2cceea1e16afb6",
+  "active": "fdfa310480f918de",
   "lastOpenFiles": [
+    "Linux/Gentoo/Kernel - Сборка или Обновление ядра.md",
+    "Linux/Network/IPTables.md",
+    "Linux/Gentoo/Gentoo Wiki - Настройка ядра Linux.md",
+    "Cache/Netfilter/iptables-router-sxema.png",
+    "Cache/Netfilter/iptables-2sevr-sxema.png",
+    "Cache/Netfilter",
+    "Cache/Netfilter/iptables-chain1.png",
+    "Cache/Netfilter/iptables-chain.jpg",
+    "Cache/iptables-схема прохождения пакетов.jpg",
+    "Cache/Схема цепочек iptables.png",
+    "Cache/iptables - схема прохождения пакетов.jpg",
+    "Cache/Netfilter/Netfilter-components.svg",
+    "Linux/Network",
     "Linux/Gentoo/Gentoo Wiki - ЯдроОбновление.md",
     "Daily/Без названия.md",
-    "Linux/Gentoo/Kernel - Сборка или Обновление ядра.md",
-    "Linux/Gentoo/Gentoo Wiki - Настройка ядра Linux.md",
     "Без названия.md",
     "Templates/Planner Template.md",
     "Templates/Reference Template.md",
@@ -184,10 +203,6 @@
     "Education/Ежедневник",
     "Education/Выполненные цели",
     "Education",
-    "Programming/Парсинг сайтов",
-    "Programming/Основы Python",
-    "Welcome.md",
-    "2024-04-25.md",
-    "создайте ссылку.md"
+    "Welcome.md"
   ]
 }
