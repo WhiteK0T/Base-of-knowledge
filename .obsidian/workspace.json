@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2fe4d9a6e3b21fe9",
+        "id": "3ab249b310298ee9",
         "type": "tabs",
         "children": [
           {
-            "id": "81713102b7770627",
+            "id": "7edde3721c981d50",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -158,11 +158,28 @@
       "command-palette:Открыть палитру команд": false
     }
   },
-  "active": "fdfa310480f918de",
+  "active": "7edde3721c981d50",
   "lastOpenFiles": [
-    "Linux/Gentoo/Kernel - Сборка или Обновление ядра.md",
+    "Programming/Очереди сообщений/Kafka vs RabbitMQ.md",
+    "Programming/Очереди сообщений/RabbitMQ.md",
+    "Linux/Telegram/Шаринг файлов-папок с серверов прямо к себе в Телеграм.md",
+    "Linux/Security/Как узнать пароль user-a, который подключается к серверу по ssh.md",
     "Linux/Network/IPTables.md",
+    "Linux/Gentoo/Kernel - Сборка или Обновление ядра.md",
     "Linux/Gentoo/Gentoo Wiki - Настройка ядра Linux.md",
+    "Windows/Как на wsl хитро вкорячить свежую версию ubuntu 23 или 24.md",
+    "Linux/Telegram",
+    "Windows",
+    "Linux/Gentoo/Gentoo Wiki - ЯдроОбновление.md",
+    "Education/Методики как учится.md",
+    "Linux/Security",
+    "Programming/Algorithm/Repository and Sites.md",
+    "Programming/Algorithm",
+    "Programming/Очереди сообщений/Kafka.md",
+    "Cache/MessageBroker/RabbitMQ-sxema1.png",
+    "Cache/MessageBroker/RabbitMQ-sxema.png",
+    "Cache/MessageBroker",
+    "Programming/Очереди сообщений",
     "Cache/Netfilter/iptables-router-sxema.png",
     "Cache/Netfilter/iptables-2sevr-sxema.png",
     "Cache/Netfilter",
@@ -173,7 +190,6 @@
     "Cache/iptables - схема прохождения пакетов.jpg",
     "Cache/Netfilter/Netfilter-components.svg",
     "Linux/Network",
-    "Linux/Gentoo/Gentoo Wiki - ЯдроОбновление.md",
     "Daily/Без названия.md",
     "Без названия.md",
     "Templates/Planner Template.md",
@@ -188,21 +204,8 @@
     "Education/Ежедневник/2024/Апрель.md",
     "Education/Выполненные цели/2024.md",
     "Education/Выполненные цели/Сортировка/Цели на год.md",
-    "Education/Выполненные цели/Сортировка/Список целей.md",
-    "Programming/Основы Python/Как работают переменные.md",
-    "Linux/Gentoo/Без названия.md",
-    "Daily/2024-04-11 продуктивность.md",
-    "Daily/2024-04-10 продуктивность.md",
     "Linux/Gentoo/Без названия.canvas",
-    "Linux/Gentoo/Kernel - Сборка или Обновление ядра1.md",
     "Daily",
-    "Education/Книги/2024",
-    "Education/Ежедневник/2024",
-    "Education/Выполненные цели/Сортировка",
-    "Education/Книги",
-    "Education/Ежедневник",
-    "Education/Выполненные цели",
-    "Education",
-    "Welcome.md"
+    "Education/Книги/2024"
   ]
 }
