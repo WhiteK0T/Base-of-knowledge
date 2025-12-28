@@ -161,11 +161,9 @@ print "GAWK "systime()-t}'
 
 --- Я немного отделил, поскольку gawk не совсем bash, но привел для примера.
 
-
 > [! ] 
 > GAWK 0
 > GAWK 2 (тут реально 1.6) но баш оперирует целыми.
-
 
 > [!Intel i3 10100 16Gb Win10 WSL] Intel i3 10100 16Gb Win10 WSL
 > FOR0 3
@@ -187,6 +185,28 @@ print "GAWK "systime()-t}'
 > GAWK 0
 > GAWK 0
 > GAWK 0
+
+> [!AMD EPYC 7502P 4Gb Debian] AMD EPYC 7502P 4Gb Debian
+> FOR0 4
+FOR0 14
+FOR1 2
+FOR1 12
+FOR2 2
+FOR2 9
+FOR3 0
+FOR3 17
+FOR4 0
+FOR4 14
+FOR5 0
+FOR5 18
+WHL0 0
+WHL0 16
+WHL1 0
+WHL1 13
+GAWK 0
+GAWK 0
+GAWK 0
+> 
 
 Выводы:
 
