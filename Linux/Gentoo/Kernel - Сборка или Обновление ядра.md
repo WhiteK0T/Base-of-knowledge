@@ -151,7 +151,7 @@ cd /usr/src/
 rm .config.working .config.default .config.diff
 ```
 
-Источник [[Gentoo Wiki - Настройка ядра Linux]] , [[Gentoo Wiki - ЯдроОбновление]]
+Источник [Gentoo Wiki - Настройка ядра Linux](Gentoo%20Wiki%20-%20Настройка%20ядра%20Linux.md) , [Gentoo Wiki - ЯдроОбновление](Gentoo%20Wiki%20-%20ЯдроОбновление.md)
 
 #Gentoo 
 #Linux 
