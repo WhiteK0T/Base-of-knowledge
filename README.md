@@ -1,10 +1,10 @@
 # 🧠 Base of knowledge
 
-![Obsidian](Cache/README/obsidian.png)
-![Made with Markdown](Cache/README/markdown.png)
-![Язык: Русский](Cache/README/lang-ru.png)
-![Заметок](Cache/README/notes.png)
-[![License: CC BY 4.0](Cache/README/license.png)](LICENSE)
+![Obsidian](https://img.shields.io/badge/Obsidian-483699?logo=obsidian&logoColor=white)
+![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f?logo=markdown&logoColor=white)
+![Язык: Русский](https://img.shields.io/badge/Язык-Русский-0088CC)
+![Заметок](https://img.shields.io/badge/Заметок-34-success)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/WhiteK0T/Base-of-knowledge)
 ![Repo size](https://img.shields.io/github/repo-size/WhiteK0T/Base-of-knowledge)
 
