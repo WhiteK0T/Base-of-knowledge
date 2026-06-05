@@ -4,6 +4,7 @@
 ![Made with Markdown](Cache/README/markdown.png)
 ![Язык: Русский](Cache/README/lang-ru.png)
 ![Заметок](Cache/README/notes.png)
+[![License: CC BY 4.0](Cache/README/license.png)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/WhiteK0T/Base-of-knowledge)
 ![Repo size](https://img.shields.io/github/repo-size/WhiteK0T/Base-of-knowledge)
 
