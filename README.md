@@ -37,7 +37,7 @@
 ### 🐧 Linux
 
 - **Пакетные менеджеры:** [APT](Linux/Package-Manager/APT.md) · [DPKG](Linux/Package-Manager/DPKG.md) · [Aptitude](Linux/Package-Manager/Aptitude.md) · [OPKG](Linux/Package-Manager/OPKG.md) · [Сравнение команд менеджеров пакетов](Linux/Package-Manager/Сравнение%20команд%20менеджеров%20пакетов.md)
-- **Сеть:** [IPTables](Linux/Network/IPTables.md)
+- **Сеть:** [IPTables](Linux/Network/IPTables.md) · [Samba](Linux/Network/Samba.md)
 - **SSH:** [Ключи](Linux/Network/SSH/SSH-Ключи.md) · [Базовое руководство](Linux/Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Linux/Network/SSH/SSH-Продвинутое%20руководство.md)
 - **Команды:** [SCP](Linux/Commands/SCP.md)
 - **Bash:** [for](Linux/Bash/for.md) · [sec](Linux/Bash/sec.md) · [Bench Циклов](Linux/Bash/Bench%20Циклов.md)
