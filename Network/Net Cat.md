@@ -60,7 +60,7 @@ kali@kali:~$ nc -nv 192.168.0.178 80
 C:\Program Files\nc111nt> nc -nlvp 4444
 ```
 
-![](../../Cache/NetCat/nc-win-listing4444.png)
+![](../Cache/NetCat/nc-win-listing4444.png)
 
 Теперь давайте подключимся к этому порту с нашей Linux-машины:
 
@@ -70,7 +70,7 @@ kali@kali:~$ nc -nv 192.168.0.178 4444
 
 И напишем что-нибудь. Например "Hello". Наш текст будет отправлен на машину Windows через TCP-порт 4444:
 
-![](../../Cache/NetCat/Chat.png)
+![](../Cache/NetCat/Chat.png)
 
 ##### Передача файлов с помощью Netcat
 

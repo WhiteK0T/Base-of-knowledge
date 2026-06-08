@@ -52,7 +52,7 @@ Host my-server
     IdentityFile ~/.ssh/my_server_key
 ```
 
-Настройка ключей и SSH — см. [SSH-Ключи](../../Linux/Network/SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md) и [SSH-Базовое руководство](../../Linux/Network/SSH/SSH-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md).
+Настройка ключей и SSH — см. [SSH-Ключи](../../Network/SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md) и [SSH-Базовое руководство](../../Network/SSH/SSH-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md).
 
 ## 4. Запуск синхронизации
 

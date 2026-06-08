@@ -65,7 +65,7 @@ localhost:~$ scp mypic.png neo@remoteserver:/media/data/mypic_2.png
 sftp neo@remoteserver
 ```
 
-Подробнее о копировании — в заметке [SCP](../../Commands/SCP.md).
+Подробнее о копировании — в заметке [SCP](../../Linux/Commands/SCP.md).
 
 ## Удалённое выполнение команд
 

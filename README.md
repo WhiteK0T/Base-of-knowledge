@@ -25,7 +25,8 @@
 |-------|-------|
 | [`AI/`](AI) | AI-агенты для кода, Claude Code, MCP, инструменты вокруг LLM |
 | [`VCS/`](VCS) | Системы контроля версий: GitHub, GitHub Actions |
-| [`Linux/`](Linux) | Пакетные менеджеры, сеть, Bash, Gentoo, безопасность и пр. |
+| [`Network/`](Network) | Сеть и SSH: IPTables, Samba, Netcat, туннели (кроссплатформенное) |
+| [`Linux/`](Linux) | Пакетные менеджеры, Bash, Gentoo, безопасность и пр. |
 | [`Programming/`](Programming) | Парадигмы, очереди сообщений, Java, алгоритмы |
 | [`Health/`](Health) | Витамины и их приём |
 | [`Education/`](Education) | Методики обучения |
@@ -46,11 +47,14 @@
 
 - **GitHub:** [GitHub Actions — автосчётчик заметок в README](VCS/GitHub/GitHub%20Actions%20%E2%80%94%20автосчётчик%20заметок%20в%20README.md)
 
+### 🌐 Network
+
+- **Сеть:** [IPTables](Network/IPTables.md) · [Samba](Network/Samba.md) · [Netcat](Network/Net%20Cat.md) · [Reverse Shell](Network/Reverse%20Shell.md) · [Флаги пиров qBittorrent](Network/Torrent%20Flags.md)
+- **SSH:** [Ключи](Network/SSH/SSH-Ключи.md) · [Базовое руководство](Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Network/SSH/SSH-Продвинутое%20руководство.md) · [Визуальное руководство по туннелям](Network/SSH/SSH-Визуальное%20руководство%20по%20туннелям.md)
+
 ### 🐧 Linux
 
 - **Пакетные менеджеры:** [APT](Linux/Package-Manager/APT.md) · [DPKG](Linux/Package-Manager/DPKG.md) · [Aptitude](Linux/Package-Manager/Aptitude.md) · [OPKG](Linux/Package-Manager/OPKG.md) · [Сравнение команд менеджеров пакетов](Linux/Package-Manager/Сравнение%20команд%20менеджеров%20пакетов.md)
-- **Сеть:** [IPTables](Linux/Network/IPTables.md) · [Samba](Linux/Network/Samba.md) · [Netcat](Linux/Network/Net%20Cat.md) · [Reverse Shell](Linux/Network/Reverse%20Shell.md) · [Флаги пиров qBittorrent](Linux/Network/Torrent%20Flags.md)
-- **SSH:** [Ключи](Linux/Network/SSH/SSH-Ключи.md) · [Базовое руководство](Linux/Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Linux/Network/SSH/SSH-Продвинутое%20руководство.md) · [Визуальное руководство по туннелям](Linux/Network/SSH/SSH-Визуальное%20руководство%20по%20туннелям.md)
 - **Команды:** [SCP](Linux/Commands/SCP.md) · [cURL](Linux/Commands/cURL.md)
 - **Bash:** [for](Linux/Bash/for.md) · [sec](Linux/Bash/sec.md) · [Bench Циклов](Linux/Bash/Bench%20Циклов.md)
 - **Debian / Ubuntu:** [Включить репозитории stable + sid](Linux/Debian-Ubuntu/Включить%20репозитории%20stable%20+%20sid.md) · [Настройка языка и региональных стандартов](Linux/Debian-Ubuntu/Настройка%20языка%20и%20региональных%20стандартов%20в%20Ubuntu%20Server-Debian.md)
