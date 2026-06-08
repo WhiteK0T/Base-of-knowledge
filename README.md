@@ -3,7 +3,7 @@
 ![Obsidian](https://img.shields.io/badge/Obsidian-483699?logo=obsidian&logoColor=white)
 ![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f?logo=markdown&logoColor=white)
 ![Язык: Русский](https://img.shields.io/badge/Язык-Русский-0088CC)
-![Заметок](https://img.shields.io/badge/Заметок-34-success)
+![Заметок](https://img.shields.io/badge/Заметок-46-success)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/WhiteK0T/Base-of-knowledge)
 ![Repo size](https://img.shields.io/github/repo-size/WhiteK0T/Base-of-knowledge)
@@ -23,6 +23,7 @@
 
 | Папка | О чём |
 |-------|-------|
+| [`AI/`](AI) | AI-агенты для кода, Claude Code, MCP, инструменты вокруг LLM |
 | [`Linux/`](Linux) | Пакетные менеджеры, сеть, Bash, Gentoo, безопасность и пр. |
 | [`Programming/`](Programming) | Парадигмы, очереди сообщений, Java, алгоритмы |
 | [`Health/`](Health) | Витамины и их приём |
@@ -34,11 +35,17 @@
 
 ## 🗂️ Каталог заметок
 
+### 🤖 AI
+
+- **AI-агенты:** [Сводная таблица AI-агентов для программирования (июнь 2026)](AI/Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md)
+- **Claude Code:** [Гайд](AI/Claude%20Code%20%E2%80%94%20гайд.md) · [Шпаргалка команд](AI/Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md) · [MCP — серверы Model Context Protocol](AI/MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md)
+- **Инструменты:** [AI Website Cloner](AI/AI%20Website%20Cloner%20%E2%80%94%20клонирование%20сайтов%20в%20Next.js%20через%20AI-агентов.md) · [Heretic (abliteration)](AI/Heretic%20%E2%80%94%20снятие%20safety-ограничений%20с%20открытых%20LLM%20%28abliteration%29.md)
+
 ### 🐧 Linux
 
 - **Пакетные менеджеры:** [APT](Linux/Package-Manager/APT.md) · [DPKG](Linux/Package-Manager/DPKG.md) · [Aptitude](Linux/Package-Manager/Aptitude.md) · [OPKG](Linux/Package-Manager/OPKG.md) · [Сравнение команд менеджеров пакетов](Linux/Package-Manager/Сравнение%20команд%20менеджеров%20пакетов.md)
 - **Сеть:** [IPTables](Linux/Network/IPTables.md) · [Samba](Linux/Network/Samba.md) · [Netcat](Linux/Network/Net%20Cat.md) · [Reverse Shell](Linux/Network/Reverse%20Shell.md) · [Флаги пиров qBittorrent](Linux/Network/Torrent%20Flags.md)
-- **SSH:** [Ключи](Linux/Network/SSH/SSH-Ключи.md) · [Базовое руководство](Linux/Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Linux/Network/SSH/SSH-Продвинутое%20руководство.md)
+- **SSH:** [Ключи](Linux/Network/SSH/SSH-Ключи.md) · [Базовое руководство](Linux/Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Linux/Network/SSH/SSH-Продвинутое%20руководство.md) · [Визуальное руководство по туннелям](Linux/Network/SSH/SSH-Визуальное%20руководство%20по%20туннелям.md)
 - **Команды:** [SCP](Linux/Commands/SCP.md)
 - **Bash:** [for](Linux/Bash/for.md) · [sec](Linux/Bash/sec.md) · [Bench Циклов](Linux/Bash/Bench%20Циклов.md)
 - **Debian / Ubuntu:** [Включить репозитории stable + sid](Linux/Debian-Ubuntu/Включить%20репозитории%20stable%20+%20sid.md) · [Настройка языка и региональных стандартов](Linux/Debian-Ubuntu/Настройка%20языка%20и%20региональных%20стандартов%20в%20Ubuntu%20Server-Debian.md)
@@ -67,7 +74,7 @@
 
 ### 📱 Apps
 
-- [SearXNG](Apps/SearXNG.md)
+- [SearXNG](Apps/SearXNG.md) · [ScreenConnect](Apps/ScreenConnect.md)
 
 ## 🛠️ Как пользоваться
 
