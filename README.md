@@ -90,7 +90,7 @@
 ### 📱 Apps
 
 - **Разное:** [SearXNG](Apps/SearXNG.md) · [ScreenConnect](Apps/ScreenConnect.md) · [Mutagen](Apps/Mutagen/Mutagen.md)
-- **Загрузчики:** [VidBee](Apps/Downloaders/VidBee.md)
+- **Загрузчики:** [Какую выбрать](Apps/Downloaders/Загрузчики%20%E2%80%94%20какую%20выбрать.md) · [yt-dlp](Apps/Downloaders/yt-dlp.md) · [VidBee](Apps/Downloaders/VidBee.md) · [Open Video Downloader](Apps/Downloaders/Open%20Video%20Downloader.md) · [ytDownloader](Apps/Downloaders/ytDownloader.md) · [Tartube](Apps/Downloaders/Tartube.md) · [Seal](Apps/Downloaders/Seal.md)
 
 ## 🛠️ Как пользоваться
 
