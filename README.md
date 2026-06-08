@@ -79,7 +79,7 @@
 
 ### 📱 Apps
 
-- [SearXNG](Apps/SearXNG.md) · [ScreenConnect](Apps/ScreenConnect.md)
+- [SearXNG](Apps/SearXNG.md) · [ScreenConnect](Apps/ScreenConnect.md) · [Mutagen](Apps/Mutagen/Mutagen.md)
 
 ## 🛠️ Как пользоваться
 
