@@ -89,7 +89,8 @@
 
 ### 📱 Apps
 
-- [SearXNG](Apps/SearXNG.md) · [ScreenConnect](Apps/ScreenConnect.md) · [Mutagen](Apps/Mutagen/Mutagen.md) · [VidBee](Apps/VidBee.md)
+- **Разное:** [SearXNG](Apps/SearXNG.md) · [ScreenConnect](Apps/ScreenConnect.md) · [Mutagen](Apps/Mutagen/Mutagen.md)
+- **Загрузчики:** [VidBee](Apps/Downloaders/VidBee.md)
 
 ## 🛠️ Как пользоваться
 
