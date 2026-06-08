@@ -14,7 +14,7 @@ tags:
 
 # 🛰️ NetWatch — сетевая форензика в терминале
 
-**NetWatch** (автор — Matt Hart, лицензия **MIT**) — **TUI для сетевой форензики в реальном времени** на **Rust** (Linux и macOS). Делает глубокий разбор пакетов (deep packet inspection) на «живой» скорости, практически без конфигурации.
+[**NetWatch**](https://github.com/matthart1983/netwatch) (автор — Matt Hart, лицензия **MIT**) — **TUI для сетевой форензики в реальном времени** на **Rust** (Linux и macOS). Делает глубокий разбор пакетов (deep packet inspection) на «живой» скорости, практически без конфигурации.
 
 ## ✨ Ключевые возможности
 
@@ -144,8 +144,8 @@ ja4:t13d1516h2_8daaf6152771_b186095e22b6
 
 ## 🔗 Связанные проекты (того же автора)
 
-- **SysWatch** и **DiskWatch** — мониторинг системы и дисков.
-- **ESSH** — SSH-клиент на чистом Rust для параллельной удалённой диагностики.
-- **NetWatch Cloud** — хостинговый флит-мониторинг (агент + дашборд).
+- [**SysWatch**](https://github.com/matthart1983/syswatch) и [**DiskWatch**](https://github.com/matthart1983/diskwatch) — TUI-диагностика системы и дисков.
+- [**ESSH**](https://github.com/matthart1983/essh) — SSH-клиент на чистом Rust для параллельной удалённой диагностики.
+- [**NetWatch Cloud**](https://www.netwatchlabs.com) — хостинговый флит-мониторинг: [агент](https://github.com/matthart1983/netwatch-agent), [дашборд](https://github.com/matthart1983/netwatch-dashboard) (Next.js), [SDK](https://github.com/matthart1983/netwatch-sdk).
 
 #NetWatch #Сеть #Rust #Безопасность #TUI
