@@ -24,6 +24,7 @@
 | Папка | О чём |
 |-------|-------|
 | [`AI/`](AI) | AI-агенты для кода, Claude Code, MCP, инструменты вокруг LLM |
+| [`VCS/`](VCS) | Системы контроля версий: GitHub, GitHub Actions |
 | [`Linux/`](Linux) | Пакетные менеджеры, сеть, Bash, Gentoo, безопасность и пр. |
 | [`Programming/`](Programming) | Парадигмы, очереди сообщений, Java, алгоритмы |
 | [`Health/`](Health) | Витамины и их приём |
@@ -40,6 +41,10 @@
 - **AI-агенты:** [Сводная таблица AI-агентов для программирования (июнь 2026)](AI/Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md)
 - **Claude Code:** [Гайд](AI/Claude%20Code%20%E2%80%94%20гайд.md) · [Шпаргалка команд](AI/Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md) · [MCP — серверы Model Context Protocol](AI/MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md)
 - **Инструменты:** [AI Website Cloner](AI/AI%20Website%20Cloner%20%E2%80%94%20клонирование%20сайтов%20в%20Next.js%20через%20AI-агентов.md) · [Heretic (abliteration)](AI/Heretic%20%E2%80%94%20снятие%20safety-ограничений%20с%20открытых%20LLM%20%28abliteration%29.md)
+
+### 🔧 VCS
+
+- **GitHub:** [GitHub Actions — автосчётчик заметок в README](VCS/GitHub/GitHub%20Actions%20%E2%80%94%20автосчётчик%20заметок%20в%20README.md)
 
 ### 🐧 Linux
 
