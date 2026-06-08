@@ -9,6 +9,7 @@ tags:
   - TUI
 Источник:
   - https://github.com/matthart1983/netwatch
+  - https://www.netwatchlabs.com
   - https://t.me/open_source_friend/5666
 ---
 
