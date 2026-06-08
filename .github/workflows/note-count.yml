@@ -1,0 +1,49 @@
+name: Update note count
+
+# Пересчитывает число заметок и обновляет бейдж в README при каждом push,
+# затрагивающем markdown-файлы.
+on:
+  push:
+    branches: [master]
+    paths:
+      - '**.md'
+      - '.github/workflows/note-count.yml'
+
+# Нужно право записи, чтобы запушить обновлённый README обратно.
+permissions:
+  contents: write
+
+jobs:
+  update-count:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Count notes and update badge
+        run: |
+          # Тематические заметки = все .md, кроме служебных папок и мета-файлов.
+          COUNT=$(find . -name '*.md' \
+            -not -path './.obsidian/*' \
+            -not -path './Templates/*' \
+            -not -path './Cache/*' \
+            -not -path './.github/*' \
+            -not -name 'README.md' \
+            -not -name 'CLAUDE.md' \
+            -not -name 'Obsidian Base Settings.md' \
+            | wc -l | tr -d ' ')
+          echo "Найдено заметок: $COUNT"
+          # Подменяем число в бейдже вида ...badge/Заметок-NN-success
+          sed -i -E "s/(badge\/Заметок-)[0-9]+(-success)/\1${COUNT}\2/" README.md
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet README.md; then
+            echo "Число не изменилось — коммит не нужен."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: update note count badge [skip ci]"
+          git push
