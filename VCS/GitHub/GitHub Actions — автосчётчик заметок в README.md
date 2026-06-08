@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Count notes and update badge
         run: |
@@ -84,7 +84,7 @@ jobs:
 
 ### 3. Шаги — `steps:`
 
-- **`actions/checkout@v4`** — клонирует репозиторий в раннер (чистая Ubuntu-виртуалка), иначе файлов там нет.
+- **`actions/checkout@v5`** — клонирует репозиторий в раннер (чистая Ubuntu-виртуалка), иначе файлов там нет. Версия `v5` работает на Node.js 24; более старая `v4` крутится на Node.js 20, который GitHub выводит из эксплуатации (форс на Node 24 с 16 июня 2026, удаление Node 20 — с 16 сентября 2026).
 - **Подсчёт + замена.** `find` собирает все `.md`, кроме служебных папок (`.obsidian`, `Templates`, `Cache`, `.github`) и мета-файлов (`README.md`, `CLAUDE.md`, `Obsidian Base Settings.md`). `sed` находит в URL бейджа кусок `Заметок-NN-success` и подменяет только число.
 - **Коммит, только если изменилось.** `git diff --quiet README.md` истинно, когда правок нет → выходим без пустого коммита. Иначе коммитит бот `github-actions[bot]`.
 
