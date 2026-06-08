@@ -63,6 +63,7 @@
 - **Парадигмы программирования:** [OOP](Programming/Парадигмы%20Программирования/OOP.md) · [Императивное](Programming/Парадигмы%20Программирования/Императивное%20программирование.md) · [Процедурное](Programming/Парадигмы%20Программирования/Процедурное%20программирование.md) · [Структурное](Programming/Парадигмы%20Программирования/Структурное%20программирование.md)
 - **Очереди сообщений:** [Kafka vs RabbitMQ](Programming/Очереди%20сообщений/Kafka%20vs%20RabbitMQ.md) · [RabbitMQ](Programming/Очереди%20сообщений/RabbitMQ.md)
 - **Java / JCF:** [PriorityQueue](Programming/Java/JCF/PriorityQueue.md)
+- **Сериализация:** [Apache Fory](Programming/Serialization/Apache%20Fory%20%E2%80%94%20высокопроизводительная%20сериализация.md)
 - **Алгоритмы:** [Repository and Sites](Programming/Algorithm/Repository%20and%20Sites.md)
 
 ### 🩺 Health
