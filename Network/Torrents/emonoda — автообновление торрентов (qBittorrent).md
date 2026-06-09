@@ -5,7 +5,6 @@ tags:
   - emonoda
   - Torrents
   - qBittorrent
-  - Gentoo
   - Automation
   - Linux
 Источник:
@@ -13,14 +12,14 @@ tags:
   - https://mdevaev.github.io/emonoda/
 ---
 
-# 🔄 emonoda — автообновление торрентов (qBittorrent, Gentoo)
+# 🔄 emonoda — автообновление торрентов (qBittorrent)
 
 [**emonoda**](https://github.com/mdevaev/emonoda) — набор консольных утилит в духе UNIX для управления коллекцией торрентов. Главная задача — **автоматически обновлять торрент-файлы прямо с трекеров**: когда раздача перезалита (новая серия, новый рип, исправленные файлы), emonoda сам скачивает свежий `.torrent`, подменяет его в клиенте и докачивает только изменённое — **в ту же папку, где лежали старые данные**.
 
 Поддерживает трекеры: **rutracker.org**, nnm-club.me, rutor.info, tfile.cc, pravtor.ru, tr.anidub.com, pornolab.net, booktracker.org, trec.to. Клиенты: rtorrent, ktorrent, transmission и **qBittorrent**.
 
 > [!info] Под какую конфигурацию написан гайд
-> - ОС: **Gentoo**
+> Сам emonoda от дистрибутива не зависит (установка ниже — под Gentoo/Debian/Arch). Примеры путей и настроек — из реальной конфигурации автора:
 > - Клиент: **qBittorrent** (с включённым WebUI)
 > - Хранилище `.torrent`-файлов: **`/mnt/dat1T/Torrents/`**
 > - Сами данные раздач разбросаны по **`/mnt/dat1T/`**, который используется **не только под торренты** (это важно для `emfind` — см. ниже).
@@ -60,7 +59,7 @@ tags:
 
 ## 🛠️ Установка
 
-emonoda — Python-пакет из PyPI (собирает Cython-расширение, нужен **Python 3.6+** и компилятор C). В дистрибутивных репозиториях его обычно нет. Запускать его логично на **полноценной машине** (Gentoo/Debian/Arch), где лежит `torrents_dir` и откуда виден WebUI клиента, — **не на роутере** (см. Entware ниже).
+emonoda — Python-пакет из PyPI (собирает Cython-расширение, нужен **Python 3.6+** и компилятор C). Запускать его нужно на машине, где лежит `torrents_dir` и откуда виден WebUI клиента.
 
 Самый переносимый способ на любой системе (и без проблем с PEP 668) — **pipx**: изолированное окружение, команды кладутся в `~/.local/bin`.
 
@@ -109,11 +108,6 @@ yay -S emonoda      # или paru -S emonoda
 sudo pacman -S python-pipx base-devel
 pipx install emonoda
 ```
-
-### Entware (роутер) — не нужно
-
-> [!note] emonoda на роутере смысла не имеет
-> В Entware есть `python3`/`python3-pip`, но emonoda собирает Cython-расширение (нужны gcc и заголовки — на роутере тяжело и не предусмотрено) и должен видеть и `torrents_dir`, и клиент. Правильно: держать emonoda на **полноценной машине** и натравливать его на нужный клиент по сети — в том числе на `transmission`, крутящийся на роутере, если раздачи там. Сам роутер ради emonoda трогать не надо.
 
 ### Проверка
 
@@ -301,4 +295,4 @@ confetti:
 - [Загрузчики видео — какой выбрать](../../Apps/Downloaders/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%20%E2%80%94%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C.md)
 - Документация: <https://mdevaev.github.io/emonoda/> · GitHub: <https://github.com/mdevaev/emonoda>
 
-#emonoda #Torrents #qBittorrent #Gentoo #Automation #Linux
+#emonoda #Torrents #qBittorrent #Automation #Linux

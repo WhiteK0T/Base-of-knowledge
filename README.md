@@ -52,7 +52,7 @@
 ### 🌐 Network
 
 - **Сеть:** [IPTables](Network/IPTables.md) · [Samba](Network/Samba.md) · [Netcat](Network/Net%20Cat.md) · [Reverse Shell](Network/Reverse%20Shell.md) · [NetWatch](Network/NetWatch.md)
-- **Торренты:** [qBittorrent (настройка и headless-сервер)](Network/Torrents/qBittorrent%20%E2%80%94%20настройка%20и%20headless-сервер%20%28WebUI%29.md) · [emonoda (автообновление торрентов)](Network/Torrents/emonoda%20%E2%80%94%20автообновление%20торрентов%20%28qBittorrent%2C%20Gentoo%29.md) · [Флаги пиров qBittorrent](Network/Torrents/Torrent%20Flags.md)
+- **Торренты:** [qBittorrent (настройка и headless-сервер)](Network/Torrents/qBittorrent%20%E2%80%94%20настройка%20и%20headless-сервер%20%28WebUI%29.md) · [emonoda (автообновление торрентов)](Network/Torrents/emonoda%20%E2%80%94%20автообновление%20торрентов%20%28qBittorrent%29.md) · [Флаги пиров qBittorrent](Network/Torrents/Torrent%20Flags.md)
 - **SSH:** [Ключи](Network/SSH/SSH-Ключи.md) · [Базовое руководство](Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Network/SSH/SSH-Продвинутое%20руководство.md) · [Визуальное руководство по туннелям](Network/SSH/SSH-Визуальное%20руководство%20по%20туннелям.md)
 
 ### 🐧 Linux
