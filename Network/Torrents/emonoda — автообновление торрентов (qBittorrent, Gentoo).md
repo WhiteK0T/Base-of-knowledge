@@ -58,38 +58,69 @@ tags:
 
 Ключевая мысль: **`emupdate` берёт путь к данным из самого qBittorrent** (save path каждого торрента). Поэтому ему **не нужно** знать, где именно на `/mnt/dat1T/` лежит контент, и его не смущает, что диск используется ещё и под другое. Достаточно, чтобы `.torrent` лежал в `torrents_dir` **и** был загружен в qBittorrent.
 
-## 🛠️ Установка на Gentoo
+## 🛠️ Установка
 
-В дереве Portage пакета нет — ставим из PyPI. На современном Gentoo системный Python помечен как *externally-managed* (PEP 668), поэтому правильнее всего — **отдельный venv** (не трогаем системные пакеты).
+emonoda — Python-пакет из PyPI (собирает Cython-расширение, нужен **Python 3.6+** и компилятор C). В дистрибутивных репозиториях его обычно нет. Запускать его логично на **полноценной машине** (Gentoo/Debian/Arch), где лежит `torrents_dir` и откуда виден WebUI клиента, — **не на роутере** (см. Entware ниже).
+
+Самый переносимый способ на любой системе (и без проблем с PEP 668) — **pipx**: изолированное окружение, команды кладутся в `~/.local/bin`.
 
 ```bash
-# зависимости для сборки C-расширения (обычно уже стоят)
-sudo emerge -an dev-lang/python dev-python/pip
+pipx install emonoda
+pipx upgrade emonoda    # обновление
+```
 
-# отдельное окружение под emonoda
+Дальше — как поставить сам pipx и зависимости сборки на каждой системе.
+
+### Gentoo
+
+```bash
+sudo emerge -an dev-python/pipx     # компилятор в системе уже есть
+pipx install emonoda
+```
+
+Без pipx — вручную в venv (системный pip помечен *externally-managed*, PEP 668 → не `pip install --user`):
+
+```bash
 python3 -m venv ~/emonoda-venv
-~/emonoda-venv/bin/pip install --upgrade pip
-~/emonoda-venv/bin/pip install --upgrade emonoda
+~/emonoda-venv/bin/pip install --upgrade pip emonoda
+ln -sf ~/emonoda-venv/bin/em* ~/.local/bin/   # прокинуть команды в PATH
 ```
 
-Бинарники окажутся в `~/emonoda-venv/bin/` (`emupdate`, `emload`, `emfind`, …). Для удобства можно прокинуть в `PATH` или сделать симлинки:
+### Debian / Ubuntu
 
 ```bash
-mkdir -p ~/.local/bin
-ln -sf ~/emonoda-venv/bin/em* ~/.local/bin/
-# и убедиться, что ~/.local/bin в PATH (добавить в ~/.bashrc при нужде)
+sudo apt install pipx python3-venv build-essential
+pipx install emonoda
 ```
 
-Проверка:
+`build-essential` нужен для сборки Cython-расширения; на свежих Debian/Ubuntu системный pip тоже *externally-managed* → ставим через pipx/venv.
+
+### Arch
+
+Нативно — из **AUR**: пакет `emonoda` ведёт **сам автор проекта** (`mdevaev`), пакет актуальный.
+
+```bash
+yay -S emonoda      # или paru -S emonoda
+```
+
+Альтернатива (без AUR-хелпера) — тот же pipx:
+
+```bash
+sudo pacman -S python-pipx base-devel
+pipx install emonoda
+```
+
+### Entware (роутер) — не нужно
+
+> [!note] emonoda на роутере смысла не имеет
+> В Entware есть `python3`/`python3-pip`, но emonoda собирает Cython-расширение (нужны gcc и заголовки — на роутере тяжело и не предусмотрено) и должен видеть и `torrents_dir`, и клиент. Правильно: держать emonoda на **полноценной машине** и натравливать его на нужный клиент по сети — в том числе на `transmission`, крутящийся на роутере, если раздачи там. Сам роутер ради emonoda трогать не надо.
+
+### Проверка
 
 ```bash
 emupdate --help
 emfile /mnt/dat1T/Torrents/любой.torrent   # покажет метаданные
 ```
-
-> [!tip] Альтернатива через pipx
-> Если есть `pipx` (`emerge dev-python/pipx`), то проще:
-> `pipx install emonoda` — он сам сделает изолированное окружение и положит команды в `~/.local/bin`.
 
 ## ⚙️ Подготовка qBittorrent
 
@@ -181,7 +212,8 @@ emupdate --name-filter "Severance*.torrent"
 ```bash
 #!/bin/bash
 # тихий запуск emupdate для cron
-exec ~/emonoda-venv/bin/emupdate \
+# при pipx путь — ~/.local/bin/emupdate; при ручном venv — ~/emonoda-venv/bin/emupdate
+exec ~/.local/bin/emupdate \
     --fail-on-captcha \
     >> /var/log/emonoda.log 2>&1
 ```
@@ -190,7 +222,13 @@ exec ~/emonoda-venv/bin/emupdate \
 chmod +x ~/bin/run-emupdate.sh
 ```
 
-Запись в crontab (на Gentoo обычно `cronie` — `emerge sys-process/cronie && rc-update add cronie default`):
+Запись в crontab. Сам cron-демон по системам:
+
+| Система | Cron |
+| :--- | :--- |
+| **Debian / Ubuntu** | стоит и запущен **из коробки** — просто `crontab -e` |
+| **Gentoo** | по умолчанию нет: `emerge sys-process/cronie && rc-update add cronie default` |
+| **Arch** | по умолчанию нет (там systemd-таймеры): `pacman -S cronie && systemctl enable --now cronie` |
 
 ```cron
 # раз в день в 05:30 проверять обновления раздач
