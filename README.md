@@ -3,7 +3,7 @@
 ![Obsidian](https://img.shields.io/badge/Obsidian-483699?logo=obsidian&logoColor=white)
 ![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f?logo=markdown&logoColor=white)
 ![Язык: Русский](https://img.shields.io/badge/Язык-Русский-0088CC)
-![Заметок](https://img.shields.io/badge/Заметок-68-success)
+![Заметок](https://img.shields.io/badge/Заметок-69-success)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/WhiteK0T/Base-of-knowledge)
 ![Repo size](https://img.shields.io/github/repo-size/WhiteK0T/Base-of-knowledge)
@@ -63,6 +63,7 @@
 - **Debian / Ubuntu:** [Включить репозитории stable + sid](Linux/Debian-Ubuntu/Включить%20репозитории%20stable%20+%20sid.md) · [Настройка языка и региональных стандартов](Linux/Debian-Ubuntu/Настройка%20языка%20и%20региональных%20стандартов%20в%20Ubuntu%20Server-Debian.md)
 - **Gentoo:** [Сборка или обновление ядра](Linux/Gentoo/Kernel%20-%20Сборка%20или%20Обновление%20ядра.md) · [Настройка ядра (Wiki)](Linux/Gentoo/Gentoo%20Wiki%20-%20Настройка%20ядра%20Linux.md) · [Обновление ядра (Wiki)](Linux/Gentoo/Gentoo%20Wiki%20-%20ЯдроОбновление.md)
 - **Безопасность:** [Как узнать пароль user-a по SSH](Linux/Security/Как%20узнать%20пароль%20user-a,%20который%20подключается%20к%20серверу%20по%20ssh.md)
+- **Серверная:** [SysRq — привести в чувство «зависший» Linux](Linux/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F%20%C2%BB%20SysRQ%20%D0%B8%D0%BB%D0%B8%20%D0%BA%D0%B0%D0%BA%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D0%B2%20%D1%87%D1%83%D0%B2%D1%81%D1%82%D0%B2%D0%BE%20%C2%AB%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D1%88%D0%B8%D0%B9%C2%BB%20Linux.md)
 - **Telegram:** [Шаринг файлов с серверов в Телеграм](Linux/Telegram/Шаринг%20файлов-папок%20с%20серверов%20прямо%20к%20себе%20в%20Телеграм.md)
 
 ### 💻 Programming
