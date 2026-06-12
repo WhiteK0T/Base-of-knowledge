@@ -6,7 +6,6 @@ tags:
   - Torrent
   - libtorrent
   - WebUI
-  - Gentoo
   - Network
 Источник:
   - https://www.qbittorrent.org/
@@ -204,4 +203,4 @@ loginctl enable-linger $USER   # чтобы крутился без активн
 - [emonoda — автообновление торрентов](emonoda%20%E2%80%94%20автообновление%20торрентов%20%28qBittorrent%29.md)
 - Документация/вики: <https://github.com/qbittorrent/qBittorrent/wiki>
 
-#qBittorrent #Torrent #libtorrent #WebUI #Gentoo #Network
+#qBittorrent #Torrent #libtorrent #WebUI #Network
