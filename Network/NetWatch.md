@@ -31,9 +31,20 @@ tags:
 
 ## 🧩 Требования
 
-- **libpcap** — `sudo apt install libpcap-dev` (Linux; на macOS встроен).
-- **Rust 1.70+** (для сборки из исходников).
+- **libpcap** — нужен для захвата пакетов (на macOS встроен в систему).
+- **Rust 1.70+** — только для сборки из исходников / `cargo install` (готовые бинарники зависимостей не требуют).
 - **Root / повышенные привилегии** — для захвата пакетов и eBPF.
+
+Зависимости по дистрибутивам:
+
+| Система | libpcap (+заголовки) | Rust-тулчейн (для сборки) |
+| :--- | :--- | :--- |
+| **Gentoo** | `emerge net-libs/libpcap` | `emerge dev-lang/rust-bin` (или `rust`) |
+| **Debian / Ubuntu** | `sudo apt install libpcap-dev` | `sudo apt install cargo` или [rustup](https://rustup.rs) |
+| **Arch** | `sudo pacman -S libpcap` | `sudo pacman -S rust` или rustup |
+
+> [!note] Entware / роутер — неактуально
+> NetWatch — десктоп/серверный форензик-инструмент (libpcap + eBPF kprobes + сборка Rust под root). На роутерах с Entware (`armv7`/`aarch64`) собирать его непрактично, а eBPF-атрибуция упрётся в урезанное ядро прошивки — для мониторинга трафика на роутере смотри лёгкие средства (`tcpdump`, `iftop` из `opkg`).
 
 ## 📦 Установка
 
