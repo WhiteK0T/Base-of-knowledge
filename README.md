@@ -3,7 +3,7 @@
 ![Obsidian](https://img.shields.io/badge/Obsidian-483699?logo=obsidian&logoColor=white)
 ![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f?logo=markdown&logoColor=white)
 ![Язык: Русский](https://img.shields.io/badge/Язык-Русский-0088CC)
-![Заметок](https://img.shields.io/badge/Заметок-69-success)
+![Заметок](https://img.shields.io/badge/Заметок-70-success)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/WhiteK0T/Base-of-knowledge)
 ![Repo size](https://img.shields.io/github/repo-size/WhiteK0T/Base-of-knowledge)
@@ -26,6 +26,7 @@
 | [`AI/`](AI) | AI-агенты для кода, Claude Code, MCP, инструменты вокруг LLM |
 | [`VCS/`](VCS) | Системы контроля версий: GitHub, GitHub Actions |
 | [`Network/`](Network) | Сеть и SSH: IPTables, Samba, Netcat, туннели, торренты (кроссплатформенное) |
+| [`Security/`](Security) | Информационная безопасность: уязвимости (CVE), эксплуатация, защита |
 | [`Linux/`](Linux) | Пакетные менеджеры, Bash, Gentoo, безопасность и пр. |
 | [`Programming/`](Programming) | Парадигмы, очереди сообщений, Java, алгоритмы |
 | [`Health/`](Health) | Витамины и их приём |
@@ -54,6 +55,10 @@
 - **Сеть:** [IPTables](Network/IPTables.md) · [Samba](Network/Samba.md) · [Netcat](Network/Net%20Cat.md) · [Reverse Shell](Network/Reverse%20Shell.md) · [NetWatch](Network/NetWatch.md)
 - **Торренты:** [qBittorrent (настройка и headless-сервер)](Network/Torrents/qBittorrent%20%E2%80%94%20настройка%20и%20headless-сервер%20%28WebUI%29.md) · [emonoda (автообновление торрентов)](Network/Torrents/emonoda%20%E2%80%94%20автообновление%20торрентов%20%28qBittorrent%29.md) · [Флаги пиров qBittorrent](Network/Torrents/Torrent%20Flags.md)
 - **SSH:** [Ключи](Network/SSH/SSH-Ключи.md) · [Базовое руководство](Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Network/SSH/SSH-Продвинутое%20руководство.md) · [Визуальное руководство по туннелям](Network/SSH/SSH-Визуальное%20руководство%20по%20туннелям.md)
+
+### 🛡️ Security
+
+- **CVE / Linux:** [CVE-2026-46333 — ssh-keysign-pwn (ptrace exit-race)](Security/Linux/CVE/CVE-2026-46333%20%E2%80%94%20ssh-keysign-pwn%20%28ptrace%20exit-race%29.md)
 
 ### 🐧 Linux
 
