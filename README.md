@@ -24,7 +24,7 @@
 | Папка | О чём |
 |-------|-------|
 | [`AI/`](AI) | AI-агенты для кода, Claude Code, MCP, инструменты вокруг LLM |
-| [`VCS/`](VCS) | Системы контроля версий: GitHub, GitHub Actions |
+| [`VCS/`](VCS) | Системы контроля версий: Git, GitHub, GitHub Actions |
 | [`Network/`](Network) | Сеть и SSH: IPTables, Samba, Netcat, туннели, торренты (кроссплатформенное) |
 | [`Security/`](Security) | Информационная безопасность: уязвимости (CVE), эксплуатация, защита |
 | [`Linux/`](Linux) | Пакетные менеджеры, Bash, Gentoo, безопасность и пр. |
@@ -49,6 +49,7 @@
 
 ### 🔧 VCS
 
+- **Git:** [git commit — фиксация изменений](VCS/Git/commit.md)
 - **GitHub:** [GitHub Actions — автосчётчик заметок в README](VCS/GitHub/GitHub%20Actions%20%E2%80%94%20автосчётчик%20заметок%20в%20README.md)
 
 ### 🌐 Network
