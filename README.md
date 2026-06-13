@@ -3,7 +3,7 @@
 ![Obsidian](https://img.shields.io/badge/Obsidian-483699?logo=obsidian&logoColor=white)
 ![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f?logo=markdown&logoColor=white)
 ![Язык: Русский](https://img.shields.io/badge/Язык-Русский-0088CC)
-![Заметок](https://img.shields.io/badge/Заметок-72-success)
+![Заметок](https://img.shields.io/badge/Заметок-73-success)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/WhiteK0T/Base-of-knowledge)
 ![Repo size](https://img.shields.io/github/repo-size/WhiteK0T/Base-of-knowledge)
@@ -32,6 +32,7 @@
 | [`Health/`](Health) | Витамины и их приём |
 | [`Education/`](Education) | Методики обучения |
 | [`Windows/`](Windows) | WSL и прочее |
+| [`Auto/`](Auto) | Автомобиль: сигнализации, электроника |
 | [`Drones/`](Drones) | Дроны, БПЛА: подборки ресурсов |
 | [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32 |
 | [`Apps/`](Apps) | Заметки по приложениям и сервисам |
@@ -90,6 +91,10 @@
 ### 🪟 Windows
 
 - [Свежая Ubuntu 23/24 в WSL](Windows/Как%20на%20wsl%20хитро%20вкорячить%20свежую%20версию%20ubuntu%2023%20или%2024.md)
+
+### 🚗 Auto
+
+- [StarLine A93 V2 — автосигнализация (настройка чувствительности)](Auto/StarLine%20A93%20V2%20%E2%80%94%20%D0%B0%D0%B2%D1%82%D0%BE%D1%81%D0%B8%D0%B3%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%28%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20%D1%87%D1%83%D0%B2%D1%81%D1%82%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%29.md)
 
 ### 🚁 Drones
 
