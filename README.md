@@ -49,7 +49,7 @@
 
 ### 🔧 VCS
 
-- **Git:** [git status — состояние рабочего дерева](VCS/Git/status.md) · [git diff — просмотр изменений](VCS/Git/diff.md) · [git add — индексация изменений](VCS/Git/add.md) · [git commit — фиксация изменений](VCS/Git/commit.md) · [git log — история коммитов](VCS/Git/log.md) · [git reset — откат указателя и индекса](VCS/Git/reset.md) · [git restore — восстановление файлов](VCS/Git/restore.md) · [git switch — переключение веток](VCS/Git/switch.md)
+- **Git:** [git status — состояние рабочего дерева](VCS/Git/status.md) · [git diff — просмотр изменений](VCS/Git/diff.md) · [git add — индексация изменений](VCS/Git/add.md) · [git commit — фиксация изменений](VCS/Git/commit.md) · [git log — история коммитов](VCS/Git/log.md) · [git reset — откат указателя и индекса](VCS/Git/reset.md) · [git restore — восстановление файлов](VCS/Git/restore.md) · [git switch — переключение веток](VCS/Git/switch.md) · [git branch — управление ветками](VCS/Git/branch.md)
 - **GitHub:** [GitHub Actions — автосчётчик заметок в README](VCS/GitHub/GitHub%20Actions%20%E2%80%94%20автосчётчик%20заметок%20в%20README.md)
 
 ### 🌐 Network
