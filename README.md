@@ -3,7 +3,7 @@
 ![Obsidian](https://img.shields.io/badge/Obsidian-483699?logo=obsidian&logoColor=white)
 ![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f?logo=markdown&logoColor=white)
 ![Язык: Русский](https://img.shields.io/badge/Язык-Русский-0088CC)
-![Заметок](https://img.shields.io/badge/Заметок-71-success)
+![Заметок](https://img.shields.io/badge/Заметок-72-success)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-green)](LICENSE)
 ![Last commit](https://img.shields.io/github/last-commit/WhiteK0T/Base-of-knowledge)
 ![Repo size](https://img.shields.io/github/repo-size/WhiteK0T/Base-of-knowledge)
@@ -58,7 +58,7 @@
 
 ### 🛡️ Security
 
-- **CVE / Linux:** [CVE-2026-46333 — ssh-keysign-pwn (ptrace exit-race)](Security/Linux/CVE/CVE-2026-46333%20%E2%80%94%20ssh-keysign-pwn%20%28ptrace%20exit-race%29.md) · [CVE-2026-31431 — Copy Fail (algif_aead AF_ALG LPE)](Security/Linux/CVE/CVE-2026-31431%20%E2%80%94%20Copy%20Fail%20%28algif_aead%20AF_ALG%20LPE%29.md)
+- **CVE / Linux:** [CVE-2026-46333 — ssh-keysign-pwn (ptrace exit-race)](Security/Linux/CVE/CVE-2026-46333%20%E2%80%94%20ssh-keysign-pwn%20%28ptrace%20exit-race%29.md) · [CVE-2026-31431 — Copy Fail (algif_aead AF_ALG LPE)](Security/Linux/CVE/CVE-2026-31431%20%E2%80%94%20Copy%20Fail%20%28algif_aead%20AF_ALG%20LPE%29.md) · [Dirty Frag (CVE-2026-43284 / CVE-2026-43500)](Security/Linux/CVE/Dirty%20Frag%20%28CVE-2026-43284%20xfrm-ESP%2C%20CVE-2026-43500%20RxRPC%29.md)
 
 ### 🐧 Linux
 
