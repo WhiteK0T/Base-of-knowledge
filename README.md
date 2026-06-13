@@ -49,7 +49,7 @@
 
 ### 🔧 VCS
 
-- **Git:** [git commit — фиксация изменений](VCS/Git/commit.md)
+- **Git:** [git add — индексация изменений](VCS/Git/add.md) · [git commit — фиксация изменений](VCS/Git/commit.md)
 - **GitHub:** [GitHub Actions — автосчётчик заметок в README](VCS/GitHub/GitHub%20Actions%20%E2%80%94%20автосчётчик%20заметок%20в%20README.md)
 
 ### 🌐 Network
