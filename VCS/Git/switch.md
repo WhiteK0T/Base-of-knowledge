@@ -66,7 +66,7 @@ git switch -d <коммит>       # или git switch --detach <тег>
 `HEAD` указывает **прямо на коммит**, а не на ветку. Можно смотреть/собирать старое состояние, но **новые коммиты не принадлежат ни одной ветке** и потеряются после переключения.
 
 > [!warning] Коммиты в detached HEAD «бесхозны»
-> Если в detached-состоянии сделать коммиты и уйти на другую ветку, они станут недостижимыми (их подберёт сборщик мусора). Чтобы сохранить работу — заранее создай ветку: `git switch -c new-branch`. Найти «потерянные» поможет [`git reflog`](log.md).
+> Если в detached-состоянии сделать коммиты и уйти на другую ветку, они станут недостижимыми (их подберёт сборщик мусора). Чтобы сохранить работу — заранее создай ветку: `git switch -c new-branch`. Найти «потерянные» поможет [`git reflog`](reflog.md).
 
 ## 🆚 switch против checkout и reset
 
@@ -100,6 +100,6 @@ git switch -d <коммит>       # или git switch --detach <тег>
 
 - Официальная документация: [git-scm.com/docs/git-switch](https://git-scm.com/docs/git-switch)
 - Книга Pro Git (рус.): [git-scm.com/book/ru/v2](https://git-scm.com/book/ru/v2)
-- Связанные: [git restore — восстановление файлов](restore.md) · [git reset — откат указателя](reset.md) · [git log / reflog](log.md) · [git stash — спрятать правки](stash.md)
+- Связанные: [git restore — восстановление файлов](restore.md) · [git reset — откат указателя](reset.md) · [git reflog — восстановление](reflog.md) · [git stash — спрятать правки](stash.md)
 
 #Git #VCS #switch #Ветки #Версионирование
