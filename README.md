@@ -48,6 +48,7 @@
 - **Инструменты:** [AI Website Cloner](AI/AI%20Website%20Cloner%20%E2%80%94%20клонирование%20сайтов%20в%20Next.js%20через%20AI-агентов.md) · [Heretic (abliteration)](AI/Heretic%20%E2%80%94%20снятие%20safety-ограничений%20с%20открытых%20LLM%20%28abliteration%29.md) · [LiteLLM (шлюз к 100+ LLM)](AI/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) · [FreeQwenApi (бесплатный API к Qwen Chat)](AI/FreeQwenApi%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20Qwen%20Chat.md) · [FreeDeepseekAPI (бесплатный API к DeepSeek)](AI/FreeDeepseekAPI%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20DeepSeek.md)
 - **Skills:** [Ponytail (минимизация кода AI-агентов)](AI/Skills/Ponytail%20%E2%80%94%20скилл%20против%20%C2%ABграфомании%C2%BB%20AI-агентов%20в%20коде.md)
 - **Модели:** [GLM 5.2 (открытая китайская LLM, Z.ai)](AI/GLM%205.2%20%E2%80%94%20открытая%20китайская%20LLM%20%28Z.ai%2C%20кодинг%29.md)
+- **Ресурсы:** [Loops! (каталог workflow-петель для агентов)](AI/Loops%20%E2%80%94%20каталог%20workflow-петель%20для%20Claude%20Code%20и%20агентов.md)
 
 ### 🔧 VCS
 
