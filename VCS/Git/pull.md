@@ -87,7 +87,7 @@ git merge --abort                # или git rebase --abort
 ## 🩺 Частые вопросы
 
 - **`fetch` или `pull`?** — `fetch` если хочешь сперва посмотреть; `pull` если готов сразу влить.
-- **«Your local changes would be overwritten by merge»** — незакоммиченные правки мешают: закоммить, `git stash` или `git pull --autostash`.
+- **«Your local changes would be overwritten by merge»** — незакоммиченные правки мешают: закоммить, [`git stash`](stash.md) или `git pull --autostash`.
 - **Не хочу merge-коммиты** — `git pull --rebase` (или `pull.rebase=true` глобально).
 - **«divergent branches» / pull требует выбрать стратегию** — новые Git просят явно: задай `git config pull.rebase true|false` или используй флаг `--rebase`/`--no-rebase`.
 - **Запутался в конфликте** — `git merge --abort` / `git rebase --abort` вернёт всё назад.
@@ -104,6 +104,6 @@ git merge --abort                # или git rebase --abort
 
 - Официальная документация: [git-scm.com/docs/git-pull](https://git-scm.com/docs/git-pull)
 - Книга Pro Git (рус.): [git-scm.com/book/ru/v2](https://git-scm.com/book/ru/v2)
-- Связанные: [git fetch](fetch.md) · [git push](push.md) · [git remote](remote.md)
+- Связанные: [git fetch](fetch.md) · [git push](push.md) · [git remote](remote.md) · [git stash — спрятать правки](stash.md)
 
 #Git #VCS #pull #Удалённый_репозиторий #Версионирование

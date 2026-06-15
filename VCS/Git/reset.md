@@ -48,7 +48,7 @@ tags:
 ```
 
 > [!warning] `--hard` выбрасывает незакоммиченную работу безвозвратно
-> `git reset --hard` **затирает** правки в индексе и рабочем дереве без подтверждения. Незакоммиченное не попадает даже в `reflog`. Перед `--hard` убедись, что ничего ценного не потеряешь (или сделай `git stash`).
+> `git reset --hard` **затирает** правки в индексе и рабочем дереве без подтверждения. Незакоммиченное не попадает даже в `reflog`. Перед `--hard` убедись, что ничего ценного не потеряешь (или сделай [`git stash`](stash.md)).
 
 ## 📝 Частые сценарии
 
@@ -127,6 +127,6 @@ git reset --hard HEAD@{1}        # вернуться на шаг назад
 
 - Официальная документация: [git-scm.com/docs/git-reset](https://git-scm.com/docs/git-reset)
 - Книга Pro Git (рус.): [git-scm.com/book/ru/v2](https://git-scm.com/book/ru/v2)
-- Связанные: [git log / reflog](log.md) · [git add — индексация](add.md) · [git commit — фиксация](commit.md)
+- Связанные: [git log / reflog](log.md) · [git add — индексация](add.md) · [git commit — фиксация](commit.md) · [git stash — спрятать правки](stash.md)
 
 #Git #VCS #reset #Версионирование

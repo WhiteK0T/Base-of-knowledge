@@ -63,7 +63,7 @@ Git прямо в выводе **подсказывает команды** — `
 | :--- | :--- | :--- |
 | **`-s` / `--short`** | Компактный вывод (по строке на файл, двухбуквенные коды). | `git status -s` |
 | **`-b` / `--branch`** | Показать строку ветки даже в коротком режиме. | `git status -sb` |
-| **`--show-stash`** | Показать, есть ли записи в stash. | `git status --show-stash` |
+| **`--show-stash`** | Показать, есть ли записи в [stash](stash.md). | `git status --show-stash` |
 | **`-u` / `--untracked-files[=mode]`** | Детализация untracked: `no` / `normal` / `all` (показать файлы внутри новых каталогов). | `git status -uall` |
 | **`--ignored`** | Показать также **игнорируемые** (`.gitignore`) файлы. | `git status --ignored` |
 | **`-v` / `--verbose`** | Показать **diff** проиндексированных изменений. `-vv` — ещё и не проиндексированных. | `git status -v` |
@@ -131,6 +131,6 @@ M  README.md
 
 - Официальная документация: [git-scm.com/docs/git-status](https://git-scm.com/docs/git-status)
 - Книга Pro Git (рус.): [git-scm.com/book/ru/v2](https://git-scm.com/book/ru/v2)
-- Связанные: [git add — индексация](add.md) · [git commit — фиксация](commit.md)
+- Связанные: [git add — индексация](add.md) · [git commit — фиксация](commit.md) · [git stash — спрятать правки](stash.md)
 
 #Git #VCS #status #Версионирование
