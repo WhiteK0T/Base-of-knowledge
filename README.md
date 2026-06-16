@@ -118,6 +118,7 @@
 ### 📱 Apps
 
 - **Разное:** [SearXNG](Apps/SearXNG.md) · [ScreenConnect](Apps/ScreenConnect.md) · [Mutagen](Apps/Mutagen/Mutagen.md) · [Pi-hole (сетевой блокировщик рекламы по DNS)](Apps/Pi-hole%20%E2%80%94%20сетевой%20блокировщик%20рекламы%20и%20телеметрии%20%28DNS-sinkhole%29.md)
+- **Браузерные расширения:** [VOT (закадровый перевод и озвучка видео)](Apps/Browser-Extensions/VOT%20%E2%80%94%20закадровый%20перевод%20и%20озвучка%20видео%20%28Voice-Over-Translation%29.md)
 - **Загрузчики:** [Какой выбрать](Apps/Downloaders/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%20%E2%80%94%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C.md) · [yt-dlp](Apps/Downloaders/yt-dlp.md) · [VidBee](Apps/Downloaders/VidBee.md) · [Open Video Downloader](Apps/Downloaders/Open%20Video%20Downloader.md) · [ytDownloader](Apps/Downloaders/ytDownloader.md) · [Tartube](Apps/Downloaders/Tartube.md) · [Seal](Apps/Downloaders/Seal.md)
 
 ## 🛠️ Как пользоваться
