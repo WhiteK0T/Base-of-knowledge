@@ -135,6 +135,6 @@ args = ["--login"]
 
 - Сайт/доки: [rioterm.com](https://rioterm.com) · [docs/config](https://rioterm.com/docs/config) · репозиторий: [github.com/raphamorim/rio](https://github.com/raphamorim/rio)
 - Обзор: [itshaman.ru](https://itshaman.ru/news/software/rio-bystryi-terminal-s-podderzhkoi-webgpu-dlya-linux)
-- Связанные: [Alacritty — GPU-терминал](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
+- Связанные: [Alacritty — GPU-терминал](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [kitty — kittens и графика](kitty%20%E2%80%94%20GPU-терминал%20с%20kittens%20и%20графикой%20%28OpenGL%29.md) · [tmux — мультиплексор](tmux%20%E2%80%94%20терминальный%20мультиплексор%20%28сессии%2C%20окна%2C%20панели%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
 
 #Terminal #Rio #WebGPU #Rust #Linux
