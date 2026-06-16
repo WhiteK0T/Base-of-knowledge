@@ -40,7 +40,7 @@ VOT работает на уровне **браузера** (не зависит
 
 ### Вариант 1. Юзерскрипт (рекомендую — автообновление)
 
-1. Поставить менеджер юзерскриптов: **Tampermonkey** или **Violentmonkey**.
+1. Поставить менеджер юзерскриптов: **[Tampermonkey](Tampermonkey%20%E2%80%94%20менеджер%20юзерскриптов.md)** или **Violentmonkey**.
 2. Открыть ссылку на скрипт — менеджер предложит установку:
 
 ```text
@@ -70,6 +70,6 @@ https://raw.githubusercontent.com/ilyhalight/voice-over-translation/master/dist/
 
 - Репозиторий: [github.com/ilyhalight/voice-over-translation](https://github.com/ilyhalight/voice-over-translation) · [вики (сайты, языки)](https://github.com/ilyhalight/voice-over-translation/wiki)
 - Менеджеры юзерскриптов: [Tampermonkey](https://www.tampermonkey.net) · [Violentmonkey](https://violentmonkey.github.io)
-- Связанные: [Загрузчики видео — какой выбрать](../Downloaders/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%20%E2%80%94%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C.md)
+- Связанные: [Tampermonkey — менеджер юзерскриптов](Tampermonkey%20%E2%80%94%20менеджер%20юзерскриптов.md) · [Загрузчики видео — какой выбрать](../Downloaders/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D1%87%D0%B8%D0%BA%D0%B8%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%20%E2%80%94%20%D0%BA%D0%B0%D0%BA%D0%BE%D0%B9%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C.md)
 
 #BrowserExtension #Userscript #Перевод #Видео #YouTube
