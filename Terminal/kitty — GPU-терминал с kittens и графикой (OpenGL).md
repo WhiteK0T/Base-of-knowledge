@@ -115,6 +115,6 @@ auto_reload_config      yes
 ## 🔗 Ссылки
 
 - Сайт/доки: [sw.kovidgoyal.net/kitty](https://sw.kovidgoyal.net/kitty/) · [конфиг](https://sw.kovidgoyal.net/kitty/conf/) · репозиторий: [github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)
-- Связанные: [Rio — терминал на WebGPU](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) · [Alacritty — минимализм](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [tmux — мультиплексор](tmux%20%E2%80%94%20терминальный%20мультиплексор%20%28сессии%2C%20окна%2C%20панели%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
+- Связанные: [Rio — терминал на WebGPU](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) · [Alacritty — минимализм](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [Konsole — терминал KDE](Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md) · [tmux — мультиплексор](tmux%20%E2%80%94%20терминальный%20мультиплексор%20%28сессии%2C%20окна%2C%20панели%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
 
 #Terminal #kitty #OpenGL #Linux

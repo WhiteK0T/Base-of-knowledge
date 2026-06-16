@@ -144,6 +144,6 @@ run '~/.config/tmux/plugins/tpm/tpm'           # ВАЖНО: последней 
 ## 🔗 Ссылки
 
 - Репозиторий: [github.com/tmux/tmux](https://github.com/tmux/tmux) · man: [man.openbsd.org/tmux](https://man.openbsd.org/tmux) · плагины: [github.com/tmux-plugins](https://github.com/tmux-plugins)
-- Связанные: [Alacritty — GPU-терминал](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [Rio — терминал на WebGPU](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
+- Связанные: [Alacritty — GPU-терминал](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [Rio — терминал на WebGPU](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) · [kitty — kittens и графика](kitty%20%E2%80%94%20GPU-терминал%20с%20kittens%20и%20графикой%20%28OpenGL%29.md) · [Konsole — терминал KDE](Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
 
 #Terminal #tmux #Linux #SSH
