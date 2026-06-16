@@ -94,17 +94,39 @@ auto_reload_config      yes
 > [!tip] Темы и kittens
 > Сменить тему интерактивно — `kitten themes` (запишет `include`-файл, применится сразу). Полезные kitten'ы на каждый день: `kitten icat file.png` (картинка), `kitten diff a b` (красивый дифф), `kitten ssh host` (SSH с пробросом своего kitty-конфига на удалённую машину).
 
-## ⚖️ kitty vs Rio vs Alacritty
+## ⌨️ Горячие клавиши по умолчанию
 
-| | kitty | [Rio](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) | [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) |
-| :--- | :--- | :--- | :--- |
-| Рендер | OpenGL | WebGPU | OpenGL |
-| Вкладки/сплиты | **да** (layouts) | да | нет |
-| Картинки | **свой протокол** + Sixel | Kitty/iTerm2/Sixel | нет |
-| Расширения | **kittens** (icat/ssh/diff…) | — | — |
-| Remote control | **да** | нет | нет |
-| Windows | только WSL | нативно | нативно |
-| Язык / лицензия | Python+C+Go / GPL-3.0 | Rust / MIT | Rust / Apache-MIT |
+`kitty_mod` по умолчанию = `Ctrl+Shift` (на macOS — `Cmd`):
+
+| Сочетание | Действие |
+| :--- | :--- |
+| `Ctrl+Shift+C` / `V` | копировать / вставить |
+| `Ctrl+Shift+T` | новая вкладка |
+| `Ctrl+Shift+Q` | закрыть вкладку |
+| `Ctrl+Shift+←` / `→` | предыдущая / следующая вкладка |
+| `Ctrl+Shift+Enter` | новое окно (сплит) |
+| `Ctrl+Shift+W` | закрыть окно |
+| `Ctrl+Shift+[` / `]` | предыдущее / следующее окно |
+| `Ctrl+Shift+N` | новое OS-окно |
+| `Ctrl+Shift+L` | следующая раскладка (layout) |
+| `Ctrl+Shift+↑` / `↓` | прокрутка на строку |
+| `Ctrl+Shift+=` / `-` / `Backspace` | шрифт +/−/сброс |
+| `Ctrl+Shift+H` | буфер прокрутки (pager) |
+| `Ctrl+Shift+F2` / `F5` | редактировать / перезагрузить конфиг |
+| `Ctrl+Shift+F11` | полноэкранный режим |
+
+## ⚖️ Сравнение терминалов
+
+| | [Rio](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) | [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) | kitty | [Konsole](Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md) |
+| :--- | :--- | :--- | :--- | :--- |
+| Рендер | WebGPU | OpenGL | **OpenGL** | Qt (CPU) |
+| Вкладки/сплиты | да | нет | **да** (layouts) | да |
+| Картинки | Kitty/iTerm2/Sixel | нет | **свой протокол** + Sixel | нет |
+| Настройка | TOML-конфиг | TOML-конфиг | конфиг | GUI/профили |
+| Скриптинг/расширения | — | — | **kittens** + remote | D-Bus / KPart |
+| Windows | нативно | нативно | только WSL | нет |
+| Язык / лицензия | Rust / MIT | Rust / Apache-MIT | Python+C+Go / GPL-3 | C++/Qt / GPL-2 |
+| Вес | средний | лёгкий | средний | тяжелее |
 
 ## 💡 Когда выбирать
 
