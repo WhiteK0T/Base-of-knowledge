@@ -35,7 +35,7 @@
 | [`Auto/`](Auto) | Автомобиль: сигнализации, электроника |
 | [`Drones/`](Drones) | Дроны, БПЛА: подборки ресурсов |
 | [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32 |
-| [`Terminal/`](Terminal) | Эмуляторы терминала и мультиплексоры: Rio, Alacritty, tmux |
+| [`Terminal/`](Terminal) | Эмуляторы терминала и мультиплексоры: Rio, Alacritty, kitty, Konsole, tmux |
 | [`Apps/`](Apps) | Заметки по приложениям и сервисам |
 | [`Templates/`](Templates) | Шаблоны заметок для Obsidian |
 | [`Cache/`](Cache) | Папка вложений (изображения и бинарные файлы) |
