@@ -65,7 +65,7 @@
 
 ### 🛡️ Security
 
-- **CVE / Linux:** [CVE-2026-46333 — ssh-keysign-pwn (ptrace exit-race)](Security/Linux/CVE/CVE-2026-46333%20%E2%80%94%20ssh-keysign-pwn%20%28ptrace%20exit-race%29.md) · [CVE-2026-31431 — Copy Fail (algif_aead AF_ALG LPE)](Security/Linux/CVE/CVE-2026-31431%20%E2%80%94%20Copy%20Fail%20%28algif_aead%20AF_ALG%20LPE%29.md) · [Dirty Frag (CVE-2026-43284 / CVE-2026-43500)](Security/Linux/CVE/Dirty%20Frag%20%28CVE-2026-43284%20xfrm-ESP%2C%20CVE-2026-43500%20RxRPC%29.md)
+- **CVE / Linux:** [CVE-2026-55200 — libssh2 pre-auth OOB-write (Токсичное рукопожатие)](Security/Linux/CVE/CVE-2026-55200%20%E2%80%94%20libssh2%20pre-auth%20OOB-write%20%28%D0%A2%D0%BE%D0%BA%D1%81%D0%B8%D1%87%D0%BD%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%BF%D0%BE%D0%B6%D0%B0%D1%82%D0%B8%D0%B5%29.md) · [CVE-2026-46333 — ssh-keysign-pwn (ptrace exit-race)](Security/Linux/CVE/CVE-2026-46333%20%E2%80%94%20ssh-keysign-pwn%20%28ptrace%20exit-race%29.md) · [CVE-2026-31431 — Copy Fail (algif_aead AF_ALG LPE)](Security/Linux/CVE/CVE-2026-31431%20%E2%80%94%20Copy%20Fail%20%28algif_aead%20AF_ALG%20LPE%29.md) · [Dirty Frag (CVE-2026-43284 / CVE-2026-43500)](Security/Linux/CVE/Dirty%20Frag%20%28CVE-2026-43284%20xfrm-ESP%2C%20CVE-2026-43500%20RxRPC%29.md)
 
 ### 🐧 Linux
 
