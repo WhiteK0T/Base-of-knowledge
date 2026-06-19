@@ -36,7 +36,7 @@
 | [`Drones/`](Drones) | Дроны, БПЛА: подборки ресурсов |
 | [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32 |
 | [`Terminal/`](Terminal) | Эмуляторы терминала и мультиплексоры: Rio, Alacritty, kitty, Konsole, tmux |
-| [`File-Managers/`](File-Managers) | Файловые менеджеры (TUI/CLI): elio |
+| [`File-Managers/`](File-Managers) | Файловые менеджеры (TUI/CLI): elio, far2l, Far Manager |
 | [`Apps/`](Apps) | Заметки по приложениям и сервисам |
 | [`Templates/`](Templates) | Шаблоны заметок для Obsidian |
 | [`Cache/`](Cache) | Папка вложений (изображения и бинарные файлы) |
@@ -124,6 +124,7 @@
 ### 🗂️ File-Managers
 
 - **Терминальные:** [elio (трёхпанельный, превью с картинками, Rust)](File-Managers/elio%20%E2%80%94%20терминальный%20файловый%20менеджер%20с%20превью%20%28Rust%29.md)
+- **FAR-семейство:** [far2l (порт FAR на Linux/macOS/BSD)](File-Managers/far2l%20%E2%80%94%20порт%20FAR%20Manager%20на%20Linux-macOS-BSD%20%28двухпанельный%29.md) · [Far Manager 3 (far3, Windows-оригинал)](File-Managers/Far%20Manager%203%20%28far3%29%20%E2%80%94%20ортодоксальный%20файловый%20менеджер%20для%20Windows.md)
 
 ### 📱 Apps
 
