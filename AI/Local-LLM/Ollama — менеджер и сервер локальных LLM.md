@@ -102,7 +102,7 @@ curl http://localhost:11434/v1/chat/completions \
 > [!tip] Доступ по сети и переменные
 > `OLLAMA_HOST=0.0.0.0:11434` — слушать на всех интерфейсах (тогда с других машин: `OLLAMA_HOST=http://server-ip:11434 ollama run ...`). `OLLAMA_MODELS` — каталог хранения моделей (удобно вынести на большой диск/USB). `OLLAMA_KEEP_ALIVE` — сколько держать модель в RAM после запроса.
 
-Через [LiteLLM](../LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) Ollama легко включается в общий стек агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов.
+Через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) Ollama легко включается в общий стек агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов.
 
 ## ⚠️ На что обратить внимание
 
@@ -118,6 +118,6 @@ curl http://localhost:11434/v1/chat/completions \
 ## 🔗 Ссылки
 
 - Сайт: [ollama.com](https://ollama.com) · репозиторий: [github.com/ollama/ollama](https://github.com/ollama/ollama) · реестр моделей: [ollama.com/library](https://ollama.com/library)
-- Связанные: [llama.cpp](llama.cpp%20%E2%80%94%20движок%20локального%20инференса%20GGUF.md) · [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20локальный%20файнтюн%20на%20ризонинге%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md)
+- Связанные: [llama.cpp](llama.cpp%20%E2%80%94%20движок%20локального%20инференса%20GGUF.md) · [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20локальный%20файнтюн%20на%20ризонинге%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md)
 
 #AI #LLM #LocalLLM #Ollama #GGUF #OpenSource

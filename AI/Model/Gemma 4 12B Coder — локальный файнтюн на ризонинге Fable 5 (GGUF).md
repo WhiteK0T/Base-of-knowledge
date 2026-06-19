@@ -102,7 +102,7 @@ GUI-вариант: в поиске моделей вбить `yuxinlu1/gemma-4-
 
 ## 🔌 Подключить к своим инструментам
 
-`llama-server` / Ollama / LM Studio дают **OpenAI-совместимый эндпоинт** (`/v1/chat/completions`). Его удобно завести в общий стек через [LiteLLM](../LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) и дальше дёргать из агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов — так же, как [FreeQwenApi](../FreeQwenApi%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20Qwen%20Chat.md) / [FreeDeepseekAPI](../FreeDeepseekAPI%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20DeepSeek.md), только полностью локально.
+`llama-server` / Ollama / LM Studio дают **OpenAI-совместимый эндпоинт** (`/v1/chat/completions`). Его удобно завести в общий стек через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) и дальше дёргать из агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов — так же, как [FreeQwenApi](../ProxyLLM/FreeQwenApi%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20Qwen%20Chat.md) / [FreeDeepseekAPI](../ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20DeepSeek.md), только полностью локально.
 
 ## ⚖️ Лицензия и правовые нюансы
 
@@ -129,6 +129,6 @@ GUI-вариант: в поиске моделей вбить `yuxinlu1/gemma-4-
 - Модель: [huggingface.co/yuxinlu1/…fable5-composer2.5-v1-GGUF](https://huggingface.co/yuxinlu1/gemma-4-12B-coder-fable5-composer2.5-v1-GGUF)
 - llama.cpp: [github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) · Ollama: [ollama.com](https://ollama.com)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25840)
-- Связанные: [GLM 5.2 — открытая LLM](../GLM%205.2%20%E2%80%94%20открытая%20китайская%20LLM%20%28Z.ai%2C%20кодинг%29.md) · [Heretic — abliteration](../Heretic%20%E2%80%94%20снятие%20safety-ограничений%20с%20открытых%20LLM%20%28abliteration%29.md) · [LiteLLM — шлюз к LLM](../LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) · [Сводная таблица AI-агентов](../Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md)
+- Связанные: [GLM 5.2 — открытая LLM](../GLM%205.2%20%E2%80%94%20открытая%20китайская%20LLM%20%28Z.ai%2C%20кодинг%29.md) · [Heretic — abliteration](../Heretic%20%E2%80%94%20снятие%20safety-ограничений%20с%20открытых%20LLM%20%28abliteration%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) · [Сводная таблица AI-агентов](../Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md)
 
 #AI #LLM #Gemma #LocalLLM #GGUF #OpenSource

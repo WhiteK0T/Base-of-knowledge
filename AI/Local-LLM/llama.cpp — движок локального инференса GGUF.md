@@ -108,7 +108,7 @@ curl http://localhost:8080/v1/chat/completions \
 
 ## 🔌 Подключение к инструментам
 
-`llama-server` даёт `/v1/chat/completions` — его можно прокинуть в общий стек через [LiteLLM](../LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) и дёргать из агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов.
+`llama-server` даёт `/v1/chat/completions` — его можно прокинуть в общий стек через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) и дёргать из агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов.
 
 ## ⚖️ llama.cpp vs Ollama vs LM Studio
 
@@ -129,6 +129,6 @@ curl http://localhost:8080/v1/chat/completions \
 ## 🔗 Ссылки
 
 - Репозиторий: [github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
-- Связанные: [Ollama](Ollama%20%E2%80%94%20менеджер%20и%20сервер%20локальных%20LLM.md) · [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20локальный%20файнтюн%20на%20ризонинге%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md)
+- Связанные: [Ollama](Ollama%20%E2%80%94%20менеджер%20и%20сервер%20локальных%20LLM.md) · [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20локальный%20файнтюн%20на%20ризонинге%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md)
 
 #AI #LLM #LocalLLM #llama_cpp #GGUF #OpenSource
