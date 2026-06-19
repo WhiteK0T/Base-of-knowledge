@@ -36,6 +36,7 @@
 | [`Drones/`](Drones) | Дроны, БПЛА: подборки ресурсов |
 | [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32 |
 | [`Terminal/`](Terminal) | Эмуляторы терминала и мультиплексоры: Rio, Alacritty, kitty, Konsole, tmux |
+| [`File-Managers/`](File-Managers) | Файловые менеджеры (TUI/CLI): elio |
 | [`Apps/`](Apps) | Заметки по приложениям и сервисам |
 | [`Templates/`](Templates) | Шаблоны заметок для Obsidian |
 | [`Cache/`](Cache) | Папка вложений (изображения и бинарные файлы) |
@@ -119,6 +120,10 @@
 
 - **Эмуляторы:** [Rio (WebGPU, вкладки/сплиты)](Terminal/Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) · [Alacritty (OpenGL, минимализм)](Terminal/Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [kitty (kittens, графика)](Terminal/kitty%20%E2%80%94%20GPU-терминал%20с%20kittens%20и%20графикой%20%28OpenGL%29.md) · [Konsole (KDE, профили)](Terminal/Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md)
 - **Мультиплексоры:** [tmux (сессии, окна, панели)](Terminal/tmux%20%E2%80%94%20терминальный%20мультиплексор%20%28сессии%2C%20окна%2C%20панели%29.md) · [Horizon (GPU «бесконечный холст» сессий, Rust)](Terminal/Horizon%20%E2%80%94%20терминальный%20%C2%AB%D0%B1%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D1%85%D0%BE%D0%BB%D1%81%D1%82%C2%BB%20%D0%BD%D0%B0%20GPU%20%28Rust%29.md)
+
+### 🗂️ File-Managers
+
+- **Терминальные:** [elio (трёхпанельный, превью с картинками, Rust)](File-Managers/elio%20%E2%80%94%20терминальный%20файловый%20менеджер%20с%20превью%20%28Rust%29.md)
 
 ### 📱 Apps
 
