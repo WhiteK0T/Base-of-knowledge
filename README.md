@@ -35,6 +35,7 @@
 | [`Auto/`](Auto) | Автомобиль: сигнализации, электроника |
 | [`Drones/`](Drones) | Дроны, БПЛА: подборки ресурсов |
 | [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32 |
+| [`3D-Printing/`](3D-Printing) | 3D-печать: подборки ресурсов, софт, слайсеры |
 | [`Terminal/`](Terminal) | Эмуляторы терминала и мультиплексоры: Rio, Alacritty, kitty, Konsole, tmux |
 | [`File-Managers/`](File-Managers) | Файловые менеджеры (TUI/CLI): elio, far2l, Far Manager |
 | [`Apps/`](Apps) | Заметки по приложениям и сервисам |
@@ -115,6 +116,10 @@
 ### 🔌 Electronics
 
 - [ESP32 — обзор и выбор варианта (2026)](Electronics/ESP32%20%E2%80%94%20обзор%20и%20выбор%20варианта%20%282026%29.md)
+
+### 🖨️ 3D-Printing
+
+- [awesome-3d-printing — подборка ресурсов по 3D-печати](3D-Printing/awesome-3d-printing%20%E2%80%94%20подборка%20ресурсов%20по%203D-печати.md)
 
 ### 💻 Terminal
 
