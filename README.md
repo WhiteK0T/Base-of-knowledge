@@ -27,7 +27,7 @@
 | [`VCS/`](VCS) | Системы контроля версий: Git, GitHub, GitHub Actions |
 | [`Network/`](Network) | Сеть и SSH: IPTables, Samba, Netcat, туннели, торренты (кроссплатформенное) |
 | [`Security/`](Security) | Информационная безопасность: уязвимости (CVE), эксплуатация, защита |
-| [`Linux/`](Linux) | Пакетные менеджеры, Bash, Gentoo, безопасность и пр. |
+| [`Linux/`](Linux) | Пакетные менеджеры, Bash, Gentoo, файловые системы, безопасность и пр. |
 | [`Programming/`](Programming) | Парадигмы, очереди сообщений, Java, алгоритмы |
 | [`Health/`](Health) | Витамины и их приём, тренировка мозга |
 | [`Education/`](Education) | Методики обучения |
@@ -81,6 +81,7 @@
 - **Bash:** [for](Linux/Bash/for.md) · [sec](Linux/Bash/sec.md) · [Bench Циклов](Linux/Bash/Bench%20Циклов.md)
 - **Debian / Ubuntu:** [Включить репозитории stable + sid](Linux/Debian-Ubuntu/Включить%20репозитории%20stable%20+%20sid.md) · [Настройка языка и региональных стандартов](Linux/Debian-Ubuntu/Настройка%20языка%20и%20региональных%20стандартов%20в%20Ubuntu%20Server-Debian.md)
 - **Gentoo:** [Сборка или обновление ядра](Linux/Gentoo/Kernel%20-%20Сборка%20или%20Обновление%20ядра.md) · [Настройка ядра (Wiki)](Linux/Gentoo/Gentoo%20Wiki%20-%20Настройка%20ядра%20Linux.md) · [Обновление ядра (Wiki)](Linux/Gentoo/Gentoo%20Wiki%20-%20ЯдроОбновление.md)
+- **Файловые системы:** [Btrfs — CoW-ФС (подтома, снапшоты, RAID): практика и устройство](Linux/Filesystems/Btrfs%20%E2%80%94%20%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20CoW-%D0%A4%D0%A1%20%28%D0%BF%D0%BE%D0%B4%D1%82%D0%BE%D0%BC%D0%B0%2C%20%D1%81%D0%BD%D0%B0%D0%BF%D1%88%D0%BE%D1%82%D1%8B%2C%20RAID%29%20%E2%80%94%20%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE.md)
 - **Безопасность:** [Как узнать пароль user-a по SSH](Linux/Security/Как%20узнать%20пароль%20user-a,%20который%20подключается%20к%20серверу%20по%20ssh.md)
 - **Серверная:** [SysRq — привести в чувство «зависший» Linux](Linux/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BD%D0%B0%D1%8F%20%C2%BB%20SysRQ%20%D0%B8%D0%BB%D0%B8%20%D0%BA%D0%B0%D0%BA%20%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%81%D1%82%D0%B8%20%D0%B2%20%D1%87%D1%83%D0%B2%D1%81%D1%82%D0%B2%D0%BE%20%C2%AB%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D1%88%D0%B8%D0%B9%C2%BB%20Linux.md)
 - **Telegram:** [Шаринг файлов с серверов в Телеграм](Linux/Telegram/Шаринг%20файлов-папок%20с%20серверов%20прямо%20к%20себе%20в%20Телеграм.md)
