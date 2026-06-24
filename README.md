@@ -95,6 +95,7 @@
 - **Парадигмы программирования:** [OOP](Programming/Парадигмы%20Программирования/OOP.md) · [Императивное](Programming/Парадигмы%20Программирования/Императивное%20программирование.md) · [Процедурное](Programming/Парадигмы%20Программирования/Процедурное%20программирование.md) · [Структурное](Programming/Парадигмы%20Программирования/Структурное%20программирование.md)
 - **Очереди сообщений:** [Kafka vs RabbitMQ](Programming/Очереди%20сообщений/Kafka%20vs%20RabbitMQ.md) · [RabbitMQ](Programming/Очереди%20сообщений/RabbitMQ.md)
 - **Java / JCF:** [PriorityQueue](Programming/Java/JCF/PriorityQueue.md)
+- **Java / Hibernate:** [Hibernate выполняет SQL не в порядке кода (порядок action queue при flush)](Programming/Java/Hibernate/Hibernate%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D1%8F%D0%B5%D1%82%20SQL%20%D0%BD%D0%B5%20%D0%B2%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D0%B5%20%D0%B2%D0%B0%D1%88%D0%B5%D0%B3%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%B0%20%28%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA%20action%20queue%20%D0%BF%D1%80%D0%B8%20flush%29.md)
 - **Сериализация:** [Apache Fory](Programming/Serialization/Apache%20Fory%20%E2%80%94%20высокопроизводительная%20сериализация.md)
 - **Алгоритмы:** [Repository and Sites](Programming/Algorithm/Repository%20and%20Sites.md)
 
