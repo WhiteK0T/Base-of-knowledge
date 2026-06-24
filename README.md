@@ -29,6 +29,7 @@
 | [`Security/`](Security) | Информационная безопасность: уязвимости (CVE), эксплуатация, защита |
 | [`Linux/`](Linux) | Пакетные менеджеры, Bash, Gentoo, файловые системы, безопасность и пр. |
 | [`Programming/`](Programming) | Парадигмы, очереди сообщений, Java, алгоритмы |
+| [`СУБД/`](СУБД) | Базы данных: PostgreSQL (обслуживание, производительность) |
 | [`Health/`](Health) | Витамины и их приём, тренировка мозга |
 | [`Education/`](Education) | Методики обучения |
 | [`Windows/`](Windows) | WSL и прочее |
@@ -96,6 +97,10 @@
 - **Java / JCF:** [PriorityQueue](Programming/Java/JCF/PriorityQueue.md)
 - **Сериализация:** [Apache Fory](Programming/Serialization/Apache%20Fory%20%E2%80%94%20высокопроизводительная%20сериализация.md)
 - **Алгоритмы:** [Repository and Sites](Programming/Algorithm/Repository%20and%20Sites.md)
+
+### 🗄️ СУБД
+
+- **PostgreSQL:** [VACUUM FULL — возврат места на диске (bloat, dead tuples, pg_repack)](%D0%A1%D0%A3%D0%91%D0%94/Postgres/VACUUM%20FULL%20%E2%80%94%20%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%20%D0%BC%D0%B5%D1%81%D1%82%D0%B0%20%D0%BD%D0%B0%20%D0%B4%D0%B8%D1%81%D0%BA%D0%B5%20%D0%B2%20PostgreSQL%20%28bloat%2C%20dead%20tuples%2C%20pg_repack%29.md)
 
 ### 🩺 Health
 
