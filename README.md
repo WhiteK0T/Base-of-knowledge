@@ -66,6 +66,7 @@
 ### 🌐 Network
 
 - **Сеть:** [IPTables](Network/IPTables.md) · [Samba](Network/Samba.md) · [Netcat](Network/Net%20Cat.md) · [Reverse Shell](Network/Reverse%20Shell.md) · [NetWatch](Network/NetWatch.md)
+- **DNS-фильтрация:** [1Hosts (DNS-блоклисты против рекламы/трекеров/malware, Lite/Xtra)](Network/1Hosts%20%E2%80%94%20DNS-%D0%B1%D0%BB%D0%BE%D0%BA%D0%BB%D0%B8%D1%81%D1%82%D1%8B%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D1%8B%2C%20%D1%82%D1%80%D0%B5%D0%BA%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20malware%20%28Lite-Xtra%2C%20Pi-hole-AdGuard%20Home%29.md)
 - **Торренты:** [qBittorrent (настройка и headless-сервер)](Network/Torrents/qBittorrent%20%E2%80%94%20настройка%20и%20headless-сервер%20%28WebUI%29.md) · [emonoda (автообновление торрентов)](Network/Torrents/emonoda%20%E2%80%94%20автообновление%20торрентов%20%28qBittorrent%29.md) · [Флаги пиров qBittorrent](Network/Torrents/Torrent%20Flags.md)
 - **SSH:** [Ключи](Network/SSH/SSH-Ключи.md) · [Базовое руководство](Network/SSH/SSH-Базовое%20руководство.md) · [Продвинутое руководство](Network/SSH/SSH-Продвинутое%20руководство.md) · [Визуальное руководство по туннелям](Network/SSH/SSH-Визуальное%20руководство%20по%20туннелям.md)
 
