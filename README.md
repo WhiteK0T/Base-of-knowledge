@@ -35,7 +35,7 @@
 | [`Windows/`](Windows) | WSL и прочее |
 | [`Auto/`](Auto) | Автомобиль: сигнализации, электроника |
 | [`Drones/`](Drones) | Дроны, БПЛА: подборки ресурсов |
-| [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32 |
+| [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32, открытое железо |
 | [`3D-Printing/`](3D-Printing) | 3D-печать: подборки ресурсов, софт, слайсеры |
 | [`Terminal/`](Terminal) | Эмуляторы терминала и мультиплексоры: Rio, Alacritty, kitty, Konsole, tmux |
 | [`File-Managers/`](File-Managers) | Файловые менеджеры (TUI/CLI): elio, far2l, Far Manager |
@@ -128,6 +128,7 @@
 ### 🔌 Electronics
 
 - [ESP32 — обзор и выбор варианта (2026)](Electronics/ESP32%20%E2%80%94%20обзор%20и%20выбор%20варианта%20%282026%29.md)
+- [awesome-open-hardware — подборка ресурсов по открытому железу (open hardware)](Electronics/awesome-open-hardware%20%E2%80%94%20подборка%20ресурсов%20по%20открытому%20железу%20%28open%20hardware%29.md)
 
 ### 🖨️ 3D-Printing
 
