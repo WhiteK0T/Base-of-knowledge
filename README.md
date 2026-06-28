@@ -83,7 +83,7 @@
 ### 🐧 Linux
 
 - **Пакетные менеджеры:** [APT](Linux/Package-Manager/APT.md) · [DPKG](Linux/Package-Manager/DPKG.md) · [Aptitude](Linux/Package-Manager/Aptitude.md) · [OPKG](Linux/Package-Manager/OPKG.md) · [Сравнение команд менеджеров пакетов](Linux/Package-Manager/Сравнение%20команд%20менеджеров%20пакетов.md)
-- **Команды:** [SCP](Linux/Commands/SCP.md) · [cURL](Linux/Commands/cURL.md) · [sed (потоковый редактор текста)](Linux/Commands/sed.md)
+- **Команды:** [SCP](Linux/Commands/SCP.md) · [cURL](Linux/Commands/cURL.md) · [sed (потоковый редактор текста)](Linux/Commands/sed.md) · [lsof (открытые файлы, сокеты, порты — шпаргалка)](Linux/Commands/lsof%20%E2%80%94%20%D0%BA%D1%82%D0%BE%20%D1%87%D1%82%D0%BE%20%D0%B8%20%D0%BA%D1%83%D0%B4%D0%B0%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D0%BB%20%28%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%2C%20%D1%81%D0%BE%D0%BA%D0%B5%D1%82%D1%8B%2C%20%D0%BF%D0%BE%D1%80%D1%82%D1%8B%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%29.md)
 - **Bash:** [for](Linux/Bash/for.md) · [sec](Linux/Bash/sec.md) · [Bench Циклов](Linux/Bash/Bench%20Циклов.md)
 - **Debian / Ubuntu:** [Включить репозитории stable + sid](Linux/Debian-Ubuntu/Включить%20репозитории%20stable%20+%20sid.md) · [Настройка языка и региональных стандартов](Linux/Debian-Ubuntu/Настройка%20языка%20и%20региональных%20стандартов%20в%20Ubuntu%20Server-Debian.md)
 - **Gentoo:** [Сборка или обновление ядра](Linux/Gentoo/Kernel%20-%20Сборка%20или%20Обновление%20ядра.md) · [Настройка ядра (Wiki)](Linux/Gentoo/Gentoo%20Wiki%20-%20Настройка%20ядра%20Linux.md) · [Обновление ядра (Wiki)](Linux/Gentoo/Gentoo%20Wiki%20-%20ЯдроОбновление.md)
