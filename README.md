@@ -131,6 +131,7 @@
 
 - [ESP32 — обзор и выбор варианта (2026)](Electronics/ESP32%20%E2%80%94%20обзор%20и%20выбор%20варианта%20%282026%29.md)
 - [awesome-open-hardware — подборка ресурсов по открытому железу (open hardware)](Electronics/awesome-open-hardware%20%E2%80%94%20подборка%20ресурсов%20по%20открытому%20железу%20%28open%20hardware%29.md)
+- [oomwoo — открытый робот-пылесос своими руками (RPi 5, лидар-SLAM, ROS 2, Home Assistant)](Electronics/oomwoo%20%E2%80%94%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B9%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82-%D0%BF%D1%8B%D0%BB%D0%B5%D1%81%D0%BE%D1%81%20%D1%81%D0%B2%D0%BE%D0%B8%D0%BC%D0%B8%20%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8%20%28RPi%205%2C%20%D0%BB%D0%B8%D0%B4%D0%B0%D1%80-SLAM%2C%20ROS%202%2C%20Home%20Assistant%29.md)
 
 ### 🖨️ 3D-Printing
 
