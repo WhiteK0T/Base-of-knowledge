@@ -40,7 +40,7 @@ tags:
 
 - **Платы/контроллеры:** [Arduino](https://www.arduino.cc/) (классика входа), а для Wi-Fi/BLE-проектов — [ESP32](ESP32%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D0%B8%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%B0%20%282026%29.md).
 - **EDA (проектирование плат):** **KiCad** — открытый, кроссплатформенный редактор схем и печатных плат (в списке тема EDA затрагивается через проекты/площадки).
-- **Площадки идей:** **Hackaday.io**, **Kitspace.org** (готовые открытые платы с BOM), **Thingiverse/Printables** для механики.
+- **Площадки идей:** **Hackaday.io**, **Kitspace.org** (готовые открытые платы с BOM), [BoardRepo](BoardRepo%20%E2%80%94%20%D0%B2%D0%B5%D0%B1-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D1%85%20KiCad-%D0%BF%D0%BB%D0%B0%D1%82%20%28%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%2C%20%D1%81%D0%BA%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%2C%20GitHub-%D0%B8%D0%BC%D0%BF%D0%BE%D1%80%D1%82%29.md) (просмотр KiCad-плат в браузере), **Thingiverse/Printables** для механики.
 - **3D-механика:** корпуса и детали печатаются на 3D-принтере — пересекается с [awesome-3d-printing](../3D-Printing/awesome-3d-printing%20%E2%80%94%20%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B0%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%BF%D0%BE%203D-%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D0%B8.md).
 
 > [!tip] Под Linux владельца
