@@ -8,6 +8,7 @@ tags:
   - Шифрование
   - GPG
   - Безопасность
+  - Windows
 Источник:
   - https://github.com/AGWA/git-crypt
   - https://packages.gentoo.org/packages/dev-vcs/git-crypt
@@ -97,10 +98,32 @@ git-crypt нужен **на каждой машине**, где репозито
 | **Gentoo** | `emerge dev-vcs/git-crypt` (+ `app-crypt/gnupg`) |
 | **Debian / Ubuntu** | `sudo apt install git-crypt gnupg` |
 | **Arch** | `sudo pacman -S git-crypt gnupg` (репо extra) |
+| **Windows 10 / 11** | `choco install git-crypt` или `scoop install git-crypt`; GPG — [Gpg4win](https://gpg4win.org/) либо gpg из [Git for Windows](https://gitforwindows.org/). Есть нюансы — см. ниже |
 | **Entware / RT-AX56U** | пакета **нет** в репозитории opkg — см. ниже |
 
 > [!danger] На роутере git-crypt не нужен (и его там нет)
 > В Entware-репозитории под armv7 пакета `git-crypt` нет (потребовалась бы ручная сборка). Но главное — **расшифровывать секреты VPN/прокси на роутере незачем**: ключ от всего вульта на устройстве, торчащем в сеть 24/7 — плохая идея. Держи расшифровку на доверенных десктопах; роутеру эти заметки ни к чему.
+
+### 🪟 Windows 10/11 — нюансы
+
+git-crypt на Windows работает, но нужен [Git for Windows](https://gitforwindows.org/) (команды удобнее выполнять из **Git Bash**), а сам git-crypt проще всего поставить пакетным менеджером:
+
+```powershell
+choco install git-crypt      # Chocolatey
+# или
+scoop install git-crypt      # Scoop (main bucket)
+```
+
+Для **GPG-режима** нужен gpg: [Gpg4win](https://gpg4win.org/) (даёт `gpg` + Kleopatra) или gpg, идущий в комплекте с Git for Windows. Импортируй **тот же приватный GPG-ключ**, что на Linux (`gpg --import secret.asc`), дальше `git-crypt unlock` — как на любой машине. Симметричный режим тоже работает: `git-crypt unlock C:\path\bok.key`.
+
+> [!warning] Официальные Windows-бинарники отстают: последний — 0.7.0
+> В [релизах](https://github.com/AGWA/git-crypt/releases) `.exe` собран только **до версии 0.7.0**; актуальный **0.8.0 выложен лишь под Linux**. `choco`/`scoop`, которые тянут готовый бинарь, дают версию **эпохи 0.7.0**. Для фиксов/форматов из 0.8.0 — собирай из исходников (MinGW/MSYS2) или, что для тебя проще, запускай git-crypt **внутри WSL2** (там обычный `apt install git-crypt` = свежая версия и нормальные Unix-права на ключ).
+
+> [!danger] На Windows файлы ключей создаются БЕЗ ограничения прав
+> Проект честно предупреждает: Windows-поддержка «less tested» и **не выставляет restrictive-права на файлы ключей** (по этой причине разработчик называет её непригодной для многопользовательской машины). На **общем** ПК ключ репозитория/симметричный ключ доступен шире, чем на Linux. На личном однопользовательском ПК — терпимо, но симметричный `*.key` всё равно держи **вне репозитория** (менеджер паролей / зашифрованный носитель), а не рядом с рабочей копией.
+
+> [!caution] Коммить через CLI, а не через git-GUI
+> README прямо отмечает, что git-crypt **ненадёжно работает с рядом сторонних git-GUI** (Atlassian SourceTree и т.п.). GUI-клиент может обойти clean/smudge-фильтр и **закоммитить секрет открытым текстом** — в публичном репо это утечка. На Windows добавляй и коммить зашифрованные файлы из **Git Bash / командной строки**, где git-crypt гарантированно в цепочке фильтров, и после первого коммита обязательно проверь шифротекст (`git show HEAD:Private/файл.md`).
 
 ## 🚀 Быстрый старт (сценарий «папка Private/»)
 
@@ -236,4 +259,4 @@ git-crypt unlock ~/bok.key
 - Репозиторий/доки: [github.com/AGWA/git-crypt](https://github.com/AGWA/git-crypt) · Gentoo: [dev-vcs/git-crypt](https://packages.gentoo.org/packages/dev-vcs/git-crypt)
 - Связанные: [.gitignore — игнорирование файлов](gitignore.md) · [Git — карта команд (шпаргалка)](Git%20%E2%80%94%20карта%20команд%20%28шпаргалка%29.md) · [git config — настройки Git](config.md)
 
-#Git #VCS #git-crypt #Шифрование #GPG #Безопасность
+#Git #VCS #git-crypt #Шифрование #GPG #Безопасность #Windows
