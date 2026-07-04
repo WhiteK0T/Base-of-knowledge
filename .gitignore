@@ -1,7 +1,5 @@
-# ── Obsidian (per-machine UI state, не для общего репо) ─────────────
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/cache
+# ── Obsidian (вся папка конфигов/плагинов — не для общего репо) ─────
+.obsidian/
 # Мусорная корзина Obsidian
 .trash/
 
