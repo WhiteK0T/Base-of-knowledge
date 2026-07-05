@@ -67,6 +67,6 @@ tags:
 - Репозиторий: [github.com/rt-bishop/Look4Sat](https://github.com/rt-bishop/Look4Sat) · десктоп-аналог: [Gpredict](http://gpredict.oz9aec.net/)
 - Данные: [Celestrak](https://celestrak.org/) · [SatNOGS](https://satnogs.org/)
 - Источник новости: [@open_source_friend](https://t.me/open_source_friend/5716)
-- Связанные: [ESP32 — обзор и выбор варианта](../Electronics/ESP32%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D0%B8%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%B0%20%282026%29.md)
+- Связанные: [ESP32 — обзор и выбор варианта](../../Electronics/ESP32%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D0%B8%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D0%B0%20%282026%29.md)
 
 #Android #Спутники #HamRadio #SDR #Приложения #OpenSource
