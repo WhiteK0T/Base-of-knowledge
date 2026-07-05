@@ -1,1 +1,2 @@
 Network/Tunnels/** filter=git-crypt diff=git-crypt
+Security/Radio-SDR/*.enc.md filter=git-crypt diff=git-crypt
