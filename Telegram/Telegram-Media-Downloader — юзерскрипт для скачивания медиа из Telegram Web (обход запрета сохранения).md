@@ -14,7 +14,7 @@ tags:
 
 # ⬇️ Telegram-Media-Downloader — скачивание медиа из Telegram Web
 
-[**Telegram-Media-Downloader**](https://github.com/Neet-Nestor/Telegram-Media-Downloader) (*Neet-Nestor*, **JavaScript**, лицензия **GPL-3.0**, ~**4.8k★**, живой — последний коммит март 2026) — **юзерскрипт** для веб-версии Telegram, который добавляет кнопку скачивания изображений, GIF, аудио/голосовых и видео — **в том числе там, где сохранение контента ограничено** («restrict saving content»). Ставится через менеджер юзерскриптов ([Tampermonkey](Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md)/Violentmonkey/Greasemonkey), распространяется на [Greasy Fork](https://greasyfork.org/scripts/446342-telegram-media-downloader).
+[**Telegram-Media-Downloader**](https://github.com/Neet-Nestor/Telegram-Media-Downloader) (*Neet-Nestor*, **JavaScript**, лицензия **GPL-3.0**, ~**4.8k★**, живой — последний коммит март 2026) — **юзерскрипт** для веб-версии Telegram, который добавляет кнопку скачивания изображений, GIF, аудио/голосовых и видео — **в том числе там, где сохранение контента ограничено** («restrict saving content»). Ставится через менеджер юзерскриптов ([Tampermonkey](../Apps/Browser-Extensions/Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md)/Violentmonkey/Greasemonkey), распространяется на [Greasy Fork](https://greasyfork.org/scripts/446342-telegram-media-downloader).
 
 > [!info] Что умеет
 > - Медиа: **картинки, GIF, аудио/голосовые, видео**; для видео — индикатор прогресса в правом нижнем углу (у картинок/аудио индикатора нет).
@@ -54,12 +54,12 @@ tags:
 
 - **Для личного архива:** сохранить свои медиа или разрешённый контент из Telegram Web, когда официальная кнопка спрятана.
 - **Не** как инструмент для слива чужих закрытых каналов — это нарушение ToS и потенциально авторских прав.
-- Требует уже настроенного менеджера юзерскриптов — см. [Tampermonkey](Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md).
+- Требует уже настроенного менеджера юзерскриптов — см. [Tampermonkey](../Apps/Browser-Extensions/Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md).
 
 ## 🔗 Ссылки
 
 - Репозиторий: [github.com/Neet-Nestor/Telegram-Media-Downloader](https://github.com/Neet-Nestor/Telegram-Media-Downloader) (GPL-3.0) · установка: [Greasy Fork](https://greasyfork.org/scripts/446342-telegram-media-downloader)
 - Источник новости: [@open_source_friend](https://t.me/open_source_friend/5738)
-- Связанные: [Tampermonkey (менеджер юзерскриптов)](Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md)
+- Связанные: [Tampermonkey (менеджер юзерскриптов)](../Apps/Browser-Extensions/Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md)
 
 #Userscript #Telegram #JavaScript #Tampermonkey #Приватность
