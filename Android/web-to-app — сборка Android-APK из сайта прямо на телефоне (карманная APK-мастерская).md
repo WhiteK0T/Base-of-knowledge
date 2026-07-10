@@ -56,6 +56,6 @@ tags:
 
 - Репозиторий: [github.com/shiaho777/web-to-app](https://github.com/shiaho777/web-to-app) · релизы: [Releases](https://github.com/shiaho777/web-to-app/releases)
 - Источник новости: [@open_source_friend](https://t.me/open_source_friend/5702)
-- Связанные: [Tampermonkey — менеджер юзерскриптов](Browser-Extensions/Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md)
+- Связанные: [Tampermonkey — менеджер юзерскриптов](../Apps/Browser-Extensions/Tampermonkey%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D1%8E%D0%B7%D0%B5%D1%80%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2.md)
 
 #Android #APK #WebView #Приложения #Kotlin
