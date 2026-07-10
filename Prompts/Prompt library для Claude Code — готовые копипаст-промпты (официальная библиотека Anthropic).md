@@ -14,7 +14,7 @@ tags:
 
 # 📚 Prompt library — готовые промпты для Claude Code (официальная, Anthropic)
 
-[**Prompt library**](https://code.claude.com/docs/en/prompt-library) — страница в официальной документации Anthropic с **копипаст-промптами именно для [Claude Code](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)** (агентного CLI), разложенными по **фазам разработки** (discover → build → ship) и **ролям** (разработчик, PM, дизайн, безопасность). Каждая карточка — готовый промпт со слотами-подстановками (`{path}`, `{behavior}` и т.п.) и ссылкой на **гайд-первоисточник**, откуда паттерн взят. Примеры: «дай обзор архитектуры этого кодбейса», «объясни, что делает `{path}` и как через него идут данные», «что сломается, если удалить `{target}`», «пройди по истории коммитов `{path}` и summary как он эволюционировал».
+[**Prompt library**](https://code.claude.com/docs/en/prompt-library) — страница в официальной документации Anthropic с **копипаст-промптами именно для [Claude Code](../AI/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)** (агентного CLI), разложенными по **фазам разработки** (discover → build → ship) и **ролям** (разработчик, PM, дизайн, безопасность). Каждая карточка — готовый промпт со слотами-подстановками (`{path}`, `{behavior}` и т.п.) и ссылкой на **гайд-первоисточник**, откуда паттерн взят. Примеры: «дай обзор архитектуры этого кодбейса», «объясни, что делает `{path}` и как через него идут данные», «что сломается, если удалить `{target}`», «пройди по истории коммитов `{path}` и summary как он эволюционировал».
 
 > [!info] Что внутри
 > - **Категории:** Onboard/Understand (разобраться в незнакомом коде), сборка фич, отладка, ревью и безопасность, автоматизация рутины.
@@ -60,6 +60,6 @@ tags:
 - Первоисточники: [Common workflows](https://code.claude.com/docs/en/common-workflows) · [Best practices](https://www.anthropic.com/engineering/claude-code-best-practices)
 - Общая (не-кодинговая) [Prompt Library](https://docs.anthropic.com/en/prompt-library) в доках API
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/26224)
-- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [Claude Code — шпаргалка команд](Claude%20Code%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4.md) · [How to AI (сборник гайдов по Claude)](How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%B3%D0%B0%D0%B9%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20Claude.md)
+- Связанные: [Claude Code — гайд](../AI/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [Claude Code — шпаргалка команд](../AI/Claude%20Code%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4.md) · [How to AI (сборник гайдов по Claude)](../AI/How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%B3%D0%B0%D0%B9%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20Claude.md)
 
 #AI #Claude_Code #Промпты #Anthropic #Reference
