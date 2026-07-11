@@ -56,7 +56,7 @@ tags:
 
 ## 💻 Платформенной части нет
 
-Это **текстовый промпт**, а не софт — ставить нечего. Работает в любом чат-интерфейсе (ChatGPT, [Claude](../AI/How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%B3%D0%B0%D0%B9%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20Claude.md), локальные LLM) на любой из твоих систем; на роутере/Entware смысла нет (там нет интерактивного чата с моделью).
+Это **текстовый промпт**, а не софт — ставить нечего. Работает в любом чат-интерфейсе (ChatGPT, [Claude](../How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%B3%D0%B0%D0%B9%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20Claude.md), локальные LLM) на любой из твоих систем; на роутере/Entware смысла нет (там нет интерактивного чата с моделью).
 
 ## 💡 Кому полезно
 
@@ -68,6 +68,6 @@ tags:
 
 - Источник: [@bugnotfeature](https://t.me/bugnotfeature/26080)
 - По теме надёжности детекторов: [OpenAI — закрытие AI Text Classifier](https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/)
-- Связанные: [Промпты для плана питания на неделю под бюджет](%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8E%20%D0%BF%D0%BE%D0%B4%20%D0%B1%D1%8E%D0%B4%D0%B6%D0%B5%D1%82%20%284%20%D0%BF%D1%80%D0%BE%D0%BC%D0%BF%D1%82%D0%B0%3A%20%D0%BC%D0%B5%D0%BD%D1%8E%2C%20%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B8%2C%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BF%D1%80%D0%BE%D1%89%D1%91%D0%BD%D0%BA%D0%B0%29.md) · [How to AI (Ruben Hassid) — сборник гайдов по Claude](../AI/How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%B3%D0%B0%D0%B9%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20Claude.md)
+- Связанные: [Промпты для плана питания на неделю под бюджет](%D0%9F%D1%80%D0%BE%D0%BC%D0%BF%D1%82%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%BD%D0%B0%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8E%20%D0%BF%D0%BE%D0%B4%20%D0%B1%D1%8E%D0%B4%D0%B6%D0%B5%D1%82%20%284%20%D0%BF%D1%80%D0%BE%D0%BC%D0%BF%D1%82%D0%B0%3A%20%D0%BC%D0%B5%D0%BD%D1%8E%2C%20%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%BA%D0%B8%2C%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BF%D1%80%D0%BE%D1%89%D1%91%D0%BD%D0%BA%D0%B0%29.md) · [How to AI (Ruben Hassid) — сборник гайдов по Claude](../How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%B3%D0%B0%D0%B9%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20Claude.md)
 
 #AI #Промпты #Письмо #Стиль #ChatGPT
