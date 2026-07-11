@@ -23,7 +23,7 @@ tags:
 > **Вывод: AUR — это User Repository, а не Trusted Repository.** Любой `PKGBUILD` исполняет НЕдоверенный код у тебя на машине.
 
 > [!warning] Тебе это прямо актуально
-> Ты собираешься переходить на **Arch и пользоваться `yay`/`paru`** — а это и есть AUR. Эта заметка не «новость ради новости», а **чек-лист гигиены AUR** (ниже раздел «Как защититься»). [Платформы владельца](../../Linux/Package-Manager/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2.md).
+> Ты собираешься переходить на **Arch и пользоваться `yay`/`paru`** — а это и есть AUR. Эта заметка не «новость ради новости», а **чек-лист гигиены AUR** (ниже раздел «Как защититься»). [Платформы владельца](../../../Linux/Package-Manager/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2.md).
 
 ## 🧬 Как работала атака
 
@@ -88,6 +88,6 @@ tags:
 - Разбор Sonatype: [Atomic Arch — npm campaign](https://www.sonatype.com/blog/atomic-arch-npm-campaign-adds-malicious-dependency) · [The Hacker News](https://thehackernews.com/2026/06/over-400-arch-linux-aur-packages.html) · [Phoronix](https://www.phoronix.com/news/Arch-Linux-AUR-400-Compromised)
 - Детект: [github.com/lenucksi/aur-malware-check](https://github.com/lenucksi/aur-malware-check)
 - Источник новости: [@Mr0x45xploit](https://t.me/IzHmfluzM81OTAy/583)
-- Связанные: [CVE-2026-55200 — libssh2 (кража через SSH-стек)](CVE/CVE-2026-55200%20%E2%80%94%20libssh2%20pre-auth%20OOB-write%20%28%D0%A2%D0%BE%D0%BA%D1%81%D0%B8%D1%87%D0%BD%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%BF%D0%BE%D0%B6%D0%B0%D1%82%D0%B8%D0%B5%29.md) · [Сравнение менеджеров пакетов](../../Linux/Package-Manager/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2.md)
+- Связанные: [CVE-2026-55200 — libssh2 (кража через SSH-стек)](CVE/CVE-2026-55200%20%E2%80%94%20libssh2%20pre-auth%20OOB-write%20%28%D0%A2%D0%BE%D0%BA%D1%81%D0%B8%D1%87%D0%BD%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%BF%D0%BE%D0%B6%D0%B0%D1%82%D0%B8%D0%B5%29.md) · [Сравнение менеджеров пакетов](../../../Linux/Package-Manager/%D0%A1%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%BE%D0%B2%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2.md)
 
 #Безопасность #SupplyChain #Arch #AUR #Malware #eBPF

@@ -66,6 +66,6 @@ tags:
 - Репозиторий: [github.com/ultrasecurity/Storm-Breaker](https://github.com/ultrasecurity/Storm-Breaker)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25928)
 - Браузерные API: [MDN getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) · [MDN Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
-- Связанные: [Atomic Arch — supply-chain атака](../Linux/Atomic%20Arch%20%E2%80%94%20supply-chain%20%D0%B0%D1%82%D0%B0%D0%BA%D0%B0%20%D0%BD%D0%B0%20AUR%20%28infostealer%20%2B%20eBPF-%D1%80%D1%83%D1%82%D0%BA%D0%B8%D1%82%29.md)
+- Связанные: [Atomic Arch — supply-chain атака](../Vulns/Linux/Atomic%20Arch%20%E2%80%94%20supply-chain%20%D0%B0%D1%82%D0%B0%D0%BA%D0%B0%20%D0%BD%D0%B0%20AUR%20%28infostealer%20%2B%20eBPF-%D1%80%D1%83%D1%82%D0%BA%D0%B8%D1%82%29.md)
 
 #Безопасность #СоциальнаяИнженерия #Фишинг #Приватность #OSINT
