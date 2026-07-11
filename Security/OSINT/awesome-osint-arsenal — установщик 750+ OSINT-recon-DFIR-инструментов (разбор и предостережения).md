@@ -15,7 +15,7 @@ tags:
 
 # 🕵️ awesome-osint-arsenal — установщик 750+ OSINT/recon/DFIR-инструментов (разбор и предостережения)
 
-[**awesome-osint-arsenal**](https://github.com/rawfilejson/awesome-osint-arsenal) — это **не «awesome»-список ссылок**, а **bash-установщик**: одной командой ставит большую пачку инструментов для **OSINT, разведки (recon), пентеста (red team), мониторинга (blue team), форензики (DFIR) и хардвар-хакинга**. Ориентирован на **Kali / apt-дистрибутивы**. Язык — Shell (100%), ~879★. Установка модульная — отдельные скрипты под каждую область.
+[**awesome-osint-arsenal**](https://github.com/rawfilejson/awesome-osint-arsenal) — это **не «awesome»-список ссылок**, а **bash-установщик**: одной командой ставит большую пачку инструментов для **OSINT, разведки (recon), пентеста (red team), мониторинга (blue team), форензики (DFIR) и хардвар-хакинга**. Ориентирован на **Kali / apt-дистрибутивы**. Язык — Shell (100%), ~1.3k★ (растёт; код не менялся с мая 2026). Установка модульная — отдельные скрипты под каждую область.
 
 > [!danger] Только для авторизованных задач — это инструмент двойного назначения
 > Сам автор в README пишет: *«This repository is for educational and authorized security research only. Always obtain written permission before testing systems you do not own.»* Здесь собраны в том числе **наступательные** инструменты (C2 Sliver, BloodHound, Nuclei). Применять их к чужим системам **без письменного разрешения владельца — преступление**.
@@ -39,10 +39,10 @@ tags:
 | Скрипт | Область | Примеры инструментов |
 | :--- | :--- | :--- |
 | `osint.sh` | OSINT / recon | Sherlock, Maigret, Amass |
-| `redteam.sh` | наступательная ИБ | Sliver (C2), BloodHound, Nuclei |
-| `blueteam.sh` | защита / мониторинг | Wazuh, Sigma, Suricata |
-| `forensics.sh` | DFIR / форензика | Volatility, Ghidra, radare2 |
-| `hardware.sh` | RF / IoT | binwalk, hackrf |
+| `redteam.sh` | наступательная ИБ | Sliver (C2), BloodHound, Nuclei, Mimikatz |
+| `blueteam.sh` | защита / мониторинг | Wazuh, Sigma, Suricata, Velociraptor |
+| `forensics.sh` | DFIR / форензика / RE | Volatility, Ghidra, radare2 |
+| `hardware.sh` | RF / SDR / IoT | binwalk, hackrf, openocd |
 | `labs.sh` | тренировочные стенды | DVWA, Juice Shop |
 | `termux.sh` | Android-подмножество | без `sudo` |
 | `install.sh` | всё сразу | вызывает модули |
