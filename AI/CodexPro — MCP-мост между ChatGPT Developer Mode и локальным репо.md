@@ -91,6 +91,6 @@ codexpro start --root /путь/к/репо   # поднять MCP против 
 
 - Репозиторий: [github.com/rebel0789/codexpro](https://github.com/rebel0789/codexpro)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25905)
-- Связанные: [MCP — серверы Model Context Protocol](MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md) · [MiMo Code (Xiaomi)](MiMo%20Code%20%E2%80%94%20терминальный%20AI-агент%20для%20кода%20с%20долгой%20памятью%20%28Xiaomi%29.md) · [Understand Anything (граф по коду)](Understand%20Anything%20%E2%80%94%20интерактивный%20граф%20знаний%20по%20кодовой%20базе.md)
+- Связанные: [MCP — серверы Model Context Protocol](MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md) · [MiMo Code (Xiaomi)](MiMo%20Code%20%E2%80%94%20терминальный%20AI-агент%20для%20кода%20с%20долгой%20памятью%20%28Xiaomi%29.md) · [Understand Anything (граф по коду)](Code-Graph/Understand%20Anything%20%E2%80%94%20интерактивный%20граф%20знаний%20по%20кодовой%20базе.md)
 
 #AI #MCP #ChatGPT #CodexPro #Программирование #Безопасность

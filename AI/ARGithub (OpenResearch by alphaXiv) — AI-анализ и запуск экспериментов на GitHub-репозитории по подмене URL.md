@@ -45,7 +45,7 @@ https://argithub.com/<owner>/<repo>
 > - **Качество — как у любой LLM:** возможны галлюцинации в разборе, выдуманные выводы; это **не аудит безопасности** и не замена чтению кода/доков.
 
 > [!tip] Когда полезно
-> Быстрый **первый взгляд** на незнакомый репозиторий: «о чём проект, как устроен, с чего начать». Для ML-кода — попробовать автоэксперименты. Но архитектурные решения и безопасность всё равно проверяй сам (и инструментами вроде [Understand Anything](Understand%20Anything%20%E2%80%94%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D0%B5.md)).
+> Быстрый **первый взгляд** на незнакомый репозиторий: «о чём проект, как устроен, с чего начать». Для ML-кода — попробовать автоэксперименты. Но архитектурные решения и безопасность всё равно проверяй сам (и инструментами вроде [Understand Anything](Code-Graph/Understand%20Anything%20%E2%80%94%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D0%B5.md)).
 
 ## 💻 Как это ложится на твои системы
 
@@ -64,6 +64,6 @@ https://argithub.com/<owner>/<repo>
 
 - Вход: [argithub.com](https://argithub.com) → [openresearch.sh](https://openresearch.sh/) (проект [alphaXiv](https://www.alphaxiv.org/))
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/26081)
-- Связанные: [Understand Anything — интерактивный граф знаний по кодовой базе](Understand%20Anything%20%E2%80%94%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D0%B5.md) · [Claude Code — гайд](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
+- Связанные: [Understand Anything — интерактивный граф знаний по кодовой базе](Code-Graph/Understand%20Anything%20%E2%80%94%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D0%B5.md) · [Claude Code — гайд](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
 
 #AI #GitHub #КодовыйАнализ #alphaXiv #Сервис

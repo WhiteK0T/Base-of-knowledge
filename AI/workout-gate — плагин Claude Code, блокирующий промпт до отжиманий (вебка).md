@@ -85,6 +85,6 @@ git clone https://github.com/BotchetDig/workout-gate.git && cd workout-gate
 
 - Репозиторий: [github.com/BotchetDig/workout-gate](https://github.com/BotchetDig/workout-gate)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25903)
-- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md) · [Claude Code — шпаргалка команд](Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md) · [Understand Anything (плагин-граф по коду)](Understand%20Anything%20%E2%80%94%20интерактивный%20граф%20знаний%20по%20кодовой%20базе.md)
+- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md) · [Claude Code — шпаргалка команд](Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md) · [Understand Anything (плагин-граф по коду)](Code-Graph/Understand%20Anything%20%E2%80%94%20интерактивный%20граф%20знаний%20по%20кодовой%20базе.md)
 
 #AI #ClaudeCode #Плагин #Хук #Здоровье #workout-gate
