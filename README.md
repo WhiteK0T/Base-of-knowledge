@@ -162,6 +162,7 @@
 
 - **Терминальные:** [elio (трёхпанельный, превью с картинками, Rust)](File-Managers/elio%20%E2%80%94%20терминальный%20файловый%20менеджер%20с%20превью%20%28Rust%29.md)
 - **FAR-семейство:** [far2l (порт FAR на Linux/macOS/BSD)](File-Managers/far2l%20%E2%80%94%20порт%20FAR%20Manager%20на%20Linux-macOS-BSD%20%28двухпанельный%29.md) · [Far Manager 3 (far3, Windows-оригинал)](File-Managers/Far%20Manager%203%20%28far3%29%20%E2%80%94%20ортодоксальный%20файловый%20менеджер%20для%20Windows.md)
+- **Веб / self-hosted:** [FileBrowser Quantum (веб-менеджер файлов на Go для домашнего сервера: SQLite-индексация/поиск, шаринг, OIDC/LDAP/2FA; форк оригинального filebrowser — что это и нюансы)](File-Managers/FileBrowser%20Quantum%20%28gtsteffaniak%29%20%E2%80%94%20self-hosted%20%D0%B2%D0%B5%D0%B1-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%28%D1%84%D0%BE%D1%80%D0%BA%20filebrowser%2C%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0%D1%86%D0%B8%D1%8F%2C%20%D1%88%D0%B0%D1%80%D0%B8%D0%BD%D0%B3%2C%20OIDC-LDAP%29%2C%20%D1%87%D1%82%D0%BE%20%D1%8D%D1%82%D0%BE%20%D0%B8%20%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B.md)
 
 ### 📱 Apps
 
