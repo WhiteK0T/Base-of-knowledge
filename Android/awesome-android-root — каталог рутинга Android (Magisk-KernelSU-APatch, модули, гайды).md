@@ -9,12 +9,13 @@ tags:
   - OpenSource
 Источник:
   - https://t.me/open_source_friend/5726
+  - https://t.me/open_source_friend/5810
   - https://github.com/awesome-android-root/awesome-android-root
 ---
 
 # 🤖 awesome-android-root — каталог рутинга Android (модули, гайды, инструменты)
 
-[**awesome-android-root**](https://github.com/awesome-android-root/awesome-android-root) (MIT, ~**3.6k★**) — большой регулярно обновляемый **awesome-каталог** по рутингу Android: **400+** инструментов, приложений и модулей + пошаговые руководства. Покрывает разблокировку загрузчика, кастомные recovery и выбор метода root (**Magisk / KernelSU / APatch**), а также подборки модулей и приложений (блокировка рекламы, тюнинг производительности, автоматизация, глубокая кастомизация системы). Есть удобный сайт-витрина: [awesome-android-root.pages.dev](https://awesome-android-root.pages.dev).
+[**awesome-android-root**](https://github.com/awesome-android-root/awesome-android-root) (MIT, ~**4.1k★**, обновл. июль 2026) — большой регулярно обновляемый **awesome-каталог** по рутингу Android: по бейджу README уже **500+** инструментов, приложений и модулей + пошаговые руководства (пост 5810 говорит «400+» — на деле каталог с прошлого репоста дорос до 500+). Покрывает разблокировку загрузчика, кастомные recovery и выбор метода root (**Magisk / KernelSU / APatch**), а также подборки модулей и приложений (блокировка рекламы, тюнинг производительности, автоматизация, глубокая кастомизация системы). Есть удобный сайт-витрина: [awesome-android-root.pages.dev](https://awesome-android-root.pages.dev).
 
 > [!info] Это каталог-документация, а не программа
 > В посте указано «**Lang: Python**» — это лишь язык, который GitHub насчитал по вспомогательным скриптам. По сути репозиторий — **awesome-list + сайт на VitePress** (ссылки, таблицы, гайды), а не приложение для рутинга. Сам он ничего не «рутит»: даёт навигацию по чужим инструментам и инструкциям, которые ты применяешь **на свой страх и риск**.
@@ -32,7 +33,7 @@ tags:
 
 ## 🧪 Факты против хайпа
 
-> [!warning] «400+ инструментов» — это ссылки, качество и безопасность не гарантированы
+> [!warning] «500+ инструментов» (и «проверенных» из поста) — это ссылки, качество и безопасность не гарантированы
 > Awesome-список — это **агрегатор**. Полезен как карта местности, но:
 > - **device-specific**: неправильный recovery/kernel/`boot.img` под твою модель → **кирпич**. Всегда сверяй с темой именно по своему устройству (XDA/4PDA), а не «по аналогии».
 > - модули и root-приложения — **сторонний код**, и после root он работает с **максимальными привилегиями**. Ставь только из доверенных источников, проверяй репутацию (это **supply-chain-риск**: вредоносный модуль = полный контроль над телефоном).
@@ -70,7 +71,7 @@ tags:
 ## 🔗 Ссылки
 
 - Репозиторий: [github.com/awesome-android-root/awesome-android-root](https://github.com/awesome-android-root/awesome-android-root) (MIT) · сайт [awesome-android-root.pages.dev](https://awesome-android-root.pages.dev)
-- Источник новости: [@open_source_friend](https://t.me/open_source_friend/5726)
+- Источник новости: [@open_source_friend](https://t.me/open_source_friend/5726) (повторно — [пост 5810](https://t.me/open_source_friend/5810))
 - Связанные: [linux-android (Linux-десктоп на Android через Termux, без root)](../Linux/linux-android%20%E2%80%94%20Linux-%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF%20%D0%BD%D0%B0%20Android%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20Termux%20%D0%B1%D0%B5%D0%B7%20root%20%28proot%20%2B%20Termux-X11%29.md) · [web-to-app (сборка APK на телефоне)](web-to-app%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B0%20Android-APK%20%D0%B8%D0%B7%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%BF%D1%80%D1%8F%D0%BC%D0%BE%20%D0%BD%D0%B0%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B5%20%28%D0%BA%D0%B0%D1%80%D0%BC%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F%20APK-%D0%BC%D0%B0%D1%81%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F%29.md) · [AndroidForensics (извлечение данных через ADB)](../Security/Forensics/AndroidForensics%20%E2%80%94%20%D0%B8%D0%B7%D0%B2%D0%BB%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%20Android%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20ADB%20%28DFIR-%D1%82%D1%80%D0%B8%D0%B0%D0%B6%2C%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%B8%20%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%29.md)
 
 #Android #Root #Magisk #Подборка #OpenSource
