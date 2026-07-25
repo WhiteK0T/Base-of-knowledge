@@ -57,7 +57,7 @@ tags:
 | **Sean Prashad — Leetcode Patterns** ([seanprashad.com/leetcode-patterns](https://seanprashad.com/leetcode-patterns/)) | Курируемый список задач с тегами паттернов и фильтрами |
 | **«14 Patterns to Ace Any Coding Interview»** | Классическая бесплатная статья (Design Gurus / hackernoon) — основа «паттерного» подхода |
 | **LeetCode** (Explore-карточки, бесплатный тариф) | Сами задачи + теги; тренируешь на практике |
-| **TheAlgorithms** (репозиторий) | Референсные реализации алгоритмов на разных языках — см. [Repository and Sites](Repository%20and%20Sites.md) |
+| **TheAlgorithms** (репозиторий) | Референсные реализации алгоритмов на разных языках — см. [TheAlgorithms](TheAlgorithms%20%E2%80%94%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5%20%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2%20%D0%B8%20%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BD%D0%B0%20%D0%B4%D0%B5%D1%81%D1%8F%D1%82%D0%BA%D0%B0%D1%85%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2%20%28%D1%87%D1%82%D0%BE%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8%2C%20%D0%B4%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%2C%20%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B%29.md) |
 
 > [!note] Платные (для полноты картины)
 > **ByteByteGo** (эта подборка), **Grokking the Coding Interview** (Design Gurus / educative — «прародитель» паттерн-подхода), **AlgoMonster** — все учат по сути одному и тому же набору. Платить стоит только если нужны структурированные разборы «под ключ» и не жалко денег; для самоподготовки бесплатных ресурсов выше достаточно.
@@ -75,7 +75,7 @@ tags:
 
 ## 🔗 Связанные заметки
 
-- Референсные реализации алгоритмов (TheAlgorithms и пр.): [Repository and Sites](Repository%20and%20Sites.md)
+- Референсные реализации алгоритмов (TheAlgorithms и пр.): [TheAlgorithms](TheAlgorithms%20%E2%80%94%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B5%20%D1%80%D0%B5%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%BE%D0%B2%20%D0%B8%20%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%BD%D0%B0%20%D0%B4%D0%B5%D1%81%D1%8F%D1%82%D0%BA%D0%B0%D1%85%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%BE%D0%B2%20%28%D1%87%D1%82%D0%BE%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8%2C%20%D0%B4%D0%BB%D1%8F%20%D1%87%D0%B5%D0%B3%D0%BE%2C%20%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B%29.md)
 - Системный путь в Computer Science по курсам топ-вузов: [CS Self-learning (CSDIY)](../../Education/CS%20Self-learning%20%28CSDIY%2C%20csdiy.wiki%29%20%E2%80%94%20%D0%B3%D0%B8%D0%B4%20%D0%BF%D0%BE%20%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%BC%D1%83%20%D0%B8%D0%B7%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8E%20Computer%20Science%20%D0%BF%D0%BE%20%D0%BA%D1%83%D1%80%D1%81%D0%B0%D0%BC%20%D1%82%D0%BE%D0%BF-%D0%B2%D1%83%D0%B7%D0%BE%D0%B2.md)
 - Бесплатные курсы с сертификатами (в т.ч. алгоритмы/CS): [awesome-certificates](../../Education/awesome-certificates%20%28PanXProject%29%20%E2%80%94%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20200%2B%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D1%85%20%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D1%81%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%20%28IT-CS-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%29%2C%20%D1%87%D1%82%D0%BE%20%D1%8D%D1%82%D0%BE%20%D0%B8%20%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B.md)
 
