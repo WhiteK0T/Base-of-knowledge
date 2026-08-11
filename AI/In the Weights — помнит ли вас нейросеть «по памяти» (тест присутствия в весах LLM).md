@@ -53,6 +53,6 @@ tags:
 - Сайт: [intheweights.com](https://intheweights.com/)
 - Разбор: [TechCrunch — In the Weights is your new AI-centric vanity search](https://techcrunch.com/2026/06/20/in-the-weights-is-your-new-ai-centric-vanity-search/) · [the-decoder](https://the-decoder.com/website-in-the-weights-shows-whether-ai-models-know-who-you-are/)
 - Источник новости: [@black_triangle_tg](https://t.me/black_triangle_tg/9066)
-- Связанные: [Сводная таблица AI-агентов для программирования](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md) · [GLM 5.2 — открытая LLM](GLM%205.2%20%E2%80%94%20открытая%20китайская%20LLM%20%28Z.ai%2C%20кодинг%29.md)
+- Связанные: [Сводная таблица AI-агентов для программирования](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md) · [GLM 5.2 — открытая LLM](GLM%205.2%20%E2%80%94%20открытая%20китайская%20LLM%20%28Z.ai%2C%20кодинг%29.md)
 
 #AI #LLM #TrainingData #Приватность #Любопытное

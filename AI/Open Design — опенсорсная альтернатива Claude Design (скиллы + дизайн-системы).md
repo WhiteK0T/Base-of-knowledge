@@ -79,6 +79,6 @@ docker compose up -d        # затем http://localhost:7456
 
 - Репозиторий: [github.com/nexu-io/open-design](https://github.com/nexu-io/open-design) · сайт: [open-design.ai](https://open-design.ai/)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25906)
-- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md) · [MCP — серверы Model Context Protocol](MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md) · [AI Website Cloner](AI%20Website%20Cloner%20%E2%80%94%20клонирование%20сайтов%20в%20Next.js%20через%20AI-агентов.md)
+- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md) · [MCP — серверы Model Context Protocol](MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md) · [AI Website Cloner](AI%20Website%20Cloner%20%E2%80%94%20клонирование%20сайтов%20в%20Next.js%20через%20AI-агентов.md)
 
 #AI #Дизайн #OpenDesign #ClaudeCode #MCP #Инструменты

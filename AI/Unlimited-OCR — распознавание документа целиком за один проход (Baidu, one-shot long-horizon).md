@@ -87,6 +87,6 @@ model = AutoModel.from_pretrained(
 - Репозиторий: [github.com/baidu/Unlimited-OCR](https://github.com/baidu/Unlimited-OCR) · веса: [huggingface.co/baidu/Unlimited-OCR](https://huggingface.co/baidu/Unlimited-OCR) · статья: [arXiv 2606.23050](https://arxiv.org/pdf/2606.23050)
 - На чём основано: [DeepSeek-OCR](https://github.com/deepseek-ai/DeepSeek-OCR) · [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/26012)
-- Связанные: [FreeDeepseekAPI — бесплатный API к DeepSeek](ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20DeepSeek.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28июнь%202026%29.md)
+- Связанные: [FreeDeepseekAPI — бесплатный API к DeepSeek](ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20DeepSeek.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md)
 
 #AI #OCR #VLM #Документы #Baidu #OpenSource

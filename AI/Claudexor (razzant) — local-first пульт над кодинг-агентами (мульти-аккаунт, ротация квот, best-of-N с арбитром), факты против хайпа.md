@@ -71,7 +71,7 @@ claudexor doctor           # проверка окружения
 ## 🔗 Связанные заметки
 
 - Лёгкий аналог-переключатель: [CCS (Claude Code Switch)](ProxyLLM/CCS%20%28Claude%20Code%20Switch%29%20%E2%80%94%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Claude%20Code.md)
-- Обзор рынка агентов: [Сводная таблица AI-агентов для программирования](%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B8%D1%8E%D0%BD%D1%8C%202026%29.md) · Эталон: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
+- Обзор рынка агентов: [Сводная таблица AI-агентов для программирования](%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md) · Эталон: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
 - Идея «несколько моделей + судья»: [OpenRouter Fusion (панель моделей + судья)](ProxyLLM/OpenRouter%20Fusion%20%E2%80%94%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9%20%2B%20%D1%81%D1%83%D0%B4%D1%8C%D1%8F%20%28%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8-LLM%20%D1%81%D0%B8%D0%BD%D1%82%D0%B5%D0%B7%29.md)
 
 ## 🔗 Ссылки
