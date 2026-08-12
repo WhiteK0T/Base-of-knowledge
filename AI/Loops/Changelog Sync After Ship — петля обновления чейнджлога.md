@@ -14,7 +14,7 @@ tags:
 
 # 📝🔁 Changelog Sync After Ship — петля обновления чейнджлога
 
-Петля из каталога [Loops!](Loops%20%E2%80%94%20обзор%20сайта%20и%20каталог%20петель.md): после релиза («ship») агент следит, чтобы в **`CHANGELOG.md`** были записи под пользовательские изменения — разбирает свежие коммиты и пишет аккуратные записи в формате **Keep a Changelog** под `[Unreleased]`.
+Петля из каталога [Loops!](Loops%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%B8%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BF%D0%B5%D1%82%D0%B5%D0%BB%D1%8C.md): после релиза («ship») агент следит, чтобы в **`CHANGELOG.md`** были записи под пользовательские изменения — разбирает свежие коммиты и пишет аккуратные записи в формате **Keep a Changelog** под `[Unreleased]`.
 
 ## ⚙️ Параметры
 
@@ -42,7 +42,7 @@ changes, and verify completeness.
 
 ## 🚀 Как запустить
 
-- **Claude Code:** вставь промпт сразу после релиза/мерджа. Самоуправляемая `/loop`-задача (см. [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20гайд.md)).
+- **Claude Code:** вставь промпт сразу после релиза/мерджа. Самоуправляемая `/loop`-задача (см. [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)).
 - Нужен файл **`CHANGELOG.md`** в репозитории (формат [Keep a Changelog](https://keepachangelog.com/)).
 
 > [!note] «User-visible» — ключевой фильтр
@@ -54,7 +54,7 @@ changes, and verify completeness.
 
 ## 💡 Когда использовать
 
-- В конце потока релиза, обычно после [Docs Sync After Edits](Docs%20Sync%20After%20Edits%20%E2%80%94%20петля%20синхронизации%20документации.md): доки → changelog.
+- В конце потока релиза, обычно после [Docs Sync After Edits](Docs%20Sync%20After%20Edits%20%E2%80%94%20%D0%BF%D0%B5%D1%82%D0%BB%D1%8F%20%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8.md): доки → changelog.
 - Удобно с **Conventional Commits**: из аккуратных сообщений коммитов записи собираются почти автоматически.
 - Ограничение: завязана на `CHANGELOG.md` и git-историю; если чейнджлога нет — сначала заведи файл.
 
@@ -62,6 +62,6 @@ changes, and verify completeness.
 
 - Страница петли: [loops.elorm.xyz/loops/changelog-sync-after-ship](https://loops.elorm.xyz/loops/changelog-sync-after-ship)
 - Формат: [keepachangelog.com](https://keepachangelog.com/)
-- Связанные: [Каталог петель Loops!](Loops%20%E2%80%94%20обзор%20сайта%20и%20каталог%20петель.md) · [Docs Sync After Edits](Docs%20Sync%20After%20Edits%20%E2%80%94%20петля%20синхронизации%20документации.md) · [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20гайд.md)
+- Связанные: [Каталог петель Loops!](Loops%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%B8%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BF%D0%B5%D1%82%D0%B5%D0%BB%D1%8C.md) · [Docs Sync After Edits](Docs%20Sync%20After%20Edits%20%E2%80%94%20%D0%BF%D0%B5%D1%82%D0%BB%D1%8F%20%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8.md) · [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
 
 #AI #Claude_Code #Workflow #Loops #Changelog #Релизы

@@ -15,7 +15,7 @@ tags:
 
 # 🧠 Obsidian Mind — постоянная память для ИИ-агентов в Obsidian-хранилище
 
-**Obsidian Mind** ([github.com/breferrari/obsidian-mind](https://github.com/breferrari/obsidian-mind)) — **шаблон Obsidian-хранилища**, который даёт кодинг-агентам ([Claude Code](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) — полная поддержка, Codex CLI, Gemini CLI) **память между сессиями**. Идея: агент по протоколу хранилища **в начале сессии подтягивает контекст** (цели, активные проекты, последние изменения, открытые задачи), а по ходу **сам ведёт структурированные заметки** — решения, профили людей, инциденты, «achievements». Всё это — обычные Markdown-файлы в твоём Obsidian-волте, которые ты можешь читать и править сам. MIT, TypeScript, **~3900★**, активно развивается.
+**Obsidian Mind** ([github.com/breferrari/obsidian-mind](https://github.com/breferrari/obsidian-mind)) — **шаблон Obsidian-хранилища**, который даёт кодинг-агентам ([Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) — полная поддержка, Codex CLI, Gemini CLI) **память между сессиями**. Идея: агент по протоколу хранилища **в начале сессии подтягивает контекст** (цели, активные проекты, последние изменения, открытые задачи), а по ходу **сам ведёт структурированные заметки** — решения, профили людей, инциденты, «achievements». Всё это — обычные Markdown-файлы в твоём Obsidian-волте, которые ты можешь читать и править сам. MIT, TypeScript, **~3900★**, активно развивается.
 
 > [!warning] «Бесконечная память / никаких ограничений» — это маркетинг
 > | Заявление поста | Реально |
@@ -60,8 +60,8 @@ shardmind install github:breferrari/obsidian-mind
 
 ## 🔗 Связанные заметки
 
-- Другой «постоянный vault» для агента (ресёрч): [Hyper Research (hyperresearch)](Skills/Hyper%20Research%20%28hyperresearch%29%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%B3%D0%BB%D1%83%D0%B1%D0%BE%D0%BA%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B5%D1%81%D1%91%D1%80%D1%87%D0%B0%20%D0%B4%D0%BB%D1%8F%20Claude%20Code%20%2816-%D1%88%D0%B0%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BF%D0%B0%D0%B9%D0%BF%D0%BB%D0%B0%D0%B9%D0%BD%2C%20%D0%B0%D1%83%D0%B4%D0%B8%D1%82%20%D1%86%D0%B8%D1%82%D0%B0%D1%82%2C%20%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9%20vault%29.md)
-- Агент с упором на долгую память: [MiMo Code (Xiaomi)](MiMo%20Code%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BE%D0%B4%D0%B0%20%D1%81%20%D0%B4%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C%D1%8E%20%28Xiaomi%29.md) · Базовый [Claude Code — гайд](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
+- Другой «постоянный vault» для агента (ресёрч): [Hyper Research (hyperresearch)](../../Skills/Hyper%20Research%20%28hyperresearch%29%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%B3%D0%BB%D1%83%D0%B1%D0%BE%D0%BA%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B5%D1%81%D1%91%D1%80%D1%87%D0%B0%20%D0%B4%D0%BB%D1%8F%20Claude%20Code%20%2816-%D1%88%D0%B0%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BF%D0%B0%D0%B9%D0%BF%D0%BB%D0%B0%D0%B9%D0%BD%2C%20%D0%B0%D1%83%D0%B4%D0%B8%D1%82%20%D1%86%D0%B8%D1%82%D0%B0%D1%82%2C%20%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9%20vault%29.md)
+- Агент с упором на долгую память: [MiMo Code (Xiaomi)](../MiMo%20Code%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BE%D0%B4%D0%B0%20%D1%81%20%D0%B4%D0%BE%D0%BB%D0%B3%D0%BE%D0%B9%20%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C%D1%8E%20%28Xiaomi%29.md) · Базовый [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
 
 ## 🔗 Ссылки
 

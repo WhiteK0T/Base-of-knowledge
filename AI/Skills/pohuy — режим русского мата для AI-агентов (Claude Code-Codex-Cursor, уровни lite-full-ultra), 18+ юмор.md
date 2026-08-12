@@ -15,7 +15,7 @@ tags:
 
 # 🚬 pohuy — «режим русского мата» для AI-агентов (18+, юмор)
 
-**pohuy** ([github.com/smixs/pohuy](https://github.com/smixs/pohuy)) — шуточный **скилл-персона** для ИИ-агентов ([Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), Codex, Cursor, Windsurf): переключает **тон комментариев** агента на идиоматический русский мат. Статусы, объяснения и ревью начинают звучать как «*Деплой наебнулся: `DATABASE_URL` пустой. Хуйня вопрос, чиню*». Три уровня крепости — **lite → full → ultra**. MIT, ~590★, свежий (июль 2026), вдохновлён скиллом [caveman](https://github.com/JuliusBrussee/caveman). **18+.**
+**pohuy** ([github.com/smixs/pohuy](https://github.com/smixs/pohuy)) — шуточный **скилл-персона** для ИИ-агентов ([Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), Codex, Cursor, Windsurf): переключает **тон комментариев** агента на идиоматический русский мат. Статусы, объяснения и ревью начинают звучать как «*Деплой наебнулся: `DATABASE_URL` пустой. Хуйня вопрос, чиню*». Три уровня крепости — **lite → full → ultra**. MIT, ~590★, свежий (июль 2026), вдохновлён скиллом [caveman](https://github.com/JuliusBrussee/caveman). **18+.**
 
 > [!warning] Что это на самом деле — и что тут шутка
 > | Заявление поста/репо | Реально |

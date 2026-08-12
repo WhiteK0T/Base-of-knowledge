@@ -15,7 +15,7 @@ tags:
 
 # 🌊 Rio — быстрый терминал на WebGPU (Rust)
 
-**Rio** ([rioterm.com](https://rioterm.com), [github.com/raphamorim/rio](https://github.com/raphamorim/rio)) — кроссплатформенный аппаратно-ускоренный эмулятор терминала на **Rust**, рендерящий через **WebGPU** (WGPU). Автор — Raphael Amorim, первый релиз в 2023. От «голого» [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) отличается тем, что из коробки умеет **вкладки и сплиты** — но при этом остаётся быстрым GPU-терминалом, настраиваемым текстовым конфигом.
+**Rio** ([rioterm.com](https://rioterm.com), [github.com/raphamorim/rio](https://github.com/raphamorim/rio)) — кроссплатформенный аппаратно-ускоренный эмулятор терминала на **Rust**, рендерящий через **WebGPU** (WGPU). Автор — Raphael Amorim, первый релиз в 2023. От «голого» [Alacritty](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md) отличается тем, что из коробки умеет **вкладки и сплиты** — но при этом остаётся быстрым GPU-терминалом, настраиваемым текстовым конфигом.
 
 > [!info] WebGPU вместо OpenGL
 > Rio рендерит через WGPU (реализация стандарта WebGPU на Rust) и сам выбирает низкоуровневый бэкенд: **Vulkan** (Linux), **Metal** (macOS), **DX12** (Windows). Это современнее, чем OpenGL у Alacritty, и даёт переносимость на разные GPU. Парсинг ANSI, обработку событий и сетку Rio переиспользует из кода Alacritty.
@@ -48,7 +48,7 @@ cargo install --git https://github.com/raphamorim/rio
 ```
 
 > [!danger] Не для роутера/Entware
-> Rio — графическое приложение (Wayland/X11/Metal/DX), требует GPU и дисплея. На ASUS RT-AX56U (Entware, без графики) **неприменимо** — терминал-эмулятор ставится на десктоп, а к роутеру подключаешься по [SSH](../Network/SSH/SSH-Базовое%20руководство.md) уже из него.
+> Rio — графическое приложение (Wayland/X11/Metal/DX), требует GPU и дисплея. На ASUS RT-AX56U (Entware, без графики) **неприменимо** — терминал-эмулятор ставится на десктоп, а к роутеру подключаешься по [SSH](../Network/SSH/SSH-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md) уже из него.
 
 ## ⚙️ Конфиг (`~/.config/rio/config.toml`)
 
@@ -135,7 +135,7 @@ Linux/Windows (на macOS обычно `Cmd` вместо `Ctrl+Shift`):
 
 ## ⚖️ Сравнение терминалов
 
-| | Rio | [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) | [kitty](kitty%20%E2%80%94%20GPU-терминал%20с%20kittens%20и%20графикой%20%28OpenGL%29.md) | [Konsole](Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md) |
+| | Rio | [Alacritty](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md) | [kitty](kitty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D1%81%20kittens%20%D0%B8%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%BE%D0%B9%20%28OpenGL%29.md) | [Konsole](Konsole%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20KDE%20%28%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D0%B8%2C%20split-view%2C%20Qt%29.md) |
 | :--- | :--- | :--- | :--- | :--- |
 | Рендер | **WebGPU** | OpenGL | OpenGL | Qt (CPU) |
 | Вкладки/сплиты | да | нет | да | да |
@@ -150,12 +150,12 @@ Linux/Windows (на macOS обычно `Cmd` вместо `Ctrl+Shift`):
 
 - Хочешь **GPU-терминал со вкладками/сплитами и картинками** из коробки, без tmux.
 - Нравится современный стек (WebGPU) и кроссплатформа (вплоть до ARM64/Raspberry Pi).
-- Если нужен **предельный минимализм** и максимальная стабильность — смотри [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md).
+- Если нужен **предельный минимализм** и максимальная стабильность — смотри [Alacritty](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md).
 
 ## 🔗 Ссылки
 
 - Сайт/доки: [rioterm.com](https://rioterm.com) · [docs/config](https://rioterm.com/docs/config) · репозиторий: [github.com/raphamorim/rio](https://github.com/raphamorim/rio)
 - Обзор: [itshaman.ru](https://itshaman.ru/news/software/rio-bystryi-terminal-s-podderzhkoi-webgpu-dlya-linux)
-- Связанные: [Alacritty — GPU-терминал](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [kitty — kittens и графика](kitty%20%E2%80%94%20GPU-терминал%20с%20kittens%20и%20графикой%20%28OpenGL%29.md) · [Konsole — терминал KDE](Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md) · [tmux — мультиплексор](tmux%20%E2%80%94%20терминальный%20мультиплексор%20%28сессии%2C%20окна%2C%20панели%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
+- Связанные: [Alacritty — GPU-терминал](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md) · [kitty — kittens и графика](kitty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D1%81%20kittens%20%D0%B8%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%BE%D0%B9%20%28OpenGL%29.md) · [Konsole — терминал KDE](Konsole%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20KDE%20%28%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D0%B8%2C%20split-view%2C%20Qt%29.md) · [tmux — мультиплексор](tmux%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BE%D1%80%20%28%D1%81%D0%B5%D1%81%D1%81%D0%B8%D0%B8%2C%20%D0%BE%D0%BA%D0%BD%D0%B0%2C%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D0%B8%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md)
 
 #Terminal #Rio #WebGPU #Rust #Linux

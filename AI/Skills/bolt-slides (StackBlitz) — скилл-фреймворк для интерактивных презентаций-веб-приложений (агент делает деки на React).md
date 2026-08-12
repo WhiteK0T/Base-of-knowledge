@@ -15,7 +15,7 @@ tags:
 
 # 🖥️ bolt-slides — презентации, которые являются веб-приложениями
 
-**bolt-slides** ([github.com/stackblitz/bolt-slides](https://github.com/stackblitz/bolt-slides)) — от **StackBlitz** (создатели [Bolt.new](https://bolt.new)): это **React/Vite-фреймворк для слайдов + встроенный скилл** (`.bolt/skills/slides/SKILL.md`), который учит ИИ-агента ([Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), Codex, Cursor, Bolt) собирать **интерактивную презентацию по одному промпту**. Каждый слайд — обычный **React-компонент**: живые данные, графики, 3D, анимации, рабочие кнопки/формы. Движок — в стиле Slidev (сайдбар, grid, click-builds, аннотации, presenter mode). MIT, TypeScript, свежий (создан 14.07.2026, ~630★).
+**bolt-slides** ([github.com/stackblitz/bolt-slides](https://github.com/stackblitz/bolt-slides)) — от **StackBlitz** (создатели [Bolt.new](https://bolt.new)): это **React/Vite-фреймворк для слайдов + встроенный скилл** (`.bolt/skills/slides/SKILL.md`), который учит ИИ-агента ([Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), Codex, Cursor, Bolt) собирать **интерактивную презентацию по одному промпту**. Каждый слайд — обычный **React-компонент**: живые данные, графики, 3D, анимации, рабочие кнопки/формы. Движок — в стиле Slidev (сайдбар, grid, click-builds, аннотации, presenter mode). MIT, TypeScript, свежий (создан 14.07.2026, ~630★).
 
 > [!info] Отделяем факты от рекламы поста
 > | Заявление поста | Реально |

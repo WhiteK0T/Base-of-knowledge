@@ -21,7 +21,7 @@ tags:
 
 Разбор проекта из поста [@johenews (2154)](https://t.me/johenews/2154) → [**fikstt2/hh-ai-agent**](https://github.com/fikstt2/hh-ai-agent) (*Python*, **MIT**, ~**17★**, создан 04.07.2026) со **сверкой с исходным кодом** и **проверкой на безопасность** (просьба «проверь код»).
 
-**Что это.** Автономный бот, который на аккаунте владельца сам ищет вакансии на HH.ru, отсекает нерелевантные, локальной LLM ([Ollama](Local-LLM/Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) / Llama 3) пишет персональное сопроводительное письмо и **реально нажимает «Откликнуться»**, а отчёты и сообщения от HR шлёт в Telegram. Пост подан как «рутину собеседований можно автоматизировать без платных API и сложной инфраструктуры».
+**Что это.** Автономный бот, который на аккаунте владельца сам ищет вакансии на HH.ru, отсекает нерелевантные, локальной LLM ([Ollama](../Local-LLM/Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) / Llama 3) пишет персональное сопроводительное письмо и **реально нажимает «Откликнуться»**, а отчёты и сообщения от HR шлёт в Telegram. Пост подан как «рутину собеседований можно автоматизировать без платных API и сложной инфраструктуры».
 
 > [!info] Из чего собран (по файлам репозитория)
 > - `main.py` — два параллельных `asyncio`-таска: Telegram-бот (long-polling) + вечный цикл агента с паузой **30 мин** (`asyncio.sleep(1800)`).
@@ -86,7 +86,7 @@ tags:
 
 | Система | Применимость |
 | :--- | :--- |
-| **Gentoo** (основная) | ✅ venv/pipx (PEP 668): `python -m venv venv && ./venv/bin/pip install -r requirements.txt && ./venv/bin/playwright install chromium`. Ollama — [заметка](Local-LLM/Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md). Пиннинг версий обязателен |
+| **Gentoo** (основная) | ✅ venv/pipx (PEP 668): `python -m venv venv && ./venv/bin/pip install -r requirements.txt && ./venv/bin/playwright install chromium`. Ollama — [заметка](../Local-LLM/Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md). Пиннинг версий обязателен |
 | **Debian / Ubuntu** | ✅ так же; Playwright сам доставит зависимости Chromium (`playwright install-deps`) |
 | **Arch** | ✅ `python`, `ollama` (в т.ч. AUR); venv/pipx |
 | **Windows 10/11** | ✅ Playwright и Ollama имеют Windows-сборки; `.env` + `python main.py` работают. `state.json`/`agent.db` держи в защищённой папке профиля |
@@ -101,7 +101,7 @@ tags:
 ## 🔗 Ссылки
 
 - Репозиторий: [github.com/fikstt2/hh-ai-agent](https://github.com/fikstt2/hh-ai-agent) (Python, MIT) · пост: [@johenews/2154](https://t.me/johenews/2154)
-- Локальная модель: [Ollama](Local-LLM/Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) · [llama.cpp](Local-LLM/llama.cpp%20%E2%80%94%20%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D0%B0%20GGUF.md)
-- Связанные (computer-use агенты): [Cua Driver](Cua%20Driver%20%E2%80%94%20%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%28computer%20use%2C%20MCP%29.md)
+- Локальная модель: [Ollama](../Local-LLM/Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) · [llama.cpp](../Local-LLM/llama.cpp%20%E2%80%94%20%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D0%B0%20GGUF.md)
+- Связанные (computer-use агенты): [Cua Driver](Tooling/Cua%20Driver%20%E2%80%94%20%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%28computer%20use%2C%20MCP%29.md)
 
 #AI #AI-Agent #Ollama #LLM #Playwright #Automation #Scraping #Telegram #Security #HH

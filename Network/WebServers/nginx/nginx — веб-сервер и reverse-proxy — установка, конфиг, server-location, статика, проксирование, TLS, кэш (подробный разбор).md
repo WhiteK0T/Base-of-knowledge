@@ -286,7 +286,7 @@ systemctl restart nginx
 - [Let's Encrypt — выпуск TLS-сертификата и связка с nginx и Apache](../Let%27s%20Encrypt%20%E2%80%94%20%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%20TLS-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%B0%20%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BA%20nginx%20%D0%B8%20Apache%20%28certbot%2C%20acme.sh%2C%20HTTP-01-DNS-01%2C%20wildcard%2C%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D1%80%D0%BE%D0%B4%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%29.md) — сертификаты подробно.
 - [Хостинг install ISO на своём сервере для VirtFusion (nginx, прямая HTTPS без редиректов)](../%D0%A5%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3%20install%20ISO%20%D0%BD%D0%B0%20%D1%81%D0%B2%D0%BE%D1%91%D0%BC%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%B5%20%D0%B4%D0%BB%D1%8F%20VirtFusion%20%E2%80%94%20%D0%BF%D1%80%D1%8F%D0%BC%D0%B0%D1%8F%20HTTPS-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0%20%D0%B1%D0%B5%D0%B7%20%D1%80%D0%B5%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D0%B2%20%28nginx%29.md) — практический пример отдачи файла на nginx.
 - [CVE-2026-42945 — NGINX Rift (heap overflow в rewrite-модуле)](../../../Security/Vulns/Linux/CVE/CVE-2026-42945%20%E2%80%94%20NGINX%20Rift%20%28ngx_http_rewrite_module%20heap%20overflow%2C%20RCE-DoS%29.md) — почему важно обновляться.
-- [IPTables](../../../Network/IPTables.md) — открыть 80/443/UDP-443 (QUIC) на фаерволе.
+- [IPTables](../../IPTables.md) — открыть 80/443/UDP-443 (QUIC) на фаерволе.
 
 ## 🔗 Ссылки
 

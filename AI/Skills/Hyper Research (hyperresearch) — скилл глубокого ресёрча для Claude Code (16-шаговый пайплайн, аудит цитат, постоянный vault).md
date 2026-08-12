@@ -16,7 +16,7 @@ tags:
 
 # 🔬 Hyper Research (hyperresearch) — скилл глубокого ресёрча для Claude Code
 
-**hyperresearch** ([github.com/jordan-gibbs/hyperresearch](https://github.com/jordan-gibbs/hyperresearch)) — «harness глубокого исследования» для [Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md): ставится как скилл, запускается командой `/hyperresearch <тема>` и прогоняет **16-шаговый пайплайн** — от разбиения темы на «матрицу покрытия» до состязательной вычитки — а на выходе даёт **отчёт с проверенными цитатами и полным списком источников**. Каждый прочитанный источник складывается в **постоянный локальный vault (Markdown + SQLite)**, который переиспользуется в следующих сессиях. Python 3.11–3.13, **MIT, ~1250★**, автор — Jordan Gibbs; проект живой (обновляется).
+**hyperresearch** ([github.com/jordan-gibbs/hyperresearch](https://github.com/jordan-gibbs/hyperresearch)) — «harness глубокого исследования» для [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md): ставится как скилл, запускается командой `/hyperresearch <тема>` и прогоняет **16-шаговый пайплайн** — от разбиения темы на «матрицу покрытия» до состязательной вычитки — а на выходе даёт **отчёт с проверенными цитатами и полным списком источников**. Каждый прочитанный источник складывается в **постоянный локальный vault (Markdown + SQLite)**, который переиспользуется в следующих сессиях. Python 3.11–3.13, **MIT, ~1250★**, автор — Jordan Gibbs; проект живой (обновляется).
 
 > [!warning] Отделяем факты от рекламы поста
 > Пост обещает, что ИИ «откопает ЛЮБУЮ инфу», и называет скилл «имбовейшим». Сверка с репозиторием:
@@ -72,7 +72,7 @@ Python **3.11–3.13** (3.14 пока не поддерживается — ст
 
 - Скиллы под академический ресёрч: [Awesome-Journal-Skills — скиллы Claude Code под научные журналы](Awesome-Journal-Skills%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D1%8B%20Claude%20Code%20%D0%BF%D0%BE%D0%B4%20%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D1%8B%D0%B5%20%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D1%8B.md)
 - Где берут скиллы и как ставят: [agent-skills — реестр скиллов + CLI](agent-skills%20%E2%80%94%20%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B0%20%28CLI-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%2C%20Claude%20Code-Cursor-Codex%29.md)
-- Другой подход к «сбору знаний» для агента: [PixelRAG — RAG по скриншотам страниц](../PixelRAG%20%E2%80%94%20RAG%20%D0%BF%D0%BE%20%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%D0%B0%D0%BC%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20HTML%20%28visual%20RAG%2C%20VLM-%D1%8D%D0%BC%D0%B1%D0%B5%D0%B4%D0%B4%D0%B8%D0%BD%D0%B3%D0%B8%2C%20%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%20Claude%20Code%29.md) · [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
+- Другой подход к «сбору знаний» для агента: [PixelRAG — RAG по скриншотам страниц](../Agents/Tooling/PixelRAG%20%E2%80%94%20RAG%20%D0%BF%D0%BE%20%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%D0%B0%D0%BC%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20HTML%20%28visual%20RAG%2C%20VLM-%D1%8D%D0%BC%D0%B1%D0%B5%D0%B4%D0%B4%D0%B8%D0%BD%D0%B3%D0%B8%2C%20%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%20Claude%20Code%29.md) · [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
 
 ## 🔗 Ссылки
 

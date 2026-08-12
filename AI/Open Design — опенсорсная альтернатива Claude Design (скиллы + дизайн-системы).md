@@ -16,7 +16,7 @@ tags:
 
 # 🎨 Open Design — опенсорсная альтернатива Claude Design (скиллы + дизайн-системы)
 
-**Open Design** ([github.com/nexu-io/open-design](https://github.com/nexu-io/open-design), [open-design.ai](https://open-design.ai/)) — local-first **опенсорсная альтернатива Claude Design**: генерирует сайты, мобильные интерфейсы, презентации, картинки и видео в фирменных стилях по описанию. Ключевая идея — **сам инструмент не содержит ИИ-агента**: «движком» выступают уже установленные у тебя кодинг-агенты ([Claude Code](Claude%20Code%20%E2%80%94%20гайд.md), Codex, Cursor, Gemini, Copilot, Kimi и др.), а Open Design даёт им **скиллы, дизайн-системы и плагины**. Apache-2.0, зрелый проект (v0.11.0, 17.06.2026, >2300 коммитов), TypeScript.
+**Open Design** ([github.com/nexu-io/open-design](https://github.com/nexu-io/open-design), [open-design.ai](https://open-design.ai/)) — local-first **опенсорсная альтернатива Claude Design**: генерирует сайты, мобильные интерфейсы, презентации, картинки и видео в фирменных стилях по описанию. Ключевая идея — **сам инструмент не содержит ИИ-агента**: «движком» выступают уже установленные у тебя кодинг-агенты ([Claude Code](Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), Codex, Cursor, Gemini, Copilot, Kimi и др.), а Open Design даёт им **скиллы, дизайн-системы и плагины**. Apache-2.0, зрелый проект (v0.11.0, 17.06.2026, >2300 коммитов), TypeScript.
 
 > [!warning] Отделяем факты от рекламы поста
 > | Заявление поста | Реально |
@@ -70,15 +70,15 @@ docker compose up -d        # затем http://localhost:7456
 
 ## 💡 Когда полезно
 
-- Уже пользуешься [Claude Code](Claude%20Code%20%E2%80%94%20гайд.md)/Cursor/Codex и хочешь **быстрые брендовые макеты** (лендинги, слайды, прототипы) с экспортом в HTML/PPTX без вендор-лока.
+- Уже пользуешься [Claude Code](Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)/Cursor/Codex и хочешь **быстрые брендовые макеты** (лендинги, слайды, прототипы) с экспортом в HTML/PPTX без вендор-лока.
 - Нужны **готовые дизайн-системы** известных брендов как стартовая точка.
 - **Не** ждёт чудес «бесплатности»: счёт идёт по твоему агенту/модели; и для серьёзной вёрстки результат всё равно дорабатывается руками.
-- Для генерации **целого сайта в код** — смежно с [AI Website Cloner](AI%20Website%20Cloner%20%E2%80%94%20клонирование%20сайтов%20в%20Next.js%20через%20AI-агентов.md).
+- Для генерации **целого сайта в код** — смежно с [AI Website Cloner](Agents/AI%20Website%20Cloner%20%E2%80%94%20%D0%BA%D0%BB%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2%20%D0%B2%20Next.js%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2.md).
 
 ## 🔗 Ссылки
 
 - Репозиторий: [github.com/nexu-io/open-design](https://github.com/nexu-io/open-design) · сайт: [open-design.ai](https://open-design.ai/)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25906)
-- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md) · [MCP — серверы Model Context Protocol](MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md) · [AI Website Cloner](AI%20Website%20Cloner%20%E2%80%94%20клонирование%20сайтов%20в%20Next.js%20через%20AI-агентов.md)
+- Связанные: [Claude Code — гайд](Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [MCP — серверы Model Context Protocol](Agents/Tooling/MCP%20%E2%80%94%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B%20Model%20Context%20Protocol.md) · [Сводная таблица AI-агентов](Agents/%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md) · [AI Website Cloner](Agents/AI%20Website%20Cloner%20%E2%80%94%20%D0%BA%D0%BB%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B0%D0%B9%D1%82%D0%BE%D0%B2%20%D0%B2%20Next.js%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2.md)
 
 #AI #Дизайн #OpenDesign #ClaudeCode #MCP #Инструменты

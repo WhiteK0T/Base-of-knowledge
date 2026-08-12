@@ -14,7 +14,7 @@ tags:
 
 # 🧩🔁 OpenAPI Sync Until Valid — петля синхронизации OpenAPI-спеки
 
-Петля из каталога [Loops!](Loops%20%E2%80%94%20обзор%20сайта%20и%20каталог%20петель.md): держит **`openapi.yaml`** валидным и **в соответствии с реальными роут-хендлерами** — линтит спеку и чинит расхождения (drift) на каждой итерации, пока линтер не вернёт 0 ошибок.
+Петля из каталога [Loops!](Loops%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%B8%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BF%D0%B5%D1%82%D0%B5%D0%BB%D1%8C.md): держит **`openapi.yaml`** валидным и **в соответствии с реальными роут-хендлерами** — линтит спеку и чинит расхождения (drift) на каждой итерации, пока линтер не вернёт 0 ошибок.
 
 ## ⚙️ Параметры
 
@@ -40,7 +40,7 @@ Step 1: Lint openapi.yaml. Fix spec errors and handler drift until lint passes.
 
 ## 🚀 Как запустить
 
-- **Claude Code:** вставь промпт; дай агенту право запускать `npx @redocly/cli lint`. Самоуправляемая `/loop`-задача (см. [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20гайд.md)).
+- **Claude Code:** вставь промпт; дай агенту право запускать `npx @redocly/cli lint`. Самоуправляемая `/loop`-задача (см. [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)).
 - Нужны: файл спеки `openapi.yaml` и доступный `npx` (Node). Альтернатива линтеру — **Swagger CLI** (`swagger-cli validate`), тогда замени check-команду в промпте.
 
 > [!tip] Подгони путь и линтер
@@ -53,7 +53,7 @@ Step 1: Lint openapi.yaml. Fix spec errors and handler drift until lint passes.
 ## 💡 Когда использовать и ограничения
 
 - Для проектов с **API-first / OpenAPI-контрактом**: после изменения роутов держать спеку валидной и актуальной.
-- Хорошо рядом с петлёй **API Contract Until Match** (приводит реализацию к контракту) — см. [каталог](Loops%20%E2%80%94%20обзор%20сайта%20и%20каталог%20петель.md).
+- Хорошо рядом с петлёй **API Contract Until Match** (приводит реализацию к контракту) — см. [каталог](Loops%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%B8%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BF%D0%B5%D1%82%D0%B5%D0%BB%D1%8C.md).
 - **Неприменима к этому Obsidian-репозиторию** (нет API) — заметка как готовый рецепт под backend-проекты с OpenAPI.
 - Линт ловит **формальную** валидность и часть drift'а; смысловую корректность контракта (правильные ли схемы по сути) всё равно проверяй сам.
 
@@ -61,6 +61,6 @@ Step 1: Lint openapi.yaml. Fix spec errors and handler drift until lint passes.
 
 - Страница петли: [loops.elorm.xyz/loops/openapi-sync-until-valid](https://loops.elorm.xyz/loops/openapi-sync-until-valid)
 - Линтеры: [Redocly CLI](https://redocly.com/docs/cli) · [Spectral](https://stoplight.io/open-source/spectral)
-- Связанные: [Каталог петель Loops!](Loops%20%E2%80%94%20обзор%20сайта%20и%20каталог%20петель.md) · [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20гайд.md)
+- Связанные: [Каталог петель Loops!](Loops%20%E2%80%94%20%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20%D0%B8%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BF%D0%B5%D1%82%D0%B5%D0%BB%D1%8C.md) · [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
 
 #AI #Claude_Code #Workflow #Loops #OpenAPI #API

@@ -20,9 +20,9 @@ tags:
 
 ## 📦 Установка и настройка по ОС
 
-- 🪟 [Установка и настройка Mutagen — Windows](Установка%20и%20настройка%20Mutagen%20%E2%80%94%20Windows.md)
-- 🐧 [Установка и настройка Mutagen — Linux](Установка%20и%20настройка%20Mutagen%20%E2%80%94%20Linux.md)
-- 🍎 [Установка и настройка Mutagen — macOS](Установка%20и%20настройка%20Mutagen%20%E2%80%94%20macOS.md)
+- 🪟 [Установка и настройка Mutagen — Windows](%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B8%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20Mutagen%20%E2%80%94%20Windows.md)
+- 🐧 [Установка и настройка Mutagen — Linux](%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B8%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20Mutagen%20%E2%80%94%20Linux.md)
+- 🍎 [Установка и настройка Mutagen — macOS](%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%B8%20%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0%20Mutagen%20%E2%80%94%20macOS.md)
 
 ## ⚡ Краткий справочник команд
 

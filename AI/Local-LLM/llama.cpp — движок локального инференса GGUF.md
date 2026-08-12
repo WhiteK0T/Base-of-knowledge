@@ -14,10 +14,10 @@ tags:
 
 # 🦙 llama.cpp — движок локального инференса GGUF
 
-**llama.cpp** ([ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)) — низкоуровневый движок для запуска LLM **локально** на CPU и/или GPU. Написан на C/C++ (библиотека `ggml`), без Python-зависимостей, минимум накладных расходов. Это **фундамент**, на котором построены [Ollama](Ollama%20%E2%80%94%20менеджер%20и%20сервер%20локальных%20LLM.md) и [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) — если нужен максимальный контроль и минимальный оверхед, работают прямо с ним.
+**llama.cpp** ([ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)) — низкоуровневый движок для запуска LLM **локально** на CPU и/или GPU. Написан на C/C++ (библиотека `ggml`), без Python-зависимостей, минимум накладных расходов. Это **фундамент**, на котором построены [Ollama](Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) и [LM Studio](LM%20Studio%20%E2%80%94%20%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF-GUI%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) — если нужен максимальный контроль и минимальный оверхед, работают прямо с ним.
 
 > [!info] GGUF — «родной» формат
-> llama.cpp использует формат **GGUF** (единый файл: веса + метаданные + токенизатор) с квантизацией (Q2…Q8, а также f16). Именно в GGUF раздают модели вроде [Gemma 4 12B Coder](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20локальный%20файнтюн%20на%20ризонинге%20Fable%205%20%28GGUF%29.md). Конвертация HF→GGUF — скриптом `convert_hf_to_gguf.py`, квантизация — `llama-quantize`.
+> llama.cpp использует формат **GGUF** (единый файл: веса + метаданные + токенизатор) с квантизацией (Q2…Q8, а также f16). Именно в GGUF раздают модели вроде [Gemma 4 12B Coder](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BD%D1%82%D1%8E%D0%BD%20%D0%BD%D0%B0%20%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D0%B8%D0%BD%D0%B3%D0%B5%20Fable%205%20%28GGUF%29.md). Конвертация HF→GGUF — скриптом `convert_hf_to_gguf.py`, квантизация — `llama-quantize`.
 
 ## 🧰 Основные бинарники
 
@@ -108,11 +108,11 @@ curl http://localhost:8080/v1/chat/completions \
 
 ## 🔌 Подключение к инструментам
 
-`llama-server` даёт `/v1/chat/completions` — его можно прокинуть в общий стек через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) и дёргать из агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов.
+`llama-server` даёт `/v1/chat/completions` — его можно прокинуть в общий стек через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md) и дёргать из агентов / [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)-совместимых клиентов.
 
 ## ⚖️ llama.cpp vs Ollama vs LM Studio
 
-| | llama.cpp | [Ollama](Ollama%20%E2%80%94%20менеджер%20и%20сервер%20локальных%20LLM.md) | [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) |
+| | llama.cpp | [Ollama](Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) | [LM Studio](LM%20Studio%20%E2%80%94%20%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF-GUI%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) |
 | :--- | :--- | :--- | :--- |
 | Уровень | низкий, ручной | удобная обёртка/CLI | десктоп-GUI |
 | Контроль | **максимальный** | средний | минимальный |
@@ -124,11 +124,11 @@ curl http://localhost:8080/v1/chat/completions \
 - Нужен **максимальный контроль** над флагами, квантизацией, оффлоадом на GPU.
 - Минимум зависимостей (один бинарник), сервер/embedded, скрипты, CI.
 - Хочешь **сам квантизовать** модель из HF (`convert_hf_to_gguf.py` + `llama-quantize`).
-- Если хочется «просто запустить» — проще [Ollama](Ollama%20%E2%80%94%20менеджер%20и%20сервер%20локальных%20LLM.md).
+- Если хочется «просто запустить» — проще [Ollama](Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md).
 
 ## 🔗 Ссылки
 
 - Репозиторий: [github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
-- Связанные: [Ollama](Ollama%20%E2%80%94%20менеджер%20и%20сервер%20локальных%20LLM.md) · [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20локальный%20файнтюн%20на%20ризонинге%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md)
+- Связанные: [Ollama](Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) · [LM Studio](LM%20Studio%20%E2%80%94%20%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF-GUI%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BD%D1%82%D1%8E%D0%BD%20%D0%BD%D0%B0%20%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D0%B8%D0%BD%D0%B3%D0%B5%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md)
 
 #AI #LLM #LocalLLM #llama_cpp #GGUF #OpenSource

@@ -15,7 +15,7 @@ tags:
 
 # 🐑 Ollama — менеджер и сервер локальных LLM
 
-**Ollama** ([ollama.com](https://ollama.com)) — удобная обёртка над [llama.cpp](llama.cpp%20%E2%80%94%20движок%20локального%20инференса%20GGUF.md), которая превращает запуск локальных моделей в «`ollama run` — и работает». Берёт на себя **скачивание, хранение, квантизацию по умолчанию и запуск фонового сервера** с OpenAI-совместимым API. Золотая середина между ручным llama.cpp и GUI [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md).
+**Ollama** ([ollama.com](https://ollama.com)) — удобная обёртка над [llama.cpp](llama.cpp%20%E2%80%94%20%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D0%B0%20GGUF.md), которая превращает запуск локальных моделей в «`ollama run` — и работает». Берёт на себя **скачивание, хранение, квантизацию по умолчанию и запуск фонового сервера** с OpenAI-совместимым API. Золотая середина между ручным llama.cpp и GUI [LM Studio](LM%20Studio%20%E2%80%94%20%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF-GUI%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md).
 
 > [!info] Что даёт поверх llama.cpp
 > Реестр моделей (`ollama pull gemma`), управление версиями/тегами, авто-выбор кванта под железо, фоновый демон (`ollama serve`), `Modelfile` для кастомизации (системный промпт, параметры), горячая выгрузка/загрузка моделей из памяти.
@@ -102,7 +102,7 @@ curl http://localhost:11434/v1/chat/completions \
 > [!tip] Доступ по сети и переменные
 > `OLLAMA_HOST=0.0.0.0:11434` — слушать на всех интерфейсах (тогда с других машин: `OLLAMA_HOST=http://server-ip:11434 ollama run ...`). `OLLAMA_MODELS` — каталог хранения моделей (удобно вынести на большой диск/USB). `OLLAMA_KEEP_ALIVE` — сколько держать модель в RAM после запроса.
 
-Через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) Ollama легко включается в общий стек агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов.
+Через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md) Ollama легко включается в общий стек агентов / [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)-совместимых клиентов.
 
 ## ⚠️ На что обратить внимание
 
@@ -113,11 +113,11 @@ curl http://localhost:11434/v1/chat/completions \
 
 - Хочешь «**поставил и работает**», но из консоли/скриптов, с фоновым сервером.
 - Нужен простой реестр моделей и быстрый OpenAI-эндпоинт для агентов.
-- Нужен полный контроль над флагами/квантизацией → [llama.cpp](llama.cpp%20%E2%80%94%20движок%20локального%20инференса%20GGUF.md). Нужен GUI → [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md).
+- Нужен полный контроль над флагами/квантизацией → [llama.cpp](llama.cpp%20%E2%80%94%20%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D0%B0%20GGUF.md). Нужен GUI → [LM Studio](LM%20Studio%20%E2%80%94%20%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF-GUI%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md).
 
 ## 🔗 Ссылки
 
 - Сайт: [ollama.com](https://ollama.com) · репозиторий: [github.com/ollama/ollama](https://github.com/ollama/ollama) · реестр моделей: [ollama.com/library](https://ollama.com/library)
-- Связанные: [llama.cpp](llama.cpp%20%E2%80%94%20движок%20локального%20инференса%20GGUF.md) · [LM Studio](LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20локальный%20файнтюн%20на%20ризонинге%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md)
+- Связанные: [llama.cpp](llama.cpp%20%E2%80%94%20%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D0%B0%20GGUF.md) · [LM Studio](LM%20Studio%20%E2%80%94%20%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF-GUI%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) · [Gemma 4 12B Coder (GGUF)](../Model/Gemma%204%2012B%20Coder%20%E2%80%94%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%84%D0%B0%D0%B9%D0%BD%D1%82%D1%8E%D0%BD%20%D0%BD%D0%B0%20%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D0%B8%D0%BD%D0%B3%D0%B5%20Fable%205%20%28GGUF%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md)
 
 #AI #LLM #LocalLLM #Ollama #GGUF #OpenSource

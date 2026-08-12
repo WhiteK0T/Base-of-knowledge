@@ -127,8 +127,8 @@ curl http://127.0.0.1:4000/v1/chat/completions \
 
 ## 🔗 См. также
 
-- [MCP — серверы Model Context Protocol](../MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md)
-- [Сводная таблица AI-агентов для программирования (август 2026)](../Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md)
-- [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20гайд.md)
+- [MCP — серверы Model Context Protocol](../Agents/Tooling/MCP%20%E2%80%94%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B%20Model%20Context%20Protocol.md)
+- [Сводная таблица AI-агентов для программирования (август 2026)](../Agents/%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md)
+- [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
 
 #LiteLLM #LLM #Proxy #Gateway #AI

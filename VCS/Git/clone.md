@@ -96,7 +96,7 @@ git clone --mirror <url> repo-backup.git    # все refs, bare
 
 ## 🩺 Частые вопросы
 
-- **«Permission denied (publickey)»** — SSH-ключ не настроен/не добавлен на GitHub; склонируй по HTTPS или настрой [SSH-ключи](../../Network/SSH/SSH-Ключи.md).
+- **«Permission denied (publickey)»** — SSH-ключ не настроен/не добавлен на GitHub; склонируй по HTTPS или настрой [SSH-ключи](../../Network/SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md).
 - **Очень долго/много весит** — `git clone --depth 1` (shallow), при необходимости `git fetch --unshallow` позже.
 - **Подмодули пустые** — клонировал без `--recurse-submodules`: `git submodule update --init --recursive`.
 - **Хочу склонировать в текущий (непустой) каталог** — clone требует пустой/новый каталог; вариант: клонировать рядом и перенести `.git`, либо `git init` + `git remote add` + `git pull`.

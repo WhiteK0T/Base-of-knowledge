@@ -16,7 +16,7 @@ tags:
 
 # 🧰 awesome-hermes-skills — каталог скиллов для Hermes Agent
 
-**awesome-hermes-skills** ([github.com/ZeroPointRepo/awesome-hermes-skills](https://github.com/ZeroPointRepo/awesome-hermes-skills)) — курируемый **awesome-list готовых к установке скиллов** для **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** (самообучающийся ИИ-агент от **Nous Research**). Собирает встроенные скиллы, опциональный каталог и проверенные community-скиллы в один список с командами установки. Скиллы **кросс-совместимы** с [Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), OpenClaw, Cursor и Windsurf (общий формат `SKILL.md`). MIT.
+**awesome-hermes-skills** ([github.com/ZeroPointRepo/awesome-hermes-skills](https://github.com/ZeroPointRepo/awesome-hermes-skills)) — курируемый **awesome-list готовых к установке скиллов** для **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** (самообучающийся ИИ-агент от **Nous Research**). Собирает встроенные скиллы, опциональный каталог и проверенные community-скиллы в один список с командами установки. Скиллы **кросс-совместимы** с [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), OpenClaw, Cursor и Windsurf (общий формат `SKILL.md`). MIT.
 
 > [!warning] Отделяем факты от рекламы поста
 > Пост называет это «ультимативным паком» и «имбой, кроме которой не нужно НИЧЕГО». Сверка с репозиторием:
@@ -63,7 +63,7 @@ tags:
 
 | Система | Как использовать |
 | :--- | :--- |
-| **Gentoo / Debian-Ubuntu / Arch** | ✅ ставишь Hermes (или используешь скиллы в [Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)/Cursor/Windsurf); каталог — источник готовых `SKILL.md` |
+| **Gentoo / Debian-Ubuntu / Arch** | ✅ ставишь Hermes (или используешь скиллы в [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)/Cursor/Windsurf); каталог — источник готовых `SKILL.md` |
 | **Entware / RT-AX56U** | ⚠️ сам агент на роутере не гоняют (нужен LLM-бэкенд/Python-окружение). Hermes «запускается на $5 VPS» — вот туда и ставь, а список читай откуда угодно |
 
 ## 💡 Вывод
@@ -76,6 +76,6 @@ tags:
 
 - Репозиторий: [github.com/ZeroPointRepo/awesome-hermes-skills](https://github.com/ZeroPointRepo/awesome-hermes-skills) · Агент: [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/26483)
-- Связанные: [agent-skills — реестр скиллов + CLI](agent-skills%20%E2%80%94%20%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B0%20%28CLI-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%2C%20Claude%20Code-Cursor-Codex%29.md) · [Ponytail — скилл против «графомании»](Ponytail%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%C2%AB%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8%C2%BB%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B5.md) · [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [Сводная таблица AI-агентов](../%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md)
+- Связанные: [agent-skills — реестр скиллов + CLI](agent-skills%20%E2%80%94%20%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B0%20%28CLI-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%2C%20Claude%20Code-Cursor-Codex%29.md) · [Ponytail — скилл против «графомании»](Ponytail%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%C2%AB%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8%C2%BB%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B5.md) · [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [Сводная таблица AI-агентов](../Agents/%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md)
 
 #AI #Skills #Hermes #NousResearch #Каталог #ClaudeCode #Ресурсы

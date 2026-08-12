@@ -37,7 +37,7 @@ tags:
 - Быстро устаревает: версии моделей и фич Claude меняются часто; смотри дату поста.
 
 > [!tip] Где официальная и проверенная информация
-> За фактами — официальная документация Anthropic ([docs.anthropic.com](https://docs.anthropic.com)) и твои локальные конспекты: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md), [шпаргалка команд](Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md), [MCP — серверы Model Context Protocol](MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md). Ньюслеттер — для идей и приёмов, а не как источник истины.
+> За фактами — официальная документация Anthropic ([docs.anthropic.com](https://docs.anthropic.com)) и твои локальные конспекты: [Claude Code — гайд](Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), [шпаргалка команд](Agents/Claude%20Code%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4.md), [MCP — серверы Model Context Protocol](Agents/Tooling/MCP%20%E2%80%94%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B%20Model%20Context%20Protocol.md). Ньюслеттер — для идей и приёмов, а не как источник истины.
 
 ## 💡 Когда полезно
 
@@ -49,6 +49,6 @@ tags:
 
 - Ресурс: [ruben.substack.com (архив)](https://ruben.substack.com/archive?sort=new)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25900)
-- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md) · [Claude Code — шпаргалка команд](Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md) · [MCP — серверы Model Context Protocol](MCP%20%E2%80%94%20серверы%20Model%20Context%20Protocol.md)
+- Связанные: [Claude Code — гайд](Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [Claude Code — шпаргалка команд](Agents/Claude%20Code%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4.md) · [MCP — серверы Model Context Protocol](Agents/Tooling/MCP%20%E2%80%94%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B%20Model%20Context%20Protocol.md)
 
 #AI #Claude #Гайды #Ресурсы

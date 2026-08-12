@@ -15,7 +15,7 @@ tags:
 
 # 💪 workout-gate — плагин Claude Code, блокирующий промпт до отжиманий (вебка)
 
-**workout-gate** ([github.com/BotchetDig/workout-gate](https://github.com/BotchetDig/workout-gate)) — шуточно-полезный **хук для [Claude Code](Claude%20Code%20%E2%80%94%20гайд.md)**: периодически замораживает ввод промпта, включает **веб-камеру** и не пускает дальше, пока ты не сделаешь отжимания или приседания — счёт повторов идёт **вживую по камере**. Девиз: «Your AI works hard, so should you». MIT, ~127★, Python. Распознавание поз — **локально** через MediaPipe, без облака.
+**workout-gate** ([github.com/BotchetDig/workout-gate](https://github.com/BotchetDig/workout-gate)) — шуточно-полезный **хук для [Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)**: периодически замораживает ввод промпта, включает **веб-камеру** и не пускает дальше, пока ты не сделаешь отжимания или приседания — счёт повторов идёт **вживую по камере**. Девиз: «Your AI works hard, so should you». MIT, ~127★, Python. Распознавание поз — **локально** через MediaPipe, без облака.
 
 > [!warning] Отделяем факты от подачи поста
 > | Заявление поста | Реально |
@@ -77,7 +77,7 @@ git clone https://github.com/BotchetDig/workout-gate.git && cd workout-gate
 
 ## 💡 Когда полезно
 
-- Сидишь в [Claude Code](Claude%20Code%20%E2%80%94%20гайд.md) часами и хочешь **принудительные микро-паузы** на разминку — «beneficial friction».
+- Сидишь в [Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) часами и хочешь **принудительные микро-паузы** на разминку — «beneficial friction».
 - Заходит геймификация (стрики, графики) и не смущает работа с камерой.
 - **Не для прод-окружения/совместных репо** — это новелти-хук; на сервере/CI/без вебки бессмысленно (там он просто fail-open пропускает).
 
@@ -85,6 +85,6 @@ git clone https://github.com/BotchetDig/workout-gate.git && cd workout-gate
 
 - Репозиторий: [github.com/BotchetDig/workout-gate](https://github.com/BotchetDig/workout-gate)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25903)
-- Связанные: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20гайд.md) · [Claude Code — шпаргалка команд](Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md) · [Understand Anything (плагин-граф по коду)](Code-Graph/Understand%20Anything%20%E2%80%94%20интерактивный%20граф%20знаний%20по%20кодовой%20базе.md)
+- Связанные: [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [Claude Code — шпаргалка команд](../Claude%20Code%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4.md) · [Understand Anything (плагин-граф по коду)](../../Code-Graph/Understand%20Anything%20%E2%80%94%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%B3%D1%80%D0%B0%D1%84%20%D0%B7%D0%BD%D0%B0%D0%BD%D0%B8%D0%B9%20%D0%BF%D0%BE%20%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2%D0%BE%D0%B9%20%D0%B1%D0%B0%D0%B7%D0%B5.md)
 
 #AI #ClaudeCode #Плагин #Хук #Здоровье #workout-gate

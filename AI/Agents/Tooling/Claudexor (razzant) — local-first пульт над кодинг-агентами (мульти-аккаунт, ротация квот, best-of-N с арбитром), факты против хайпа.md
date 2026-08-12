@@ -17,7 +17,7 @@ tags:
 
 # 🎛️ Claudexor — local-first «пульт» над кодинг-агентами
 
-**Claudexor** ([github.com/razzant/claudexor](https://github.com/razzant/claudexor)) — **local-first control plane** поверх кодинг-агентов, которые ты **уже оплачиваешь**: [Claude Code](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), Codex CLI, Cursor CLI, OpenCode + сырые API-адаптеры — под одним типизированным интерфейсом. Идея: у каждого харнесса свой логин и квота, а Claudexor даёт слой, которого у вендоров нет — **несколько аккаунтов с ротацией по квоте, гонки best-of-N с независимым арбитром, честный учёт бюджета и защищённые пути**. Всё крутится **на твоей машине, файлы — источник правды, телеметрии нет**. MIT, TypeScript, ~250★, автор один (razzant), активная разработка (v3.0).
+**Claudexor** ([github.com/razzant/claudexor](https://github.com/razzant/claudexor)) — **local-first control plane** поверх кодинг-агентов, которые ты **уже оплачиваешь**: [Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), Codex CLI, Cursor CLI, OpenCode + сырые API-адаптеры — под одним типизированным интерфейсом. Идея: у каждого харнесса свой логин и квота, а Claudexor даёт слой, которого у вендоров нет — **несколько аккаунтов с ротацией по квоте, гонки best-of-N с независимым арбитром, честный учёт бюджета и защищённые пути**. Всё крутится **на твоей машине, файлы — источник правды, телеметрии нет**. MIT, TypeScript, ~250★, автор один (razzant), активная разработка (v3.0).
 
 > [!warning] Отделяем факты от рекламы поста
 > | Заявление поста | Реально |
@@ -50,9 +50,9 @@ claudexor doctor           # проверка окружения
 
 **Нужно**: Node.js ≥ 20.19, `pnpm` (через corepack), `git`, и **хотя бы один залогиненный вендорский CLI** (`claude`/`codex`/`cursor-agent`/`opencode`) **или** API-ключ (`ANTHROPIC_API_KEY`/`OPENAI_API_KEY`…). Логиниться нужно **через Claudexor**, а не через голый вендорский CLI. На macOS проще поставить приложение из [Releases](https://github.com/razzant/claudexor/releases) (подписанный DMG).
 
-## 🔁 Чем отличается от [CCS (Claude Code Switch)](ProxyLLM/CCS%20%28Claude%20Code%20Switch%29%20%E2%80%94%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Claude%20Code.md)
+## 🔁 Чем отличается от [CCS (Claude Code Switch)](../../ProxyLLM/CCS%20%28Claude%20Code%20Switch%29%20%E2%80%94%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Claude%20Code.md)
 
-| | **Claudexor** | **[CCS](ProxyLLM/CCS%20%28Claude%20Code%20Switch%29%20%E2%80%94%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Claude%20Code.md)** |
+| | **Claudexor** | **[CCS](../../ProxyLLM/CCS%20%28Claude%20Code%20Switch%29%20%E2%80%94%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Claude%20Code.md)** |
 | :--- | :--- | :--- |
 | Что делает | **оркестратор**: мульти-агент, гонки, арбитр, учёт квот | **переключатель** провайдеров/аккаунтов для Claude Code |
 | Охват | Claude Code + Codex + Cursor + OpenCode + API | в основном Claude Code |
@@ -70,9 +70,9 @@ claudexor doctor           # проверка окружения
 
 ## 🔗 Связанные заметки
 
-- Лёгкий аналог-переключатель: [CCS (Claude Code Switch)](ProxyLLM/CCS%20%28Claude%20Code%20Switch%29%20%E2%80%94%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Claude%20Code.md)
-- Обзор рынка агентов: [Сводная таблица AI-агентов для программирования](%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md) · Эталон: [Claude Code — гайд](Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
-- Идея «несколько моделей + судья»: [OpenRouter Fusion (панель моделей + судья)](ProxyLLM/OpenRouter%20Fusion%20%E2%80%94%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9%20%2B%20%D1%81%D1%83%D0%B4%D1%8C%D1%8F%20%28%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8-LLM%20%D1%81%D0%B8%D0%BD%D1%82%D0%B5%D0%B7%29.md)
+- Лёгкий аналог-переключатель: [CCS (Claude Code Switch)](../../ProxyLLM/CCS%20%28Claude%20Code%20Switch%29%20%E2%80%94%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B0%D0%B9%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%20%D0%B8%20%D0%B0%D0%BA%D0%BA%D0%B0%D1%83%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20Claude%20Code.md)
+- Обзор рынка агентов: [Сводная таблица AI-агентов для программирования](../%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md) · Эталон: [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)
+- Идея «несколько моделей + судья»: [OpenRouter Fusion (панель моделей + судья)](../../ProxyLLM/OpenRouter%20Fusion%20%E2%80%94%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B5%D0%B9%20%2B%20%D1%81%D1%83%D0%B4%D1%8C%D1%8F%20%28%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8-LLM%20%D1%81%D0%B8%D0%BD%D1%82%D0%B5%D0%B7%29.md)
 
 ## 🔗 Ссылки
 

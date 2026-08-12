@@ -59,7 +59,7 @@ tags:
 
 ## 🚀 Как запустить локально
 
-Целевые системы владельца — десктопные дистрибутивы (Gentoo, Debian/Ubuntu, Arch). Сначала ставим движок инференса, затем берём GGUF-файл. Подробно про каждый движок — в отдельных заметках: [llama.cpp](../Local-LLM/llama.cpp%20%E2%80%94%20движок%20локального%20инференса%20GGUF.md) · [Ollama](../Local-LLM/Ollama%20%E2%80%94%20менеджер%20и%20сервер%20локальных%20LLM.md) · [LM Studio](../Local-LLM/LM%20Studio%20%E2%80%94%20десктоп-GUI%20для%20локальных%20LLM.md).
+Целевые системы владельца — десктопные дистрибутивы (Gentoo, Debian/Ubuntu, Arch). Сначала ставим движок инференса, затем берём GGUF-файл. Подробно про каждый движок — в отдельных заметках: [llama.cpp](../Local-LLM/llama.cpp%20%E2%80%94%20%D0%B4%D0%B2%D0%B8%D0%B6%D0%BE%D0%BA%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%84%D0%B5%D1%80%D0%B5%D0%BD%D1%81%D0%B0%20GGUF.md) · [Ollama](../Local-LLM/Ollama%20%E2%80%94%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20%D0%B8%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md) · [LM Studio](../Local-LLM/LM%20Studio%20%E2%80%94%20%D0%B4%D0%B5%D1%81%D0%BA%D1%82%D0%BE%D0%BF-GUI%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20LLM.md).
 
 ### llama.cpp (самый «нативный» путь)
 
@@ -102,7 +102,7 @@ GUI-вариант: в поиске моделей вбить `yuxinlu1/gemma-4-
 
 ## 🔌 Подключить к своим инструментам
 
-`llama-server` / Ollama / LM Studio дают **OpenAI-совместимый эндпоинт** (`/v1/chat/completions`). Его удобно завести в общий стек через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) и дальше дёргать из агентов / [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов — так же, как [FreeQwenApi](../ProxyLLM/FreeQwenApi%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20Qwen%20Chat.md) / [FreeDeepseekAPI](../ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20DeepSeek.md), только полностью локально.
+`llama-server` / Ollama / LM Studio дают **OpenAI-совместимый эндпоинт** (`/v1/chat/completions`). Его удобно завести в общий стек через [LiteLLM](../ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md) и дальше дёргать из агентов / [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)-совместимых клиентов — так же, как [FreeQwenApi](../ProxyLLM/FreeQwenApi%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20Qwen%20Chat.md) / [FreeDeepseekAPI](../ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20DeepSeek.md), только полностью локально.
 
 ## ⚖️ Лицензия и правовые нюансы
 
@@ -115,20 +115,20 @@ GUI-вариант: в поиске моделей вбить `yuxinlu1/gemma-4-
 ## 🛡️ Безопасность
 
 > [!danger] «Refuses less than base» — меньше отказов
-> В карточке модели прямо сказано: из-за узкого, заточенного под задачи обучения она **отказывает реже базовой Gemma** и авторы советуют «добавить свои guardrails для продакшна». То есть встроенных предохранителей меньше — не подключай вслепую к чувствительным/публичным сценариям без своего слоя модерации. (Похожий эффект целенаправленно делают через [abliteration](../Heretic%20%E2%80%94%20снятие%20safety-ограничений%20с%20открытых%20LLM%20%28abliteration%29.md).)
+> В карточке модели прямо сказано: из-за узкого, заточенного под задачи обучения она **отказывает реже базовой Gemma** и авторы советуют «добавить свои guardrails для продакшна». То есть встроенных предохранителей меньше — не подключай вслепую к чувствительным/публичным сценариям без своего слоя модерации. (Похожий эффект целенаправленно делают через [abliteration](../Heretic%20%E2%80%94%20%D1%81%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%20safety-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D1%85%20LLM%20%28abliteration%29.md).)
 
 ## 💡 Стоит ли смотреть
 
 - **Да**, если нужен **локальный** кодинг-ассистент по Python/алгоритмам, который влезает на десктоп (8–16 ГБ RAM) и работает офлайн/приватно.
 - **Скептически** к подаче «это Fable 5»: это 12B Gemma, а не топовая облачная модель; на широких задачах будет ощутимо слабее.
 - **Учитывай** лицензию Gemma, спорность дистилляции чужих трейсов и сниженный уровень safety-отказов.
-- Для сравнения с другими открытыми кодинг-LLM — см. [GLM 5.2](../GLM%205.2%20%E2%80%94%20открытая%20китайская%20LLM%20%28Z.ai%2C%20кодинг%29.md) и [сводную таблицу AI-агентов](../Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md).
+- Для сравнения с другими открытыми кодинг-LLM — см. [GLM 5.2](../GLM%205.2%20%E2%80%94%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F%20%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%20LLM%20%28Z.ai%2C%20%D0%BA%D0%BE%D0%B4%D0%B8%D0%BD%D0%B3%29.md) и [сводную таблицу AI-агентов](../Agents/%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md).
 
 ## 🔗 Ссылки
 
 - Модель: [huggingface.co/yuxinlu1/…fable5-composer2.5-v1-GGUF](https://huggingface.co/yuxinlu1/gemma-4-12B-coder-fable5-composer2.5-v1-GGUF)
 - llama.cpp: [github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) · Ollama: [ollama.com](https://ollama.com)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25840)
-- Связанные: [GLM 5.2 — открытая LLM](../GLM%205.2%20%E2%80%94%20открытая%20китайская%20LLM%20%28Z.ai%2C%20кодинг%29.md) · [Heretic — abliteration](../Heretic%20%E2%80%94%20снятие%20safety-ограничений%20с%20открытых%20LLM%20%28abliteration%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) · [Сводная таблица AI-агентов](../Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md)
+- Связанные: [GLM 5.2 — открытая LLM](../GLM%205.2%20%E2%80%94%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0%D1%8F%20%D0%BA%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%20LLM%20%28Z.ai%2C%20%D0%BA%D0%BE%D0%B4%D0%B8%D0%BD%D0%B3%29.md) · [Heretic — abliteration](../Heretic%20%E2%80%94%20%D1%81%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%20safety-%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B9%20%D1%81%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D1%85%20LLM%20%28abliteration%29.md) · [LiteLLM — шлюз к LLM](../ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md) · [Сводная таблица AI-агентов](../Agents/%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md)
 
 #AI #LLM #Gemma #LocalLLM #GGUF #OpenSource

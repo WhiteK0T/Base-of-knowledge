@@ -13,10 +13,10 @@ tags:
 
 # 🐱 kitty — GPU-терминал с kittens и графикой (OpenGL)
 
-**kitty** ([sw.kovidgoyal.net/kitty](https://sw.kovidgoyal.net/kitty/), [github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)) — быстрый, **функционально богатый** GPU-терминал на **OpenGL** от Kovid Goyal (автор Calibre). Написан на Python + C + Go, лицензия **GPL-3.0**. В отличие от минималистичного [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md), kitty — это «комбайн»: вкладки, сплиты (layouts), **собственный протокол вывода картинок**, расширения-**kittens** и удалённое управление из коробки.
+**kitty** ([sw.kovidgoyal.net/kitty](https://sw.kovidgoyal.net/kitty/), [github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)) — быстрый, **функционально богатый** GPU-терминал на **OpenGL** от Kovid Goyal (автор Calibre). Написан на Python + C + Go, лицензия **GPL-3.0**. В отличие от минималистичного [Alacritty](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md), kitty — это «комбайн»: вкладки, сплиты (layouts), **собственный протокол вывода картинок**, расширения-**kittens** и удалённое управление из коробки.
 
 > [!info] «kitty graphics protocol» — де-факто стандарт картинок в терминале
-> kitty придумал популярный протокол показа изображений прямо в терминале; его сегодня поддерживают и другие (в т.ч. [Rio](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md)). Картинки рисует встроенный kitten `icat`: `kitten icat image.png`.
+> kitty придумал популярный протокол показа изображений прямо в терминале; его сегодня поддерживают и другие (в т.ч. [Rio](Rio%20%E2%80%94%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20WebGPU%20%28Rust%29.md)). Картинки рисует встроенный kitten `icat`: `kitten icat image.png`.
 
 ## ✨ Возможности
 
@@ -42,7 +42,7 @@ sudo pacman -S kitty
 ```
 
 > [!danger] Не для роутера/Entware
-> kitty — графическое OpenGL-приложение, нужен GPU и дисплей. На ASUS RT-AX56U (Entware) **неприменимо**. Но к роутеру удобно ходить kitten'ом `ssh` (`kitten ssh user@router`), а долгие задачи на нём держать в [tmux](tmux%20%E2%80%94%20терминальный%20мультиплексор%20%28сессии%2C%20окна%2C%20панели%29.md).
+> kitty — графическое OpenGL-приложение, нужен GPU и дисплей. На ASUS RT-AX56U (Entware) **неприменимо**. Но к роутеру удобно ходить kitten'ом `ssh` (`kitten ssh user@router`), а долгие задачи на нём держать в [tmux](tmux%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BE%D1%80%20%28%D1%81%D0%B5%D1%81%D1%81%D0%B8%D0%B8%2C%20%D0%BE%D0%BA%D0%BD%D0%B0%2C%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D0%B8%29.md).
 
 ## ⚙️ Конфиг (`~/.config/kitty/kitty.conf`)
 
@@ -117,7 +117,7 @@ auto_reload_config      yes
 
 ## ⚖️ Сравнение терминалов
 
-| | [Rio](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) | [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) | kitty | [Konsole](Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md) |
+| | [Rio](Rio%20%E2%80%94%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20WebGPU%20%28Rust%29.md) | [Alacritty](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md) | kitty | [Konsole](Konsole%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20KDE%20%28%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D0%B8%2C%20split-view%2C%20Qt%29.md) |
 | :--- | :--- | :--- | :--- | :--- |
 | Рендер | WebGPU | OpenGL | **OpenGL** | Qt (CPU) |
 | Вкладки/сплиты | да | нет | **да** (layouts) | да |
@@ -132,11 +132,11 @@ auto_reload_config      yes
 
 - Нужен **богатый** терминал «всё включено»: вкладки, сплиты, картинки, скриптуемость — без внешних утилит.
 - Активно показываешь **изображения/графики** в терминале или пользуешься kittens (`diff`, `ssh`, `icat`).
-- Если важен **минимализм/максимальная скорость** — [Alacritty](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md); если хочется современный **WebGPU**-стек — [Rio](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md).
+- Если важен **минимализм/максимальная скорость** — [Alacritty](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md); если хочется современный **WebGPU**-стек — [Rio](Rio%20%E2%80%94%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20WebGPU%20%28Rust%29.md).
 
 ## 🔗 Ссылки
 
 - Сайт/доки: [sw.kovidgoyal.net/kitty](https://sw.kovidgoyal.net/kitty/) · [конфиг](https://sw.kovidgoyal.net/kitty/conf/) · репозиторий: [github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)
-- Связанные: [Rio — терминал на WebGPU](Rio%20%E2%80%94%20быстрый%20терминал%20на%20WebGPU%20%28Rust%29.md) · [Alacritty — минимализм](Alacritty%20%E2%80%94%20GPU-терминал%20на%20OpenGL%20%28минимализм%29.md) · [Konsole — терминал KDE](Konsole%20%E2%80%94%20терминал%20KDE%20%28профили%2C%20split-view%2C%20Qt%29.md) · [tmux — мультиплексор](tmux%20%E2%80%94%20терминальный%20мультиплексор%20%28сессии%2C%20окна%2C%20панели%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-Базовое%20руководство.md)
+- Связанные: [Rio — терминал на WebGPU](Rio%20%E2%80%94%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20WebGPU%20%28Rust%29.md) · [Alacritty — минимализм](Alacritty%20%E2%80%94%20GPU-%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20%D0%BD%D0%B0%20OpenGL%20%28%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D0%B7%D0%BC%29.md) · [Konsole — терминал KDE](Konsole%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%20KDE%20%28%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D0%B8%2C%20split-view%2C%20Qt%29.md) · [tmux — мультиплексор](tmux%20%E2%80%94%20%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%BF%D0%BB%D0%B5%D0%BA%D1%81%D0%BE%D1%80%20%28%D1%81%D0%B5%D1%81%D1%81%D0%B8%D0%B8%2C%20%D0%BE%D0%BA%D0%BD%D0%B0%2C%20%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D0%B8%29.md) · [SSH — базовое руководство](../Network/SSH/SSH-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md)
 
 #Terminal #kitty #OpenGL #Linux

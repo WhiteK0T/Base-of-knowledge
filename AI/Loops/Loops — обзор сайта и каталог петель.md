@@ -120,11 +120,11 @@ Closed-loop workflow — это сценарий, где агент **самос
 
 Чтобы не зависеть от доступности сайта, отдельные петли разобраны в самостоятельных заметках — с **kickoff-промптом**, check-командой, лимитом итераций, условием выхода, guardrails и адаптацией под стек:
 
-- [Autoloop TDD — петля TDD (red → green → refactor)](Autoloop%20TDD%20%E2%80%94%20петля%20TDD%20%28red-green-refactor%29.md)
-- [PR Self-Review — петля самостоятельного ревью diff](PR%20Self-Review%20%E2%80%94%20петля%20самостоятельного%20ревью%20diff.md)
-- [Docs Sync After Edits — петля синхронизации документации](Docs%20Sync%20After%20Edits%20%E2%80%94%20петля%20синхронизации%20документации.md)
-- [Changelog Sync After Ship — петля обновления чейнджлога](Changelog%20Sync%20After%20Ship%20%E2%80%94%20петля%20обновления%20чейнджлога.md)
-- [OpenAPI Sync Until Valid — петля синхронизации OpenAPI-спеки](OpenAPI%20Sync%20Until%20Valid%20%E2%80%94%20петля%20синхронизации%20OpenAPI-спеки.md)
+- [Autoloop TDD — петля TDD (red → green → refactor)](Autoloop%20TDD%20%E2%80%94%20%D0%BF%D0%B5%D1%82%D0%BB%D1%8F%20TDD%20%28red-green-refactor%29.md)
+- [PR Self-Review — петля самостоятельного ревью diff](PR%20Self-Review%20%E2%80%94%20%D0%BF%D0%B5%D1%82%D0%BB%D1%8F%20%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%80%D0%B5%D0%B2%D1%8C%D1%8E%20diff.md)
+- [Docs Sync After Edits — петля синхронизации документации](Docs%20Sync%20After%20Edits%20%E2%80%94%20%D0%BF%D0%B5%D1%82%D0%BB%D1%8F%20%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8.md)
+- [Changelog Sync After Ship — петля обновления чейнджлога](Changelog%20Sync%20After%20Ship%20%E2%80%94%20%D0%BF%D0%B5%D1%82%D0%BB%D1%8F%20%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%87%D0%B5%D0%B9%D0%BD%D0%B4%D0%B6%D0%BB%D0%BE%D0%B3%D0%B0.md)
+- [OpenAPI Sync Until Valid — петля синхронизации OpenAPI-спеки](OpenAPI%20Sync%20Until%20Valid%20%E2%80%94%20%D0%BF%D0%B5%D1%82%D0%BB%D1%8F%20%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8%20OpenAPI-%D1%81%D0%BF%D0%B5%D0%BA%D0%B8.md)
 
 ## 🚀 Как использовать
 
@@ -132,7 +132,7 @@ Closed-loop workflow — это сценарий, где агент **самос
 
 1. **Скопировать kickoff-инструкции** — готовый промпт-затравку вставить агенту.
 2. **Открыть в IDE** — сразу в редактор.
-3. **Установить hook-бандл** — автоматизация через хуки агента (для Claude Code это [хуки](../Claude%20Code%20%E2%80%94%20гайд.md), срабатывающие на события).
+3. **Установить hook-бандл** — автоматизация через хуки агента (для Claude Code это [хуки](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md), срабатывающие на события).
 
 **Совместимость:** Claude Code, Cursor, Codex, Gemini CLI, OpenCode.
 
@@ -156,6 +156,6 @@ Closed-loop workflow — это сценарий, где агент **самос
 
 - Сайт: [loops.elorm.xyz](https://loops.elorm.xyz/)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25830)
-- Связанные: [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20гайд.md) · [Claude Code — шпаргалка команд](../Claude%20Code%20%E2%80%94%20шпаргалка%20команд.md) · [Ponytail (минимизация кода)](../Skills/Ponytail%20%E2%80%94%20скилл%20против%20%C2%ABграфомании%C2%BB%20AI-агентов%20в%20коде.md)
+- Связанные: [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [Claude Code — шпаргалка команд](../Agents/Claude%20Code%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4.md) · [Ponytail (минимизация кода)](../Skills/Ponytail%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%C2%AB%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8%C2%BB%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B5.md)
 
 #AI #Claude_Code #Workflow #Агенты #Ресурсы

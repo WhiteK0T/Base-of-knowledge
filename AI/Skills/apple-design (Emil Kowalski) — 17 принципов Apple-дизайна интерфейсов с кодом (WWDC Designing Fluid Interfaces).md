@@ -17,7 +17,7 @@ tags:
 
 # 🍎 apple-design — 17 принципов Apple-дизайна интерфейсов (с кодом)
 
-**apple-design** — скилл из репозитория [emilkowalski/skills](https://github.com/emilkowalski/skills) («Skills for Design Engineers», MIT, **~20k★**). Автор — **Emil Kowalski**, известный design-инженер (создатель [Sonner](https://github.com/emilkowalski/sonner)/[Vaul](https://github.com/emilkowalski/vaul), автор курса по анимациям). Скилл — один файл [`SKILL.md`](https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md), где **17 принципов** «живого» интерфейса Apple разобраны и **переложены на веб** (CSS, Pointer Events, `requestAnimationFrame`, spring-библиотеки вроде Motion/Framer Motion) — к каждому есть **пример кода**. Ставится в [Claude Code](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)/агента как обычный Agent Skill.
+**apple-design** — скилл из репозитория [emilkowalski/skills](https://github.com/emilkowalski/skills) («Skills for Design Engineers», MIT, **~20k★**). Автор — **Emil Kowalski**, известный design-инженер (создатель [Sonner](https://github.com/emilkowalski/sonner)/[Vaul](https://github.com/emilkowalski/vaul), автор курса по анимациям). Скилл — один файл [`SKILL.md`](https://github.com/emilkowalski/skills/blob/main/skills/apple-design/SKILL.md), где **17 принципов** «живого» интерфейса Apple разобраны и **переложены на веб** (CSS, Pointer Events, `requestAnimationFrame`, spring-библиотеки вроде Motion/Framer Motion) — к каждому есть **пример кода**. Ставится в [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)/агента как обычный Agent Skill.
 
 > [!info] Отделяем факты от рекламы поста
 > | Заявление поста | Реально |

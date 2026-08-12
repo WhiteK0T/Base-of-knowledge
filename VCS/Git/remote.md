@@ -74,7 +74,7 @@ git remote set-url origin git@github.com:WhiteK0T/Base-of-knowledge.git
 ```
 
 > [!tip] SSH удобнее для частых push
-> С SSH-ключом не нужно каждый раз вводить токен. См. заметки по [SSH-ключам](../../Network/SSH/SSH-Ключи.md). Проверить, что remote на SSH: `git remote -v` (URL начинается с `git@`).
+> С SSH-ключом не нужно каждый раз вводить токен. См. заметки по [SSH-ключам](../../Network/SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md). Проверить, что remote на SSH: `git remote -v` (URL начинается с `git@`).
 
 ## 🍴 Сценарий форка — origin + upstream
 

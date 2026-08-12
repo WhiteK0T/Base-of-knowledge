@@ -257,6 +257,6 @@ git-crypt unlock ~/bok.key
 ## 🔗 Ссылки
 
 - Репозиторий/доки: [github.com/AGWA/git-crypt](https://github.com/AGWA/git-crypt) · Gentoo: [dev-vcs/git-crypt](https://packages.gentoo.org/packages/dev-vcs/git-crypt)
-- Связанные: [.gitignore — игнорирование файлов](gitignore.md) · [Git — карта команд (шпаргалка)](Git%20%E2%80%94%20карта%20команд%20%28шпаргалка%29.md) · [git config — настройки Git](config.md)
+- Связанные: [.gitignore — игнорирование файлов](gitignore.md) · [Git — карта команд (шпаргалка)](Git%20%E2%80%94%20%D0%BA%D0%B0%D1%80%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%20%28%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%29.md) · [git config — настройки Git](config.md)
 
 #Git #VCS #git-crypt #Шифрование #GPG #Безопасность #Windows

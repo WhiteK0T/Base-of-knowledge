@@ -15,7 +15,7 @@ tags:
 
 # 🎓 Awesome-Journal-Skills — скиллы Claude Code под научные журналы
 
-`brycewang-stanford/Awesome-Journal-Skills` (MIT, автор — Bryce Wang, Stanford; поддержка Stanford REAP / CoPaper.AI) — большая коллекция **[скиллов Claude Code](Ponytail%20%E2%80%94%20скилл%20против%20%C2%ABграфомании%C2%BB%20AI-агентов%20в%20коде.md) (`SKILL.md`)**, заточенных под **подачу статей в конкретные журналы и конференции**. Идея: общие «как писать научный текст» советы не кодируют редполитику конкретного журнала (форматирование, «красные линии», культуру ревью) — поэтому скиллы сделаны **по-журнально**.
+`brycewang-stanford/Awesome-Journal-Skills` (MIT, автор — Bryce Wang, Stanford; поддержка Stanford REAP / CoPaper.AI) — большая коллекция **[скиллов Claude Code](Ponytail%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%C2%AB%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8%C2%BB%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B5.md) (`SKILL.md`)**, заточенных под **подачу статей в конкретные журналы и конференции**. Идея: общие «как писать научный текст» советы не кодируют редполитику конкретного журнала (форматирование, «красные линии», культуру ревью) — поэтому скиллы сделаны **по-журнально**.
 
 > [!warning] Факты против хайпа — это не «Claude-гений, пишущий статьи сам»
 > | В посте | На самом деле |
@@ -54,14 +54,14 @@ tags:
 
 ## 🚀 Как поставить (Claude Code)
 
-Нужен [Claude Code](../Claude%20Code%20%E2%80%94%20гайд.md) и доступ к моделям Claude. Паки подключаются как marketplace-скиллы (под конкретный журнал — свой репозиторий-пак):
+Нужен [Claude Code](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) и доступ к моделям Claude. Паки подключаются как marketplace-скиллы (под конкретный журнал — свой репозиторий-пак):
 
 ```bash
 # пример: пак под журнал AER
 /plugin marketplace add https://github.com/brycewang-stanford/AER-skills
 ```
 
-Дальше скилл активируется в сессии Claude Code, когда задача совпадает с его описанием (механика скиллов — как у [Ponytail](Ponytail%20%E2%80%94%20скилл%20против%20%C2%ABграфомании%C2%BB%20AI-агентов%20в%20коде.md)). Перед установкой **прочитай `SKILL.md`** пакета — это просто инструкции-промпты, полезно понимать, что именно он велит делать модели.
+Дальше скилл активируется в сессии Claude Code, когда задача совпадает с его описанием (механика скиллов — как у [Ponytail](Ponytail%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%C2%AB%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8%C2%BB%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B5.md)). Перед установкой **прочитай `SKILL.md`** пакета — это просто инструкции-промпты, полезно понимать, что именно он велит делать модели.
 
 ## 💡 Кому полезно
 
@@ -74,6 +74,6 @@ tags:
 - Репозиторий: [github.com/brycewang-stanford/Awesome-Journal-Skills](https://github.com/brycewang-stanford/Awesome-Journal-Skills)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25929)
 - Этика ИИ в публикациях: [COPE — Authorship and AI](https://publicationethics.org/cope-position-statements/ai-author) · [ICMJE](https://www.icmje.org/)
-- Связанные: [Ponytail (скилл Claude Code)](Ponytail%20%E2%80%94%20скилл%20против%20%C2%ABграфомании%C2%BB%20AI-агентов%20в%20коде.md) · [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20гайд.md) · [How to AI (гайды по Claude)](../How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20сборник%20гайдов%20по%20Claude.md)
+- Связанные: [Ponytail (скилл Claude Code)](Ponytail%20%E2%80%94%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%20%C2%AB%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D0%B8%D0%B8%C2%BB%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B5.md) · [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) · [How to AI (гайды по Claude)](../How%20to%20AI%20%28Ruben%20Hassid%29%20%E2%80%94%20%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%20%D0%B3%D0%B0%D0%B9%D0%B4%D0%BE%D0%B2%20%D0%BF%D0%BE%20Claude.md)
 
 #AI #Claude_Code #Skills #Наука #Академия #Ресурсы

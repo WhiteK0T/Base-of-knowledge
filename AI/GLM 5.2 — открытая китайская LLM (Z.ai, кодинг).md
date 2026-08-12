@@ -55,7 +55,7 @@ tags:
 - **Self-host** — открытые веса MIT: локально/на сервере (vLLM, llama.cpp по мере появления квантов).
 
 > [!tip] Подключить к своим инструментам
-> Если у GLM есть OpenAI-совместимый endpoint, модель удобно прокинуть в существующий стек через [LiteLLM](ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) (единый прокси к 100+ LLM) и дальше дёргать из агентов/[Claude Code](Claude%20Code%20%E2%80%94%20гайд.md)-совместимых клиентов. Так же, как [FreeQwenApi](ProxyLLM/FreeQwenApi%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20Qwen%20Chat.md) / [FreeDeepseekAPI](ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20DeepSeek.md).
+> Если у GLM есть OpenAI-совместимый endpoint, модель удобно прокинуть в существующий стек через [LiteLLM](ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md) (единый прокси к 100+ LLM) и дальше дёргать из агентов/[Claude Code](Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md)-совместимых клиентов. Так же, как [FreeQwenApi](ProxyLLM/FreeQwenApi%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20Qwen%20Chat.md) / [FreeDeepseekAPI](ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20DeepSeek.md).
 
 ## 💡 Стоит ли смотреть
 
@@ -67,6 +67,6 @@ tags:
 
 - Сайт/чат: [z.ai](https://z.ai) · площадка кодинга [zcode.z.ai/en](https://zcode.z.ai/en)
 - Источник новости: [@bugnotfeature](https://t.me/bugnotfeature/25820)
-- Связанные: [LiteLLM — шлюз к LLM](ProxyLLM/LiteLLM%20%E2%80%94%20единый%20шлюз%20%28proxy%29%20к%20100%2B%20LLM.md) · [FreeQwenApi](ProxyLLM/FreeQwenApi%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20Qwen%20Chat.md) · [FreeDeepseekAPI](ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20бесплатный%20OpenAI-совместимый%20API%20к%20DeepSeek.md) · [Сводная таблица AI-агентов](Сводная%20таблица%20AI-агентов%20для%20программирования%20%28август%202026%29.md)
+- Связанные: [LiteLLM — шлюз к LLM](ProxyLLM/LiteLLM%20%E2%80%94%20%D0%B5%D0%B4%D0%B8%D0%BD%D1%8B%D0%B9%20%D1%88%D0%BB%D1%8E%D0%B7%20%28proxy%29%20%D0%BA%20100%2B%20LLM.md) · [FreeQwenApi](ProxyLLM/FreeQwenApi%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20Qwen%20Chat.md) · [FreeDeepseekAPI](ProxyLLM/FreeDeepseekAPI%20%E2%80%94%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D1%8B%D0%B9%20OpenAI-%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D1%8B%D0%B9%20API%20%D0%BA%20DeepSeek.md) · [Сводная таблица AI-агентов](Agents/%D0%A1%D0%B2%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0%20AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%28%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%202026%29.md)
 
 #AI #LLM #GLM #Zhipu #OpenSource
