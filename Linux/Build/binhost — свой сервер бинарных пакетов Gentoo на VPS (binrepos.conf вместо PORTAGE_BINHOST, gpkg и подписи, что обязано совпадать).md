@@ -97,6 +97,141 @@ CPU_FLAGS_X86="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse ss
 
 ---
 
+## 2а. «На VPS нет видеокарты и нет графики» — и это не мешает
+
+Самый частый вопрос при первом знакомстве с binhost. Разберём по пунктам, потому что ответ неочевиден только на первый взгляд.
+
+### Видеокарта сборщику не нужна
+
+Сборка `x11-drivers/nvidia-drivers`, `media-libs/mesa` или всего KDE — это **компиляция исходников**, а не работа с устройством. Компилятору всё равно, есть ли в системе GPU: он читает `.c` и пишет `.o`. Ровно так же VPS без звуковой карты прекрасно соберёт PipeWire, а без принтера — CUPS.
+
+Что действительно нужно — чтобы в chroot стояли те же **переменные**, что у клиента:
+
+```bash
+# в /etc/portage/make.conf чрута — как у клиента, а не как на VPS
+VIDEO_CARDS="nvidia"
+INPUT_DEVICES="libinput"
+ACCEPT_LICENSE="-* @FREE NVIDIA-2025"
+```
+
+`VIDEO_CARDS="nvidia"` — это просто набор USE-флагов, который включает соответствующие ветки в mesa, xorg-server, ffmpeg и прочем. Ничего не «определяется автоматически» из железа: если написать `nvidia`, будет собрано под nvidia, стоит ли карта в машине — Portage не проверяет.
+
+### Профиль чрута не имеет отношения к профилю VPS
+
+chroot — это отдельная система со своим `/etc/portage/make.profile`. Хостовая система VPS может оставаться на чём угодно, хоть на `default/linux/amd64/23.0` без графики.
+
+```bash
+# внутри chroot
+eselect profile list
+eselect profile set default/linux/amd64/23.0/desktop/plasma   # тот же, что у клиента
+eselect profile show
+```
+
+Сверить с клиентом обязательно — профиль тянет за собой десятки предустановленных USE, и разъехавшийся профиль означает, что бинарники не подойдут вообще ни к чему.
+
+### KDE собирается без X и Wayland
+
+Графическая сессия нужна для **запуска**, а не для сборки. Qt, Plasma, KDE Frameworks компилируются на headless-машине без единого пикселя. Единственное исключение — тесты, которым иногда нужен дисплей, но `FEATURES="test"` в Gentoo по умолчанию **выключен**, и включать его для binhost незачем.
+
+Если какой-то отдельный пакет всё же захочет дисплей на этапе сборки, лечится виртуальным:
+
+```bash
+emerge -av x11-base/xorg-server   # с USE="xvfb"
+# и в /etc/portage/env/xvfb.conf: VIRTUALX_REQUIRED="always"
+```
+
+На практике для Plasma это не требуется.
+
+### Настоящее исключение — модули ядра
+
+Вот здесь binhost действительно упирается. Проверил ебилд `x11-drivers/nvidia-drivers-595.99.02`:
+
+```bash
+inherit desktop dot-a eapi9-pipestatus eapi9-ver flag-o-matic linux-mod-r1
+MODULES_KERNEL_MAX=7.2
+```
+
+Наследование **`linux-mod-r1`** означает, что пакет собирает модуль ядра против конкретных исходников (`/usr/src/linux` либо `KERNEL_DIR`) и сверяется с конфигом ядра через `CONFIG_CHECK`. Готовый бинарный пакет содержит модуль, скомпилированный под **ту версию и тот конфиг ядра**, которые были в chroot. На клиенте с другим ядром он просто не загрузится.
+
+Это касается не только NVIDIA. Полный список таких пакетов у себя можно получить штатным набором:
+
+```bash
+emerge -pv @module-rebuild
+```
+
+Набор определён в самом Portage как «пакеты, владеющие файлами в `/lib/modules`»:
+
+```ini
+[module-rebuild]
+class = portage.sets.dbapi.OwnerSet
+files = /lib/modules
+exclude-files = /usr/src/linux*
+```
+
+Обычно туда попадают `nvidia-drivers`, VirtualBox-модули, `zfs-kmod`, `v4l2loopback` и подобное.
+
+### Три стратегии, что с этим делать
+
+| Стратегия | Как | Кому подходит |
+| :--- | :--- | :--- |
+| **A. Исключить из binhost** | собирать модули локально | **самая простая, рекомендую** |
+| **B. Синхронизировать ядро** | держать в chroot копию исходников и `.config` клиента | если ядро меняется редко |
+| **C. Перейти на dist-kernel** | `sys-kernel/gentoo-kernel-bin` + `USE="dist-kernel"` | если готовы отказаться от своего ядра |
+
+**Стратегия A на практике:**
+
+```bash
+# на клиенте — не брать бинарники для модульных пакетов
+emerge -avuDNg --usepkg-exclude "x11-drivers/nvidia-drivers" @world
+```
+
+Либо, чтобы не писать это каждый раз, вынести в `/etc/portage/make.conf`:
+
+```bash
+EMERGE_DEFAULT_OPTS="${EMERGE_DEFAULT_OPTS} --usepkg-exclude x11-drivers/nvidia-drivers"
+```
+
+Потеря невелика: `nvidia-drivers` — это в основном предсобранные закрытые библиотеки, из исходников там компилируется только модуль ядра, и делается это минуты, а не часы. А всё, ради чего binhost и заводится — Qt, Plasma, LLVM, rust, chromium — уезжает на VPS в полном объёме.
+
+**Стратегия B**, если хочется полноты:
+
+```bash
+# rsync исходников и конфига ядра клиента в chroot
+rsync -av --delete /usr/src/linux-6.x.y/ vps:/srv/gentoo-build/usr/src/linux-6.x.y/
+ssh vps 'ln -sfn /usr/src/linux-6.x.y /srv/gentoo-build/usr/src/linux'
+```
+
+И следить, чтобы после каждого обновления ядра на клиенте это повторялось **до** пересборки модулей. Забудете — получите модуль под старое ядро.
+
+**Стратегия C** — самая радикальная и самая беспроблемная: перейти на дистрибутивное ядро. Тогда и ядро, и модули приезжают с binhost согласованно, а `USE="dist-kernel"` у `nvidia-drivers` включает автоматическую пересборку модуля при обновлении ядра. Цена — отказ от своей конфигурации ядра, что после [собственноручной сборки](../Gentoo/Kernel%20-%20%D0%A1%D0%B1%D0%BE%D1%80%D0%BA%D0%B0%20%D0%B8%D0%BB%D0%B8%20%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%8F%D0%B4%D1%80%D0%B0.md) обычно неприемлемо.
+
+### Про лицензию NVIDIA
+
+Два факта, которые стоит знать, раз пакеты кладутся на сервер:
+
+- в ебилде `nvidia-drivers` **нет `RESTRICT="bindist"`** — Portage не запрещает класть его в бинарный репозиторий;
+- лицензия `NVIDIA-2025` состоит в группе **`@BINARY-REDISTRIBUTABLE`**, то есть распространение в бинарном виде ею разрешено.
+
+Но она **не входит в `@FREE`**, а умолчание Portage — `ACCEPT_LICENSE="-* @FREE"`. Значит принимать её надо явно **на обеих сторонах**:
+
+```bash
+# /etc/portage/package.license
+x11-drivers/nvidia-drivers NVIDIA-2025
+```
+
+Если этого нет в chroot — сборщик просто пропустит пакет, и вы будете гадать, почему его нет в индексе.
+
+### Чек-лист «графический клиент, headless сборщик»
+
+```bash
+# сверить всё разом: вывод должен отличаться только именем машины
+emerge --info | grep -E '^(CHOST|CFLAGS|CXXFLAGS|USE|VIDEO_CARDS|INPUT_DEVICES|ACCEPT_LICENSE|ACCEPT_KEYWORDS|CPU_FLAGS_X86)='
+ssh vps "chroot /srv/gentoo-build emerge --info" | grep -E '^(CHOST|CFLAGS|...)='
+eselect profile show                    # и то же самое в chroot
+```
+
+---
+
 ## 3. Форматы и умолчания
 
 Проверено по `cnf/make.globals` в исходниках Portage (версии в дереве: стабильная `3.0.81.3`, в тестировании до `3.0.82.2`):
