@@ -422,14 +422,22 @@ FEATURES="-distcc" time emerge -1 --nodeps sys-apps/file
 ```bash
 # на VPS, в chroot с идентичным make.conf:
 FEATURES="buildpkg"
-BINPKG_FORMAT="gpkg"
+BINPKG_FORMAT="gpkg"        # значение по умолчанию, подписи работают только с ним
 # раздать /var/cache/binpkgs любым http-сервером
 
-# на клиенте:
+# на клиенте: /etc/portage/binrepos.conf/myvps.conf
+# [myvps]
+# priority = 9999
+# sync-uri = https://vps.example.com/binpkgs
+# verify-signature = true
 FEATURES="getbinpkg"
-PORTAGE_BINHOST="https://vps.example.com/binpkgs"
-emerge -avuDN --usepkg @world
+emerge -avuDNg @world
 ```
+
+> [!note] Не `PORTAGE_BINHOST`
+> Переменная `PORTAGE_BINHOST` из `make.conf` **объявлена устаревшей** — `make.conf(5)`: *«The PORTAGE_BINHOST variable is deprecated in favor of the binrepos.conf configuration file»*. Новые конфиги пишутся в `/etc/portage/binrepos.conf`, где есть приоритеты источников и попакетная проверка подписи.
+
+Подробный разбор — в [отдельной заметке про binhost](binhost%20%E2%80%94%20%D1%81%D0%B2%D0%BE%D0%B9%20%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%B1%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D1%85%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2%20Gentoo%20%D0%BD%D0%B0%20VPS%20%28binrepos.conf%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20PORTAGE_BINHOST%2C%20gpkg%20%D0%B8%20%D0%BF%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%B8%2C%20%D1%87%D1%82%D0%BE%20%D0%BE%D0%B1%D1%8F%D0%B7%D0%B0%D0%BD%D0%BE%20%D1%81%D0%BE%D0%B2%D0%BF%D0%B0%D0%B4%D0%B0%D1%82%D1%8C%29.md).
 
 Почему это лучше distcc в вашем случае:
 
