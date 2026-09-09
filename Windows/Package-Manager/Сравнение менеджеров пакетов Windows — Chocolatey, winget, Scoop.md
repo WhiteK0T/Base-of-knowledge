@@ -15,6 +15,8 @@ tags:
 
 Обзор и сравнение трёх основных менеджеров пакетов для Windows. Данные проверены **09.09.2026** по первоисточникам: официальный индекс winget (`source.msix` от Microsoft), исходники `chocolatey/choco` и `ScoopInstaller/Scoop`, GitHub API, документация Microsoft Learn.
 
+Подробные шпаргалки по командам: [winget](winget.md) · [Chocolatey](Chocolatey.md) · [Scoop](Scoop.md).
+
 Три менеджера **не конфликтуют** друг с другом: у каждого свой каталог, свой реестр установленного и своя папка. Нормальная практика — держать все три и брать каждый под свою задачу.
 
 ## Коротко: что выбирать
@@ -232,6 +234,7 @@ scoop list           # только пакеты Scoop
 - winget: [документация Microsoft Learn](https://learn.microsoft.com/en-us/windows/package-manager/winget/) · [winget-cli](https://github.com/microsoft/winget-cli) · [winget-pkgs](https://github.com/microsoft/winget-pkgs)
 - Chocolatey: [chocolatey/choco](https://github.com/chocolatey/choco) · [документация](https://docs.chocolatey.org/) · [модерация](https://docs.chocolatey.org/en-us/community-repository/moderation/)
 - Scoop: [ScoopInstaller/Scoop](https://github.com/ScoopInstaller/Scoop) · [buckets.json](https://github.com/ScoopInstaller/Scoop/blob/master/buckets.json) · [установщик](https://github.com/ScoopInstaller/Install)
+- Шпаргалки: [winget](winget.md) · [Chocolatey](Chocolatey.md) · [Scoop](Scoop.md)
 - Связанное: [System Informer — что реально запустилось после установки](../System%20Informer%20%E2%80%94%20%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BD%D0%B3%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D0%B2%20%D0%B8%20%D0%BE%D1%85%D0%BE%D1%82%D0%B0%20%D0%BD%D0%B0%20%D0%BC%D0%B0%D0%BB%D0%B2%D0%B0%D1%80%D1%8C%20%28%D0%BF%D1%80%D0%B5%D0%B5%D0%BC%D0%BD%D0%B8%D0%BA%20Process%20Hacker%29.md)
 
 #Windows #Пакетный_Менеджер #Chocolatey #winget #Scoop #PowerShell #Автоматизация
