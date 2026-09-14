@@ -10,7 +10,11 @@ When asked to "add a note" or "document X", create or edit a Markdown file follo
 
 ## Layout
 
-Top-level folders group notes by domain, e.g. `AI/`, `VCS/`, `Network/`, `Linux/`, `Programming/`, `Health/`, `Education/`, `Windows/`, `Drones/`, `Apps/`. Each domain is further nested by topic (`Linux/Package-Manager/`, `Programming/Java/JCF/`, `VCS/GitHub/`, etc.). Two special folders:
+Top-level folders group notes by domain, e.g. `AI/`, `VCS/`, `Network/`, `Linux/`, `Programming/`, `Security/`, `Pentest/`, `Health/`, `Education/`, `Windows/`, `Drones/`, `Apps/`. Each domain is further nested by topic (`Linux/Package-Manager/`, `Programming/Java/JCF/`, `VCS/GitHub/`, etc.).
+
+**`Pentest/` vs `Security/`:** **offensive** tooling lives in `Pentest/`, split by area — `Pentest/Web/`, `Pentest/Windows-AD/`, `Pentest/Wireless/`, `Pentest/Recon/` (OSINT), `Pentest/Social-Engineering/`, `Pentest/Frameworks/`. `Security/` keeps CVE writeups (`Security/Vulns/`), forensics, radio/SDR, privacy and **defensive** tools. New offensive-tool notes go under `Pentest/<area>`; CVE research and defensive/privacy notes stay in `Security/`.
+
+Two special folders:
 
 - `Templates/` — note skeletons inserted by Obsidian's Templates plugin (`Book`, `Course`, `Daily`, `Default`, `Planner`, `Reference`).
 - `Cache/` — the **attachment folder** (`app.json: attachmentFolderPath = "Cache"`). All images/binaries live here, mirroring the note's path (e.g. images for `Network/IPTables.md` live in `Cache/Netfilter/`).
