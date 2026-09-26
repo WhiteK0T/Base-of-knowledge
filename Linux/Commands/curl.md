@@ -96,6 +96,6 @@ curl -G --data-urlencode "q=привет мир" https://api.example.com/search
 | `curl -x http://proxy:8080 <url>` | через прокси |
 | `curl --resolve host:443:1.2.3.4 <url>` | подменить DNS для хоста (тест без правки `/etc/hosts`) |
 
-См. также: [SCP](SCP.md) — копирование файлов по SSH.
+См. также: [SCP](scp.md) — копирование файлов по SSH.
 
 #cURL #Linux #Сеть #Шпаргалка

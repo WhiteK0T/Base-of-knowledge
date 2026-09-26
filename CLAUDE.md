@@ -14,6 +14,8 @@ Top-level folders group notes by domain, e.g. `AI/`, `VCS/`, `Network/`, `Linux/
 
 **`Pentest/` vs `Security/`:** **offensive** tooling lives in `Pentest/`, split by area — `Pentest/Web/`, `Pentest/Windows-AD/`, `Pentest/Wireless/`, `Pentest/Recon/` (OSINT), `Pentest/Social-Engineering/`, `Pentest/Frameworks/`. `Security/` keeps CVE writeups (`Security/Vulns/`), forensics, radio/SDR, privacy and **defensive** tools. New offensive-tool notes go under `Pentest/<area>`; CVE research and defensive/privacy notes stay in `Security/`.
 
+**`Linux/Commands/` naming rule:** every note's filename is **exactly the system command name**, in its real case, plus `.md` — `rm.md`, `mv.md`, `lsof.md`, `curl.md`, `scp.md`. No descriptions, dashes or parentheses in the filename (this keeps quick-search by command instant). The descriptive title goes into the note's `# H1` and into the note's bullet in `README.md`. When adding a note there or renaming one, update every link to it by hand (percent-encode if needed).
+
 Two special folders:
 
 - `Templates/` — note skeletons inserted by Obsidian's Templates plugin (`Book`, `Course`, `Daily`, `Default`, `Planner`, `Reference`).

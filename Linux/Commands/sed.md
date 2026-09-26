@@ -133,6 +133,6 @@ sed -i '/# BEGIN BLOCK/,$d' file
 sed '$d' file
 ```
 
-См. также: [cURL](cURL.md) · [SCP](SCP.md) · [for (циклы Bash)](../Bash/for.md)
+См. также: [cURL](curl.md) · [SCP](scp.md) · [for (циклы Bash)](../Bash/for.md)
 
 #sed #Linux #Bash #Текст #Шпаргалка
