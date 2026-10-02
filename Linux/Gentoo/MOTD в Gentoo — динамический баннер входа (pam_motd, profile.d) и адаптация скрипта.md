@@ -132,7 +132,10 @@ IPADDRESS=$(ip -o addr show scope global 2>/dev/null | awk '{print $4}' | cut -d
 # ОС без debian_version/lsb:
 OS_REL=$( . /etc/os-release 2>/dev/null; printf '%s' "$PRETTY_NAME" )
 [ -r /etc/gentoo-release ] && OS_REL="$OS_REL [$(cat /etc/gentoo-release)]"
-CORES=$(nproc)
+# Физические ядра / логические потоки (HT):
+THREADS=$(grep -c '^processor' /proc/cpuinfo)
+CORES=$(awk -F: '/^physical id/{p=$2} /^core id/{seen[p":"$2]=1} END{n=0; for(k in seen) n++; print n}' /proc/cpuinfo)
+[ "${CORES:-0}" -le 0 ] && CORES=$THREADS   # ARM/без core id → ядра=потоки
 # FQDN, с откатом на короткое имя (hostname -f пуст, если FQDN не резолвится):
 HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname)
 
@@ -144,7 +147,7 @@ printf '%b\n' "${tcLtGRN} - Hostname          :${tcLtBL} ${HOSTN}"
 printf '%b\n' "${tcLtGRN} - IP Address        :${tcLtBL} ${IPADDRESS}"
 printf '%b\n' "${tcLtGRN} - OS Release        :${tcLtBL} ${OS_REL}"
 printf '%b\n' "${tcLtGRN} - Kernel            :${tcLtBL} $(uname -r)"
-printf '%b\n' "${tcLtGRN} - CPU (logical)     :${tcLtBL} ${CORES}"
+printf '%b\n' "${tcLtGRN} - CPU Cores/Threads :${tcLtBL} ${CORES} / ${THREADS}"
 printf '%b\n' "${tcLtGRN} - Users             :${tcLtBL} ${NUM_USERS} logged on"
 printf '%b\n' "${tcLtGRN} - Logged in         :${tcLtBL} ${USERS_LIST}"
 printf '%b\n' "${tcLtGRN} - System load       :${tcLtBL} ${SYS_LOADS} / ${NUM_PROCS} processes"
@@ -163,7 +166,7 @@ printf '%b\n' "${tcLtG}=========================================================
  - Swap used         : ░░░░░░░░░░░░░░░░░░░░░░░░ 0%
 ```
 
-Что изменено против оригинала: `printf '%b'` вместо `echo` (цвета в bash), `/etc/os-release`+`/etc/gentoo-release` вместо `lsb_release`/`debian_version`, `ip -o addr` вместо `hostname --all-ip-addresses`, корректный подсчёт процессов (`-1` на заголовок `ps`), логические CPU через `nproc`. **Добавлено:** функция `bar()` — цветной индикатор загрузки (память и своп, порог 70/90 %), и строка **Logged in** с уникальными никами залогиненных (`users | sort -u`).
+Что изменено против оригинала: `printf '%b'` вместо `echo` (цвета в bash), `/etc/os-release`+`/etc/gentoo-release` вместо `lsb_release`/`debian_version`, `ip -o addr` вместо `hostname --all-ip-addresses`, корректный подсчёт процессов (`-1` на заголовок `ps`), ядра/потоки из `/proc/cpuinfo` (физические ядра и логические потоки HT). **Добавлено:** функция `bar()` — цветной индикатор загрузки (память и своп, порог 70/90 %), и строка **Logged in** с уникальными никами залогиненных (`users | sort -u`).
 
 > [!note] Пустой Hostname
 > Если `hostname -f` ничего не выводит (FQDN не резолвится — нет записи в `/etc/hosts`/DNS), строка Hostname будет пустой. Поэтому в версии выше — переменная `HOSTN` с откатом на короткое имя: `HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname)`.
@@ -209,10 +212,11 @@ sudo chmod +x /etc/local.d/motd.start && sudo rc-update add local default
 | `hostname -f` | `sys-apps/net-tools` |
 | `free`, `ps`, `uptime` | `sys-process/procps` |
 | `ip` | `sys-apps/iproute2` |
-| `nproc`, `users`, `date`, `cut`, `paste` | `sys-apps/coreutils` |
+| `users`, `date`, `cut`, `paste`, `sort`, `tr` | `sys-apps/coreutils` |
+| `grep`, `awk` (ядра/потоки из /proc/cpuinfo) | `sys-apps/grep`, `sys-apps/gawk` (базовые) |
 | (опц.) `lsb_release` | `sys-apps/lsb-release` |
 
-На Debian/Ubuntu работает и оригинал (там `/etc/debian_version`, dash-`/bin/sh` интерпретирует `\033`, coreutils-`hostname` знает `--all-ip-addresses`). На **Entware/роутере** — `printf` и `/proc` есть (busybox), но часть утилит (`free`, `nproc`, net-tools-`hostname`) урезаны; баннер проще держать на десктопе/сервере.
+На Debian/Ubuntu работает и оригинал (там `/etc/debian_version`, dash-`/bin/sh` интерпретирует `\033`, coreutils-`hostname` знает `--all-ip-addresses`). На **Entware/роутере** — `printf` и `/proc` есть (busybox), но часть утилит (`free`, net-tools-`hostname`) урезаны; CPU-метод через `/proc/cpuinfo` (grep/awk) работает и там; баннер проще держать на десктопе/сервере.
 
 ## 🔗 Связанные заметки
 
