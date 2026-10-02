@@ -89,11 +89,29 @@ echo $tcRESET ""
 
 ## ✅ Gentoo-версия (проверено запуском)
 
+С цветным баром памяти/свопа (зелёный <70%, жёлтый ≥70%, красный ≥90%) и списком ников залогиненных.
+
 ```bash
 #!/bin/bash
 # MOTD-баннер — Gentoo-адаптация. Исходник: WhiteK0T.
 tcLtG="\033[00;37m"; tcLtGRN="\033[01;32m"; tcLtBL="\033[01;34m"
-tcORANGE="\033[38;5;209m"; tcRESET="\033[0m"
+tcORANGE="\033[38;5;209m"; tcRESET="\033[0m"; tcDkG="\033[01;30m"
+
+# Цветной бар: $1=процент (float/int), $2=ширина. Цвет по порогам.
+bar() {
+  local pct=${1%.*}; [ -z "$pct" ] && pct=0
+  local width=${2:-24}
+  local filled=$(( pct * width / 100 )); (( filled > width )) && filled=$width
+  local empty=$(( width - filled )); (( empty < 0 )) && empty=0
+  local c
+  if   (( pct >= 90 )); then c="\033[01;31m"     # красный
+  elif (( pct >= 70 )); then c="\033[01;33m"     # жёлтый
+  else                      c="\033[01;32m"; fi  # зелёный
+  local f= e= i
+  for ((i=0;i<filled;i++)); do f="$f█"; done
+  for ((i=0;i<empty;i++));  do e="$e░"; done
+  printf '%b' "${c}${f}${tcDkG}${e}${tcRESET} ${c}${pct}%${tcRESET}"
+}
 
 HOUR=$(date +%H)
 if   [ "$HOUR" -lt 12 ]; then TIME="morning"
@@ -107,6 +125,8 @@ SYS_LOADS=$(awk '{print $1}' /proc/loadavg)
 MEMORY_USED=$(free -b | awk '/Mem/{printf "%.1f", $3/$2*100}')
 SWAP_USED=$(free -b | awk '/Swap/{if($2>0) printf "%.1f", $3/$2*100; else printf "0.0"}')
 NUM_PROCS=$(($(ps aux | wc -l) - 1))
+NUM_USERS=$(users | wc -w)
+USERS_LIST=$(users | tr ' ' '\n' | sort -u | paste -sd' ')   # уникальные ники
 # реальные IP (net-tools hostname не умеет --all-ip-addresses):
 IPADDRESS=$(ip -o addr show scope global 2>/dev/null | awk '{print $4}' | cut -d/ -f1 | paste -sd' ')
 # ОС без debian_version/lsb:
@@ -123,18 +143,28 @@ printf '%b\n' "${tcLtGRN} - IP Address        :${tcLtBL} ${IPADDRESS}"
 printf '%b\n' "${tcLtGRN} - OS Release        :${tcLtBL} ${OS_REL}"
 printf '%b\n' "${tcLtGRN} - Kernel            :${tcLtBL} $(uname -r)"
 printf '%b\n' "${tcLtGRN} - CPU (logical)     :${tcLtBL} ${CORES}"
-printf '%b\n' "${tcLtGRN} - Users             :${tcLtBL} $(users | wc -w) logged on"
+printf '%b\n' "${tcLtGRN} - Users             :${tcLtBL} ${NUM_USERS} logged on"
+printf '%b\n' "${tcLtGRN} - Logged in         :${tcLtBL} ${USERS_LIST}"
 printf '%b\n' "${tcLtGRN} - System load       :${tcLtBL} ${SYS_LOADS} / ${NUM_PROCS} processes"
-printf '%b\n' "${tcLtGRN} - Memory used %     :${tcLtBL} ${MEMORY_USED}"
-printf '%b\n' "${tcLtGRN} - Swap used %       :${tcLtBL} ${SWAP_USED}"
+printf '%b\n' "${tcLtGRN} - Memory used       :${tcLtBL} $(bar "$MEMORY_USED" 24)"
+printf '%b\n' "${tcLtGRN} - Swap used         :${tcLtBL} $(bar "$SWAP_USED" 24)"
 printf '%b\n' "${tcLtGRN} - Uptime            :${tcLtBL} ${upDays}d ${upHours}h ${upMins}m"
 printf '%b\n' "${tcLtG}=================================================================${tcRESET}"
 ```
 
-Что изменено против оригинала: `printf '%b'` вместо `echo` (цвета в bash), `/etc/os-release`+`/etc/gentoo-release` вместо `lsb_release`/`debian_version`, `ip -o addr` вместо `hostname --all-ip-addresses`, корректный подсчёт процессов (`-1` на заголовок `ps`), логические CPU через `nproc`.
+Пример вывода (бар зелёный при малой загрузке):
+```
+ - Users             : 1 logged on
+ - Logged in         : claude
+ - System load       : 0.08 / 223 processes
+ - Memory used       : █░░░░░░░░░░░░░░░░░░░░░░░ 7%
+ - Swap used         : ░░░░░░░░░░░░░░░░░░░░░░░░ 0%
+```
 
-> [!note] Нюанс с IP
-> `scope global` отдаёт все глобальные адреса, включая мосты Docker (напр. `172.17.0.1`). Если нужен только внешний/LAN — отфильтровать по интерфейсу: `ip -o addr show scope global dev eth0`.
+Что изменено против оригинала: `printf '%b'` вместо `echo` (цвета в bash), `/etc/os-release`+`/etc/gentoo-release` вместо `lsb_release`/`debian_version`, `ip -o addr` вместо `hostname --all-ip-addresses`, корректный подсчёт процессов (`-1` на заголовок `ps`), логические CPU через `nproc`. **Добавлено:** функция `bar()` — цветной индикатор загрузки (память и своп, порог 70/90 %), и строка **Logged in** с уникальными никами залогиненных (`users | sort -u`).
+
+> [!tip] Если бар отображается «кракозябрами»
+> Символы `█`/`░` требуют **UTF-8**-терминала и locale. Если выводится мусор — заменить в `bar()` на ASCII: `f="$f#"` и `e="$e-"`.
 
 ---
 
