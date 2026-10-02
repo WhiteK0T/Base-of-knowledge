@@ -93,6 +93,11 @@ $dec = base64_decode($enc);                 // 2-й арг true → строги
 $u = rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
 $d = base64_decode(strtr($u, '-_', '+/'));
 ```
+Из shell:
+```bash
+php -r 'echo base64_encode(stream_get_contents(STDIN));' <<< 'Hello'   # кодировать stdin
+php -r 'echo base64_decode($argv[1]);' -- 'SGVsbG8='                   # декодировать
+```
 
 ### Python
 ```python
@@ -106,6 +111,11 @@ s_dec = base64.b64decode(s_enc).decode()
 u = base64.urlsafe_b64encode(b"data").decode()
 d = base64.urlsafe_b64decode(u)
 ```
+Из shell (модуль запускается напрямую):
+```bash
+python3 -m base64 <<< 'Hello, World!'     # SGVsbG8sIFdvcmxkIQo=  (учитывает \n от <<<)
+python3 -m base64 -d <<< 'SGVsbG8='        # декодировать
+```
 > `b64decode(..., validate=True)` бросит ошибку на мусор; по умолчанию невалидные символы молча игнорируются.
 
 ### Perl
@@ -117,6 +127,11 @@ my $dec  = decode_base64($enc);
 # URL-safe (свежие версии MIME::Base64):
 use MIME::Base64 qw(encode_base64url decode_base64url);
 my $u = encode_base64url($data);
+```
+Из shell:
+```bash
+perl -MMIME::Base64 -0777 -ne 'print encode_base64($_, "")' <<< 'Hello'   # кодировать stdin
+perl -MMIME::Base64 -ne 'print decode_base64($_)' <<< 'SGVsbG8='          # декодировать
 ```
 
 ### Java (8+)
@@ -132,6 +147,10 @@ String text = new String(dec, StandardCharsets.UTF_8);
 String u = Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
 String mime = Base64.getMimeEncoder().encodeToString(bytes);
 ```
+Из shell (без компиляции — через JShell, JDK 9+):
+```bash
+echo 'System.out.println(java.util.Base64.getEncoder().encodeToString("Hello".getBytes()))' | jshell -q -
+```
 (подробнее про байты/кодировки — [Ключи в Java (JCA)](../../Programming/Java/Crypto/%D0%9A%D0%BB%D1%8E%D1%87%D0%B8%20%D0%B2%20Java%20%28JCA%29%20%E2%80%94%20%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20KeyFactory%20%D0%B8%20%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20KeyPairGenerator%20%28SPI%2C%20KeySpec%2C%20PEM-DER%2C%20ECC%2C%20%D0%BF%D0%BE%D1%81%D1%82%D0%BA%D0%B2%D0%B0%D0%BD%D1%82%29.md))
 
 ### JavaScript
@@ -145,6 +164,11 @@ const url = Buffer.from(data).toString('base64url');   // URL-safe
 const enc2 = btoa(String.fromCharCode(...new TextEncoder().encode('тест')));
 const dec2 = new TextDecoder().decode(Uint8Array.from(atob(enc2), c => c.charCodeAt(0)));
 // Современно (где доступно): Uint8Array.prototype.toBase64() / Uint8Array.fromBase64()
+```
+Из shell (Node):
+```bash
+node -e 'process.stdout.write(require("fs").readFileSync(0).toString("base64"))' <<< 'Hello'  # кодировать
+node -e 'process.stdout.write(Buffer.from(require("fs").readFileSync(0,"utf8").trim(),"base64").toString())' <<< 'SGVsbG8='
 ```
 > ⚠️ Классическая ошибка: `btoa('тест')` бросает исключение — он не понимает не-Latin1. Для UTF-8 — через `TextEncoder` (выше) или `Buffer` в Node.
 
@@ -175,7 +199,12 @@ let enc = STANDARD.encode(b"text");
 let dec: Vec<u8> = STANDARD.decode(&enc)?;
 let u = URL_SAFE_NO_PAD.encode(data);       // URL-safe без '='
 ```
+Из shell: для Rust есть `rust-script`/`evcxr`, но это не из коробки.
+
 > С версии **0.21** старые `base64::encode()/decode()` убраны — только через трейт `Engine` (как выше).
+
+> [!note] Компилируемые языки (C / C++ / Rust)
+> Готового shell-однострочника у них нет — код нужно собрать. Если нужен именно CLI, «shell-эквивалент» для них — это сам `base64` / `openssl base64` (в начале заметки), а не язык.
 
 ---
 
