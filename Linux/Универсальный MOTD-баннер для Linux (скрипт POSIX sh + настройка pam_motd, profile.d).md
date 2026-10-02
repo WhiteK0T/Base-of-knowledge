@@ -3,30 +3,31 @@
 author: WhiteK0T
 tags:
   - Linux
-  - Gentoo
   - MOTD
-  - PAM
   - Shell
+  - PAM
+  - Gentoo
+  - Debian
 ---
 
-# 🖥️ MOTD в Gentoo — динамический баннер входа
+# 🖥️ Универсальный MOTD-баннер для Linux
 
-Как в Gentoo выводить баннер при входе (**MOTD**, message of the day) и как подключить свой скрипт. Плюс разбор, почему типовой «дебиановский» MOTD-скрипт на Gentoo не заводится как есть, и рабочая адаптированная версия.
+Готовый скрипт-баннер при входе (**MOTD**, message of the day) + как подключить его на разных дистрибутивах. Скрипт **кроссдистрибутивный** (чистый POSIX sh, все данные из `/proc` + базовые утилиты) — работает на Gentoo/Debian/Ubuntu/Arch/Alpine и под busybox. Ниже также разобрано, почему типовой «дебиановский» MOTD-скрипт пришлось переписать.
 
 ## ⚙️ Как это устроено
 
-Показ MOTD делает PAM-модуль **`pam_motd`**. В Gentoo (pam ≥1.7) в `/etc/pam.d/system-login`:
-```
-session  optional  pam_motd.so motd=/etc/motd
-```
-То есть при каждом **входе** (консоль и SSH) один раз печатается **статический файл `/etc/motd`**. Сам pam_motd скрипты **не запускает** — только читает файл. Отсюда два способа подключить динамический скрипт:
+Показ MOTD делает PAM-модуль **`pam_motd`**: при каждом **входе** (консоль и SSH) один раз печатается **статический файл `/etc/motd`**. Сам pam_motd скрипты **не запускает** — только читает файл.
+- **Gentoo** (pam ≥1.7): в `/etc/pam.d/system-login` → `session optional pam_motd.so motd=/etc/motd`.
+- **Debian/Ubuntu**: pam_motd указывает на `/run/motd.dynamic`, который генерит `run-parts /etc/update-motd.d/` — туда и кладут исполняемые скрипты (самый простой путь на Debian).
+
+Два способа подключить **динамический** скрипт:
 
 | Хочу | Способ |
 | :--- | :--- |
-| **Живой** баннер (uptime, нагрузка, память) при каждом входе | **A. `/etc/profile.d`** — скрипт печатает вывод при логине |
+| **Живой** баннер (uptime, нагрузка, память) при каждом входе | **A. `/etc/profile.d`** (любой дистрибутив) или **`/etc/update-motd.d/`** (Debian) |
 | Классический MOTD «один раз до шелла», одинаково SSH/консоль | **B. писать в `/etc/motd`** + регенерация (OpenRC `local.d` / cron / `pam_exec`) |
 
-Для баннера с живыми данными (как скрипт ниже) — **вариант A**.
+Для баннера с живыми данными (скрипт ниже) — **вариант A**.
 
 ---
 
@@ -87,30 +88,37 @@ echo $tcRESET ""
 
 ---
 
-## ✅ Gentoo-версия (проверено запуском)
+## ✅ Универсальная версия (проверено на Gentoo и Debian)
 
 С цветным баром памяти/свопа (зелёный <70%, жёлтый ≥70%, красный ≥90%) и списком ников залогиненных.
 
 ```bash
-#!/bin/bash
-# MOTD-баннер — Gentoo-адаптация. Исходник: WhiteK0T.
+#!/bin/sh
+#==============================================================================
+#  motd.sh — универсальный MOTD-баннер для Linux (баннер при входе)
+#  Хост, IP, ОС, ядро, CPU (ядра/потоки), пользователи, нагрузка, память, аптайм.
+#  Кроссдистрибутивный: все данные из /proc + базовые утилиты, чистый POSIX sh
+#  (работает под bash/dash/busybox-ash, на Gentoo/Debian/Ubuntu/Arch/Alpine...).
+#
+#  Автор:  WhiteK0T
+#  GitHub: https://github.com/WhiteK0T/motd
+#==============================================================================
 tcLtG="\033[00;37m"; tcLtGRN="\033[01;32m"; tcLtBL="\033[01;34m"
 tcORANGE="\033[38;5;209m"; tcRESET="\033[0m"; tcDkG="\033[01;30m"
 
-# Цветной бар: $1=процент (float/int), $2=ширина. Цвет по порогам.
+# повтор символа N раз (POSIX, корректно с UTF-8)
+rep() { _n=$1; _c=$2; _s=''; while [ "$_n" -gt 0 ]; do _s="$_c$_s"; _n=$((_n-1)); done; printf '%s' "$_s"; }
+
+# цветной бар: $1=процент (float/int), $2=ширина. Цвет по порогам.
 bar() {
-  local pct=${1%.*}; [ -z "$pct" ] && pct=0
-  local width=${2:-24}
-  local filled=$(( pct * width / 100 )); (( filled > width )) && filled=$width
-  local empty=$(( width - filled )); (( empty < 0 )) && empty=0
-  local c
-  if   (( pct >= 90 )); then c="\033[01;31m"     # красный
-  elif (( pct >= 70 )); then c="\033[01;33m"     # жёлтый
-  else                      c="\033[01;32m"; fi  # зелёный
-  local f= e= i
-  for ((i=0;i<filled;i++)); do f="$f█"; done
-  for ((i=0;i<empty;i++));  do e="$e░"; done
-  printf '%b' "${c}${f}${tcDkG}${e}${tcRESET} ${c}${pct}%${tcRESET}"
+  _p=${1%.*}; [ -z "$_p" ] && _p=0
+  _w=${2:-24}
+  _f=$(( _p * _w / 100 )); [ "$_f" -gt "$_w" ] && _f=$_w; [ "$_f" -lt 0 ] && _f=0
+  _e=$(( _w - _f ))
+  if   [ "$_p" -ge 90 ]; then _c="\033[01;31m"
+  elif [ "$_p" -ge 70 ]; then _c="\033[01;33m"
+  else                        _c="\033[01;32m"; fi
+  printf '%b' "${_c}$(rep "$_f" '█')${tcDkG}$(rep "$_e" '░')${tcRESET} ${_c}${_p}%${tcRESET}"
 }
 
 HOUR=$(date +%H)
@@ -122,26 +130,31 @@ up=$(cut -d. -f1 /proc/uptime)
 upDays=$((up/86400)); upHours=$((up/3600%24)); upMins=$((up/60%60))
 
 SYS_LOADS=$(awk '{print $1}' /proc/loadavg)
-MEMORY_USED=$(free -b | awk '/Mem/{printf "%.1f", $3/$2*100}')
-SWAP_USED=$(free -b | awk '/Swap/{if($2>0) printf "%.1f", $3/$2*100; else printf "0.0"}')
-NUM_PROCS=$(($(ps aux | wc -l) - 1))
-NUM_USERS=$(users | wc -w)
-USERS_LIST=$(users | tr ' ' '\n' | sort -u | paste -sd' ')   # уникальные ники
-# реальные IP (net-tools hostname не умеет --all-ip-addresses):
-IPADDRESS=$(ip -o addr show scope global 2>/dev/null | awk '{print $4}' | cut -d/ -f1 | paste -sd' ')
-# ОС без debian_version/lsb:
-OS_REL=$( . /etc/os-release 2>/dev/null; printf '%s' "$PRETTY_NAME" )
-[ -r /etc/gentoo-release ] && OS_REL="$OS_REL [$(cat /etc/gentoo-release)]"
-# Физические ядра / логические потоки (HT):
-THREADS=$(grep -c '^processor' /proc/cpuinfo)
-CORES=$(awk -F: '/^physical id/{p=$2} /^core id/{seen[p":"$2]=1} END{n=0; for(k in seen) n++; print n}' /proc/cpuinfo)
-[ "${CORES:-0}" -le 0 ] && CORES=$THREADS   # ARM/без core id → ядра=потоки
-# FQDN, с откатом на короткое имя (hostname -f пуст, если FQDN не резолвится):
-HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname)
+set -- /proc/[0-9]*; NUM_PROCS=$#                      # процессы напрямую из /proc
+MEMORY_USED=$(awk '/^MemTotal:/{t=$2}/^MemAvailable:/{a=$2} END{if(t>0)printf "%.1f",(t-a)/t*100; else print "0.0"}' /proc/meminfo)
+SWAP_USED=$(awk '/^SwapTotal:/{t=$2}/^SwapFree:/{f=$2} END{if(t>0)printf "%.1f",(t-f)/t*100; else print "0.0"}' /proc/meminfo)
+NUM_USERS=$(who 2>/dev/null | wc -l)
+USERS_LIST=$(who 2>/dev/null | awk '{print $1}' | sort -u | paste -sd' ')
 
-printf '%b\n' "${tcLtG}======================================================================"
+IPADDRESS=$(ip -o addr show scope global 2>/dev/null | awk '{print $4}' | cut -d/ -f1 | paste -sd' ')
+[ -z "$IPADDRESS" ] && IPADDRESS=$(hostname -I 2>/dev/null)
+
+HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname 2>/dev/null)
+[ -z "$HOSTN" ] && HOSTN=$(cat /etc/hostname 2>/dev/null || uname -n)
+
+OS_REL=$( . /etc/os-release 2>/dev/null; printf '%s' "$PRETTY_NAME" )
+[ -z "$OS_REL" ] && OS_REL=$(uname -o 2>/dev/null || echo Linux)
+[ -r /etc/gentoo-release ] && OS_REL="$OS_REL [$(cat /etc/gentoo-release)]"
+[ -r /etc/debian_version ] && OS_REL="$OS_REL [$(cat /etc/debian_version)]"
+
+THREADS=$(grep -c '^processor' /proc/cpuinfo)
+CORES=$(awk -F: '/^physical id/{p=$2}/^core id/{s[p":"$2]=1} END{n=0;for(k in s)n++;print n}' /proc/cpuinfo)
+[ "${CORES:-0}" -le 0 ] && CORES=$THREADS
+
+SEP="======================================================================"
+printf '%b\n' "${tcLtG}${SEP}"
 printf '%b\n' "${tcLtG} Good ${TIME}!                                           ${tcORANGE}by WhiteK0T.${tcRESET}"
-printf '%b\n' "${tcLtG}======================================================================"
+printf '%b\n' "${tcLtG}${SEP}"
 printf '%b\n' "${tcLtGRN} - Server Date/Time  :${tcLtBL} $(date '+%a %d %b %Y / %X %Z')"
 printf '%b\n' "${tcLtGRN} - Hostname          :${tcLtBL} ${HOSTN}"
 printf '%b\n' "${tcLtGRN} - IP Address        :${tcLtBL} ${IPADDRESS}"
@@ -154,7 +167,7 @@ printf '%b\n' "${tcLtGRN} - System load       :${tcLtBL} ${SYS_LOADS} / ${NUM_PR
 printf '%b\n' "${tcLtGRN} - Memory used       :${tcLtBL} $(bar "$MEMORY_USED" 24)"
 printf '%b\n' "${tcLtGRN} - Swap used         :${tcLtBL} $(bar "$SWAP_USED" 24)"
 printf '%b\n' "${tcLtGRN} - Uptime            :${tcLtBL} ${upDays}d ${upHours}h ${upMins}m"
-printf '%b\n' "${tcLtG}======================================================================${tcRESET}"
+printf '%b\n' "${tcLtG}${SEP}${tcRESET}"
 ```
 
 Пример вывода (бар зелёный при малой загрузке):
@@ -166,7 +179,7 @@ printf '%b\n' "${tcLtG}=========================================================
  - Swap used         : ░░░░░░░░░░░░░░░░░░░░░░░░ 0%
 ```
 
-Что изменено против оригинала: `printf '%b'` вместо `echo` (цвета в bash), `/etc/os-release`+`/etc/gentoo-release` вместо `lsb_release`/`debian_version`, `ip -o addr` вместо `hostname --all-ip-addresses`, корректный подсчёт процессов (`-1` на заголовок `ps`), ядра/потоки из `/proc/cpuinfo` (физические ядра и логические потоки HT). **Добавлено:** функция `bar()` — цветной индикатор загрузки (память и своп, порог 70/90 %), и строка **Logged in** с уникальными никами залогиненных (`users | sort -u`).
+**Сделано универсальным** (любой дистрибутив, чистый POSIX sh — bash/dash/busybox): все данные берутся из `/proc` + базовые утилиты, без распределённо-специфичных команд. `printf '%b'` вместо `echo` (цвета в любом shell); память/своп из `/proc/meminfo` (без `free`), процессы из `/proc` (без `ps`), пользователи через `who`; кроссдистрибутивный OS Release (`PRETTY_NAME` + точная версия: `/etc/gentoo-release` **и** `/etc/debian_version`); `hostname -f`→короткое→`/etc/hostname`→`uname -n` с откатами; IP через `ip -o addr` с откатом на `hostname -I`; CPU — ядра/потоки из `/proc/cpuinfo`. Цветной бар памяти/свопа (порог 70/90 %) и строка **Logged in** с никами залогиненных.
 
 > [!note] Пустой Hostname
 > Если `hostname -f` ничего не выводит (FQDN не резолвится — нет записи в `/etc/hosts`/DNS), строка Hostname будет пустой. Поэтому в версии выше — переменная `HOSTN` с откатом на короткое имя: `HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname)`.
@@ -178,8 +191,9 @@ printf '%b\n' "${tcLtG}=========================================================
 
 ## 🔌 Подключение (вариант A — живой баннер при входе)
 
+**Любой дистрибутив — через `/etc/profile.d`:**
 ```bash
-sudo install -m 0755 motd-gentoo.sh /usr/local/bin/motd.sh
+sudo install -m 0755 motd.sh /usr/local/bin/motd.sh
 printf '%s\n' '[ -x /usr/local/bin/motd.sh ] && /usr/local/bin/motd.sh' \
   | sudo tee /etc/profile.d/zz-motd.sh >/dev/null
 ```
@@ -187,7 +201,13 @@ printf '%s\n' '[ -x /usr/local/bin/motd.sh ] && /usr/local/bin/motd.sh' \
 - Работает для всех **login-shell**: SSH и вход в консоль. Для себя одного — та же строка в `~/.bash_profile`.
 - Не сработает для non-login shells (новые вкладки терминала в DE читают `.bashrc`).
 
-**Вариант B** (классический `/etc/motd`): писать вывод в файл и регенерировать —
+**Debian/Ubuntu — через `/etc/update-motd.d`** (нативный механизм; печатается один раз до шелла):
+```bash
+sudo install -m 0755 motd.sh /etc/update-motd.d/99-motd
+# показывается через pam_motd из /run/motd.dynamic; проверить: run-parts /etc/update-motd.d/
+```
+
+**Вариант B** (классический `/etc/motd`, прочие дистрибутивы): писать вывод в файл и регенерировать —
 ```bash
 # при загрузке, OpenRC:  /etc/local.d/motd.start
 #!/bin/sh
@@ -205,18 +225,19 @@ sudo chmod +x /etc/local.d/motd.start && sudo rc-update add local default
 
 ---
 
-## 📦 Зависимости (emerge)
+## 📦 Зависимости
 
-| Нужно | Пакет |
-| :--- | :--- |
-| `hostname -f` | `sys-apps/net-tools` |
-| `free`, `ps`, `uptime` | `sys-process/procps` |
-| `ip` | `sys-apps/iproute2` |
-| `users`, `date`, `cut`, `paste`, `sort`, `tr` | `sys-apps/coreutils` |
-| `grep`, `awk` (ядра/потоки из /proc/cpuinfo) | `sys-apps/grep`, `sys-apps/gawk` (базовые) |
-| (опц.) `lsb_release` | `sys-apps/lsb-release` |
+Универсальная версия намеренно обходится **минимумом** — почти всё из `@system`/base, плюс `ip` и `hostname`:
 
-На Debian/Ubuntu работает и оригинал (там `/etc/debian_version`, dash-`/bin/sh` интерпретирует `\033`, coreutils-`hostname` знает `--all-ip-addresses`). На **Entware/роутере** — `printf` и `/proc` есть (busybox), но часть утилит (`free`, net-tools-`hostname`) урезаны; CPU-метод через `/proc/cpuinfo` (grep/awk) работает и там; баннер проще держать на десктопе/сервере.
+| Утилита | Откуда (Gentoo / Debian) | Примечание |
+| :--- | :--- | :--- |
+| `date cut paste sort wc cat uname who` | `coreutils` / `coreutils` | базовые |
+| `grep`, `awk` | `grep`+`gawk` / `grep`+`gawk\|mawk` | ядра/потоки, парсинг |
+| `ip` | `sys-apps/iproute2` / `iproute2` | IP-адреса (есть и в busybox) |
+| `hostname` | `sys-apps/net-tools` / `inetutils`\|`hostname` | FQDN; есть фоллбэки |
+
+> [!tip] Работает и на busybox (Entware/роутер)
+> Поскольку всё берётся из `/proc` + POSIX sh, скрипт теперь **заводится и под busybox** (`who`, `ip`, `grep`, `awk`, `/proc` там есть). `free`/`ps`/`users` больше **не нужны** — память из `/proc/meminfo`, процессы из `/proc`, пользователи через `who`.
 
 ## 🔗 Связанные заметки
 
@@ -227,4 +248,4 @@ sudo chmod +x /etc/local.d/motd.start && sudo rc-update add local default
 
 - Цвета/форматирование: [misc.flogisoft.com/bash/tip_colors_and_formatting](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 
-#Linux #Gentoo #MOTD #PAM #Shell
+#Linux #MOTD #Shell #PAM #Gentoo #Debian
