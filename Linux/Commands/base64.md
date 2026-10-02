@@ -75,6 +75,7 @@ cut -d. -f2 <<< "$JWT" | tr '_-' '/+' | base64 -d 2>/dev/null; echo
 echo "data:image/png;base64,$(base64 -w0 icon.png)"
 
 # проверить округление/битость: длина валидного base64 кратна 4
+s='SGVsbG8='; (( ${#s} % 4 == 0 )) && echo "длина ок (кратна 4)" || echo "битая длина"
 ```
 
 > [!note] GNU vs BSD/macOS
@@ -91,6 +92,31 @@ $dec = base64_decode($enc);                 // 2-й арг true → строги
 // URL-safe:
 $u = rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
 $d = base64_decode(strtr($u, '-_', '+/'));
+```
+
+### Python
+```python
+import base64
+enc = base64.b64encode(b"text").decode()          # 'dGV4dA=='
+dec = base64.b64decode(enc)                        # b'text'  (bytes!)
+# строки — через encode/decode:
+s_enc = base64.b64encode("тест".encode()).decode()
+s_dec = base64.b64decode(s_enc).decode()
+# URL-safe (алфавит -_):
+u = base64.urlsafe_b64encode(b"data").decode()
+d = base64.urlsafe_b64decode(u)
+```
+> `b64decode(..., validate=True)` бросит ошибку на мусор; по умолчанию невалидные символы молча игнорируются.
+
+### Perl
+```perl
+use MIME::Base64;                        # core-модуль, ставить не нужно
+my $enc  = encode_base64($data);         # по умолчанию перенос каждые 76 + \n в конце
+my $enc1 = encode_base64($data, "");     # 2-й арг — конец строки; "" убирает переносы
+my $dec  = decode_base64($enc);
+# URL-safe (свежие версии MIME::Base64):
+use MIME::Base64 qw(encode_base64url decode_base64url);
+my $u = encode_base64url($data);
 ```
 
 ### Java (8+)
