@@ -139,9 +139,9 @@ CORES=$(awk -F: '/^physical id/{p=$2} /^core id/{seen[p":"$2]=1} END{n=0; for(k 
 # FQDN, с откатом на короткое имя (hostname -f пуст, если FQDN не резолвится):
 HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname)
 
-printf '%b\n' "${tcLtG}================================================================="
-printf '%b\n' "${tcLtG} Good ${TIME}!                                   ${tcORANGE}by WhiteK0T.${tcRESET}"
-printf '%b\n' "${tcLtG}================================================================="
+printf '%b\n' "${tcLtG}======================================================================"
+printf '%b\n' "${tcLtG} Good ${TIME}!                                           ${tcORANGE}by WhiteK0T.${tcRESET}"
+printf '%b\n' "${tcLtG}======================================================================"
 printf '%b\n' "${tcLtGRN} - Server Date/Time  :${tcLtBL} $(date '+%a %d %b %Y / %X %Z')"
 printf '%b\n' "${tcLtGRN} - Hostname          :${tcLtBL} ${HOSTN}"
 printf '%b\n' "${tcLtGRN} - IP Address        :${tcLtBL} ${IPADDRESS}"
@@ -154,7 +154,7 @@ printf '%b\n' "${tcLtGRN} - System load       :${tcLtBL} ${SYS_LOADS} / ${NUM_PR
 printf '%b\n' "${tcLtGRN} - Memory used       :${tcLtBL} $(bar "$MEMORY_USED" 24)"
 printf '%b\n' "${tcLtGRN} - Swap used         :${tcLtBL} $(bar "$SWAP_USED" 24)"
 printf '%b\n' "${tcLtGRN} - Uptime            :${tcLtBL} ${upDays}d ${upHours}h ${upMins}m"
-printf '%b\n' "${tcLtG}=================================================================${tcRESET}"
+printf '%b\n' "${tcLtG}======================================================================${tcRESET}"
 ```
 
 Пример вывода (бар зелёный при малой загрузке):
