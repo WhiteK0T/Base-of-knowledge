@@ -71,7 +71,7 @@ echo $tcLtG "================================================================="
 echo $tcLtG " Good $TIME !                                   $tcORANGE by WhiteK0T."
 echo "\e[39m================================================================="
 echo $tcLtGRN " - Server Date/Time  :$tcLtBL `date '+%a %d %b %Y / %X %Z'`"
-echo $tcLtGRN " - Hostname          :$tcLtBL `hostname -f`"
+echo $tcLtGRN " - Hostname          :$tcLtBL `hostname -f 2>/dev/null`"
 echo $tcLtGRN " - IP Address        :$tcLtBL $IPADDRESS"
 echo $tcLtGRN " - OS Release        :$tcLtBL $(lsb_release -s -d)[$(cat /etc/debian_version)]"
 echo $tcLtGRN " - Kernel Release    :$tcLtBL `uname -r` "
@@ -133,12 +133,14 @@ IPADDRESS=$(ip -o addr show scope global 2>/dev/null | awk '{print $4}' | cut -d
 OS_REL=$( . /etc/os-release 2>/dev/null; printf '%s' "$PRETTY_NAME" )
 [ -r /etc/gentoo-release ] && OS_REL="$OS_REL [$(cat /etc/gentoo-release)]"
 CORES=$(nproc)
+# FQDN, с откатом на короткое имя (hostname -f пуст, если FQDN не резолвится):
+HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname)
 
 printf '%b\n' "${tcLtG}================================================================="
 printf '%b\n' "${tcLtG} Good ${TIME}!                                   ${tcORANGE}by WhiteK0T.${tcRESET}"
 printf '%b\n' "${tcLtG}================================================================="
 printf '%b\n' "${tcLtGRN} - Server Date/Time  :${tcLtBL} $(date '+%a %d %b %Y / %X %Z')"
-printf '%b\n' "${tcLtGRN} - Hostname          :${tcLtBL} $(hostname -f)"
+printf '%b\n' "${tcLtGRN} - Hostname          :${tcLtBL} ${HOSTN}"
 printf '%b\n' "${tcLtGRN} - IP Address        :${tcLtBL} ${IPADDRESS}"
 printf '%b\n' "${tcLtGRN} - OS Release        :${tcLtBL} ${OS_REL}"
 printf '%b\n' "${tcLtGRN} - Kernel            :${tcLtBL} $(uname -r)"
@@ -162,6 +164,9 @@ printf '%b\n' "${tcLtG}=========================================================
 ```
 
 Что изменено против оригинала: `printf '%b'` вместо `echo` (цвета в bash), `/etc/os-release`+`/etc/gentoo-release` вместо `lsb_release`/`debian_version`, `ip -o addr` вместо `hostname --all-ip-addresses`, корректный подсчёт процессов (`-1` на заголовок `ps`), логические CPU через `nproc`. **Добавлено:** функция `bar()` — цветной индикатор загрузки (память и своп, порог 70/90 %), и строка **Logged in** с уникальными никами залогиненных (`users | sort -u`).
+
+> [!note] Пустой Hostname
+> Если `hostname -f` ничего не выводит (FQDN не резолвится — нет записи в `/etc/hosts`/DNS), строка Hostname будет пустой. Поэтому в версии выше — переменная `HOSTN` с откатом на короткое имя: `HOSTN=$(hostname -f 2>/dev/null); [ -z "$HOSTN" ] && HOSTN=$(hostname)`.
 
 > [!tip] Если бар отображается «кракозябрами»
 > Символы `█`/`░` требуют **UTF-8**-терминала и locale. Если выводится мусор — заменить в `bar()` на ASCII: `f="$f#"` и `e="$e-"`.
