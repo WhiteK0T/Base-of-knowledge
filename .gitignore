@@ -30,3 +30,6 @@ $RECYCLE.BIN/
 
 # ── Временные файлы проекта (папка temp/ в корне, целиком) ──────────
 /temp/
+
+# ── Приватная заметка (инфраструктура VPS), не публиковать ──────────
+/Linux/Gentoo/KDE Plasma на headless VPS (Gentoo, X11) — удалённый доступ RustDesk + RDP-VNC на localhost.md

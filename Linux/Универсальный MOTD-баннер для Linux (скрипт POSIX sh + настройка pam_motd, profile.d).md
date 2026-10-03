@@ -33,7 +33,7 @@ tags:
 
 ## ⚠️ Почему дебиановский скрипт не работает на Gentoo
 
-Исходный скрипт (ниже) написан под Debian/Ubuntu. На Gentoo ломается в трёх местах (проверено на `whitek0t.tehlab.org`):
+Исходный скрипт (ниже) написан под Debian/Ubuntu. На Gentoo ломается в трёх местах (проверено на живой системе):
 
 1. **`cat /etc/debian_version`** — файла в Gentoo **нет** → ошибка. Замена: `/etc/gentoo-release` и/или `PRETTY_NAME` из `/etc/os-release`.
 2. **`hostname --all-ip-addresses`** — у Gentoo `hostname` из **net-tools**, он такого флага **не знает** (это опция coreutils/Debian-hostname). Замена: `ip -o addr show scope global`.
