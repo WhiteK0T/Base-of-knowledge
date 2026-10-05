@@ -37,6 +37,7 @@
 | [`Auto/`](Auto) | Автомобиль: сигнализации, электроника |
 | [`Drones/`](Drones) | Дроны, БПЛА: подборки ресурсов |
 | [`Electronics/`](Electronics) | Электроника и микроконтроллеры: ESP32, открытое железо |
+| [`Hardware/`](Hardware) | Готовое железо: роутеры ([`Hardware/Routers/`](Hardware/Routers)) — обзоры, версии, прошивка OpenWrt |
 | [`3D-Printing/`](3D-Printing) | 3D-печать: подборки ресурсов, софт, слайсеры |
 | [`Terminal/`](Terminal) | Эмуляторы терминала и мультиплексоры: Rio, Alacritty, kitty, Konsole, tmux |
 | [`File-Managers/`](File-Managers) | Файловые менеджеры (TUI/CLI): elio, far2l, Far Manager |
@@ -183,6 +184,10 @@
 - [oomwoo — открытый робот-пылесос своими руками (RPi 5, лидар-SLAM, ROS 2, Home Assistant)](Electronics/oomwoo%20%E2%80%94%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B9%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82-%D0%BF%D1%8B%D0%BB%D0%B5%D1%81%D0%BE%D1%81%20%D1%81%D0%B2%D0%BE%D0%B8%D0%BC%D0%B8%20%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8%20%28RPi%205%2C%20%D0%BB%D0%B8%D0%B4%D0%B0%D1%80-SLAM%2C%20ROS%202%2C%20Home%20Assistant%29.md) · [OpenAMR — открытый складской AMR своими руками (ROS 2, LiDAR-SLAM, до 150 кг)](Electronics/OpenAMR%20%E2%80%94%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B9%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BD%D0%BE%D0%BC%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%80%D0%BE%D0%B1%D0%BE%D1%82%20%28AMR%29%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%20%D1%81%D0%B2%D0%BE%D0%B8%D0%BC%D0%B8%20%D1%80%D1%83%D0%BA%D0%B0%D0%BC%D0%B8%20%28ROS%202%2C%20LiDAR-SLAM%2C%20%D0%B4%D0%BE%20150%20%D0%BA%D0%B3%29.md)
 - [DIY-CNC-machine (гайд по сборке ЧПУ-фрезера с нуля: BOM, STL/OBJ-детали, Fusion 360, GRBL на Arduino — что внутри и трезвая оценка бюджета/навыков)](Electronics/DIY-CNC-machine%20%28maxvfischer%29%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4%20%D0%BF%D0%BE%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B5%20%D0%A7%D0%9F%D0%A3-%D1%84%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B0%20%D1%81%20%D0%BD%D1%83%D0%BB%D1%8F%20%28BOM%2C%203D-%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D0%B8%2C%20GRBL%29%2C%20%D1%87%D1%82%D0%BE%20%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B8%20%D0%B8%20%D1%82%D1%80%D0%B5%D0%B7%D0%B2%D0%B0%D1%8F%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0.md)
 - [Jcorp Nomad (карманный офлайн медиасервер на ESP32-S3: свой Wi-Fi раздаёт фильмы/музыку/книги/офлайн-Wikipedia в браузер; DIY, 3D-корпус — что это и нюансы, без транскодинга)](Electronics/Jcorp%20Nomad%20%28Jstudner%29%20%E2%80%94%20%D0%BA%D0%B0%D1%80%D0%BC%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%84%D0%BB%D0%B0%D0%B9%D0%BD%20%D0%BC%D0%B5%D0%B4%D0%B8%D0%B0%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%BD%D0%B0%20ESP32-S3%20%28Wi-Fi-%D1%80%D0%B0%D0%B7%D0%B4%D0%B0%D1%87%D0%B0%20%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%BE%D0%B2-%D0%BA%D0%BD%D0%B8%D0%B3-Wikipedia%29%2C%20%D1%87%D1%82%D0%BE%20%D1%8D%D1%82%D0%BE%20%D0%B8%20%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B.md)
+
+### 🔩 Hardware
+
+- **Роутеры:** [Cudy TR3000 (AX3000 Travel Router) — карманный роутер на MT7981B с OpenWrt (две версии флеша 128/256 МБ, новая партия 2543+ требует OpenWrt ≥ 24.10.5, установка через промежуточную прошивку, сравнение с RT-AX56U)](Hardware/Routers/Cudy%20TR3000%20%28AX3000%20Travel%20Router%29%20%E2%80%94%20%D0%BA%D0%B0%D1%80%D0%BC%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%80%D0%BE%D1%83%D1%82%D0%B5%D1%80%20%D0%BD%D0%B0%20MT7981B%20%D1%81%20OpenWrt%20%28%D0%B4%D0%B2%D0%B5%20%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D0%B8%20%D1%84%D0%BB%D0%B5%D1%88%D0%B0%2C%20%D0%BD%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%B0%D1%80%D1%82%D0%B8%D1%8F%202543%2B%2C%20%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%29.md)
 
 ### 🖨️ 3D-Printing
 
