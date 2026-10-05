@@ -319,7 +319,7 @@ chmod 600 /opt/root/.ssh/authorized_keys
 
 Автозапуск Entware-служб Merlin поднимает сам через `/jffs/scripts/post-mount` — отдельно ничего прописывать не нужно, при условии что Entware был установлен штатным `amtm`.
 
-По ключам и настройке клиента — [SSH-Ключи](../SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md) и [SSH — продвинутое руководство](../SSH/SSH-%D0%9F%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%BD%D1%83%D1%82%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md); удобно держать хосты в [sshm](../SSH/sshm%20%28Gu1llaum-3%29%20%E2%80%94%20TUI-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20SSH-%D1%85%D0%BE%D1%81%D1%82%D0%BE%D0%B2%20%D0%BD%D0%B0%20Go%20%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%20~-.ssh-config.md).
+По ключам и настройке клиента — [SSH-Ключи](../../Network/SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md) и [SSH — продвинутое руководство](../../Network/SSH/SSH-%D0%9F%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%BD%D1%83%D1%82%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md); удобно держать хосты в [sshm](../../Network/SSH/sshm%20%28Gu1llaum-3%29%20%E2%80%94%20TUI-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20SSH-%D1%85%D0%BE%D1%81%D1%82%D0%BE%D0%B2%20%D0%BD%D0%B0%20Go%20%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%20~-.ssh-config.md).
 
 ### Чего Entware принципиально не чинит
 
@@ -560,13 +560,13 @@ nvram get misc_http_x         # доступ к админке с WAN (0 = вы�
 ## Связанные заметки
 
 - [OPKG](../../Linux/Package-Manager/OPKG.md) — менеджер пакетов Entware/OpenWrt, которым обновляется всё из раздела 6
-- [SSH-Ключи](../SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md) — ключи для замены dropbear на OpenSSH
-- [SSH — базовое руководство](../SSH/SSH-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md) · [SSH — продвинутое руководство](../SSH/SSH-%D0%9F%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%BD%D1%83%D1%82%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md)
-- [sshm (Gu1llaum-3)](../SSH/sshm%20%28Gu1llaum-3%29%20%E2%80%94%20TUI-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20SSH-%D1%85%D0%BE%D1%81%D1%82%D0%BE%D0%B2%20%D0%BD%D0%B0%20Go%20%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%20~-.ssh-config.md) — держать роутер в списке хостов
+- [SSH-Ключи](../../Network/SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md) — ключи для замены dropbear на OpenSSH
+- [SSH — базовое руководство](../../Network/SSH/SSH-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md) · [SSH — продвинутое руководство](../../Network/SSH/SSH-%D0%9F%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%BD%D1%83%D1%82%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.md)
+- [sshm (Gu1llaum-3)](../../Network/SSH/sshm%20%28Gu1llaum-3%29%20%E2%80%94%20TUI-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%20SSH-%D1%85%D0%BE%D1%81%D1%82%D0%BE%D0%B2%20%D0%BD%D0%B0%20Go%20%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%20~-.ssh-config.md) — держать роутер в списке хостов
 - [CVE-2024-6387 — regreSSHion](../../Security/Vulns/Linux/CVE/CVE-2024-6387%20%E2%80%94%20regreSSHion%20%28OpenSSH%20sshd%20signal-handler%20race%20RCE%29%20%2B%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BC%D0%B8%D1%84%D0%BE%D0%B2.md) — почему версия SSH-демона на периметре имеет значение
-- [IPTables](../IPTables.md) — правила фильтрации, если закрывать доступ руками
-- [WatchYourLAN (aceberg)](../WatchYourLAN%20%28aceberg%29%20%E2%80%94%20%D0%BB%D1%91%D0%B3%D0%BA%D0%B8%D0%B9%20ARP-%D1%81%D0%BA%D0%B0%D0%BD%D0%B5%D1%80%20LAN%20%D1%81%20%D0%B2%D0%B5%D0%B1-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%BC%20%28%D0%B8%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%2C%20%D0%B0%D0%BB%D0%B5%D1%80%D1%82%D1%8B%2C%20Grafana%29%2C%20%D1%87%D1%82%D0%BE%20%D1%8D%D1%82%D0%BE%20%D0%B8%20%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B.md) — инвентаризация того, что висит за этим роутером
-- [russian-iperf3-servers](../russian-iperf3-servers%20%28itdoginfo%29%20%E2%80%94%20%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B5%20iPerf3-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B%20%D0%B2%20%D0%A0%D0%A4%20%D0%B4%D0%BB%D1%8F%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%80%D0%B0%20%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8.md) — проверить, не просела ли скорость после смены прошивки
+- [IPTables](../../Network/IPTables.md) — правила фильтрации, если закрывать доступ руками
+- [WatchYourLAN (aceberg)](../../Network/WatchYourLAN%20%28aceberg%29%20%E2%80%94%20%D0%BB%D1%91%D0%B3%D0%BA%D0%B8%D0%B9%20ARP-%D1%81%D0%BA%D0%B0%D0%BD%D0%B5%D1%80%20LAN%20%D1%81%20%D0%B2%D0%B5%D0%B1-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%BE%D0%BC%20%28%D0%B8%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%2C%20%D0%B0%D0%BB%D0%B5%D1%80%D1%82%D1%8B%2C%20Grafana%29%2C%20%D1%87%D1%82%D0%BE%20%D1%8D%D1%82%D0%BE%20%D0%B8%20%D0%BD%D1%8E%D0%B0%D0%BD%D1%81%D1%8B.md) — инвентаризация того, что висит за этим роутером
+- [russian-iperf3-servers](../../Network/russian-iperf3-servers%20%28itdoginfo%29%20%E2%80%94%20%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B5%20iPerf3-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B%20%D0%B2%20%D0%A0%D0%A4%20%D0%B4%D0%BB%D1%8F%20%D0%B7%D0%B0%D0%BC%D0%B5%D1%80%D0%B0%20%D1%81%D0%BA%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8.md) — проверить, не просела ли скорость после смены прошивки
 
 ## Ссылки
 
