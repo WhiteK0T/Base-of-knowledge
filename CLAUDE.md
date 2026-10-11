@@ -10,11 +10,15 @@ When asked to "add a note" or "document X", create or edit a Markdown file follo
 
 ## Layout
 
-Top-level folders group notes by domain, e.g. `AI/`, `VCS/`, `Network/`, `Linux/`, `Programming/`, `Security/`, `Pentest/`, `Health/`, `Education/`, `Windows/`, `Drones/`, `Apps/`. Each domain is further nested by topic (`Linux/Package-Manager/`, `Programming/Java/JCF/`, `VCS/GitHub/`, etc.).
+Top-level folders group notes by domain, e.g. `AI/`, `VCS/`, `Network/`, `Linux/`, `Programming/`, `Security/`, `Pentest/`, `Health/`, `Education/`, `Windows/`, `Drones/`, `Apps/`, `Tools/`. Each domain is further nested by topic (`Linux/Package-Manager/`, `Programming/Java/JCF/`, `VCS/GitHub/`, etc.).
 
 **`Pentest/` vs `Security/`:** **offensive** tooling lives in `Pentest/`, split by area — `Pentest/Web/`, `Pentest/Windows-AD/`, `Pentest/Wireless/`, `Pentest/Recon/` (OSINT), `Pentest/Social-Engineering/`, `Pentest/Frameworks/`. `Security/` keeps CVE writeups (`Security/Vulns/`), forensics, radio/SDR, privacy and **defensive** tools. New offensive-tool notes go under `Pentest/<area>`; CVE research and defensive/privacy notes stay in `Security/`.
 
 **`Linux/Commands/` naming rule:** every note's filename is **exactly the system command name**, in its real case, plus `.md` — `rm.md`, `mv.md`, `lsof.md`, `curl.md`, `scp.md`. No descriptions, dashes or parentheses in the filename (this keeps quick-search by command instant). The descriptive title goes into the note's `# H1` and into the note's bullet in `README.md`. When adding a note there or renaming one, update every link to it by hand (percent-encode if needed).
+
+**`Tools/` — vault tooling, not notes about tools:** scripts that *produce material for the vault itself* (poster/image/cheatsheet generators and similar helpers). One subfolder per tool: the script plus a `README.md` note (normal frontmatter, Russian) explaining what it builds, how to run it and its dependencies per platform. Generated output still goes to `Cache/`, mirroring the note it belongs to. Downloaded assets (fonts etc.) are cached outside the repo, never committed. Notes *about* third-party tools stay in their topic domains (`Apps/`, `AI/`, …).
+
+- `Tools/claude-code-poster/poster.py` builds `Cache/Claude-Code/claude-code-cheatsheet-2560x1440.png` for `AI/Agents/Claude Code — шпаргалка команд.md`. Its design copies the original cheatsheet from https://t.me/bugnotfeature/27215 (header/body colors sampled from it). When the cheatsheet note changes, update `BLOCKS` in the script and regenerate the poster with it instead of drawing a new one by hand.
 
 Two special folders:
 

@@ -33,3 +33,7 @@ $RECYCLE.BIN/
 
 # ── Приватная заметка (инфраструктура VPS), не публиковать ──────────
 /Linux/Gentoo/KDE Plasma на headless VPS (Gentoo, X11) — удалённый доступ RustDesk + RDP-VNC на localhost.md
+
+# ── Tools/: служебные скрипты — кэш Python не коммитим ─────────────
+__pycache__/
+*.pyc
