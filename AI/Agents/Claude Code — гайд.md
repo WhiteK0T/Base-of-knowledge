@@ -10,6 +10,8 @@ tags:
   - https://code.claude.com/docs/en/commands
   - https://code.claude.com/docs/en/interactive-mode
   - https://code.claude.com/docs/en/slash-commands
+  - https://github.com/thevibeworks/claude-code-docs
+  - https://t.me/bugnotfeature/28349
 ---
 
 # Claude Code — гайд
@@ -85,5 +87,19 @@ tags:
 - `/team-onboarding` — гайд для коллеги из истории твоих сессий.
 - `/insights` — аналитика твоих сессий: зоны проекта, паттерны, точки трения.
 - `/doctor` — проверить установку (`f` — попросить Claude починить найденное).
+
+## 📚 Офлайн-зеркало документации (claude-code-docs)
+
+Если нужно искать по докам офлайн или дать самому Claude Code локальную базу знаний о себе — есть сторонний репозиторий **[thevibeworks/claude-code-docs](https://github.com/thevibeworks/claude-code-docs)** (MIT): авто-обновляемое (4 раза в день через GitHub Actions) зеркало markdown-документации Anthropic — ~4100 файлов из 6+ источников (Claude Code и Agent SDK, API-референс, MCP-спека, официальные skills и плагины, cookbooks, support). Клонируешь и натравливаешь агента:
+
+```bash
+git clone https://github.com/thevibeworks/claude-code-docs
+cd claude-code-docs
+claude "how do I set up hooks in the Agent SDK?"
+```
+
+- Обновить вручную: `uv run scripts/fetcher.py` (нужен [uv](https://docs.astral.sh/uv/); для GitHub-источников — `GITHUB_TOKEN`). Ничего не конвертируется из HTML: источники сами отдают `.md`-вариант каждой страницы.
+- Есть и **MCP-сервер** (`mcp/`) с инструментом `search_docs` — ставит доки в `~/.claude/claude-code-docs/` и ищет по ним прямо из агента.
+- ⚠️ «Вся документация» — с оговоркой: сами доки (Claude Code, API, MCP, skills, cookbooks) полные, а блог Anthropic заморожен на 2026-07-08, research собран на ~46%, news на ~22% (anthropic.com отдаёт только HTML, markdown-варианта нет). Для справочного поиска по продуктовым докам — полноценно; как архив инженерного блога — частично.
 
 #AI #Claude_Code #CLI #Гайд
