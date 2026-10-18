@@ -73,7 +73,7 @@ sntp pool.ntp.org                        # разовая проверка см�
 | Конфигурация | свой `chrony.conf` | **тот же `ntp.conf`**, `ntpq` |
 | Когда брать | **почти всегда**: сервер, VPS, ноутбук, роутер | нужна совместимость с конфигами старого ntp или экзотические эталонные часы |
 
-Переход на chrony на Gentoo — в разделе 3.
+Переход на chrony на Gentoo — в разделе 3. Про ntpsec — отдельная заметка: [ntpsec — защищённый форк ntpd](ntpsec%20%E2%80%94%20%D0%B7%D0%B0%D1%89%D0%B8%D1%89%D1%91%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%84%D0%BE%D1%80%D0%BA%20ntpd%20%28NTS%2C%20ntp.conf%2C%20ntpq-ntpmon-ntpviz%29%2C%20%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0%20net-misc-ntp%20%D0%BD%D0%B0%20Gentoo%2C%20Debian%2C%20Arch.md).
 
 ---
 
