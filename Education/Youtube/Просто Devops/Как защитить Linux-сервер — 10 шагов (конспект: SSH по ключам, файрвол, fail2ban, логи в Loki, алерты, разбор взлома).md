@@ -12,7 +12,6 @@ tags:
 Источник:
   - https://www.youtube.com/watch?v=SF6e_aYOGRE
   - https://www.youtube.com/@prosto_devops
-  - "/mnt/dat1T/Youtube/prog/Просто Devops/2026-10-18 КАК ЗАЩИТИТЬ LINUX-(1080p30).mkv"
   - https://news.sophos.com/en-us/2019/04/16/exposed-cyberattacks-on-cloud-honeypots/
   - https://blog.qualys.com/vulnerabilities-threat-research/2024/07/01/regresshion-remote-unauthenticated-code-execution-vulnerability-in-openssh-server
   - https://wiki.debian.org/NewInTrixie
@@ -23,7 +22,7 @@ tags:
 
 # 🛡️ Как защитить Linux-сервер — 10 шагов (Просто DevOps)
 
-Конспект ролика [«Как защитить Linux»](https://www.youtube.com/watch?v=SF6e_aYOGRE) канала [**«Просто DevOps»**](https://www.youtube.com/@prosto_devops) (18.10.2026, ~28 минут). Видео расшифровано whisper, команды сверены со слайдами. Рекламные вставки курса опущены.
+Конспект ролика [«Как защитить Linux»](https://www.youtube.com/watch?v=SF6e_aYOGRE) канала [**«Просто DevOps»**](https://www.youtube.com/@prosto_devops) (18.10.2026, ~28 минут; [локальная копия](file:///mnt/dat1T/Youtube/prog/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%20Devops/2026-10-18%20%D0%9A%D0%90%D0%9A%20%D0%97%D0%90%D0%A9%D0%98%D0%A2%D0%98%D0%A2%D0%AC%20LINUX-%281080p30%29.mkv)). Видео расшифровано whisper, команды сверены со слайдами. Рекламные вставки курса опущены.
 
 **Главная мысль:** сервер в интернете начинают атаковать в первые минуты. Защититься на 100 % нельзя, поэтому шаги двух видов: **закрыть очевидные дыры**, чтобы бот ушёл к другому хосту, и **видеть, что происходит**, чтобы заметить взлом и разобраться в нём.
 
@@ -304,7 +303,7 @@ sudo fail2ban-client set sshd unbanip 203.0.113.7    # если забанил �
 
 - Видео: https://www.youtube.com/watch?v=SF6e_aYOGRE
 - Канал «Просто DevOps»: https://www.youtube.com/@prosto_devops
-- Локальная копия видео: `/mnt/dat1T/Youtube/prog/Просто Devops/2026-10-18 КАК ЗАЩИТИТЬ LINUX-(1080p30).mkv`
+- Локальная копия видео: [/mnt/dat1T/Youtube/prog/Просто Devops/2026-10-18 КАК ЗАЩИТИТЬ LINUX-(1080p30).mkv](file:///mnt/dat1T/Youtube/prog/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%20Devops/2026-10-18%20%D0%9A%D0%90%D0%9A%20%D0%97%D0%90%D0%A9%D0%98%D0%A2%D0%98%D0%A2%D0%AC%20LINUX-%281080p30%29.mkv)
 - Sophos — Exposed: Cyberattacks on Cloud Honeypots (2019): https://news.sophos.com/en-us/2019/04/16/exposed-cyberattacks-on-cloud-honeypots/
 - Qualys — regreSSHion (CVE-2024-6387): https://blog.qualys.com/vulnerabilities-threat-research/2024/07/01/regresshion-remote-unauthenticated-code-execution-vulnerability-in-openssh-server
 - Debian 13 — что нового (wtmpdb, lastlog2): https://wiki.debian.org/NewInTrixie
