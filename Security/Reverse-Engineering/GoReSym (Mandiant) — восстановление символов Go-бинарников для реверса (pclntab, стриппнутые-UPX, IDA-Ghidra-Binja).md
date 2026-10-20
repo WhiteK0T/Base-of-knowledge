@@ -97,6 +97,6 @@ GoReSym -human ./malware.bin                     # быстрый обзор в 
 - Скрипты: [IDAPython/goresym_rename.py](https://github.com/mandiant/GoReSym/tree/master/IDAPython) · GhidraPython/ · BinjaPython
 - Деобфускация garble: [GoResolver (Volexity)](https://www.volexity.com/blog/2025/04/01/goresolver-using-control-flow-graph-similarity-to-deobfuscate-golang-binaries-automatically/)
 - Источник новости: [CodeGuard: PySec Edition](https://t.me/c/2675453029/1425)
-- Связанные: [Reversecore MCP — MCP-сервер для реверса и анализа malware](Reversecore%20MCP%20%E2%80%94%20MCP-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B5%D0%B2%D0%B5%D1%80%D1%81-%D0%B8%D0%BD%D0%B6%D0%B8%D0%BD%D0%B8%D1%80%D0%B8%D0%BD%D0%B3%D0%B0%20%D0%B8%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20malware%20%28Radare2-r2ghidra-YARA%29.md)
+- Связанные: [Reversecore MCP — MCP-сервер для реверса и анализа malware](AI/Reversecore%20MCP%20%E2%80%94%20MCP-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%20%D0%B4%D0%BB%D1%8F%20%D1%80%D0%B5%D0%B2%D0%B5%D1%80%D1%81-%D0%B8%D0%BD%D0%B6%D0%B8%D0%BD%D0%B8%D1%80%D0%B8%D0%BD%D0%B3%D0%B0%20%D0%B8%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20malware%20%28Radare2-r2ghidra-YARA%29.md)
 
 #ReverseEngineering #Malware #Security #Golang #DFIR
