@@ -130,6 +130,6 @@ python -m scripts.run_loop \
 - skill-forge: https://github.com/AgriciDaniel/skill-forge
 - Исходный пост: https://t.me/open_source_friend/5860
 
-Связанные заметки: [agent-skills (Addy Osmani)](agent-skills%20%28Addy%20Osmani%29%20%E2%80%94%2025%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B6%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%86%D0%B8%D0%BA%D0%BB%D0%B0%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8%20%D0%BE%D1%82%20spec%20%D0%B4%D0%BE%20ship%20%281%2C9k%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2%20%D0%B2%20%D1%84%D0%BE%D0%BD%D0%B5%29.md), [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md).
+Связанные заметки: [agent-skills (Addy Osmani)](addyosmani/agent-skills%20%28Addy%20Osmani%29%20%E2%80%94%2025%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B6%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%86%D0%B8%D0%BA%D0%BB%D0%B0%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8%20%D0%BE%D1%82%20spec%20%D0%B4%D0%BE%20ship%20%281%2C9k%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2%20%D0%B2%20%D1%84%D0%BE%D0%BD%D0%B5%29.md), [Claude Code — гайд](../Agents/Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md).
 
 #AI #Skills #Claude_Code #Агенты #Тестирование

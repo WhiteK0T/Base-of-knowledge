@@ -9,9 +9,11 @@ tags:
   - Cursor
   - Инженерные_практики
   - TDD
+обновлено: 2026-10-20T10:10:00
 Источник:
   - https://github.com/addyosmani/agent-skills
   - https://skills.addy.ie
+  - https://github.com/addyosmani/agent-skills/blob/main/evals/README.md
 ---
 
 # agent-skills (Addy Osmani) — 25 скиллов жизненного цикла разработки
@@ -22,34 +24,34 @@ tags:
 > Идея из README: агент по умолчанию идёт кратчайшим путём (пропускает спеки, тесты, безопасность), а скиллы навязывают дисциплину, которой придерживаются сильные инженеры.
 
 > [!warning] Не путать
-> В хранилище уже есть заметка [agent-skills — реестр проверенных скиллов](agent-skills%20%E2%80%94%20%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B0%20%28CLI-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%2C%20Claude%20Code-Cursor-Codex%29.md) — это **другой** проект (`tech-leads-club/agent-skills`, реестр с проверкой безопасности). Здесь — `addyosmani/agent-skills`, набор процессов разработки.
+> В хранилище уже есть заметка [agent-skills — реестр проверенных скиллов](../agent-skills%20%E2%80%94%20%D1%80%D0%B5%D0%B5%D1%81%D1%82%D1%80%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%D0%BA%D0%BE%D0%B4%D0%B0%20%28CLI-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%2C%20Claude%20Code-Cursor-Codex%29.md) — это **другой** проект (`tech-leads-club/agent-skills`, реестр с проверкой безопасности). Здесь — `addyosmani/agent-skills`, набор процессов разработки.
 
 ---
 
-## 1. Цифры (замерено на клоне и через API, 2026-10-07)
+## 1. Цифры (замерено на клоне и через API, 2026-10-20; первый замер — 07.10)
 
 | Параметр | Значение |
 | :--- | :--- |
-| Репозиторий создан | 2026-02-15, последний пуш 2026-10-03 |
-| Звёзды / форки | **102 672** / **10 757** |
-| Открытых issue + PR | 135 (счётчик GitHub считает их вместе) |
-| Версия плагина | **0.6.12** (`plugin.json`), теги `0.6.x` |
+| Репозиторий создан | 2026-02-15, последний пуш 2026-10-13 |
+| Звёзды / форки | **108 708** / **11 335** (07.10: 102 672 / 10 757) |
+| Открытых issue + PR | 146 (счётчик GitHub считает их вместе) |
+| Версия плагина | **0.6.13** (`plugin.json`, 13.10.2026), теги `0.6.x` |
 | Авторы | Addy Osmani; среди основных соавторов по коммитам — Federico Bartoli и Joan León |
 | Скиллов / команд / персон / чек-листов | 25 / 9 / 4 / 7 |
-| Eval-кейсов | 25 файлов в `evals/cases/` (по одному на скилл) |
+| Eval-кейсов | 25 файлов в `evals/cases/` (по одному на скилл) + 5 кейсов `claude plugin eval` в `evals/plugin/` |
 
 ### Цена в токенах (tiktoken `o200k_base`)
 
 | Что | Токены |
 | :--- | ---: |
-| Фронтматтеры всех 25 скиллов (то, что агент держит постоянно) | **1 890** |
-| Все 25 `SKILL.md` целиком | 75 693 |
-| Скиллы вместе с подфайлами (`references/`, `scripts/`) | 90 879 |
-| 4 персоны (`agents/`) | 5 518 |
-| 7 чек-листов (`references/`) | 15 708 |
-| 9 команд (`.claude/commands/`) | 3 861 |
+| Фронтматтеры всех 25 скиллов (то, что агент держит постоянно) | **1 925** |
+| Все 25 `SKILL.md` целиком | 76 197 |
+| Скиллы вместе с подфайлами (`references/`, `scripts/`) | 91 485 |
+| 4 персоны (`agents/`) | 5 542 |
+| 7 чек-листов (`references/`) | 15 712 |
+| 9 команд (`.claude/commands/`) | 3 862 |
 
-Вывод: **в фоне проект стоит ~1,9k токенов** — это дёшево (для сравнения, [claude-skills (alirezarezvani)](claude-skills%20%28alirezarezvani%29%20%E2%80%94%20374%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%B0%20%C2%AB%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%C2%BB%20%28%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%E2%80%94%2036k%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2%20%D0%B2%20%D1%84%D0%BE%D0%BD%D0%B5%2C%20%D1%81%D0%B0%D0%BC%20%D0%BD%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%D0%B5%D1%82%29.md) держит ~36k). Тело скилла (2–5k токенов, у `code-review-and-quality` 4,5k) подгружается только когда он сработал. Самые тяжёлые с подфайлами: `idea-refine` (8,6k), `constraint-driven-development` (7,9k), `security-and-hardening` (7,0k), `performance-optimization` (6,2k).
+Вывод: **в фоне проект стоит ~1,9k токенов** — это дёшево (для сравнения, [claude-skills (alirezarezvani)](../claude-skills%20%28alirezarezvani%29%20%E2%80%94%20374%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%B0%20%C2%AB%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%C2%BB%20%28%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%E2%80%94%2036k%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2%20%D0%B2%20%D1%84%D0%BE%D0%BD%D0%B5%2C%20%D1%81%D0%B0%D0%BC%20%D0%BD%D0%B5%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%D0%B5%D1%82%29.md) держит ~36k). Тело скилла (2–5k токенов, у `code-review-and-quality` 4,5k) подгружается только когда он сработал. Самые тяжёлые с подфайлами: `idea-refine` (8,9k), `constraint-driven-development` (7,9k), `security-and-hardening` (7,0k), `performance-optimization` (6,2k).
 
 ---
 
@@ -129,7 +131,7 @@ DEFINE → PLAN → BUILD → VERIFY → REVIEW → SHIP
 | `/plan` | План мелких задач (`tasks/plan.md`) |
 | `/build` | Одна задача: тест (RED) → код (GREEN) → регрессия → сборка → коммит → стоп |
 | `/build auto` | Весь план за один утверждённый проход: **один** человеческий барьер, дальше задача за задачей |
-| `/test`, `/constraints`, `/review`, `/webperf`, `/code-simplify` | Соответствующие этапы |
+| `/test`, `/constraints`, `/review`, `/webperf`, `/code-simplify` | Соответствующие этапы. С 0.6.13 `/review` и `/test` — **не обёртки персон**: они запускают `code-review-and-quality` и `test-driven-development` прямо в основной сессии, где весь контекст разговора. Персону в чистом контексте — вызвать напрямую или через `/ship` |
 | `/ship` | Веер: параллельно запускает персоны и сводит отчёты в **go/no-go** с планом отката |
 
 Что стоит знать про `/build auto` (по тексту команды):
@@ -137,6 +139,8 @@ DEFINE → PLAN → BUILD → VERIFY → REVIEW → SHIP
 - до старта проверяет чистоту `git status`, чтобы автокоммиты не захватили чужие правки;
 - согласие должно быть однозначным («approve», «go»); «выглядит разумно» не засчитывается;
 - по коммиту на задачу, `git add -A` не используется; на авторизации, платежах, деструктивных миграциях и всём, что нельзя откатить `git revert`, **останавливается** и просит подтверждения.
+
+В Claude Code команды ставятся как команды плагина; если имя совпадает со встроенной (как `/review`), вызывать с пространством имён: **`/agent-skills:review`**. Метки находок ревью теперь Critical / Required / Optional / Nit.
 
 `/ship` пропускает веер, только если одновременно: ≤2 файлов, дифф <50 строк и нет auth/платежей/доступа к данным/конфигов. Свои `code-reviewer`/`security-auditor`/`test-engineer` в `.claude/agents/` имеют приоритет над плагинными.
 
@@ -208,6 +212,9 @@ npx skills add addyosmani/agent-skills --skill test-driven-development    # од
 | Command Code | `cmd skills add addyosmani/agent-skills [--global]` |
 | Copilot / Windsurf | персоны из `agents/` и тексты скиллов — в `.github/copilot-instructions.md` / правила Windsurf |
 | Antigravity | `agy plugin install https://github.com/addyosmani/agent-skills.git`; обёртки команд не находятся, вызывать скиллы напрямую |
+| Pi / Oh My Pi | `pi install git:github.com/addyosmani/agent-skills` / `omp plugin marketplace add addyosmani/agent-skills`, затем `omp plugin install agent-skills@addy-agent-skills` |
+| Dojo Workspace | `dojo skills add addyosmani/agent-skills` |
+| fx | скопировать `skills/*` в `.fx/skills/` (или `~/.fx/skills/`), нужен fx 0.0.5+ |
 
 ---
 
@@ -222,10 +229,30 @@ npx skills add addyosmani/agent-skills --skill test-driven-development    # од
 
 > [!warning] Что проверить самому
 > - **Сравнение написано автором проекта** — честное по духу, но не независимое.
-> - **Нет доказательства, что скиллы улучшают результат.** Три уровня evals проверяют структуру, маршрутизацию по описаниям и трассу выполнения, но не качество итогового кода. Файл `evals/skill-impact.md` — лишь журнал отклонённых правок. Пользу замерьте A/B-тестом, например через [skillcheck](skillcheck%20%28sx4im%29%20%E2%80%94%20A-B-%D1%82%D0%B5%D1%81%D1%82%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%28SKILL.md%2C%20AGENTS.md%2C%20CLAUDE.md%29%20%D1%81%D0%BE%20%D1%81%D0%BB%D0%B5%D0%BF%D0%BE%D0%B9%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%BE%D0%B9%20%D0%B8%20bootstrap-CI%2C%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8%20%D0%B8%20%D0%B3%D0%B4%D0%B5%20%D0%BE%D0%BD%D0%B0%20%D0%B2%D1%80%D1%91%D1%82.md).
+> - **Доказательства пользы пока частичные.** Три уровня evals проверяют структуру, маршрутизацию по описаниям и трассу выполнения; с 0.6.13 добавились `claude plugin eval` с замером `Δ` «с плагином / без» (раздел 7.1), но это 5 кейсов про срабатывание и ответ, а не качество кода на реальном проекте. Файл `evals/skill-impact.md` — журнал отклонённых правок. Пользу для своих задач замерьте A/B-тестом, например через [skillcheck](../skillcheck%20%28sx4im%29%20%E2%80%94%20A-B-%D1%82%D0%B5%D1%81%D1%82%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%28SKILL.md%2C%20AGENTS.md%2C%20CLAUDE.md%29%20%D1%81%D0%BE%20%D1%81%D0%BB%D0%B5%D0%BF%D0%BE%D0%B9%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%BE%D0%B9%20%D0%B8%20bootstrap-CI%2C%20%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D0%BA%D0%B8%20%D0%B8%20%D0%B3%D0%B4%D0%B5%20%D0%BE%D0%BD%D0%B0%20%D0%B2%D1%80%D1%91%D1%82.md).
 > - **Тяжёлый процесс для мелочей.** Для правки в пару строк весь цикл избыточен; автор сам даёт «короткую дорогу» (`/test` + `/review`).
 > - **Примеры в основном про веб/TypeScript** (Core Web Vitals, DevTools MCP). Ядро (TDD, ревью, git, ADR) от языка не зависит, а `test-driven-development` прямо требует сначала выяснить стек и команды проекта; но веб-скиллы для системной разработки (C, ядро, пакеты Gentoo) бесполезны.
 > - **Автономный режим коммитит сам** — запускайте `/build auto` в отдельной ветке.
+
+### 7.1. Plugin evals: срабатывает ли скилл на самом деле (новое в 0.6.13)
+
+`claude plugin eval` (Claude Code 2.1.269+) загружает весь плагин и прогоняет кейсы из `evals/plugin/` **в двух вариантах — с плагином и без**, а столбец `Δ` показывает, что скилл добавил к ответу. Каждый прогон — реальный вызов модели на вашем аккаунте, поэтому в CI не запускается.
+
+```bash
+claude plugin eval . --no-publish                                       # все кейсы, оба варианта, по 3 прогона
+claude plugin eval . --case code-review-fires --runs 1 --ablation none  # один дешёвый прогон
+```
+
+Кейсы парные: «должен сработать» и «должен промолчать» — `code-review-fires` / `code-review-stays-quiet` / `code-review-stays-quiet-on-commit-message`, `tdd-fires-on-pasted-bug` / `tdd-stays-quiet-on-debug`.
+
+Что показали первые прогоны (записано в `evals/README.md`):
+
+- **Срабатывание скилла случайно.** Скилл ревью сработал в 5 из 7 прогонов, TDD — в 2 из 7 на «тест сначала».
+- **Рычаг — описание (description).** На просьбы вроде «Review this diff before I merge it» скилл почти не срабатывал: модель делала ревью сама, грамотно, но без вердикта, уровней важности и пяти осей. Помогла одна оговорка в описании — **«скилл применяется, даже если дифф вставлен прямо в сообщение»**: на claude-opus-5-5 срабатывания выросли с 7 до 21 из 27, а на девяти соседних запросах, где скилл не нужен, остались 0 из 27.
+- **То же для TDD:** «добавь тесты», «почини баг» и «измени поведение» с кодом в сообщении поначалу не включали скилл вовсе (0 из 6 каждый). После уточнения описания — 19 из 24, ложных срабатываний по-прежнему 0.
+- **Практика:** фиксировать `--model` и версию Claude Code при замерах (CLI обновляется сам, модель по умолчанию за день менялась дважды) и давать кейсу бюджет от 10 ходов.
+
+Это полезный урок и для своих скиллов: если скилл «не срабатывает», чинить нужно описание, а не тело — см. [skill-creator (Anthropic)](../skill-creator%20%28Anthropic%29%20%E2%80%94%20%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%28eval%2C%20%D0%B1%D0%B5%D0%BD%D1%87%D0%BC%D0%B0%D1%80%D0%BA%2C%20%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F%20description%29%2C%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D0%BE%20skill-forge.md).
 
 ---
 
@@ -238,6 +265,7 @@ npx skills add addyosmani/agent-skills --skill test-driven-development    # од
 
 ## Ссылки
 
+- Видеообзор трёх наборов (Matt Pocock, Addy Osmani, pstack): [конспект ролика Swag](../../../Education/Youtube/Swag/%D0%A1%D0%BA%D0%B8%D0%BB%D0%BB%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20%E2%80%94%20%D1%82%D1%80%D0%B8%20%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D0%B0%3A%20Matt%20Pocock%2C%20Addy%20Osmani%2C%20pstack%20%28%D0%BA%D0%BE%D0%BD%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20Swag%3A%20grill-me%2C%20%D0%B6%D0%B8%D0%B7%D0%BD%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D1%86%D0%B8%D0%BA%D0%BB%2C%20poteto-mode%2C%20unslop%29.md)
 - Репозиторий: https://github.com/addyosmani/agent-skills
 - Сайт: https://skills.addy.ie
 - Формат скилла: https://github.com/addyosmani/agent-skills/blob/main/docs/skill-anatomy.md
