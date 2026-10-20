@@ -12,6 +12,7 @@ tags:
 Источник:
   - https://www.youtube.com/watch?v=SF6e_aYOGRE
   - https://www.youtube.com/@prosto_devops
+  - "/mnt/dat1T/Youtube/prog/Просто Devops/2026-10-18 КАК ЗАЩИТИТЬ LINUX-(1080p30).mkv"
   - https://news.sophos.com/en-us/2019/04/16/exposed-cyberattacks-on-cloud-honeypots/
   - https://blog.qualys.com/vulnerabilities-threat-research/2024/07/01/regresshion-remote-unauthenticated-code-execution-vulnerability-in-openssh-server
   - https://wiki.debian.org/NewInTrixie
@@ -303,6 +304,7 @@ sudo fail2ban-client set sshd unbanip 203.0.113.7    # если забанил �
 
 - Видео: https://www.youtube.com/watch?v=SF6e_aYOGRE
 - Канал «Просто DevOps»: https://www.youtube.com/@prosto_devops
+- Локальная копия видео: `/mnt/dat1T/Youtube/prog/Просто Devops/2026-10-18 КАК ЗАЩИТИТЬ LINUX-(1080p30).mkv`
 - Sophos — Exposed: Cyberattacks on Cloud Honeypots (2019): https://news.sophos.com/en-us/2019/04/16/exposed-cyberattacks-on-cloud-honeypots/
 - Qualys — regreSSHion (CVE-2024-6387): https://blog.qualys.com/vulnerabilities-threat-research/2024/07/01/regresshion-remote-unauthenticated-code-execution-vulnerability-in-openssh-server
 - Debian 13 — что нового (wtmpdb, lastlog2): https://wiki.debian.org/NewInTrixie
