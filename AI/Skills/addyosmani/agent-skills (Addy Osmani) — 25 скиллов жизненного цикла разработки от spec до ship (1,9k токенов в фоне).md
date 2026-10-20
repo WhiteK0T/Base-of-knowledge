@@ -220,7 +220,7 @@ npx skills add addyosmani/agent-skills --skill test-driven-development    # од
 
 ## 7. Сравнение и ограничения
 
-В `docs/comparison.md` автор сравнивает проект с **Superpowers** (obra) и скиллами **Matt Pocock**. Итог его же таблицы:
+В `docs/comparison.md` автор сравнивает проект с **Superpowers** (obra) и скиллами **Matt Pocock** (подробно — [skills (Matt Pocock)](../mattpocock/skills%20%28Matt%20Pocock%29%20%E2%80%94%2038%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D1%8F%D1%89%D0%B8%D1%85%20%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%BE%D0%B2%3A%20grilling%2C%20%D0%B3%D0%BB%D0%BE%D1%81%D1%81%D0%B0%D1%80%D0%B8%D0%B9%20%D0%B8%20ADR%2C%20to-spec%20%D0%B8%20to-tickets%2C%20tdd%2C%20code-review%20%28~0%2C6k%20%D1%82%D0%BE%D0%BA%D0%B5%D0%BD%D0%BE%D0%B2%20%D0%B2%20%D1%84%D0%BE%D0%BD%D0%B5%29.md)). Итог его же таблицы:
 - **agent-skills** — весь жизненный цикл, человек на каждом этапе, evals в репозитории;
 - **Superpowers** — длинные автономные прогоны с субагентами и git-worktree;
 - **Pocock** — острый ежедневный цикл, сильнее всего в выяснении требований («grill me»).
