@@ -185,14 +185,64 @@ withCredentials([string(credentialsId: 'demo-token', variable: 'TOKEN')]) {
   - у агента своё только `run/` (слои его машин) и копия ключа ВМ — `ssh` не примет ключ, читаемый кем-то кроме владельца; скрипты он исполняет, но изменить не может;
   - агенту — метка `kvm` (и группа `kvm` в системе), пайплайн просит `agent { label 'kvm' }`;
   - `Jenkinsfile.vm` в учебном репозитории; задача `sandbox-vm` — *Pipeline script from SCM* с **Script Path** `Jenkinsfile.vm` (один репозиторий — несколько пайплайнов).
-- **Первая же находка:** в Debian тест `-u` упал, на Gentoo — зелёный. `awk '{ print toupper($0) }'` в Gentoo — это `gawk` (кириллицу понимает), в Debian по умолчанию `mawk` (только латиница). Ради таких ошибок ВМ и нужны: переносимый вариант — GNU `sed 's/.*/\U&/'`.
-- **Ограничение `lock`:** он защищает от одновременных сборок Jenkins, но не от ручного запуска той же ВМ (тот же SSH-порт) в терминале.
+- **Первая же находка:** в Debian тест `-u` упал, на Gentoo — зелёный. `awk '{ print toupper($0) }'` в Gentoo — это `gawk` (кириллицу понимает), в Debian по умолчанию `mawk` (только латиница). Ради таких ошибок ВМ и нужны: исправлено на GNU `sed 's/.*/\U&/'` → обе системы зелёные. Оговорка на будущее: `\U` — расширение GNU sed, в BusyBox (Alpine, Entware) его нет — появится такая ВМ, матрица это поймает.
+- **Как выглядит в логе:** `Resource [vm-debian-13] did not exist. Created.` → `Lock acquired` → `vm-up` (≈8 с) → `PRETTY_NAME="Debian GNU/Linux 13 (trixie)"` → тесты → `scp` отчёта обратно → `junit` → `vm-down` → `Lock released`. Строка `[Checks API] No suitable checks publisher found` безвредна (отправка статусов в GitHub не настроена).
+- **Скриншоты GUI** — отложены до проекта с графическим интерфейсом.
+- **Ограничение `lock`:** он защищает от одновременных сборок Jenkins, но не от ручного запуска той же ВМ (тот же SSH-порт) в терминале. На этапе 8 причина убрана целиком — у каждой ВМ свой порт, `lock` больше не нужен (см. ниже).
 
 ### Этап 8. Матрица и параметры
 
-- **Цель:** одна задача — несколько окружений.
-- **Упражнение:** `matrix { axes { axis { name 'DISTRO'; values 'debian-13', 'ubuntu-24.04', 'ubuntu-26.04' } } … }` или `parallel`; параметры `choice`/`booleanParam` (например, «только Debian»).
-- **Готово, когда:** одна кнопка гоняет тесты на всех дистрибутивах, отчёт показывает, где упало.
+- **Цель:** одна задача — несколько окружений. Вместо двух задач (`sandbox-mb` на Gentoo и `sandbox-vm` в Debian), которые запускают и смотрят порознь, — **одна сборка**, где все системы проверяются параллельно, а отчёт показывает, где что упало.
+- **Подготовлено:** ветка [`matrix`](https://github.com/WhiteK0T/jenkins-sandbox/tree/matrix) учебного репозитория — новый `Jenkinsfile`, `Jenkinsfile.vm` удалён (его работу делает матрица).
+
+Устройство нового `Jenkinsfile`:
+
+```groovy
+// команда «на платформе»: на агенте или по SSH в ВМ; команда идёт через env — без экранирования кавычек
+def onPlatform(String platform, String cmd, boolean returnStatus = false) { … }
+
+pipeline {
+    agent none                                    // у каждой ячейки матрицы свой агент
+    parameters { choice(name: 'ONLY', choices: ['все', 'gentoo', 'debian-13']) }
+    stages {
+        stage('Системы') {
+            matrix {
+                axes { axis { name 'PLATFORM'; values 'gentoo', 'debian-13' } }
+                when { expression { params.ONLY == null || params.ONLY == 'все' || params.ONLY == env.PLATFORM } }
+                agent { label 'linux && kvm' }
+                environment { VIRT = '/srv/virt'; VM_ID = "b${env.BUILD_NUMBER}-${currentBuild.startTimeInMillis}" }
+                stages {
+                    stage('ВМ: запуск') { when { expression { PLATFORM != 'gentoo' } } … }   // vm-up + scp кода
+                    stage('Окружение')  { … }                                               // uname, os-release, bats --version
+                    stage('shellcheck') { … }
+                    stage('Тесты')      { … post { always { junit 'reports/*.xml' } } }
+                }
+                post { always { /* vm-down, если ВМ */ } }
+            }
+        }
+        stage('Упаковка') { agent { label 'linux' } … }   // после матрицы, один раз
+    }
+}
+```
+
+- **Новое на этом этапе:**
+  - `agent none` наверху и `agent` у ячеек — каждая параллельная ветка получает свой исполнитель и свой workspace (`…@2`);
+  - `axes`/`axis` — оси матрицы; ячеек = произведение значений осей (позже можно добавить вторую ось, например версию bats), `excludes` — выкинуть ненужные сочетания;
+  - `when` у матрицы — фильтр ячеек по параметру `ONLY`;
+  - Groovy-функция над `pipeline { }` — общий код для всех ячеек;
+  - **у агента 2 исполнителя** — обе ячейки идут одновременно; с одним исполнителем матрица выполнилась бы по очереди.
+- **Что выяснилось при подготовке** (ветка прогнана в `sandbox-mb`, сборки #1–#5):
+  1. `No such property: PLATFORM` — в Groovy-выражениях (`when`, `script`, `options`) значение оси берут как **`env.PLATFORM`**; голое `PLATFORM` работает только внутри `sh '…$PLATFORM…'` (там это переменная окружения shell).
+  2. `lock(resource: "vm-${env.PLATFORM}")` в `options` матрицы — и даже в `options` стадии внутри неё — дал **`vm-null`**: options вычисляются раньше, чем ячейке назначено значение оси. Обе ячейки делили один замок и шли **по очереди** — сборка зелёная, а параллельности нет. Видно только по логу (`Trying to acquire lock on [Resource: vm-null]`) — хороший пример, зачем читать лог и у зелёных сборок.
+  3. Решение — убрать причину замка: **`vm-up` выбирает свободный SSH-порт** (пишет в `run/<имя>-<id>/ssh-port`), VNC-дисплей QEMU ищет сам (`-vnc …,to=99`, фактический — в `vnc-display` через QMP); `vm-ssh` находит машину по `VM_ID` из окружения. Теперь машин одного типа может быть сколько угодно, сборки разных веток и ручные ВМ друг другу не мешают.
+  4. Итог (сборка #5): обе ячейки стартуют в одну секунду (`…/sandbox-mb_matrix` и `…/sandbox-mb_matrix@2`), Gentoo — 1 с, Debian с подъёмом ВМ — ≈15 с, вся сборка — **17 с**, в отчёте 12 тестов (по 6 на систему).
+- **Упражнения:**
+  1. Посмотреть сборку ветки `matrix` в `sandbox-mb`: граф с двумя параллельными ветками `PLATFORM = 'gentoo'` / `PLATFORM = 'debian-13'`; в *Test Result* — тесты с пометкой системы.
+  2. Сломать что-то только для Debian (например, вернуть `awk` вместо `sed` в ветке) → жёлтая ячейка Debian, зелёная Gentoo, сборка целиком UNSTABLE.
+  3. *Build with Parameters* → `ONLY = debian-13` — ячейка Gentoo пропущена (*skipped*).
+  4. Слить `matrix` в `main` через **Pull Request** на GitHub; задачу `sandbox-vm` после этого удалить.
+- **Дальше:** собрать образы Ubuntu 24.04 и 26.04 (`vm-build-base`) → добавить их в `vms.conf` и в `values` оси — матрица вырастет на две ячейки без другой правки пайплайна.
+- **Готово, когда:** одна кнопка (или коммит) гоняет тесты на всех системах, отчёт показывает, где упало.
 
 ### Этап 9. Конфигурация как код и обслуживание
 
@@ -239,7 +289,7 @@ withCredentials([string(credentialsId: 'demo-token', variable: 'TOKEN')]) {
 | JUnit | `junit` | отчёты тестов (bats, Maven, pytest), тренды |
 | Timestamper | `timestamper` | время у каждой строки лога — видно, что тормозит |
 | Workspace Cleanup | `ws-cleanup` | `cleanWs()` — чистый workspace между сборками |
-| Lockable Resources | `lockable-resources` | эксклюзивный доступ к ВМ/портам из параллельных сборок |
+| Lockable Resources | `lockable-resources` | эксклюзивный доступ к общему ресурсу из параллельных сборок (этап 7; с этапа 8 ВМ без него — у каждой свой порт) |
 | Pipeline Utility Steps | `pipeline-utility-steps` | `readJSON`, `readYaml`, `zip` в пайплайне |
 | Configuration as Code | `configuration-as-code` | конфигурация сервера в YAML (этап 9) |
 | Job DSL | `job-dsl` | задачи кодом (этап 9) |
@@ -277,8 +327,8 @@ withCredentials([string(credentialsId: 'demo-token', variable: 'TOKEN')]) {
 - [x] Этап 4 — `Jenkinsfile` из Git, Multibranch, Poll SCM
 - [x] Этап 5 — JUnit-отчёты, UNSTABLE, артефакты
 - [x] Этап 6 — Credentials и `withCredentials`
-- [ ] Этап 7 — тесты во временной ВМ (Debian 13 — в работе), скриншоты GUI
-- [ ] Этап 8 — матрица дистрибутивов
+- [x] Этап 7 — тесты во временной ВМ (Debian 13); скриншоты GUI — отложены до проекта с GUI
+- [ ] Этап 8 — матрица дистрибутивов (ветка `matrix` готова и проверена; упражнения 1–4, затем Ubuntu 24.04/26.04)
 - [ ] Этап 9 — JCasC + Job DSL, бэкап, обновления
 - [ ] Этап 10 — API/CLI, Shared Library, MCP для агента
 
