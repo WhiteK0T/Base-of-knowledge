@@ -1438,6 +1438,8 @@ flowchart TB
 
 **Код:** [alexzhang13/rlm](https://github.com/alexzhang13/rlm) (MIT). Под-модель вызывается через `llm_query` и `llm_query_batched`, вложенная RLM — через `rlm_query`. Бэкенды: OpenAI, Anthropic, OpenRouter, Portkey, локальные через vLLM. Среда по умолчанию `local` выполняет код модели через `exec` **прямо в вашем процессе, без изоляции**. Для чего-то кроме опытов есть `docker`, `modal`, `e2b`, `daytona` и `prime`.
 
+**Своя мини-реализация на 6 языках** (документ в REPL, рекурсивный `llm_query`, сравнение изоляции кода модели, песочница bubblewrap, тесты) — в заметке [RLM на практике](../../../AI/Agents/Tooling/RLM%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B5%20%E2%80%94%20%D1%81%D0%B2%D0%BE%D0%B9%20Recursive%20Language%20Model%20%D0%BD%D0%B0%206%20%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0%D1%85%20%28%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%20%D0%B2%20REPL%2C%20%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20llm_query%3B%20exec%2C%20vm%2C%20JShell%2C%20yaegi%2C%20Rhai%2C%20bash%3B%20%D0%BF%D0%B5%D1%81%D0%BE%D1%87%D0%BD%D0%B8%D1%86%D0%B0%29.md).
+
 <details><summary>Минимальный пример из README (Python — библиотека только для него)</summary>
 
 ```sh
