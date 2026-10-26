@@ -288,6 +288,68 @@ pipeline {
 
 - **Цель:** сервер можно пересобрать из Git за минуты.
 - **Упражнение:** перенести созданное руками в **JCasC** (`casc.yaml`: пользователи, права, агенты, секреты-ссылки) и **Job DSL** (задачи); экспорт текущей конфигурации — *Manage Jenkins → Configuration as Code → View Configuration*. Бэкап `JENKINS_HOME` (особенно `secrets/`), обновление LTS и плагинов, чтение security advisories.
+- **Где код.** Каталог тестовых ВМ и Jenkins (`~/Virt`) — локальный Git-репозиторий. В `.gitignore` белый список: образы, кэш, закрытые ключи и пароли в Git не попадут даже случайно.
+
+  | Файл | Что описывает |
+  | :--- | :--- |
+  | `jenkins/casc.yaml` | безопасность (было с установки) + узел `agent-1` |
+  | `jenkins/jobs/sandbox-mb.groovy` | задача `sandbox-mb` на Job DSL; `casc.yaml` подключает её разделом `jobs:` |
+  | `jenkins/casc-sync-root.sh` | кладёт на сервер **только закоммиченное** (незакоммиченные правки — отказ) и показывает diff |
+  | `jenkins/twin.sh up\|down` | «двойник»: чистый `JENKINS_HOME` + тот же JCasC на `127.0.0.1:8091`, от обычного пользователя |
+
+- **Порядок работы:** правка → коммит → `sudo ~/Virt/jenkins/casc-sync-root.sh` → *Manage Jenkins → Configuration as Code → Reload existing configuration*. Правка в UI живёт до следующего Reload — если раздел описан в YAML, Reload вернёт значение из файла.
+- **Как выглядит код:**
+
+```yaml
+jenkins:
+  nodes:
+    - permanent:
+        name: "agent-1"
+        remoteFS: "/var/lib/jenkins-agent"
+        numExecutors: 4
+        labelString: "gentoo kvm linux"
+        retentionStrategy: "always"
+        launcher:
+          inbound:
+            webSocket: true
+jobs:
+  - file: /var/lib/jenkins/casc/jobs/sandbox-mb.groovy
+```
+
+```groovy
+multibranchPipelineJob('sandbox-mb') {
+    branchSources {
+        branchSource {
+            source {
+                git {
+                    id('jenkins-sandbox')   // постоянный id — иначе каждое применение DSL даёт «новый» источник
+                    remote('https://github.com/WhiteK0T/jenkins-sandbox.git')
+                    traits { gitBranchDiscovery() }
+                }
+            }
+        }
+    }
+    triggers { periodicFolderTrigger { interval('5m') } }
+    orphanedItemStrategy { discardOldItems() }
+}
+```
+
+- **Проверено до применения:** двойник с нуля поднял тот же сервер — пользователи и права, `agent-1` (4 исполнителя, метки, WebSocket), `sandbox-mb` с тем же источником и сканированием. Задача сама просканировала репозиторий и поставила `main` в очередь; агента у двойника нет, так что сборка ждёт.
+- **Части этапа:**
+  1. **Экспорт.** *View Configuration* — что Jenkins знает о себе. Это сотни строк значений по умолчанию, копировать целиком не нужно, только искать нужное: узел `agent-1` (сравнить с `casc.yaml`), учётные данные этапа 6 — значения там вида `{AQAAAB…}`.
+  2. **Агент из кода.** Синхронизация и *Reload*. Затем дрейф: в UI поставить 2 исполнителя → *Reload* → снова 4. Остаётся ли агент подключённым при Reload?
+  3. **Задача из кода.** *Configure* `sandbox-mb` до и после Reload: описание из DSL, остальное то же. Источник получил постоянный id `jenkins-sandbox` вместо случайного из UI — заметит ли это Jenkins, пересоберёт ли `main`?
+  4. **Своя задача на Job DSL** — написать самому, синтаксис в *API Viewer* (`/plugin/job-dsl/api-viewer/index.html`). Например, `vm-smoke`: по ночам поднимает и гасит каждую ВМ из `vms.conf` — образы живы.
+  5. **«Снести и поднять».** `twin.sh up` → сравнить с настоящим → `twin.sh down`. Учётных данных у двойника нет: их нет в YAML. Секрет узла другой: он вычисляется из ключа в `secrets/`.
+  6. **Секреты этапа 6:** удалить (не используются) или описать в YAML ссылкой на файл — `${readFile:/var/lib/jenkins/casc-secrets/…}`, сам секрет в Git не кладётся. Зашифрованное `{AQAAAB…}` расшифрует только Jenkins с тем же `secrets/`.
+  7. **Бэкап.** Код в Git, а из `JENKINS_HOME` бэкапить данные: `secrets/` (ключи шифрования и секретов узлов), `credentials.xml`, по желанию — история сборок `jobs/*/builds`. Проверка бэкапа — восстановить его в двойника.
+  8. **Обновления:**
+     - Jenkins LTS:
+       - Gentoo — `emerge -uav dev-util/jenkins-bin:lts`;
+       - Debian/Ubuntu — `apt` из `pkg.jenkins.io/debian-stable`;
+       - Arch — `pacman -Syu jenkins`;
+     - плагины — *Manage Jenkins → Plugins → Updates*;
+     - перед обновлением — бэкап, чтение *Upgrade Guide* LTS и [security advisories](https://www.jenkins.io/security/advisories/), обновление сначала на двойнике.
 - **Готово, когда:** «снести и поднять заново» даёт тот же сервер.
 
 ### Этап 10. Автоматизация и общие библиотеки (по желанию)
