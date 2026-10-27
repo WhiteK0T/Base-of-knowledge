@@ -19,6 +19,7 @@ Top-level folders group notes by domain, e.g. `AI/`, `VCS/`, `Network/`, `Linux/
 **`Tools/` — vault tooling, not notes about tools:** scripts that *produce material for the vault itself* (poster/image/cheatsheet generators and similar helpers). One subfolder per tool: the script plus a `README.md` note (normal frontmatter, Russian) explaining what it builds, how to run it and its dependencies per platform. Generated output still goes to `Cache/`, mirroring the note it belongs to. Downloaded assets (fonts etc.) are cached outside the repo, never committed. Notes *about* third-party tools stay in their topic domains (`Apps/`, `AI/`, …).
 
 - `Tools/claude-code-poster/poster.py` builds `Cache/Claude-Code/claude-code-cheatsheet-2560x1440.png` for `AI/Agents/Claude Code — шпаргалка команд.md`. Its design copies the original cheatsheet from https://t.me/bugnotfeature/27215 (header/body colors sampled from it). When the cheatsheet note changes, update `BLOCKS` in the script and regenerate the poster with it instead of drawing a new one by hand.
+- `Tools/codex-cli-poster/poster.py` builds `Cache/Codex-CLI/codex-cli-cheatsheet-2560x1440.png` for `AI/Agents/Codex CLI — шпаргалка команд.md` with the same engine and design as claude-code-poster (blue `EXP` badge marks experimental/beta items). When the Codex cheatsheet changes, update `BLOCKS` there and regenerate.
 
 Two special folders:
 
