@@ -136,6 +136,7 @@ alias claude-guarded='claude --settings ~/.claude/profiles/guarded.json'
 
 ## Связанные заметки
 
+- [Claude Code Templates (aitmpl.com) — каталог, откуда этот мод](Claude%20Code%20Templates%20%28aitmpl.com%29%20%E2%80%94%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2%20Claude%20Code%20%28922%20%D1%81%D0%BA%D0%B8%D0%BB%D0%BB%D0%B0%2C%20421%20%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%2C%20%D1%85%D1%83%D0%BA%D0%B8%2C%20MCP%2C%20%D0%BC%D0%BE%D0%B4%D1%8B%3B%20%D0%BE%D1%82%D0%BA%D1%83%D0%B4%D0%B0%20%D0%B1%D0%B5%D1%80%D1%83%D1%82%D1%81%D1%8F%20%D0%B8%20%D0%BA%D0%B0%D0%BA%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D1%8F%D1%8E%D1%82%D1%81%D1%8F%29.md) — сколько там компонентов, откуда они и как проверяются
 - [Claude Code — гайд](../Claude%20Code%20%E2%80%94%20%D0%B3%D0%B0%D0%B9%D0%B4.md) — настройки, режимы разрешений, плагины
 - [Claude Code — шпаргалка команд](../Claude%20Code%20%E2%80%94%20%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4.md) — `/model`, `/effort`, `/config` и флаги запуска
 - [Claude Code — кэш промптов](../Claude%20Code%20%E2%80%94%20%D0%BA%D1%8D%D1%88%20%D0%BF%D1%80%D0%BE%D0%BC%D0%BF%D1%82%D0%BE%D0%B2%20%28TTL%205%20%D0%BC%D0%B8%D0%BD%D1%83%D1%82%20%D0%B8%201%20%D1%87%D0%B0%D1%81%2C%20subagentPromptCacheTtl%2C%20%D1%87%D1%82%D0%BE%20%D1%81%D0%B1%D1%80%D0%B0%D1%81%D1%8B%D0%B2%D0%B0%D0%B5%D1%82%20%D0%BA%D1%8D%D1%88%29.md) — ещё один рычаг экономии токенов, кроме смены модели
