@@ -26,6 +26,18 @@ brew install yt-dlp
 # или просто скачать бинарник с GitHub Releases и положить в PATH
 ```
 
+YouTube то и дело меняет выдачу, поэтому yt-dlp нужен свежий: старые версии перестают находить форматы. Версии в репозиториях на ноябрь 2026:
+
+| Система | Команда | Версия |
+| :--- | :--- | :--- |
+| Gentoo | `emerge --ask net-misc/yt-dlp` | 2026.10.26 |
+| Arch | `sudo pacman -S yt-dlp` | 2026.10.26 |
+| Debian 13 | `sudo apt install -t trixie-backports yt-dlp` | 2026.10.26 (в основном репозитории — 2025.04.30) |
+| Ubuntu | `pipx install yt-dlp` | в 24.04 — 2024.04.09, в 26.04 — 2026.03.17 |
+| Entware | `opkg install yt-dlp` | 2026.2.4 — для YouTube может не хватить |
+
+Самостоятельная сборка с GitHub обновляет себя сама: `yt-dlp -U`.
+
 > [!note] FFmpeg
 > Для склейки видео+аудио и перекодирования нужен **FFmpeg** в `PATH`. Без него многие форматы (особенно >1080p на YouTube) не соберутся.
 
@@ -50,6 +62,21 @@ yt-dlp <URL_плейлиста>                     # плейлист цели�
 | `--write-subs --sub-langs ru,en` | субтитры |
 | `-N 4` | многопоточная загрузка фрагментов |
 | `--cookies-from-browser firefox` | приватные/возрастные видео через куки браузера |
+
+## 🧩 YouTube: JavaScript-движок и конфиг
+
+Для полной поддержки YouTube yt-dlp решает его JavaScript-задачи внешним движком ([EJS](https://github.com/yt-dlp/yt-dlp/wiki/EJS)). Нужны две вещи:
+- **компоненты `yt-dlp-ejs`.** В самостоятельные сборки с GitHub они уже встроены; при установке через pip — `pip install -U "yt-dlp[default]"`;
+- **JavaScript-движок:** Deno (рекомендуют, включён по умолчанию), Node.js, Bun или QuickJS. Кроме Deno, движки нужно включить явно: `--js-runtimes node`.
+
+Без движка часть форматов YouTube недоступна, и yt-dlp пишет об этом предупреждение. Обёртки, которые запускают его с `--no-warnings`, это предупреждение скрывают — остаётся только `Requested format is not available`.
+
+Постоянные ключи удобно держать в конфиге `~/.config/yt-dlp/config`. Его читают и обёртки, если они не передают `--ignore-config`:
+
+```text
+--js-runtimes node
+# --cookies-from-browser firefox
+```
 
 > [!warning] Правовой момент
 > Качай только тот контент, на который имеешь право; учитывай ToS площадок и авторские права.
