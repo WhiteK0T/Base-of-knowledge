@@ -352,11 +352,14 @@ DISTCC_DIR="/var/tmp/portage/.distcc" distccmon-text 5
 ### На клиенте: подробный лог одной сборки
 
 ```bash
-export DISTCC_VERBOSE=1
-export DISTCC_LOG=/tmp/distcc.log
-emerge -av1 какой-нибудь-пакет
-grep -c "would prefer to run" /tmp/distcc.log
+# файл заранее и на запись portage: компилирует он, а не root
+install -m 660 -o portage -g portage /dev/null /var/tmp/distcc-client.log
+# переменные только для этого запуска — export остался бы в терминале для всех следующих emerge
+DISTCC_VERBOSE=1 DISTCC_LOG=/var/tmp/distcc-client.log emerge -av1 какой-нибудь-пакет
+grep -c "would prefer to run" /var/tmp/distcc-client.log
 ```
+
+Если `portage` не может писать в файл лога, distcc на каждом вызове пишет `failed to open logfile` в stderr. Этот шум ломает проверки флагов в `configure` (например, `-fPIC` у libtool). Подробно — в заметке [distcc на Gentoo: tmpfs и логи](distcc%20%D0%BD%D0%B0%20Gentoo%20%E2%80%94%20tmpfs%20%D0%B8%20%D0%BB%D0%BE%D0%B3%D0%B8%20%28%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%B8%20.distcc%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8%2C%20DISTCC_LOG%20%D0%B8%20distccd%2C%20%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D1%88%D1%83%D0%BC%20distcc%20%D0%B2%20stderr%20%D0%BB%D0%BE%D0%BC%D0%B0%D0%B5%D1%82%20configure%29.md).
 
 Быстрая проверка без Portage:
 
@@ -517,6 +520,8 @@ systemctl enable --now distccd
 ---
 
 ## Связанные заметки
+
+- [distcc на Gentoo: tmpfs и логи](distcc%20%D0%BD%D0%B0%20Gentoo%20%E2%80%94%20tmpfs%20%D0%B8%20%D0%BB%D0%BE%D0%B3%D0%B8%20%28%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%B8%20.distcc%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8%2C%20DISTCC_LOG%20%D0%B8%20distccd%2C%20%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83%20%D1%88%D1%83%D0%BC%20distcc%20%D0%B2%20stderr%20%D0%BB%D0%BE%D0%BC%D0%B0%D0%B5%D1%82%20configure%29.md) — эксплуатация: сборки в tmpfs, каталоги `.distcc` после перезагрузки, логи клиента и `distccd`, почему шум в stderr ломает `configure`
 
 - [Kernel — сборка или обновление ядра](../Gentoo/Kernel%20-%20%D0%A1%D0%B1%D0%BE%D1%80%D0%BA%D0%B0%20%D0%B8%D0%BB%D0%B8%20%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%8F%D0%B4%D1%80%D0%B0.md) — то, что distcc как раз не ускорит
 - [SSH-Ключи](../../Network/SSH/SSH-%D0%9A%D0%BB%D1%8E%D1%87%D0%B8.md) — ключ для пользователя `build` с ограничением `command=`
