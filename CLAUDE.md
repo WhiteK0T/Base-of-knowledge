@@ -24,6 +24,7 @@ Top-level folders group notes by domain, e.g. `AI/`, `VCS/`, `Network/`, `Linux/
 | :--- | :--- | :--- |
 | Containers (Docker, runc, containerd, LXC, podman, namespaces/cgroups/OverlayFS) | `Linux/Containers/` | images in `Cache/Containers/`; container CVEs still go to `Security/Vulns/` |
 | Kali Linux (установка, live/persistence, выпуски, NetHunter, настройка) | `Linux/Kali/` | README line «Kali Linux» in the Linux section; offensive tools that merely run on Kali still go to `Pentest/<area>` |
+| Honeypot / приманки (Cowrie, T-Pot, OpenCanary, Canarytokens…) | `Security/Honeypots/` | defensive; README line «Приманки (honeypot)» in the Security section |
 | Remote-desktop / remote-support apps (RustDesk, AnyDesk, TeamViewer, ScreenConnect) | `Apps/Remote-Access/` | the owner's own deployment of such tools is a private note — see below |
 | Git, forges, CI, trackers | `VCS/Git/`, `VCS/GitHub/`, `VCS/GitLab/`, `VCS/Forgejo-Gitea/`, `VCS/CI/`, `VCS/Trackers/` (incl. the `Jira/` series) | a forge's own issues/CI features go to that forge's folder; README section «🔧 VCS и трекеры» |
 | Big skill collections | `AI/Skills/<author>/` (`addyosmani/`, `mattpocock/`, `pstack/`) | single skills from other authors stay flat in `AI/Skills/` |

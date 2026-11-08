@@ -104,7 +104,7 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 22 -j REDIRECT --to-port 2222
 
 ## Связанные заметки
 
-- [Fail2ban — защита сервисов от перебора](../Network/Fail2ban/Fail2ban%20%E2%80%94%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BE%D0%B2%20%D0%BE%D1%82%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D1%80%D0%B0%20%28SSH%2C%20journald%2C%20%D1%84%D0%B0%D0%B9%D1%80%D0%B2%D0%BE%D0%BB%2C%20%D0%B4%D0%B8%D0%B0%D0%B3%D0%BD%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0%29.md) — не приманка, а блокировка перебора: Cowrie собирает данные, Fail2ban банит по логам; у Cowrie есть вывод в Fail2ban
+- [Fail2ban — защита сервисов от перебора](../../Network/Fail2ban/Fail2ban%20%E2%80%94%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%B0%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%BE%D0%B2%20%D0%BE%D1%82%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B1%D0%BE%D1%80%D0%B0%20%28SSH%2C%20journald%2C%20%D1%84%D0%B0%D0%B9%D1%80%D0%B2%D0%BE%D0%BB%2C%20%D0%B4%D0%B8%D0%B0%D0%B3%D0%BD%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0%29.md) — не приманка, а блокировка перебора: Cowrie собирает данные, Fail2ban банит по логам; у Cowrie есть вывод в Fail2ban
 
 ## 🔗 Ссылки
 
